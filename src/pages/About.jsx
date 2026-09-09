@@ -9,7 +9,7 @@ import {
   Activity,
   HeartHandshake,
   ShieldCheck,
-  Calendar,
+  Phone,
   ArrowRight,
   MapPin
 } from 'lucide-react'
@@ -124,11 +124,11 @@ export default function About() {
           </p>
           <div className="pt-3">
             <a
-              href="#book"
+              href="tel:+919820012345"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] shadow-md transition-all"
             >
-              <Calendar className="w-4 h-4" />
-              <span>Book Appointment</span>
+              <Phone className="w-4 h-4" />
+              <span>Call Us for Appointment</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

@@ -91,11 +91,11 @@ export default function FinalCTA() {
             {/* Primary Action Buttons */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
               <a
-                href="#book-appointment"
+                href="tel:+919820012345"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] shadow-md shadow-[#B64D2E]/20 hover:shadow-lg transition-all active:scale-[0.98] group"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Book an Appointment</span>
+                <Phone className="w-4 h-4" />
+                <span>Call Us for Appointment</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 

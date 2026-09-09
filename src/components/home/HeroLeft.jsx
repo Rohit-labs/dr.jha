@@ -1,4 +1,4 @@
-import { Calendar } from 'lucide-react'
+import { Phone } from 'lucide-react'
 
 export default function HeroLeft() {
   const avatars = [
@@ -41,11 +41,11 @@ export default function HeroLeft() {
       {/* Primary Action Buttons */}
       <div className="flex flex-wrap items-center gap-3.5 pt-2">
         <a
-          href="#book"
+          href="tel:+919820012345"
           className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full text-sm sm:text-[15px] font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#A8482D]/25 cursor-pointer"
         >
-          <Calendar className="w-4 h-4 text-white/90" />
-          <span>Book an Appointment</span>
+          <Phone className="w-4 h-4 text-white/90" />
+          <span>Call Us for Appointment</span>
           <span className="text-white/80 font-normal">→</span>
         </a>
 

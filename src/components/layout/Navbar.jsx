@@ -14,7 +14,8 @@ import {
   Sparkles,
   Activity,
   Stethoscope,
-  BookOpen
+  BookOpen,
+  Phone
 } from 'lucide-react'
 import { conditions } from '../../data/conditions'
 import { treatments } from '../../data/treatments'
@@ -692,11 +693,11 @@ export default function Navbar() {
           {/* ──────────────── Right CTA Button ──────────────── */}
           <div className="hidden sm:flex items-center shrink-0">
             <a
-              href="#book"
+              href="tel:+919820012345"
               className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white bg-[#A8482D] hover:bg-[#933D25] active:scale-[0.98] transition-all duration-200 shadow-sm shadow-[#A8482D]/20 cursor-pointer whitespace-nowrap shrink-0"
             >
-              <Calendar className="w-3.5 h-3.5 text-white/90 shrink-0" />
-              <span className="whitespace-nowrap">Book Appointment</span>
+              <Phone className="w-3.5 h-3.5 text-white/90 shrink-0" />
+              <span className="whitespace-nowrap">Call Us for Appointment</span>
               <span className="text-white/80 shrink-0">→</span>
             </a>
           </div>
@@ -999,15 +1000,15 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Book Appointment CTA */}
+            {/* Call Us for Appointment CTA */}
             <div className="pt-2">
               <a
-                href="#book"
+                href="tel:+919820012345"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] shadow-md shadow-[#A8482D]/20"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Book Appointment</span>
+                <Phone className="w-4 h-4" />
+                <span>Call Us for Appointment</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

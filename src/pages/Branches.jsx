@@ -19,7 +19,6 @@ import {
   Sparkles,
   ShieldCheck,
   Compass,
-  Calendar,
   Building2,
   Car,
   Navigation
@@ -689,11 +688,11 @@ export default function Branches() {
 
             <div className="pt-4 flex flex-wrap items-center justify-center gap-3.5">
               <a
-                href="#locations"
+                href="tel:+919820012345"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] active:scale-[0.98] transition-all shadow-md shadow-[#B64D2E]/20 cursor-pointer"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Book an Appointment</span>
+                <Phone className="w-4 h-4" />
+                <span>Call Us for Appointment</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 

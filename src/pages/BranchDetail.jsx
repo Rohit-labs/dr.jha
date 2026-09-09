@@ -12,7 +12,6 @@ import NotFound from './NotFound'
 import { getBranchBySlug, branches } from '../data/branches'
 import { doctors } from '../data/team'
 import {
-  Calendar,
   CheckCircle2,
   HelpCircle,
   ArrowRight,
@@ -116,11 +115,11 @@ export default function BranchDetail() {
               {/* Dual Hero CTAs */}
               <div className="flex flex-wrap items-center gap-3.5 pt-2">
                 <a
-                  href="#book"
+                  href={`tel:${branch.phone.replace(/[^0-9+]/g, '')}`}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] active:scale-[0.98] transition-all shadow-md shadow-[#B64D2E]/20"
                 >
-                  <Calendar className="w-4 h-4" />
-                  <span>Book an Appointment</span>
+                  <Phone className="w-4 h-4" />
+                  <span>Call Us for Appointment</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
 
@@ -518,7 +517,7 @@ export default function BranchDetail() {
               Direct Clinical Consultation
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-tight">
-              Book Your Appointment at <br />
+              Call Us for Appointment at <br />
               <span className="italic font-normal text-[#B64D2E]">{branch.name}</span>
             </h2>
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
@@ -531,7 +530,7 @@ export default function BranchDetail() {
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] active:scale-[0.98] transition-all shadow-md shadow-[#B64D2E]/20"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call Clinic Directly ({branch.phone})</span>
+                <span>Call Us for Appointment ({branch.phone})</span>
               </a>
 
               <Link

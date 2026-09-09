@@ -37,11 +37,11 @@ export default function Footer() {
 
             <div className="pt-2">
               <a
-                href="#book"
+                href="tel:+919820012345"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] transition-colors shadow-sm"
               >
-                <Calendar className="w-3.5 h-3.5" />
-                <span>Book Appointment</span>
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call Us for Appointment</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>

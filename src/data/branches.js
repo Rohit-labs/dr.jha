@@ -87,8 +87,8 @@ export const branches = [
     ],
     faqs: [
       {
-        question: 'How do I book an appointment at the Mira Road clinic?',
-        answer: 'You can book online through our website booking form or call our direct helpline at +91 98200 12345 to reserve an initial consultation slot.'
+        question: 'How do I schedule an appointment at the Mira Road clinic?',
+        answer: 'You can call our direct helpline at +91 98200 12345 to reserve an initial consultation slot with our specialists.'
       },
       {
         question: 'Is parking available near the Mira Road branch?',

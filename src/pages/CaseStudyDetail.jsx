@@ -9,7 +9,7 @@ import {
   ClipboardList,
   HeartHandshake,
   TrendingUp,
-  Calendar,
+  Phone,
   ArrowRight,
   Quote,
   ShieldCheck
@@ -132,11 +132,11 @@ export default function CaseStudyDetail() {
             </p>
           </div>
           <a
-            href="#book"
+            href="tel:+919820012345"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] shrink-0 shadow-md"
           >
-            <Calendar className="w-4 h-4" />
-            <span>Book Consultation</span>
+            <Phone className="w-4 h-4" />
+            <span>Call Us for Appointment</span>
           </a>
         </div>
 

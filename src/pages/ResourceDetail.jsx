@@ -4,7 +4,7 @@ import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getResourceBySlug, resources } from '../data/resources'
-import { Clock, Calendar, ArrowRight, BookOpen, Stethoscope } from 'lucide-react'
+import { Clock, Phone, ArrowRight, BookOpen, Stethoscope } from 'lucide-react'
 
 export default function ResourceDetail() {
   const { slug } = useParams()
@@ -104,11 +104,11 @@ export default function ResourceDetail() {
           </p>
           <div className="pt-2">
             <a
-              href="#book"
+              href="tel:+919820012345"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] transition-colors"
             >
-              <Calendar className="w-4 h-4" />
-              <span>Book an Evaluation</span>
+              <Phone className="w-4 h-4" />
+              <span>Call Us for Appointment</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
