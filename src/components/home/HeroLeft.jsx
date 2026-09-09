@@ -1,12 +1,94 @@
-import { Phone } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Phone, Search, ArrowRight, X } from 'lucide-react'
+import { conditions } from '../../data/conditions'
+import { treatments } from '../../data/treatments'
+import { branches } from '../../data/branches'
+import { resources } from '../../data/resources'
+
+// Searchable database across all primary care domains
+const heroSearchIndex = [
+  ...conditions.map((c) => ({
+    title: c.name,
+    category: 'Condition',
+    description: c.shortDescription || c.overview?.slice(0, 80) + '...',
+    href: `/conditions/${c.slug}`,
+  })),
+  ...treatments.map((t) => ({
+    title: t.name,
+    category: 'Treatment',
+    description: t.shortDescription || t.overview?.slice(0, 80) + '...',
+    href: `/treatments/${t.slug}`,
+  })),
+  ...branches.map((b) => ({
+    title: `${b.name} Clinic`,
+    category: 'Branch',
+    description: `${b.headline} • ${b.address}`,
+    href: `/branches/${b.slug}`,
+  })),
+  ...resources.map((r) => ({
+    title: r.title,
+    category: 'Resource',
+    description: r.summary || '',
+    href: `/resources/${r.slug}`,
+  })),
+]
+
+const popularTags = [
+  { name: 'Back Pain', href: '/conditions/back-pain' },
+  { name: 'Knee Pain', href: '/conditions/knee-pain' },
+  { name: 'Neck Pain', href: '/conditions/neck-pain' },
+  { name: 'Sciatica', href: '/conditions/sciatica' },
+  { name: 'Sports Injury', href: '/conditions/sports-injuries' },
+]
 
 export default function HeroLeft() {
+  const navigate = useNavigate()
+  const [searchQuery, setSearchQuery] = useState('')
+  const [showDropdown, setShowDropdown] = useState(false)
+  const searchRef = useRef(null)
+
   const avatars = [
     'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80',
     'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80',
     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80',
     'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80',
   ]
+
+  const filteredResults = searchQuery.trim()
+    ? heroSearchIndex.filter((item) => {
+        const q = searchQuery.toLowerCase()
+        return (
+          item.title.toLowerCase().includes(q) ||
+          item.description.toLowerCase().includes(q) ||
+          item.category.toLowerCase().includes(q)
+        )
+      }).slice(0, 5)
+    : []
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    if (!searchQuery.trim()) return
+
+    if (filteredResults.length > 0) {
+      navigate(filteredResults[0].href)
+      setShowDropdown(false)
+    } else {
+      navigate('/conditions')
+      setShowDropdown(false)
+    }
+  }
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowDropdown(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   return (
     <div className="flex flex-col justify-center space-y-6 sm:space-y-7 max-w-xl">
@@ -37,6 +119,108 @@ export default function HeroLeft() {
         Expert physiotherapy, rehabilitation and acupuncture care for a
         healthier, stronger and pain-free you.
       </p>
+
+      {/* Desktop Hero Search Bar (hidden on mobile/tablet where dedicated below-navbar search bar operates) */}
+      <div ref={searchRef} className="hidden lg:block relative w-full pt-1">
+        <form
+          onSubmit={handleSearchSubmit}
+          className="w-full relative flex items-center bg-white rounded-full p-1.5 sm:p-2 pl-5 sm:pl-6 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-stone-300 focus-within:border-[#A8482D] focus-within:ring-4 focus-within:ring-[#A8482D]/10 transition-all duration-200"
+        >
+          <Search className="w-5 h-5 text-stone-400 shrink-0 mr-3" />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value)
+              setShowDropdown(true)
+            }}
+            onFocus={() => setShowDropdown(true)}
+            placeholder="What condition or symptom are you experiencing?"
+            className="w-full bg-transparent text-stone-800 placeholder:text-stone-400 text-sm sm:text-[15px] focus:outline-none font-normal"
+            aria-label="Search conditions and treatments"
+          />
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery('')
+                setShowDropdown(false)
+              }}
+              className="p-1.5 rounded-full text-stone-400 hover:text-stone-700 hover:bg-stone-100 mr-1.5 transition-colors cursor-pointer"
+              aria-label="Clear search"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
+          <button
+            type="submit"
+            aria-label="Search care options"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#A8482D] hover:bg-[#933D25] text-white flex items-center justify-center shrink-0 transition-all duration-200 active:scale-95 shadow-md shadow-[#A8482D]/25 cursor-pointer"
+          >
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </form>
+
+        {/* Live Search Results Dropdown */}
+        {showDropdown && searchQuery.trim().length > 0 && (
+          <div className="absolute left-0 right-0 top-full mt-2 bg-[#FAF7F2] border border-[#E8E2D8] rounded-2xl shadow-xl shadow-stone-900/10 p-2 z-40 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            {filteredResults.length > 0 ? (
+              <div className="divide-y divide-stone-200/60 max-h-64 overflow-y-auto">
+                {filteredResults.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    to={item.href}
+                    onClick={() => {
+                      setShowDropdown(false)
+                      setSearchQuery('')
+                    }}
+                    className="flex items-center justify-between p-2.5 rounded-xl hover:bg-[#F4EFEA] transition-colors group cursor-pointer"
+                  >
+                    <div className="pr-3">
+                      <span className="text-xs sm:text-[13px] font-semibold text-stone-900 group-hover:text-[#A8482D] transition-colors block">
+                        {item.title}
+                      </span>
+                      <p className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
+                        {item.description}
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded-full bg-stone-200/80 text-stone-700 shrink-0">
+                      {item.category}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="p-4 text-center">
+                <p className="text-xs text-stone-600">
+                  No direct care options found for "{searchQuery}".
+                </p>
+                <Link
+                  to="/conditions"
+                  onClick={() => setShowDropdown(false)}
+                  className="text-xs text-[#A8482D] hover:underline font-semibold mt-1 inline-block"
+                >
+                  Explore all conditions we treat →
+                </Link>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Popular Tags */}
+        <div className="flex flex-wrap items-center gap-2 pt-2.5 text-xs">
+          <span className="font-semibold text-stone-700 mr-1">Popular:</span>
+          {popularTags.map((tag) => (
+            <Link
+              key={tag.name}
+              to={tag.href}
+              className="px-3 py-1.5 rounded-full border border-stone-300/70 bg-[#FAF7F2]/90 hover:bg-white text-stone-600 hover:text-stone-900 hover:border-[#A8482D]/40 active:scale-[0.98] transition-all cursor-pointer font-medium"
+            >
+              {tag.name}
+            </Link>
+          ))}
+        </div>
+      </div>
 
       {/* Primary Action Buttons */}
       <div className="flex flex-wrap items-center gap-3.5 pt-2">
