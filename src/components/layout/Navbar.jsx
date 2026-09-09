@@ -16,6 +16,49 @@ import {
   Stethoscope,
   BookOpen
 } from 'lucide-react'
+import { conditions } from '../../data/conditions'
+import { treatments } from '../../data/treatments'
+import { resources } from '../../data/resources'
+import { caseStudies } from '../../data/caseStudies'
+import { branches } from '../../data/branches'
+
+const allSearchItems = [
+  ...conditions.map((c) => ({
+    title: c.name,
+    category: 'Conditions',
+    tag: c.category || 'Condition',
+    description: c.shortDescription || c.overview || '',
+    href: `/conditions/${c.slug}`,
+  })),
+  ...treatments.map((t) => ({
+    title: t.name,
+    category: 'Treatments',
+    tag: t.category || 'Treatment',
+    description: t.shortDescription || t.overview || '',
+    href: `/treatments/${t.slug}`,
+  })),
+  ...resources.map((r) => ({
+    title: r.title,
+    category: 'Resources',
+    tag: r.category || 'Guide',
+    description: r.summary || '',
+    href: `/resources/${r.slug}`,
+  })),
+  ...caseStudies.map((cs) => ({
+    title: cs.title,
+    category: 'Case Studies',
+    tag: cs.category || 'Case Study',
+    description: cs.summary || '',
+    href: `/case-studies/${cs.slug}`,
+  })),
+  ...branches.map((b) => ({
+    title: `${b.name} Clinic`,
+    category: 'Branches',
+    tag: b.tag || 'Branch',
+    description: `${b.headline} • ${b.address}`,
+    href: `/branches/${b.slug}`,
+  })),
+]
 
 export default function Navbar() {
   const location = useLocation()
@@ -30,6 +73,19 @@ export default function Navbar() {
   const [searchModalOpen, setSearchModalOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [searchFilter, setSearchFilter] = useState('All')
+
+  const filteredSearchItems = searchQuery.trim()
+    ? allSearchItems.filter((item) => {
+        const matchesFilter = searchFilter === 'All' || item.category === searchFilter
+        const q = searchQuery.toLowerCase()
+        const matchesQuery =
+          item.title.toLowerCase().includes(q) ||
+          item.description.toLowerCase().includes(q) ||
+          item.tag.toLowerCase().includes(q) ||
+          item.category.toLowerCase().includes(q)
+        return matchesFilter && matchesQuery
+      })
+    : []
 
   const timeoutRef = useRef(null)
   const searchInputRef = useRef(null)
@@ -249,7 +305,7 @@ export default function Navbar() {
     'Stroke Rehabilitation',
     'Knee Pain',
     'Dry Needling',
-    'Post-Surgical Rehab',
+    'Mira Road',
     'Shockwave Therapy',
   ]
 
@@ -645,22 +701,41 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* ──────────────── Mobile Controls ──────────────── */}
-          <div className="flex items-center gap-1.5 lg:hidden shrink-0">
+          {/* ──────────────── Mobile Controls (Hamburger ONLY) ──────────────── */}
+          <div className="flex items-center lg:hidden shrink-0">
             <button
-              onClick={() => setSearchModalOpen(true)}
-              className="p-2 rounded-xl text-stone-700 hover:text-black hover:bg-stone-200/50 transition-colors"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5 stroke-[2]" />
-            </button>
-            <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-stone-700 hover:text-black hover:bg-stone-200/50 transition-colors"
-              aria-label="Toggle menu"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-stone-700 hover:text-[#1A1A1A] hover:bg-stone-200/50 active:bg-stone-200/70 transition-colors cursor-pointer"
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 stroke-[2]" />
+              ) : (
+                <Menu className="w-6 h-6 stroke-[2]" />
+              )}
             </button>
+          </div>
+        </div>
+
+        {/* ──────────────── Dedicated Mobile Search Bar ──────────────── */}
+        <div className="lg:hidden mt-2.5 sm:mt-3">
+          <div
+            onClick={() => setSearchModalOpen(true)}
+            className="w-full h-[50px] flex items-center gap-3 px-4 rounded-2xl bg-[#F4EFEA] hover:bg-[#EFE9E2] border border-[#E8E2D8] text-stone-700 shadow-2xs transition-colors cursor-pointer focus-within:border-[#A8482D] focus-within:ring-2 focus-within:ring-[#A8482D]/20"
+            role="search"
+          >
+            <Search className="w-[18px] h-[18px] text-stone-400 stroke-[2] shrink-0" />
+            <input
+              type="text"
+              readOnly
+              value=""
+              placeholder="Search conditions, treatments..."
+              className="w-full bg-transparent text-[13px] sm:text-sm text-stone-800 placeholder:text-stone-500 font-normal focus:outline-none cursor-pointer"
+              onClick={() => setSearchModalOpen(true)}
+              onFocus={() => setSearchModalOpen(true)}
+              aria-label="Search conditions, treatments..."
+            />
           </div>
         </div>
 
@@ -914,7 +989,7 @@ export default function Navbar() {
                   setMobileMenuOpen(false)
                   setSearchModalOpen(true)
                 }}
-                className="w-full flex items-center justify-between p-3 rounded-2xl bg-white border border-stone-200 text-stone-700 text-xs font-medium"
+                className="w-full flex items-center justify-between p-3 rounded-2xl bg-[#F4EFEA] border border-[#E8E2D8] text-stone-700 text-xs font-medium hover:bg-[#EFE9E2] transition-colors cursor-pointer"
               >
                 <span className="flex items-center gap-2">
                   <Search className="w-4 h-4 text-stone-400" />
@@ -942,20 +1017,23 @@ export default function Navbar() {
 
       {/* ──────────────── 7. SEARCH MODAL ──────────────── */}
       {searchModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-stone-950/40 backdrop-blur-xs animate-in fade-in duration-200">
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-20 px-4 bg-stone-950/40 backdrop-blur-xs animate-in fade-in duration-200 overflow-y-auto"
+          onClick={() => setSearchModalOpen(false)}
+        >
           <div
-            className="w-full max-w-2xl bg-[#FAF7F2] border border-[#E8E2D8] rounded-[28px] shadow-2xl p-6 sm:p-8 overflow-hidden relative animate-in zoom-in-95 duration-200"
+            className="w-full max-w-2xl bg-[#FAF7F2] border border-[#E8E2D8] rounded-[28px] shadow-2xl p-6 sm:p-8 overflow-hidden relative animate-in zoom-in-95 duration-200 my-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-3">
               <span className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#3A5A40]">
                 Search Knowledge Base
               </span>
               <button
                 type="button"
                 onClick={() => setSearchModalOpen(false)}
-                className="p-1.5 rounded-full text-stone-400 hover:text-stone-800 hover:bg-stone-200/60 transition-colors"
+                className="w-9 h-9 flex items-center justify-center rounded-full text-stone-400 hover:text-stone-800 hover:bg-stone-200/60 transition-colors cursor-pointer"
                 aria-label="Close search"
               >
                 <X className="w-5 h-5" />
@@ -967,21 +1045,22 @@ export default function Navbar() {
             </h3>
 
             {/* Search Input Box */}
-            <div className="relative flex items-center bg-white rounded-full p-2 pl-5 border border-stone-300 shadow-sm focus-within:border-[#A8482D] focus-within:ring-2 focus-within:ring-[#A8482D]/15 transition-all">
+            <div className="relative flex items-center bg-[#F4EFEA] rounded-full p-2 pl-5 border border-stone-300 shadow-sm focus-within:border-[#A8482D] focus-within:ring-2 focus-within:ring-[#A8482D]/15 transition-all">
               <Search className="w-5 h-5 text-stone-400 shrink-0 mr-3" />
               <input
                 ref={searchInputRef}
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search a condition, treatment, symptom or topic..."
+                placeholder="Search conditions, treatments, branches..."
                 className="w-full bg-transparent text-stone-800 placeholder:text-stone-400 text-sm sm:text-base focus:outline-none"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery('')}
-                  className="p-1.5 rounded-full hover:bg-stone-100 text-stone-400 hover:text-stone-700 mr-1"
+                  className="p-1.5 rounded-full hover:bg-stone-200/60 text-stone-400 hover:text-stone-700 mr-1 cursor-pointer"
+                  aria-label="Clear search"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -989,9 +1068,9 @@ export default function Navbar() {
             </div>
 
             {/* Filter Category Chips */}
-            <div className="flex flex-wrap items-center gap-2 mt-4">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-4">
               <span className="text-xs text-stone-400 mr-1">Filter:</span>
-              {['All', 'Conditions', 'Treatments', 'Resources', 'Case Studies'].map((filter) => (
+              {['All', 'Conditions', 'Treatments', 'Resources', 'Case Studies', 'Branches'].map((filter) => (
                 <button
                   key={filter}
                   type="button"
@@ -999,7 +1078,7 @@ export default function Navbar() {
                   className={`px-3 py-1 rounded-full text-xs font-medium transition-colors cursor-pointer ${
                     searchFilter === filter
                       ? 'bg-[#A8482D] text-white font-semibold'
-                      : 'bg-white border border-stone-200 text-stone-600 hover:border-stone-400'
+                      : 'bg-white/80 border border-stone-200 text-stone-600 hover:border-stone-400'
                   }`}
                 >
                   {filter}
@@ -1007,24 +1086,105 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Popular Suggested Searches */}
-            <div className="mt-6 pt-5 border-t border-stone-200">
-              <p className="text-xs font-semibold text-stone-500 mb-2.5">
-                Popular Searches
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {popularSearches.map((item, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => setSearchQuery(item)}
-                    className="px-3 py-1.5 rounded-full text-xs bg-[#F3EFEA] hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-300/70 hover:border-stone-400 transition-all cursor-pointer"
-                  >
-                    {item}
-                  </button>
-                ))}
+            {/* Search Results */}
+            {searchQuery.trim() ? (
+              <div className="mt-5 pt-4 border-t border-stone-200">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">
+                    Results ({filteredSearchItems.length})
+                  </span>
+                  {searchFilter !== 'All' && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchFilter('All')}
+                      className="text-xs text-[#A8482D] hover:underline cursor-pointer"
+                    >
+                      Clear filter
+                    </button>
+                  )}
+                </div>
+
+                {filteredSearchItems.length > 0 ? (
+                  <div className="max-h-[300px] overflow-y-auto space-y-1.5 pr-1 divide-y divide-stone-200/50">
+                    {filteredSearchItems.map((item, idx) => (
+                      <Link
+                        key={idx}
+                        to={item.href}
+                        onClick={() => {
+                          setSearchModalOpen(false)
+                          setSearchQuery('')
+                        }}
+                        className="block pt-2 pb-2 px-3 rounded-xl hover:bg-[#F4EFEA] transition-colors group"
+                      >
+                        <div className="flex items-center justify-between gap-2 mb-0.5">
+                          <span className="text-sm font-semibold text-stone-900 group-hover:text-[#A8482D] transition-colors">
+                            {item.title}
+                          </span>
+                          <span className="text-[10px] font-bold tracking-wider px-2 py-0.5 rounded-full bg-stone-200/80 text-stone-700 shrink-0">
+                            {item.category}
+                          </span>
+                        </div>
+                        <p className="text-xs text-stone-500 line-clamp-1">
+                          {item.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="py-8 text-center bg-[#F4EFEA]/60 rounded-2xl border border-stone-200/60 mt-2">
+                    <p className="text-sm font-medium text-stone-700">
+                      No matching results found for "{searchQuery}"
+                    </p>
+                    <p className="text-xs text-stone-400 mt-1.5">
+                      Try searching for{' '}
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery('Back Pain')}
+                        className="text-[#A8482D] hover:underline font-medium cursor-pointer"
+                      >
+                        Back Pain
+                      </button>
+                      {', '}
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery('Acupuncture')}
+                        className="text-[#A8482D] hover:underline font-medium cursor-pointer"
+                      >
+                        Acupuncture
+                      </button>
+                      {', or '}
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery('Mira Road')}
+                        className="text-[#A8482D] hover:underline font-medium cursor-pointer"
+                      >
+                        Mira Road
+                      </button>
+                      .
+                    </p>
+                  </div>
+                )}
               </div>
-            </div>
+            ) : (
+              /* Popular Suggested Searches when no query */
+              <div className="mt-6 pt-5 border-t border-stone-200">
+                <p className="text-xs font-semibold text-stone-500 mb-2.5">
+                  Popular Searches
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {popularSearches.map((item, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setSearchQuery(item)}
+                      className="px-3 py-1.5 rounded-full text-xs bg-[#F3EFEA] hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-300/70 hover:border-stone-400 transition-all cursor-pointer"
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Modal Footer */}
             <div className="mt-6 pt-4 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-400">
