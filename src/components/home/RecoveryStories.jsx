@@ -5,7 +5,6 @@ import {
   ClipboardList,
   HeartHandshake,
   TrendingUp,
-  MessageSquare,
   Quote
 } from 'lucide-react'
 
@@ -313,35 +312,6 @@ export default function RecoveryStories() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* ═══════════ FINAL SECTION CTA STRIP ═══════════ */}
-        <div className="max-w-6xl mx-auto mt-12 sm:mt-16">
-          <div className="bg-[#0E352A] border border-[#F7F3EC]/15 rounded-3xl sm:rounded-full py-4 px-6 sm:px-8 lg:px-10 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
-            {/* Left side: icon + heading + copy */}
-            <div className="flex items-center gap-3.5 text-center sm:text-left">
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[#F7F3EC] shrink-0 border border-white/10">
-                <MessageSquare className="w-5 h-5 stroke-[1.8]" />
-              </div>
-              <div>
-                <h4 className="font-serif text-base sm:text-lg font-bold text-[#F7F3EC] leading-tight">
-                  Have a similar problem?
-                </h4>
-                <p className="text-xs text-[#F7F3EC]/70 leading-snug mt-0.5">
-                  Let our experts help you take the first step toward better movement and recovery.
-                </p>
-              </div>
-            </div>
-
-            {/* Right side: button to condition directory */}
-            <a
-              href="#conditions"
-              className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold text-[#123F32] bg-[#F7F3EC] hover:bg-white active:scale-[0.98] transition-all shadow-md shrink-0 cursor-pointer"
-            >
-              <span>Explore Your Condition</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
           </div>
         </div>
 

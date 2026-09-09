@@ -6,7 +6,6 @@ import {
   BookOpen,
   Activity,
   FileText,
-  Compass,
   Sparkles,
   ChevronRight
 } from 'lucide-react'
@@ -481,31 +480,6 @@ export default function ConditionDiscovery() {
             </div>
 
           </div>
-        </div>
-
-        {/* ═══════════ 4. CONVERSION FUNNEL BOTTOM STRIP ═══════════ */}
-        <div className="max-w-4xl mx-auto mt-14 sm:mt-16 pt-8 border-t border-stone-300/60 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#123F32] shrink-0 border border-stone-200 shadow-xs">
-              <Compass className="w-5 h-5 stroke-[1.8]" />
-            </div>
-            <div>
-              <h4 className="font-serif text-base sm:text-lg font-bold text-[#1C1C1A] leading-tight">
-                Not sure where to start?
-              </h4>
-              <p className="text-xs text-stone-500 mt-0.5">
-                Tell us what you're experiencing and find the right place to begin.
-              </p>
-            </div>
-          </div>
-
-          <a
-            href="#conditions"
-            className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#123F32] hover:bg-[#1A5242] active:scale-[0.98] transition-all shadow-sm shrink-0"
-          >
-            <span>Find My Care</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
 
       </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRight, Search } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 /* ──────────────── SVG Icons ──────────────── */
 
@@ -316,40 +316,6 @@ export default function CareAreas() {
 
             </div>
 
-          </div>
-
-          {/* ═══════════ Bottom Search Utility Pill ═══════════ */}
-          <div className="mt-6 bg-[#ECE7DF] rounded-full py-3.5 px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
-            {/* Left Side: Magnifier badge + titles */}
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center text-slate-600 shadow-sm shrink-0">
-                <Search className="w-4 h-4 stroke-[2]" />
-              </div>
-              <div className="text-left leading-tight">
-                <span className="block text-[10px] text-[#1A1A1A]/50 font-medium uppercase tracking-wider">
-                  Not sure where to start?
-                </span>
-                <span className="font-serif text-sm sm:text-base font-bold text-[#1A1A1A]">
-                  Find the right care <span className="italic font-normal text-[#A6543D]">for your condition.</span>
-                </span>
-              </div>
-            </div>
-
-            {/* Right Side: Subtext + Button + Handwritten script */}
-            <div className="flex items-center gap-4">
-              <span className="hidden md:inline-block text-xs text-[#1A1A1A]/50">
-                Search your symptoms and get personalized guidance.
-              </span>
-              <a
-                href="#search"
-                className="bg-white hover:bg-slate-50 text-[#1A1A1A] text-xs font-semibold px-5 py-2.5 rounded-full shadow-sm border border-black/5 transition inline-flex items-center gap-1.5 shrink-0 active:scale-[0.98]"
-              >
-                Search Conditions <span>&rarr;</span>
-              </a>
-              <span className="hidden lg:inline-block font-handwriting font-['Caveat'] text-lg text-slate-500 leading-none">
-                Better Movement<br />Brighter Days
-              </span>
-            </div>
           </div>
 
         </div>

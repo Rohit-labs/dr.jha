@@ -1,34 +1,12 @@
-import { useState } from 'react'
-import { Search, Calendar, ArrowRight } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 
 export default function HeroLeft() {
-  const [searchQuery, setSearchQuery] = useState('')
-
-  const popularTags = [
-    'Back Pain',
-    'Knee Pain',
-    'Neck Pain',
-    'Sports Injury',
-    'Sciatica',
-  ]
-
   const avatars = [
     'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80',
     'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80',
     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80',
     'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80',
   ]
-
-  const handleTagClick = (tag) => {
-    setSearchQuery(tag)
-  }
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault()
-    if (searchQuery.trim()) {
-      alert(`Searching for care options for: "${searchQuery}"`)
-    }
-  }
 
   return (
     <div className="flex flex-col justify-center space-y-6 sm:space-y-7 max-w-xl">
@@ -59,47 +37,6 @@ export default function HeroLeft() {
         Expert physiotherapy, rehabilitation and acupuncture care for a
         healthier, stronger and pain-free you.
       </p>
-
-      {/* Interactive Search Input */}
-      <form
-        onSubmit={handleSearchSubmit}
-        className="w-full relative flex items-center bg-white rounded-full p-1.5 sm:p-2 pl-5 sm:pl-6 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.04)] focus-within:border-[#A8482D]/60 focus-within:ring-2 focus-within:ring-[#A8482D]/10 transition-all"
-      >
-        <Search className="w-5 h-5 text-stone-400 shrink-0 mr-3" />
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="What are you experiencing?"
-          className="w-full bg-transparent text-stone-800 placeholder:text-stone-400 text-sm sm:text-[15px] focus:outline-none"
-        />
-        <button
-          type="submit"
-          aria-label="Search"
-          className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#A8482D] hover:bg-[#933D25] text-white flex items-center justify-center shrink-0 transition-transform active:scale-95 shadow-md shadow-[#A8482D]/25 cursor-pointer"
-        >
-          <ArrowRight className="w-5 h-5" />
-        </button>
-      </form>
-
-      {/* Popular Tags */}
-      <div className="flex flex-wrap items-center gap-2 pt-1 text-xs sm:text-[13px]">
-        <span className="font-semibold text-stone-700 mr-1">Popular:</span>
-        {popularTags.map((tag) => (
-          <button
-            key={tag}
-            type="button"
-            onClick={() => handleTagClick(tag)}
-            className={`px-3 py-1.5 rounded-full border transition-all cursor-pointer ${
-              searchQuery === tag
-                ? 'bg-stone-900 text-white border-stone-900'
-                : 'bg-[#FAF7F2]/80 hover:bg-white text-stone-600 hover:text-stone-900 border-stone-300/70 hover:border-stone-400'
-            }`}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
 
       {/* Primary Action Buttons */}
       <div className="flex flex-wrap items-center gap-3.5 pt-2">
