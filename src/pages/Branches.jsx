@@ -150,7 +150,7 @@ export default function Branches() {
                   href="#locations"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] active:scale-[0.98] transition-all shadow-md shadow-[#B64D2E]/20 cursor-pointer"
                 >
-                  <Calendar className="w-4 h-4" />
+                  <MapPin className="w-4 h-4" />
                   <span>Explore Our Branches</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
