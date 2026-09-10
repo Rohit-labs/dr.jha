@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   MapPin,
   Clock,
@@ -159,13 +160,13 @@ export default function OurBranches() {
 
               {/* CTAs */}
               <div className="pt-5 border-t border-white/15 flex flex-wrap items-center gap-3.5 sm:gap-4">
-                <a
-                  href="/branches/mira-road"
+                <Link
+                  to="/branches/mira-road"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] active:scale-[0.98] transition-all shadow-md shadow-black/20 border border-white/20"
                 >
                   <span>View Mira Road Branch</span>
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
 
                 <a
                   href="https://maps.google.com/?q=Dr+Jha+Physiotherapy+Mira+Road"
@@ -241,13 +242,13 @@ export default function OurBranches() {
 
             {/* CTAs */}
             <div className="pt-4 border-t border-stone-200/70 flex items-center justify-between">
-              <a
-                href="/branches/vasai"
+              <Link
+                to="/branches/vasai"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#073D32] transition-colors group/link"
               >
                 <span>View Vasai Branch</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-              </a>
+              </Link>
 
               <a
                 href="https://maps.google.com/?q=Dr+Jha+Physiotherapy+Vasai"
@@ -307,13 +308,13 @@ export default function OurBranches() {
 
             {/* CTAs */}
             <div className="pt-4 border-t border-stone-200/70 flex items-center justify-between">
-              <a
-                href="/branches/surat"
+              <Link
+                to="/branches/surat"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#073D32] transition-colors group/link"
               >
                 <span>View Surat Branch</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-              </a>
+              </Link>
 
               <a
                 href="https://maps.google.com/?q=Dr+Jha+Physiotherapy+Surat"
@@ -331,16 +332,13 @@ export default function OurBranches() {
 
         {/* ═══════════ HOMEPAGE CONVERSION STRIP ═══════════ */}
         <div className="max-w-xl mx-auto text-center mt-12 sm:mt-14 pt-6 border-t border-stone-200/70">
-          <p className="text-xs sm:text-[13px] text-stone-600">
-            Not sure which centre is right for you?{' '}
-            <a
-              href="#book"
-              className="font-semibold text-[#064C3B] hover:text-[#073D32] inline-flex items-center gap-1 hover:underline transition-all"
-            >
-              <span>Tell us what you're looking for</span>
-              <ArrowRight className="w-3 h-3" />
-            </a>
-          </p>
+          <Link
+            to="/branches"
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all shadow-xs active:scale-[0.98]"
+          >
+            <span>Explore All Clinics</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
       </div>

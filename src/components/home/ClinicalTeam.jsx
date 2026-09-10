@@ -50,14 +50,14 @@ export default function ClinicalTeam() {
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 text-xs tracking-[0.2em] text-[#064C3B] uppercase font-semibold mb-3">
             <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
-            CLINICAL LEADERSHIP
+            MEET YOUR CARE TEAM
             <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
           </div>
 
           {/* Main Heading */}
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#26332F] leading-[1.12]">
-            Clinical experience. <br />
-            <span className="italic font-normal text-[#064C3B]">Personalized healing.</span>
+            Clinical Experience, <br />
+            <span className="italic font-normal text-[#064C3B]">Personal Care.</span>
           </h2>
 
           {/* Supporting Paragraph */}
@@ -213,21 +213,6 @@ export default function ClinicalTeam() {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* ═══════════ SUB-BANNER: MEET FULL TEAM ACROSS CLINICS ═══════════ */}
-        <div className="max-w-5xl mx-auto mt-8 sm:mt-10 pt-6 border-t border-stone-300/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs sm:text-sm text-stone-600 text-center sm:text-left">
-            Our wider clinical team provides care across our Mira Road, Vasai, and Surat locations.
-          </p>
-
-          <Link
-            to="/about"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#073D32] group shrink-0"
-          >
-            <span>View All Clinicians &amp; Qualifications</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
         </div>
 
       </div>

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Calendar, ArrowRight, ShieldCheck, Clock, MapPin, Phone, MessageCircle } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, ShieldCheck, Clock, MapPin, Phone, MessageCircle } from 'lucide-react'
 
 export default function FinalCTA() {
   const guarantees = [
@@ -30,7 +31,7 @@ export default function FinalCTA() {
     <section
       id="book"
       aria-labelledby="final-cta-heading"
-      className="w-full bg-[#F8F6F0] py-16 sm:py-20 lg:py-24"
+      className="w-full bg-[#F8F6F0] py-16 sm:py-20 lg:py-24 font-sans antialiased text-[#26332F]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -60,13 +61,13 @@ export default function FinalCTA() {
               id="final-cta-heading"
               className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-[1.15] mb-4"
             >
-              Your path to pain-free movement<br />
-              <span className="italic font-normal text-[#064C3B]">begins with an evaluation.</span>
+              Ready to take <br />
+              <span className="italic font-normal text-[#064C3B]">the next step?</span>
             </h2>
 
             {/* Supporting Copy */}
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal mb-8 sm:mb-10 max-w-2xl">
-              Whether you are recovering from surgery, managing chronic pain, or seeking preventative rehabilitation, our senior physiotherapists and acupuncture specialists are here to guide your recovery with individualized clinical care.
+              Whether you are recovering from an injury, managing chronic pain, or seeking preventative rehabilitation, our senior physiotherapists are ready to guide your journey to lasting recovery.
             </p>
 
             {/* 3 Peace-of-Mind Clinical Guarantees */}
@@ -88,8 +89,9 @@ export default function FinalCTA() {
               ))}
             </div>
 
-            {/* Primary Action Buttons */}
+            {/* Primary & Secondary Action Buttons */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
+              {/* Primary: Call Us for Appointment */}
               <a
                 href="tel:+919820012345"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] shadow-md shadow-[#064C3B]/20 hover:shadow-lg transition-all active:scale-[0.98] group"
@@ -99,14 +101,24 @@ export default function FinalCTA() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
+              {/* Secondary: Find a Clinic */}
+              <Link
+                to="/branches"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-[#26332F] bg-white hover:bg-[#F8F6F0] border border-[#DCDDD5] hover:border-[#064C3B] transition-all shadow-xs"
+              >
+                <MapPin className="w-4 h-4 text-[#064C3B]" />
+                <span>Find a Clinic</span>
+              </Link>
+
+              {/* WhatsApp Secondary Option */}
               <a
                 href="https://wa.me/919820012345?text=Hello%20Dr.%20Jha%20Clinic,%20I%20would%20like%20to%20enquire%20about%20a%20consultation"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-stone-800 bg-white hover:bg-stone-50 border border-[#DCDDD5] hover:border-stone-400 transition-all shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full text-sm font-semibold text-stone-700 bg-white hover:bg-stone-50 border border-[#DCDDD5] hover:border-stone-400 transition-all shadow-xs"
               >
                 <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                <span>Chat on WhatsApp</span>
+                <span>WhatsApp</span>
               </a>
             </div>
 
