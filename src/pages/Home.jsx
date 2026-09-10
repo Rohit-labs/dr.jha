@@ -4,8 +4,7 @@ import SEO from '../components/common/SEO'
 import Hero from '../components/home/Hero'
 import ExploreCare from '../components/home/ExploreCare'
 import ClinicalTeam from '../components/home/ClinicalTeam'
-import RecoveryStories from '../components/home/RecoveryStories'
-import KnowledgeDiscovery from '../components/home/KnowledgeDiscovery'
+import ConditionDiscovery from '../components/home/ConditionDiscovery'
 import Branches from '../components/home/Branches'
 import PatientReviews from '../components/home/PatientReviews'
 import FinalCTA from '../components/home/FinalCTA'
@@ -63,22 +62,19 @@ export default function Home() {
       {/* Section 2: Explore Our Care */}
       <ExploreCare />
 
-      {/* Section 3: Meet Our Clinical Team */}
+      {/* Section 3: Featured Clinician / Dr. Pranab Jha */}
       <ClinicalTeam />
 
-      {/* Section 4: Real Recovery Stories */}
-      <RecoveryStories />
+      {/* Section 4: Conditions & What We Help With */}
+      <ConditionDiscovery />
 
-      {/* Section 5: Knowledge / Condition Discovery */}
-      <KnowledgeDiscovery />
-
-      {/* Section 6: Our Branches */}
+      {/* Section 5: Our Physical Clinics */}
       <Branches />
 
-      {/* Section 7: Patient Reviews / Social Proof */}
+      {/* Section 6: Patient Reviews / Social Proof */}
       <PatientReviews />
 
-      {/* Section 8: Final Call to Action */}
+      {/* Section 7: Final Consultation & Booking CTA */}
       <FinalCTA />
     </PageContainer>
   )
