@@ -65,7 +65,15 @@ export default function Navbar() {
   const location = useLocation()
   const isPathActive = (path) => {
     if (path === '/') return location.pathname === '/'
-    return location.pathname.startsWith(path)
+    if (path === '/resources') {
+      return (
+        location.pathname === '/resources' ||
+        location.pathname.startsWith('/resources/') ||
+        location.pathname === '/case-studies' ||
+        location.pathname.startsWith('/case-studies/')
+      )
+    }
+    return location.pathname === path || location.pathname.startsWith(`${path}/`)
   }
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -343,13 +351,17 @@ export default function Navbar() {
             <Link
               to="/"
               className={`relative py-2 transition-colors whitespace-nowrap ${
-                isPathActive('/') ? 'text-[#26332F] font-semibold' : 'text-stone-600 hover:text-[#064C3B]'
+                isPathActive('/')
+                  ? 'text-[#064C3B] font-semibold'
+                  : 'text-stone-600 hover:text-[#064C3B] font-medium'
               }`}
             >
-              <span>Home</span>
-              {location.pathname === '/' && (
-                <span className="absolute bottom-1 left-0 right-0 h-[2px] bg-[#E5A500] rounded-full"></span>
-              )}
+              <span className="relative inline-block">
+                Home
+                {isPathActive('/') && (
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
+                )}
+              </span>
             </Link>
 
             {/* 2. Conditions ▾ (Mega-Menu) */}
@@ -361,14 +373,25 @@ export default function Navbar() {
               <Link
                 to="/conditions"
                 onClick={() => setActiveDropdown(null)}
-                className={`flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
-                  isPathActive('/conditions') ? 'text-[#064C3B] font-semibold' : 'hover:text-[#064C3B]'
+                className={`relative py-2 flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
+                  isPathActive('/conditions')
+                    ? 'text-[#064C3B] font-semibold'
+                    : 'text-stone-600 hover:text-[#064C3B] font-medium'
                 }`}
               >
-                <span>Conditions</span>
+                <span className="relative inline-block">
+                  Conditions
+                  {isPathActive('/conditions') && (
+                    <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
+                  )}
+                </span>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 text-stone-400 stroke-[2.2] transition-transform duration-200 ${
-                    activeDropdown === 'conditions' ? 'rotate-180 text-[#064C3B]' : ''
+                  className={`w-3.5 h-3.5 stroke-[2.2] transition-transform duration-200 ${
+                    activeDropdown === 'conditions'
+                      ? 'rotate-180 text-[#064C3B]'
+                      : isPathActive('/conditions')
+                      ? 'text-[#064C3B]'
+                      : 'text-stone-400'
                   }`}
                 />
               </Link>
@@ -445,14 +468,25 @@ export default function Navbar() {
               <Link
                 to="/treatments"
                 onClick={() => setActiveDropdown(null)}
-                className={`flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
-                  isPathActive('/treatments') ? 'text-[#064C3B] font-semibold' : 'hover:text-[#064C3B]'
+                className={`relative py-2 flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
+                  isPathActive('/treatments')
+                    ? 'text-[#064C3B] font-semibold'
+                    : 'text-stone-600 hover:text-[#064C3B] font-medium'
                 }`}
               >
-                <span>Treatments</span>
+                <span className="relative inline-block">
+                  Treatments
+                  {isPathActive('/treatments') && (
+                    <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
+                  )}
+                </span>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 text-stone-400 stroke-[2.2] transition-transform duration-200 ${
-                    activeDropdown === 'treatments' ? 'rotate-180 text-[#064C3B]' : ''
+                  className={`w-3.5 h-3.5 stroke-[2.2] transition-transform duration-200 ${
+                    activeDropdown === 'treatments'
+                      ? 'rotate-180 text-[#064C3B]'
+                      : isPathActive('/treatments')
+                      ? 'text-[#064C3B]'
+                      : 'text-stone-400'
                   }`}
                 />
               </Link>
@@ -523,11 +557,18 @@ export default function Navbar() {
             {/* 4. About Us (No dropdown) */}
             <Link
               to="/about"
-              className={`py-2 transition-colors whitespace-nowrap ${
-                isPathActive('/about') ? 'text-[#064C3B] font-semibold' : 'hover:text-[#064C3B]'
+              className={`relative py-2 transition-colors whitespace-nowrap ${
+                isPathActive('/about')
+                  ? 'text-[#064C3B] font-semibold'
+                  : 'text-stone-600 hover:text-[#064C3B] font-medium'
               }`}
             >
-              About Us
+              <span className="relative inline-block">
+                About Us
+                {isPathActive('/about') && (
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
+                )}
+              </span>
             </Link>
 
             {/* 5. Branches ▾ (Dedicated 3 Locations) */}
@@ -539,14 +580,25 @@ export default function Navbar() {
               <Link
                 to="/branches"
                 onClick={() => setActiveDropdown(null)}
-                className={`flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
-                  isPathActive('/branches') ? 'text-[#064C3B] font-semibold' : 'hover:text-[#064C3B]'
+                className={`relative py-2 flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
+                  isPathActive('/branches')
+                    ? 'text-[#064C3B] font-semibold'
+                    : 'text-stone-600 hover:text-[#064C3B] font-medium'
                 }`}
               >
-                <span>Branches</span>
+                <span className="relative inline-block">
+                  Branches
+                  {isPathActive('/branches') && (
+                    <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
+                  )}
+                </span>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 text-stone-400 stroke-[2.2] transition-transform duration-200 ${
-                    activeDropdown === 'branches' ? 'rotate-180 text-[#064C3B]' : ''
+                  className={`w-3.5 h-3.5 stroke-[2.2] transition-transform duration-200 ${
+                    activeDropdown === 'branches'
+                      ? 'rotate-180 text-[#064C3B]'
+                      : isPathActive('/branches')
+                      ? 'text-[#064C3B]'
+                      : 'text-stone-400'
                   }`}
                 />
               </Link>
@@ -609,14 +661,25 @@ export default function Navbar() {
               <Link
                 to="/resources"
                 onClick={() => setActiveDropdown(null)}
-                className={`flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
-                  isPathActive('/resources') ? 'text-[#064C3B] font-semibold' : 'hover:text-[#064C3B]'
+                className={`relative py-2 flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
+                  isPathActive('/resources')
+                    ? 'text-[#064C3B] font-semibold'
+                    : 'text-stone-600 hover:text-[#064C3B] font-medium'
                 }`}
               >
-                <span>Resources</span>
+                <span className="relative inline-block">
+                  Resources
+                  {isPathActive('/resources') && (
+                    <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
+                  )}
+                </span>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 text-stone-400 stroke-[2.2] transition-transform duration-200 ${
-                    activeDropdown === 'resources' ? 'rotate-180 text-[#064C3B]' : ''
+                  className={`w-3.5 h-3.5 stroke-[2.2] transition-transform duration-200 ${
+                    activeDropdown === 'resources'
+                      ? 'rotate-180 text-[#064C3B]'
+                      : isPathActive('/resources')
+                      ? 'text-[#064C3B]'
+                      : 'text-stone-400'
                   }`}
                 />
               </Link>
@@ -748,13 +811,13 @@ export default function Navbar() {
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className={`text-sm py-2 flex items-center justify-between ${
-                location.pathname === '/' ? 'font-bold text-[#064C3B]' : 'font-medium text-stone-800'
+              className={`text-sm py-2 flex items-center justify-between transition-colors ${
+                isPathActive('/') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
               }`}
             >
               <span>Home</span>
-              {location.pathname === '/' && (
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E5A500]"></span>
+              {isPathActive('/') && (
+                <span className="w-1.5 h-1.5 rounded-full bg-[#064C3B]"></span>
               )}
             </Link>
 
@@ -765,7 +828,7 @@ export default function Navbar() {
                   to="/conditions"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm hover:text-[#064C3B] ${
-                    isPathActive('/conditions') ? 'font-bold text-[#064C3B]' : 'font-medium text-stone-800'
+                    isPathActive('/conditions') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
                   }`}
                 >
                   Conditions
@@ -820,7 +883,7 @@ export default function Navbar() {
                   to="/treatments"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm hover:text-[#064C3B] ${
-                    isPathActive('/treatments') ? 'font-bold text-[#064C3B]' : 'font-medium text-stone-800'
+                    isPathActive('/treatments') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
                   }`}
                 >
                   Treatments
@@ -874,7 +937,7 @@ export default function Navbar() {
                 to="/about"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`text-sm py-2 block ${
-                  isPathActive('/about') ? 'font-bold text-[#064C3B]' : 'font-medium text-stone-800'
+                  isPathActive('/about') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
                 }`}
               >
                 About Us
@@ -888,7 +951,7 @@ export default function Navbar() {
                   to="/branches"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm hover:text-[#064C3B] ${
-                    isPathActive('/branches') ? 'font-bold text-[#064C3B]' : 'font-medium text-stone-800'
+                    isPathActive('/branches') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
                   }`}
                 >
                   Branches
@@ -934,7 +997,7 @@ export default function Navbar() {
                   to="/resources"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm hover:text-[#064C3B] ${
-                    isPathActive('/resources') ? 'font-bold text-[#064C3B]' : 'font-medium text-stone-800'
+                    isPathActive('/resources') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
                   }`}
                 >
                   Resources
