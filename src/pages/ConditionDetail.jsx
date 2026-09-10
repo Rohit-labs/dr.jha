@@ -168,7 +168,7 @@ export default function ConditionDetail() {
           <div className="lg:col-span-4 space-y-6">
             
             {/* Consultation CTA Card */}
-            <div className="bg-[#064C3B] text-white rounded-3xl p-6 sm:p-7 shadow-lg space-y-4">
+            <div className="bg-[#073D32] text-white rounded-3xl p-6 sm:p-7 shadow-lg space-y-4">
               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E5A500]">
                 Personalized Care
               </span>
@@ -181,7 +181,7 @@ export default function ConditionDetail() {
               <div className="pt-2">
                 <a
                   href="tel:+919820012345"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white active:scale-[0.98] transition-all shadow-md"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 active:scale-[0.98] transition-all shadow-md"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call Us for Appointment</span>

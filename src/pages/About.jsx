@@ -117,7 +117,7 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <div className="bg-[#064C3B] text-white rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
+        <div className="bg-[#073D32] text-white rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
           <h2 className="font-serif text-3xl font-bold">Ready to Move Without Discomfort?</h2>
           <p className="text-xs sm:text-sm text-stone-300 max-w-md mx-auto leading-relaxed">
             Schedule an appointment at your nearest Dr. Jha centre and receive an individualized assessment today.
@@ -125,7 +125,7 @@ export default function About() {
           <div className="pt-3">
             <a
               href="tel:+919820012345"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white shadow-md transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 shadow-md transition-all"
             >
               <Phone className="w-4 h-4" />
               <span>Call Us for Appointment</span>

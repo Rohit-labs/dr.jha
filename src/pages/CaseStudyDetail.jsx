@@ -124,7 +124,7 @@ export default function CaseStudyDetail() {
         </p>
 
         {/* Consultation Callout */}
-        <div className="mt-8 p-7 sm:p-9 rounded-3xl bg-[#064C3B] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+        <div className="mt-8 p-7 sm:p-9 rounded-3xl bg-[#073D32] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
           <div>
             <h3 className="font-serif text-2xl font-bold">Have a similar physical complaint?</h3>
             <p className="text-xs text-stone-300 mt-1 max-w-md">
@@ -133,7 +133,7 @@ export default function CaseStudyDetail() {
           </div>
           <a
             href="tel:+919820012345"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white shrink-0 shadow-md"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 shrink-0 shadow-md"
           >
             <Phone className="w-4 h-4" />
             <span>Call Us for Appointment</span>

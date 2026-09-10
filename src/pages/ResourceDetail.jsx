@@ -92,7 +92,7 @@ export default function ResourceDetail() {
         </article>
 
         {/* Next Step / Consultation Callout Box */}
-        <div className="mt-12 p-7 sm:p-9 rounded-3xl bg-[#064C3B] text-white space-y-4 shadow-lg">
+        <div className="mt-12 p-7 sm:p-9 rounded-3xl bg-[#073D32] text-white space-y-4 shadow-lg">
           <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E5A500]">
             Clinical Guidance
           </span>
@@ -105,7 +105,7 @@ export default function ResourceDetail() {
           <div className="pt-2">
             <a
               href="tel:+919820012345"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span>Call Us for Appointment</span>

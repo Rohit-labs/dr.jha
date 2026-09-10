@@ -220,7 +220,7 @@ export default function Branches() {
             {miraRoadBranch && (
               <div
                 id="mira-road"
-                className="bg-[#064C3B] text-white rounded-[32px] sm:rounded-[36px] overflow-hidden shadow-xl shadow-stone-900/10 border border-white/10"
+                className="bg-[#073D32] text-white rounded-[32px] sm:rounded-[36px] overflow-hidden shadow-xl shadow-stone-900/10 border border-white/10"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
                   {/* Left Content Area (58%) */}
@@ -272,7 +272,7 @@ export default function Branches() {
                     <div className="pt-5 border-t border-white/15 flex flex-wrap items-center gap-3.5">
                       <Link
                         to="/branches/mira-road"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all shadow-md shadow-[#064C3B]/20"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 active:scale-[0.98] transition-all shadow-md shadow-[#064C3B]/20"
                       >
                         <span>View Clinic Details</span>
                         <ArrowRight className="w-4 h-4" />

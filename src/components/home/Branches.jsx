@@ -109,7 +109,7 @@ export default function OurBranches() {
         </div>
 
         {/* ═══════════ FEATURED BRANCH: MIRA ROAD ═══════════ */}
-        <div className="max-w-6xl mx-auto bg-[#064C3B] rounded-[30px] sm:rounded-[36px] overflow-hidden text-white shadow-xl shadow-stone-900/10 border border-white/10 mb-8 sm:mb-10">
+        <div className="max-w-6xl mx-auto bg-[#073D32] rounded-[30px] sm:rounded-[36px] overflow-hidden text-white shadow-xl shadow-stone-900/10 border border-white/10 mb-8 sm:mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
             {/* Left Content Area (56%) */}
             <div className="lg:col-span-7 p-7 sm:p-9 lg:p-11 xl:p-12 flex flex-col justify-between">
@@ -161,7 +161,7 @@ export default function OurBranches() {
               <div className="pt-5 border-t border-white/15 flex flex-wrap items-center gap-3.5 sm:gap-4">
                 <a
                   href="/branches/mira-road"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#FCFBF7] text-[#064C3B] hover:bg-white active:scale-[0.98] transition-all shadow-md shadow-black/10"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] active:scale-[0.98] transition-all shadow-md shadow-black/20 border border-white/20"
                 >
                   <span>View Mira Road Branch</span>
                   <ArrowRight className="w-4 h-4" />
