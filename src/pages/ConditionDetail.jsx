@@ -59,10 +59,10 @@ export default function ConditionDetail() {
 
         {/* Page Hero Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-[0.2em] text-[#A8482D] uppercase block mb-3">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase block mb-3">
             {condition.category}
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-[1.15] mb-4">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-[1.15] mb-4">
             {condition.name}
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
@@ -77,8 +77,8 @@ export default function ConditionDetail() {
           <div className="lg:col-span-8 space-y-8">
             
             {/* Overview */}
-            <article className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-9 shadow-xs space-y-4">
-              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A]">
+            <article className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-9 shadow-xs space-y-4">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F]">
                 Understanding the Condition
               </h2>
               <p className="text-sm text-stone-700 leading-relaxed font-normal">
@@ -88,15 +88,15 @@ export default function ConditionDetail() {
 
             {/* Common Symptoms */}
             {condition.symptoms && (
-              <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-9 shadow-xs space-y-4">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] flex items-center gap-2.5">
-                  <Activity className="w-5 h-5 text-[#A8482D]" />
+              <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-9 shadow-xs space-y-4">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] flex items-center gap-2.5">
+                  <Activity className="w-5 h-5 text-[#064C3B]" />
                   <span>Common Symptoms</span>
                 </h2>
                 <ul className="space-y-3">
                   {condition.symptoms.map((symptom, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#A8482D] mt-2 shrink-0"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#064C3B] mt-2 shrink-0"></span>
                       <span>{symptom}</span>
                     </li>
                   ))}
@@ -106,15 +106,15 @@ export default function ConditionDetail() {
 
             {/* When to Seek Professional Care */}
             {condition.whenToSeekHelp && (
-              <div className="bg-[#FAF8F5] border border-[#E8E2D8] rounded-3xl p-6 sm:p-9 shadow-xs space-y-4">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] flex items-center gap-2.5">
-                  <AlertCircle className="w-5 h-5 text-[#B64D2E]" />
+              <div className="bg-[#F4F2EC] border border-[#DCDDD5] rounded-3xl p-6 sm:p-9 shadow-xs space-y-4">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] flex items-center gap-2.5">
+                  <AlertCircle className="w-5 h-5 text-[#064C3B]" />
                   <span>When to Seek Professional Evaluation</span>
                 </h2>
                 <ul className="space-y-3">
                   {condition.whenToSeekHelp.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                      <CheckCircle2 className="w-4 h-4 text-[#3A5A40] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#064C3B] shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -124,15 +124,15 @@ export default function ConditionDetail() {
 
             {/* Treatment Approach at Dr. Jha Centre */}
             {condition.treatmentApproach && (
-              <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-9 shadow-xs space-y-4">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] flex items-center gap-2.5">
-                  <Stethoscope className="w-5 h-5 text-[#123F32]" />
+              <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-9 shadow-xs space-y-4">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] flex items-center gap-2.5">
+                  <Stethoscope className="w-5 h-5 text-[#064C3B]" />
                   <span>How We Approach Care</span>
                 </h2>
                 <ul className="space-y-3">
                   {condition.treatmentApproach.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-stone-700">
-                      <CheckCircle2 className="w-4 h-4 text-[#123F32] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#064C3B] shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -142,9 +142,9 @@ export default function ConditionDetail() {
 
             {/* FAQs */}
             {condition.faqs && (
-              <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-9 shadow-xs space-y-5">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-[#3A5A40]" />
+              <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-9 shadow-xs space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] flex items-center gap-2">
+                  <HelpCircle className="w-5 h-5 text-[#064C3B]" />
                   <span>Frequently Asked Questions</span>
                 </h2>
                 <div className="space-y-4">
@@ -168,8 +168,8 @@ export default function ConditionDetail() {
           <div className="lg:col-span-4 space-y-6">
             
             {/* Consultation CTA Card */}
-            <div className="bg-[#123F32] text-white rounded-3xl p-6 sm:p-7 shadow-lg space-y-4">
-              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#D66B4E]">
+            <div className="bg-[#064C3B] text-white rounded-3xl p-6 sm:p-7 shadow-lg space-y-4">
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E5A500]">
                 Personalized Care
               </span>
               <h3 className="font-serif text-2xl font-bold leading-tight">
@@ -181,7 +181,7 @@ export default function ConditionDetail() {
               <div className="pt-2">
                 <a
                   href="tel:+919820012345"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] active:scale-[0.98] transition-all shadow-md"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white active:scale-[0.98] transition-all shadow-md"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call Us for Appointment</span>
@@ -192,7 +192,7 @@ export default function ConditionDetail() {
 
             {/* Related Treatments */}
             {condition.relatedTreatments && (
-              <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 shadow-xs">
+              <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs">
                 <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-stone-400 block mb-3">
                   Recommended Treatments
                 </span>
@@ -201,9 +201,9 @@ export default function ConditionDetail() {
                     <Link
                       key={t.slug}
                       to={`/treatments/${t.slug}`}
-                      className="flex items-center justify-between p-2.5 rounded-xl hover:bg-[#FAF8F5] transition-colors group"
+                      className="flex items-center justify-between p-2.5 rounded-xl hover:bg-[#F4F2EC] transition-colors group"
                     >
-                      <span className="text-xs font-semibold text-stone-800 group-hover:text-[#A8482D]">
+                      <span className="text-xs font-semibold text-stone-800 group-hover:text-[#064C3B]">
                         {t.name}
                       </span>
                       <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:translate-x-0.5 transition-transform" />
@@ -215,7 +215,7 @@ export default function ConditionDetail() {
 
             {/* Nearest Physical Clinics */}
             {condition.relatedBranches && (
-              <div className="bg-[#FAF8F5] border border-[#E8E2D8] rounded-3xl p-6 shadow-xs">
+              <div className="bg-[#F4F2EC] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs">
                 <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-stone-400 block mb-3">
                   Available Across Branches
                 </span>
@@ -227,7 +227,7 @@ export default function ConditionDetail() {
                       className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-stone-200/60 hover:border-stone-400 transition-colors group"
                     >
                       <div className="flex items-center gap-2">
-                        <MapPin className="w-3.5 h-3.5 text-[#3A5A40]" />
+                        <MapPin className="w-3.5 h-3.5 text-[#064C3B]" />
                         <span className="text-xs font-semibold text-stone-900">
                           {b.name} Clinic
                         </span>
@@ -240,7 +240,7 @@ export default function ConditionDetail() {
             )}
 
             {/* Other Conditions */}
-            <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 shadow-xs">
+            <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs">
               <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-stone-400 block mb-3">
                 Other Conditions We Treat
               </span>
@@ -249,7 +249,7 @@ export default function ConditionDetail() {
                   <Link
                     key={oc.slug}
                     to={`/conditions/${oc.slug}`}
-                    className="block text-xs font-medium text-stone-700 hover:text-[#A8482D] py-1 border-b border-stone-100 last:border-0"
+                    className="block text-xs font-medium text-stone-700 hover:text-[#064C3B] py-1 border-b border-stone-100 last:border-0"
                   >
                     {oc.name}
                   </Link>

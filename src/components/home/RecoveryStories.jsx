@@ -55,25 +55,25 @@ const featuredCase = {
       step: '01',
       stage: 'CHALLENGE',
       detail: 'Knee pain and limited mobility',
-      icon: <Activity className="w-4 h-4 text-[#B64D2E]" />,
+      icon: <Activity className="w-4 h-4 text-[#E5A500]" />,
     },
     {
       step: '02',
       stage: 'ASSESSMENT',
       detail: 'Detailed clinical evaluation',
-      icon: <ClipboardList className="w-4 h-4 text-[#B64D2E]" />,
+      icon: <ClipboardList className="w-4 h-4 text-[#E5A500]" />,
     },
     {
       step: '03',
       stage: 'CARE',
       detail: 'Physiotherapy, strengthening & functional training',
-      icon: <HeartHandshake className="w-4 h-4 text-[#B64D2E]" />,
+      icon: <HeartHandshake className="w-4 h-4 text-[#E5A500]" />,
     },
     {
       step: '04',
       stage: 'PROGRESS',
       detail: 'Return toward sports and daily activities',
-      icon: <TrendingUp className="w-4 h-4 text-[#B64D2E]" />,
+      icon: <TrendingUp className="w-4 h-4 text-[#E5A500]" />,
     },
   ],
   testimonial:
@@ -129,7 +129,7 @@ const supportingCases = [
 
 export default function RecoveryStories() {
   return (
-    <section className="w-full bg-[#123F32] py-20 sm:py-24 lg:py-28 font-sans antialiased text-[#F7F3EC] relative overflow-hidden">
+    <section className="w-full bg-[#064C3B] py-20 sm:py-24 lg:py-28 font-sans antialiased text-[#F8F6F0] relative overflow-hidden">
       {/* Subtle organic line decorations */}
       <SubtleFoliageLeft />
       <SubtleFoliageRight />
@@ -139,26 +139,26 @@ export default function RecoveryStories() {
         {/* ═══════════ TOP HEADING AREA ═══════════ */}
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16 relative">
           {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 text-[11px] sm:text-xs tracking-[0.22em] text-[#F7F3EC]/80 uppercase font-semibold mb-3">
-            <span className="w-8 h-[1px] bg-[#F7F3EC]/30"></span>
+          <div className="flex items-center justify-center gap-3 text-[11px] sm:text-xs tracking-[0.22em] text-[#F8F6F0]/80 uppercase font-semibold mb-3">
+            <span className="w-8 h-[1px] bg-[#FCFBF7]/30"></span>
             REAL RECOVERY STORIES
-            <span className="w-8 h-[1px] bg-[#F7F3EC]/30"></span>
+            <span className="w-8 h-[1px] bg-[#FCFBF7]/30"></span>
           </div>
 
           {/* Heading */}
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#F7F3EC] leading-[1.12]">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#F8F6F0] leading-[1.12]">
             Every recovery <br />
-            <span className="italic font-normal text-[#D66B4E]">has a story.</span>
+            <span className="italic font-normal text-[#E5A500]">has a story.</span>
           </h2>
 
           {/* Supporting paragraph */}
-          <p className="text-sm sm:text-base text-[#F7F3EC]/75 max-w-xl mx-auto mt-4 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-[#F8F6F0]/75 max-w-xl mx-auto mt-4 leading-relaxed font-normal">
             Explore real patient journeys and see how personalized physiotherapy and rehabilitation helped them move toward better function and everyday life.
           </p>
 
           {/* Small editorial accent note on top-right */}
           <div className="hidden lg:block absolute -top-2 right-[-140px] xl:right-[-180px] pointer-events-none select-none text-right -rotate-6">
-            <span className="font-handwriting font-['Caveat'] text-[#F7F3EC]/40 text-xl xl:text-2xl leading-tight block">
+            <span className="font-handwriting font-['Caveat'] text-[#F8F6F0]/40 text-xl xl:text-2xl leading-tight block">
               Real People
               <br />
               Real Progress
@@ -167,7 +167,7 @@ export default function RecoveryStories() {
         </div>
 
         {/* ═══════════ FEATURED CASE STUDY (COMPOSITION) ═══════════ */}
-        <div className="max-w-6xl mx-auto bg-[#F7F3EC] rounded-[28px] sm:rounded-[36px] overflow-hidden text-[#1C1C1A] shadow-2xl shadow-black/20 border border-white/10">
+        <div className="max-w-6xl mx-auto bg-[#FCFBF7] rounded-[28px] sm:rounded-[36px] overflow-hidden text-[#26332F] shadow-2xl shadow-black/20 border border-white/10">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
 
             {/* Left Image Area (approx 48%) */}
@@ -196,12 +196,12 @@ export default function RecoveryStories() {
             <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-between">
               <div>
                 {/* Category Label */}
-                <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#B64D2E] block mb-2">
+                <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#064C3B] block mb-2">
                   {featuredCase.category}
                 </span>
 
                 {/* Main Case Title */}
-                <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#1C1C1A] leading-tight mb-3">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#26332F] leading-tight mb-3">
                   {featuredCase.title}
                 </h3>
 
@@ -223,7 +223,7 @@ export default function RecoveryStories() {
                             <span className="font-mono text-[10px] font-bold text-stone-400">
                               {step.step}
                             </span>
-                            <div className="w-6 h-6 rounded-lg bg-[#B64D2E]/10 flex items-center justify-center">
+                            <div className="w-6 h-6 rounded-lg bg-[#E5A500]/10 flex items-center justify-center">
                               {step.icon}
                             </div>
                           </div>
@@ -245,7 +245,7 @@ export default function RecoveryStories() {
                 {/* Terracotta Button */}
                 <a
                   href={featuredCase.ctaHref}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-[#F7F3EC] bg-[#B64D2E] hover:bg-[#A34226] active:scale-[0.98] transition-all shadow-md shadow-[#B64D2E]/20 w-fit shrink-0 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-[#F8F6F0] bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all shadow-md shadow-[#064C3B]/20 text-white w-fit shrink-0 cursor-pointer"
                 >
                   <span>{featuredCase.ctaText}</span>
                 </a>
@@ -272,7 +272,7 @@ export default function RecoveryStories() {
             {supportingCases.map((c, idx) => (
               <div
                 key={idx}
-                className="bg-[#F7F3EC] rounded-[24px] sm:rounded-[28px] p-5 sm:p-6 text-[#1C1C1A] flex flex-col justify-between shadow-lg shadow-black/10 border border-white/10 group hover:-translate-y-1 transition-all duration-300"
+                className="bg-[#FCFBF7] rounded-[24px] sm:rounded-[28px] p-5 sm:p-6 text-[#26332F] flex flex-col justify-between shadow-lg shadow-black/10 border border-white/10 group hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
                   {/* Card Image */}
@@ -286,12 +286,12 @@ export default function RecoveryStories() {
                   </div>
 
                   {/* Category */}
-                  <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#B64D2E] block mb-1.5">
+                  <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#064C3B] block mb-1.5">
                     {c.category}
                   </span>
 
                   {/* Title */}
-                  <h4 className="font-serif text-lg sm:text-xl font-bold text-[#1C1C1A] leading-tight mb-2">
+                  <h4 className="font-serif text-lg sm:text-xl font-bold text-[#26332F] leading-tight mb-2">
                     {c.title}
                   </h4>
 
@@ -305,7 +305,7 @@ export default function RecoveryStories() {
                 <div className="pt-4 mt-3 border-t border-stone-200/60">
                   <a
                     href={c.ctaHref}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B64D2E] hover:text-[#8E3B24] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#064C3B] hover:text-[#073D32] transition-colors"
                   >
                     <span>{c.ctaText}</span>
                   </a>

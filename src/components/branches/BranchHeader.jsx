@@ -6,7 +6,7 @@ export default function BranchHeader({ branch }) {
   return (
     <div className="max-w-3xl mb-10 sm:mb-12">
       <div className="flex items-center gap-2.5 mb-3">
-        <span className="text-xs font-bold tracking-[0.2em] text-[#A8482D] uppercase">
+        <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase">
           {name}
         </span>
         <span className="text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-stone-200/80 text-stone-700">
@@ -14,7 +14,7 @@ export default function BranchHeader({ branch }) {
         </span>
       </div>
 
-      <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-[1.15] mb-4">
+      <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-[1.15] mb-4">
         Physiotherapy &amp; Acupuncture in {name}
       </h1>
 

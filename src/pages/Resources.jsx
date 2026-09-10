@@ -19,11 +19,11 @@ export default function Resources() {
 
         {/* Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-[0.2em] text-[#3A5A40] uppercase block mb-3">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase block mb-3">
             Patient Knowledge Centre
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-tight mb-4">
-            Educational Guides &amp; <span className="italic font-normal text-[#B64D2E]">Clinical Articles</span>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-tight mb-4">
+            Educational Guides &amp; <span className="italic font-normal text-[#064C3B]">Clinical Articles</span>
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
             Understand the mechanics of pain, when to seek therapy, and what evidence-based rehabilitation entails through our certified clinician guides.

@@ -54,7 +54,7 @@ export default function ResourceDetail() {
         {/* Article Header */}
         <header className="mb-10 sm:mb-12">
           <div className="flex items-center gap-3 text-xs text-stone-500 font-medium mb-3">
-            <span className="font-bold tracking-[0.18em] uppercase text-[#B64D2E]">
+            <span className="font-bold tracking-[0.18em] uppercase text-[#064C3B]">
               {resource.category}
             </span>
             <span>•</span>
@@ -66,11 +66,11 @@ export default function ResourceDetail() {
             <span>{resource.date}</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-tight mb-5">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-tight mb-5">
             {resource.title}
           </h1>
 
-          <div className="bg-[#FAF8F5] border-l-4 border-[#B64D2E] p-4 sm:p-5 rounded-r-2xl">
+          <div className="bg-[#FCFBF7] border-l-4 border-[#064C3B] p-4 sm:p-5 rounded-r-2xl">
             <p className="text-xs sm:text-sm text-stone-700 leading-relaxed italic font-normal">
               {resource.summary}
             </p>
@@ -81,7 +81,7 @@ export default function ResourceDetail() {
         <article className="space-y-8 text-sm sm:text-base text-stone-700 leading-relaxed font-normal">
           {resource.sections.map((sec, idx) => (
             <section key={idx} className="space-y-3">
-              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A]">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F]">
                 {sec.heading}
               </h2>
               <p className="leading-relaxed">
@@ -92,8 +92,8 @@ export default function ResourceDetail() {
         </article>
 
         {/* Next Step / Consultation Callout Box */}
-        <div className="mt-12 p-7 sm:p-9 rounded-3xl bg-[#123F32] text-white space-y-4 shadow-lg">
-          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#D66B4E]">
+        <div className="mt-12 p-7 sm:p-9 rounded-3xl bg-[#064C3B] text-white space-y-4 shadow-lg">
+          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E5A500]">
             Clinical Guidance
           </span>
           <h3 className="font-serif text-2xl font-bold">
@@ -105,7 +105,7 @@ export default function ResourceDetail() {
           <div className="pt-2">
             <a
               href="tel:+919820012345"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span>Call Us for Appointment</span>
@@ -124,12 +124,12 @@ export default function ResourceDetail() {
               <Link
                 key={or.slug}
                 to={`/resources/${or.slug}`}
-                className="p-5 rounded-2xl bg-white border border-[#E8E2D8] hover:border-stone-400 transition-colors block group"
+                className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#DCDDD5] hover:border-stone-400 transition-colors block group"
               >
-                <span className="text-[10px] font-bold tracking-wider uppercase text-[#B64D2E] block mb-1">
+                <span className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] block mb-1">
                   {or.category}
                 </span>
-                <strong className="font-serif text-base font-bold text-stone-900 group-hover:text-[#A8482D] block mb-2 leading-snug">
+                <strong className="font-serif text-base font-bold text-stone-900 group-hover:text-[#064C3B] block mb-2 leading-snug">
                   {or.title}
                 </strong>
                 <span className="text-xs text-stone-500 line-clamp-2">

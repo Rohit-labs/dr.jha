@@ -4,12 +4,12 @@ export default function BranchGallery({ gallery = [], branchName = '' }) {
   if (!gallery || gallery.length === 0) return null
 
   return (
-    <div className="bg-[#FAF8F5] border border-[#E8E2D8] rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 shadow-xs">
+    <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 shadow-xs">
       <div className="mb-6">
-        <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#3A5A40] block mb-1">
+        <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#064C3B] block mb-1">
           Clinic Spaces &amp; Facilities
         </span>
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A]">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F]">
           Inside the {branchName} Clinic
         </h2>
         <p className="text-xs sm:text-sm text-stone-600 mt-1 font-normal">

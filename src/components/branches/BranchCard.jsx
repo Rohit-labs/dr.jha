@@ -18,8 +18,8 @@ export default function BranchCard({ branch, featured = false }) {
 
   return (
     <article
-      className={`bg-white border border-[#E8E2D8] rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group ${
-        featured ? 'ring-1 ring-[#123F32]/10' : ''
+      className={`bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group ${
+        featured ? 'ring-1 ring-[#064C3B]/10' : ''
       }`}
     >
       <div>
@@ -35,8 +35,8 @@ export default function BranchCard({ branch, featured = false }) {
             <span
               className={`px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-xs ${
                 tag === 'Flagship Centre'
-                  ? 'bg-[#123F32] text-white'
-                  : 'bg-white/95 text-[#123F32] border border-stone-200/80'
+                  ? 'bg-[#064C3B] text-white'
+                  : 'bg-white/95 text-[#064C3B] border border-stone-200/80'
               }`}
             >
               {tag}
@@ -47,10 +47,10 @@ export default function BranchCard({ branch, featured = false }) {
         {/* Content Body */}
         <div className="p-6 sm:p-7 space-y-4">
           <div>
-            <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#B64D2E] block mb-1">
+            <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#064C3B] block mb-1">
               {name}
             </span>
-            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] leading-tight">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] leading-tight">
               Dr. Jha Physiotherapy &amp; Acupuncture Centre
             </h3>
             {shortDescription && (
@@ -78,7 +78,7 @@ export default function BranchCard({ branch, featured = false }) {
               <Phone className="w-4 h-4 text-stone-400 shrink-0" />
               <a
                 href={`tel:${phone.replace(/[^0-9+]/g, '')}`}
-                className="font-medium text-stone-800 hover:text-[#B64D2E] transition-colors"
+                className="font-medium text-stone-800 hover:text-[#064C3B] transition-colors"
               >
                 {phone}
               </a>
@@ -91,7 +91,7 @@ export default function BranchCard({ branch, featured = false }) {
       <div className="p-6 sm:p-7 pt-0 flex items-center justify-between border-t border-stone-100 mt-4">
         <Link
           to={`/branches/${slug}`}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#123F32] hover:text-[#B64D2E] transition-colors group/link"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#064C3B] transition-colors group/link"
         >
           <span>View Clinic Details</span>
           <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />

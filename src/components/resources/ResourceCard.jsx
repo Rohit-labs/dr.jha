@@ -6,10 +6,10 @@ export default function ResourceCard({ resource }) {
   const { slug, category, readTime, title, summary, date } = resource
 
   return (
-    <article className="bg-white border border-[#E8E2D8] rounded-3xl p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between group">
+    <article className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between group">
       <div>
         <div className="flex items-center justify-between text-xs text-stone-400 mb-3">
-          <span className="font-bold tracking-[0.16em] uppercase text-[#B64D2E] text-[10px]">
+          <span className="font-bold tracking-[0.16em] uppercase text-[#064C3B] text-[10px]">
             {category}
           </span>
           <span className="flex items-center gap-1 text-[11px]">
@@ -18,7 +18,7 @@ export default function ResourceCard({ resource }) {
           </span>
         </div>
 
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] leading-snug mb-3 group-hover:text-[#A8482D] transition-colors">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] leading-snug mb-3 group-hover:text-[#064C3B] transition-colors">
           {title}
         </h2>
 
@@ -30,7 +30,7 @@ export default function ResourceCard({ resource }) {
       <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
         <Link
           to={`/resources/${slug}`}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#123F32] group-hover:text-[#A8482D] transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] group-hover:text-[#064C3B] transition-colors"
         >
           <span>Read Article</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

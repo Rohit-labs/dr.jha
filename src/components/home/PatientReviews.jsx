@@ -9,7 +9,7 @@ export default function PatientReviews() {
     <section
       id="patient-reviews"
       aria-labelledby="reviews-heading"
-      className="w-full bg-[#123F32] text-[#FAF7F2] py-16 sm:py-20 lg:py-24 border-t border-white/10 relative overflow-hidden"
+      className="w-full bg-[#064C3B] text-[#FCFBF7] py-16 sm:py-20 lg:py-24 border-t border-white/10 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -18,12 +18,12 @@ export default function PatientReviews() {
           
           {/* Heading Column */}
           <div className="max-w-2xl space-y-3">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#D66B4E] block">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#E5A500] block">
               PATIENT STORIES
             </span>
             <h2
               id="reviews-heading"
-              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FAF7F2] leading-[1.15]"
+              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FCFBF7] leading-[1.15]"
             >
               Real people.<br />
               <span className="italic font-normal text-stone-300">Real experiences.</span>
@@ -36,7 +36,7 @@ export default function PatientReviews() {
           {/* Neutral Trust Indicator Badge */}
           <div className="shrink-0">
             <div className="inline-flex flex-col sm:flex-row sm:items-center gap-3 px-5 py-3 rounded-2xl bg-white/[0.04] border border-white/10">
-              <div className="flex items-center gap-1 text-[#E5A93C]" aria-label={`${trustBadge.starCount} out of 5 stars`}>
+              <div className="flex items-center gap-1 text-[#E5A500]" aria-label={`${trustBadge.starCount} out of 5 stars`}>
                 {Array.from({ length: trustBadge.starCount }).map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current stroke-none" />
                 ))}
@@ -60,14 +60,14 @@ export default function PatientReviews() {
             
             {/* Elegant Quotation Mark */}
             <span
-              className="font-serif text-6xl sm:text-7xl lg:text-8xl text-[#D66B4E]/30 leading-none select-none block mb-2 sm:mb-4 -mt-2 sm:-mt-4"
+              className="font-serif text-6xl sm:text-7xl lg:text-8xl text-[#E5A500]/30 leading-none select-none block mb-2 sm:mb-4 -mt-2 sm:-mt-4"
               aria-hidden="true"
             >
               “
             </span>
 
             {/* Featured Quote */}
-            <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#FAF7F2] font-normal leading-relaxed italic mb-8 sm:mb-10 max-w-4xl">
+            <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#FCFBF7] font-normal leading-relaxed italic mb-8 sm:mb-10 max-w-4xl">
               {featuredReview.quote}
             </blockquote>
 
@@ -75,7 +75,7 @@ export default function PatientReviews() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-white/10">
               <div className="flex items-center gap-3.5">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-xs font-semibold text-stone-200">
-                  <CheckCircle className="w-4 h-4 text-[#D66B4E]" />
+                  <CheckCircle className="w-4 h-4 text-[#E5A500]" />
                 </div>
                 <div>
                   <cite className="not-italic text-sm sm:text-base font-semibold text-white block">
@@ -89,7 +89,7 @@ export default function PatientReviews() {
 
               {featuredReview.branch && (
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-stone-300 w-fit">
-                  <MapPin className="w-3.5 h-3.5 text-[#D66B4E]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#E5A500]" />
                   <span>{featuredReview.branch} Branch</span>
                 </div>
               )}
@@ -108,7 +108,7 @@ export default function PatientReviews() {
               <div>
                 {/* 5 Stars */}
                 <div
-                  className="flex items-center gap-1 text-[#E5A93C] mb-4"
+                  className="flex items-center gap-1 text-[#E5A500] mb-4"
                   aria-label={`${review.rating} out of 5 stars`}
                 >
                   {Array.from({ length: review.rating }).map((_, i) => (
@@ -129,7 +129,7 @@ export default function PatientReviews() {
                 </cite>
                 {review.branch && (
                   <span className="text-stone-400 font-medium flex items-center gap-1 text-[11px]">
-                    <MapPin className="w-3 h-3 text-[#D66B4E]" />
+                    <MapPin className="w-3 h-3 text-[#E5A500]" />
                     {review.branch}
                   </span>
                 )}
@@ -143,7 +143,7 @@ export default function PatientReviews() {
           
           <a
             href="#patient-reviews"
-            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white hover:text-[#D66B4E] transition-colors px-6 py-3 rounded-full border border-white/20 hover:border-[#D66B4E] bg-white/[0.03]"
+            className="group inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white hover:text-[#E5A500] transition-colors px-6 py-3 rounded-full border border-white/20 hover:border-[#E5A500] bg-white/[0.03]"
           >
             <span>Read More Reviews</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" />

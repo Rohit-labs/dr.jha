@@ -13,10 +13,10 @@ export default function NotFound() {
       />
 
       <div className="max-w-2xl mx-auto px-4 py-20 text-center space-y-6">
-        <span className="font-mono text-sm font-bold tracking-[0.2em] text-[#B64D2E] uppercase">
+        <span className="font-mono text-sm font-bold tracking-[0.2em] text-[#064C3B] uppercase">
           404 • Page Not Found
         </span>
-        <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#1C1C1A]">
+        <h1 className="font-serif text-3xl sm:text-5xl font-bold text-[#26332F]">
           Looking for guidance?
         </h1>
         <p className="text-sm text-stone-600 leading-relaxed max-w-md mx-auto">
@@ -26,7 +26,7 @@ export default function NotFound() {
         <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-white bg-[#123F32] hover:bg-[#1A5242] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] transition-colors"
           >
             <Home className="w-4 h-4" />
             <span>Return to Homepage</span>
@@ -36,7 +36,7 @@ export default function NotFound() {
             to="/branches"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-stone-800 border border-stone-300 hover:border-stone-800 transition-colors"
           >
-            <MapPin className="w-4 h-4 text-[#B64D2E]" />
+            <MapPin className="w-4 h-4 text-[#064C3B]" />
             <span>Find a Clinic</span>
           </Link>
 
@@ -44,7 +44,7 @@ export default function NotFound() {
             to="/conditions"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-stone-800 border border-stone-300 hover:border-stone-800 transition-colors"
           >
-            <Search className="w-4 h-4 text-[#3A5A40]" />
+            <Search className="w-4 h-4 text-[#064C3B]" />
             <span>Explore Conditions</span>
           </Link>
         </div>

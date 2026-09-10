@@ -101,12 +101,12 @@ function FoliageBottomRight() {
 
 export default function CareAreas() {
   return (
-    <section className="w-full bg-[#F5F2EC] pt-8 sm:pt-12 lg:pt-14 pb-4 sm:pb-6 lg:pb-8">
+    <section className="w-full bg-[#F8F6F0] pt-8 sm:pt-12 lg:pt-14 pb-4 sm:pb-6 lg:pb-8">
       {/* Outer Centered Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 font-sans antialiased text-[#1A1A1A]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 font-sans antialiased text-[#26332F]">
         
         {/* Master Canvas Container */}
-        <div className="bg-[#FAF8F5] rounded-[44px] p-6 sm:p-10 lg:p-14 relative overflow-hidden border border-black/[0.04]">
+        <div className="bg-[#FCFBF7] rounded-[44px] p-6 sm:p-10 lg:p-14 relative overflow-hidden border border-black/[0.04]">
           {/* Subtle botanical vector silhouettes */}
           <FoliageTopLeft />
           <FoliageBottomRight />
@@ -114,16 +114,16 @@ export default function CareAreas() {
           {/* ═══════════ Section Heading Area ═══════════ */}
           <div className="text-center max-w-2xl mx-auto mb-10 relative z-10">
             {/* Top Eyebrow */}
-            <div className="flex items-center justify-center gap-3 text-xs tracking-widest text-[#4A6453] uppercase font-semibold mb-3">
-              <span className="w-8 h-[1px] bg-[#4A6453]/40"></span>
+            <div className="flex items-center justify-center gap-3 text-xs tracking-widest text-[#064C3B] uppercase font-semibold mb-3">
+              <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
               OUR CARE AREAS
-              <span className="w-8 h-[1px] bg-[#4A6453]/40"></span>
+              <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
             </div>
 
             {/* H2 Title */}
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tight text-[#1A1A1A] leading-[1.15] mb-3">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-tight text-[#26332F] leading-[1.15] mb-3">
               Explore our care <br />
-              <span className="italic font-normal text-[#A6543D]">for a stronger, pain-free you.</span>
+              <span className="italic font-normal text-[#064C3B]">for a stronger, pain-free you.</span>
             </h2>
 
             {/* Subtitle */}
@@ -139,23 +139,23 @@ export default function CareAreas() {
             <div className="lg:col-span-4 flex flex-col gap-5">
               
               {/* Card 1: Pain & Mobility */}
-              <div className="bg-[#ECE7DF] rounded-[32px] overflow-hidden flex relative flex-1 min-h-[220px]">
+              <div className="bg-[#F4F2EC] rounded-[32px] overflow-hidden flex relative flex-1 min-h-[220px]">
                 {/* Left Text Area */}
                 <div className="w-[58%] p-6 sm:p-7 flex flex-col justify-between z-10 h-full">
                   <div>
                     <div className="mb-4">
                       <SpineJointIcon />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-[#1A1A1A] leading-tight mb-2">
+                    <h3 className="font-serif text-xl font-bold text-[#26332F] leading-tight mb-2">
                       Pain &amp; Mobility
                     </h3>
-                    <p className="text-xs text-[#1A1A1A]/60 leading-relaxed">
+                    <p className="text-xs text-[#26332F]/60 leading-relaxed">
                       Back pain, neck pain, knee pain, sciatica and more.
                     </p>
                   </div>
                   <a
                     href="#explore"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#1A1A1A] mt-4 hover:text-[#A6543D] transition"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#26332F] mt-4 hover:text-[#064C3B] transition"
                   >
                     Explore <span>&rarr;</span>
                   </a>
@@ -173,23 +173,23 @@ export default function CareAreas() {
               </div>
 
               {/* Card 2: Neurological Rehabilitation */}
-              <div className="bg-[#ECE7DF] rounded-[32px] overflow-hidden flex relative flex-1 min-h-[220px]">
+              <div className="bg-[#F4F2EC] rounded-[32px] overflow-hidden flex relative flex-1 min-h-[220px]">
                 {/* Left Text Area */}
                 <div className="w-[58%] p-6 sm:p-7 flex flex-col justify-between z-10 h-full">
                   <div>
                     <div className="mb-4">
                       <BrainNeurologyIcon />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-[#1A1A1A] leading-tight mb-2">
+                    <h3 className="font-serif text-xl font-bold text-[#26332F] leading-tight mb-2">
                       Neurological Rehabilitation
                     </h3>
-                    <p className="text-xs text-[#1A1A1A]/60 leading-relaxed">
+                    <p className="text-xs text-[#26332F]/60 leading-relaxed">
                       Stroke, Parkinson's, facial palsy and other neurological conditions.
                     </p>
                   </div>
                   <a
                     href="#explore"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#1A1A1A] mt-4 hover:text-[#A6543D] transition"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#26332F] mt-4 hover:text-[#064C3B] transition"
                   >
                     Explore <span>&rarr;</span>
                   </a>
@@ -210,7 +210,7 @@ export default function CareAreas() {
 
             {/* ──────────────── COLUMN B: Center Column (lg:col-span-4) ──────────────── */}
             <div className="lg:col-span-4 flex flex-col">
-              <div className="bg-[#ECE7DF] rounded-[36px] overflow-hidden flex flex-col justify-between shadow-sm relative h-full min-h-[460px]">
+              <div className="bg-[#F4F2EC] rounded-[36px] overflow-hidden flex flex-col justify-between shadow-sm relative h-full min-h-[460px]">
                 
                 {/* Top Image Portion: The Arched Dome */}
                 <div className="w-full h-[280px] sm:h-[310px] relative overflow-hidden">
@@ -226,15 +226,15 @@ export default function CareAreas() {
                 {/* Bottom Content Portion */}
                 <div className="p-7 sm:p-8 text-center flex flex-col items-center justify-center flex-1">
                   <LotusWellnessIcon />
-                  <h3 className="font-serif text-[22px] font-bold text-[#1A1A1A] leading-tight mt-3 mb-2">
+                  <h3 className="font-serif text-[22px] font-bold text-[#26332F] leading-tight mt-3 mb-2">
                     Physiotherapy &amp; Rehabilitation
                   </h3>
-                  <p className="text-xs text-[#1A1A1A]/65 max-w-xs leading-relaxed mb-4">
+                  <p className="text-xs text-[#26332F]/65 max-w-xs leading-relaxed mb-4">
                     Personalized treatment plans for long-term recovery and better movement.
                   </p>
                   <a
                     href="#all-treatments"
-                    className="bg-[#2D4536] hover:bg-[#223529] text-white text-xs font-semibold px-6 py-3 rounded-full mt-2 transition shadow-sm inline-flex items-center gap-2 active:scale-[0.98]"
+                    className="bg-[#064C3B] hover:bg-[#073D32] text-white text-xs font-semibold px-6 py-3 rounded-full mt-2 transition shadow-sm inline-flex items-center gap-2 active:scale-[0.98]"
                   >
                     Explore All Treatments <span>&rarr;</span>
                   </a>
@@ -247,23 +247,23 @@ export default function CareAreas() {
             <div className="lg:col-span-4 flex flex-col gap-5">
               
               {/* Card 3: Sports Rehabilitation */}
-              <div className="bg-[#ECE7DF] rounded-[32px] overflow-hidden flex relative flex-1 min-h-[220px]">
+              <div className="bg-[#F4F2EC] rounded-[32px] overflow-hidden flex relative flex-1 min-h-[220px]">
                 {/* Left Text Area */}
                 <div className="w-[58%] p-6 sm:p-7 flex flex-col justify-between z-10 h-full">
                   <div>
                     <div className="mb-4">
                       <SportsRunnerIcon />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-[#1A1A1A] leading-tight mb-2">
+                    <h3 className="font-serif text-xl font-bold text-[#26332F] leading-tight mb-2">
                       Sports Rehabilitation
                     </h3>
-                    <p className="text-xs text-[#1A1A1A]/60 leading-relaxed">
+                    <p className="text-xs text-[#26332F]/60 leading-relaxed">
                       Injury recovery, performance enhancement and return to activity.
                     </p>
                   </div>
                   <a
                     href="#explore"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#1A1A1A] mt-4 hover:text-[#A6543D] transition"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#26332F] mt-4 hover:text-[#064C3B] transition"
                   >
                     Explore <span>&rarr;</span>
                   </a>
@@ -281,23 +281,23 @@ export default function CareAreas() {
               </div>
 
               {/* Card 4: Acupuncture & Pain Management */}
-              <div className="bg-[#ECE7DF] rounded-[32px] overflow-hidden flex relative flex-1 min-h-[220px]">
+              <div className="bg-[#F4F2EC] rounded-[32px] overflow-hidden flex relative flex-1 min-h-[220px]">
                 {/* Left Text Area */}
                 <div className="w-[58%] p-6 sm:p-7 flex flex-col justify-between z-10 h-full">
                   <div>
                     <div className="mb-4">
                       <AcupunctureNeedlesIcon />
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-[#1A1A1A] leading-tight mb-2">
+                    <h3 className="font-serif text-xl font-bold text-[#26332F] leading-tight mb-2">
                       Acupuncture &amp; Pain Management
                     </h3>
-                    <p className="text-xs text-[#1A1A1A]/60 leading-relaxed">
+                    <p className="text-xs text-[#26332F]/60 leading-relaxed">
                       Holistic care for chronic pain, stress and overall well-being.
                     </p>
                   </div>
                   <a
                     href="#explore"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#1A1A1A] mt-4 hover:text-[#A6543D] transition"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#26332F] mt-4 hover:text-[#064C3B] transition"
                   >
                     Explore <span>&rarr;</span>
                   </a>

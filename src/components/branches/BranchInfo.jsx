@@ -16,13 +16,13 @@ export default function BranchInfo({ branch }) {
   } = branch
 
   return (
-    <div className="bg-white border border-[#E8E2D8] rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 shadow-xs space-y-6">
+    <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 shadow-xs space-y-6">
       <div className="flex items-center justify-between pb-4 border-b border-stone-100">
         <div>
-          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#3A5A40] block mb-1">
+          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#064C3B] block mb-1">
             Clinic Information
           </span>
-          <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A]">
+          <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F]">
             Location &amp; Visiting Hours
           </h2>
         </div>
@@ -32,7 +32,7 @@ export default function BranchInfo({ branch }) {
         {/* Full Address & Landmark */}
         <div className="space-y-3">
           <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-[#B64D2E] shrink-0 mt-0.5" />
+            <MapPin className="w-5 h-5 text-[#064C3B] shrink-0 mt-0.5" />
             <div>
               <strong className="block text-stone-900 font-semibold mb-0.5">Physical Address</strong>
               <address className="not-italic leading-relaxed text-stone-600">
@@ -68,7 +68,7 @@ export default function BranchInfo({ branch }) {
         {/* Timings & Direct Contact */}
         <div className="space-y-3 sm:border-l sm:border-stone-100 sm:pl-6">
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-[#3A5A40] shrink-0 mt-0.5" />
+            <Clock className="w-5 h-5 text-[#064C3B] shrink-0 mt-0.5" />
             <div>
               <strong className="block text-stone-900 font-semibold mb-1">Consultation Timings</strong>
               {timingDetails && timingDetails.length > 0 ? (
@@ -87,12 +87,12 @@ export default function BranchInfo({ branch }) {
           </div>
 
           <div className="flex items-start gap-3 pt-2 border-t border-stone-100">
-            <Phone className="w-5 h-5 text-[#B64D2E] shrink-0 mt-0.5" />
+            <Phone className="w-5 h-5 text-[#064C3B] shrink-0 mt-0.5" />
             <div>
               <strong className="block text-stone-900 font-semibold mb-0.5">Direct Clinic Phone</strong>
               <a
                 href={`tel:${phone.replace(/[^0-9+]/g, '')}`}
-                className="text-[#123F32] font-bold text-sm hover:text-[#B64D2E] transition-colors"
+                className="text-[#064C3B] font-bold text-sm hover:text-[#073D32] transition-colors"
               >
                 {phone}
               </a>

@@ -4,7 +4,7 @@ import { MapPin, Phone, Clock, ArrowRight, Calendar } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#123F32] text-[#F7F3EC] pt-16 pb-12 font-sans antialiased border-t border-white/10">
+    <footer className="w-full bg-[#073D32] text-[#F8F6F0] pt-16 pb-12 font-sans antialiased border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
@@ -17,7 +17,7 @@ export default function Footer() {
                 <svg viewBox="0 0 36 36" fill="none" className="w-7 h-7">
                   <circle cx="18" cy="8" r="3.2" fill="#FAF7F2" />
                   <path d="M17 14C12 14 7 18 8 26C11 25 15 22 17 18V14Z" fill="#FAF7F2" />
-                  <path d="M19 14C24 14 29 18 28 26C25 25 21 22 19 18V14Z" fill="#B64D2E" />
+                  <path d="M19 14C24 14 29 18 28 26C25 25 21 22 19 18V14Z" fill="#E5A500" />
                   <path d="M18 17V30C18 30 16.5 27 15 27" stroke="#FAF7F2" strokeWidth="2.2" strokeLinecap="round" />
                 </svg>
               </div>
@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="pt-2">
               <a
                 href="tel:+919820012345"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#064C3B] hover:bg-[#053C2F] border border-white/20 transition-colors shadow-sm"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>Call Us for Appointment</span>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Col 2: Physical Branches (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#D66B4E] block mb-2">
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#E5A500] block mb-2">
               Our Clinics
             </span>
             <ul className="space-y-3 text-xs text-stone-300">
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Col 3: Key Conditions (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
-            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#D66B4E] block mb-2">
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#E5A500] block mb-2">
               Conditions
             </span>
             <ul className="space-y-2 text-xs text-stone-300">
@@ -103,7 +103,7 @@ export default function Footer() {
 
           {/* Col 4: Treatments & Resources (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#D66B4E] block mb-2">
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#E5A500] block mb-2">
               Treatments & Guides
             </span>
             <ul className="space-y-2 text-xs text-stone-300">

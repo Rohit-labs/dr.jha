@@ -94,8 +94,8 @@ export default function HeroLeft() {
     <div className="flex flex-col justify-center space-y-6 sm:space-y-7 max-w-xl">
       {/* Top Tag Pill */}
       <div>
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EDE8E0] border border-stone-300/50 text-xs font-semibold text-stone-700 tracking-wide">
-          <span className="w-2 h-2 rounded-full bg-[#243B2E]"></span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FCFBF7] border border-[#DCDDD5] text-xs font-semibold text-[#26332F] tracking-wide">
+          <span className="w-2 h-2 rounded-full bg-[#064C3B]"></span>
           <span>Trusted Care</span>
           <span className="text-stone-400">•</span>
           <span>3 Locations</span>
@@ -106,10 +106,10 @@ export default function HeroLeft() {
 
       {/* Main Heading */}
       <div className="space-y-1">
-        <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] font-bold text-[#1A1A1A] tracking-tight leading-[1.06]">
+        <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] font-bold text-[#26332F] tracking-tight leading-[1.06]">
           Move Better.
         </h1>
-        <h2 className="font-serif italic text-5xl sm:text-6xl lg:text-[72px] font-bold text-[#A8482D] tracking-tight leading-[1.06]">
+        <h2 className="font-serif italic text-5xl sm:text-6xl lg:text-[72px] font-bold text-[#064C3B] tracking-tight leading-[1.06]">
           Live Fuller.
         </h2>
       </div>
@@ -124,7 +124,7 @@ export default function HeroLeft() {
       <div ref={searchRef} className="hidden lg:block relative w-full pt-1">
         <form
           onSubmit={handleSearchSubmit}
-          className="w-full relative flex items-center bg-white rounded-full p-1.5 sm:p-2 pl-5 sm:pl-6 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-stone-300 focus-within:border-[#A8482D] focus-within:ring-4 focus-within:ring-[#A8482D]/10 transition-all duration-200"
+          className="w-full relative flex items-center bg-white rounded-full p-1.5 sm:p-2 pl-5 sm:pl-6 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-stone-300 focus-within:border-[#064C3B] focus-within:ring-4 focus-within:ring-[#064C3B]/10 transition-all duration-200"
         >
           <Search className="w-5 h-5 text-stone-400 shrink-0 mr-3" />
           <input
@@ -155,7 +155,7 @@ export default function HeroLeft() {
           <button
             type="submit"
             aria-label="Search care options"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#A8482D] hover:bg-[#933D25] text-white flex items-center justify-center shrink-0 transition-all duration-200 active:scale-95 shadow-md shadow-[#A8482D]/25 cursor-pointer"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#064C3B] hover:bg-[#073D32] text-white flex items-center justify-center shrink-0 transition-all duration-200 active:scale-95 shadow-md shadow-[#064C3B]/25 cursor-pointer"
           >
             <ArrowRight className="w-5 h-5" />
           </button>
@@ -163,7 +163,7 @@ export default function HeroLeft() {
 
         {/* Live Search Results Dropdown */}
         {showDropdown && searchQuery.trim().length > 0 && (
-          <div className="absolute left-0 right-0 top-full mt-2 bg-[#FAF7F2] border border-[#E8E2D8] rounded-2xl shadow-xl shadow-stone-900/10 p-2 z-40 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+          <div className="absolute left-0 right-0 top-full mt-2 bg-[#FCFBF7] border border-[#DCDDD5] rounded-2xl shadow-xl shadow-stone-900/10 p-2 z-40 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
             {filteredResults.length > 0 ? (
               <div className="divide-y divide-stone-200/60 max-h-64 overflow-y-auto">
                 {filteredResults.map((item, idx) => (
@@ -174,10 +174,10 @@ export default function HeroLeft() {
                       setShowDropdown(false)
                       setSearchQuery('')
                     }}
-                    className="flex items-center justify-between p-2.5 rounded-xl hover:bg-[#F4EFEA] transition-colors group cursor-pointer"
+                    className="flex items-center justify-between p-2.5 rounded-xl hover:bg-[#F4F2EC] transition-colors group cursor-pointer"
                   >
                     <div className="pr-3">
-                      <span className="text-xs sm:text-[13px] font-semibold text-stone-900 group-hover:text-[#A8482D] transition-colors block">
+                      <span className="text-xs sm:text-[13px] font-semibold text-stone-900 group-hover:text-[#064C3B] transition-colors block">
                         {item.title}
                       </span>
                       <p className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
@@ -198,7 +198,7 @@ export default function HeroLeft() {
                 <Link
                   to="/conditions"
                   onClick={() => setShowDropdown(false)}
-                  className="text-xs text-[#A8482D] hover:underline font-semibold mt-1 inline-block"
+                  className="text-xs text-[#064C3B] hover:underline font-semibold mt-1 inline-block"
                 >
                   Explore all conditions we treat →
                 </Link>
@@ -214,7 +214,7 @@ export default function HeroLeft() {
             <Link
               key={tag.name}
               to={tag.href}
-              className="px-3 py-1.5 rounded-full border border-stone-300/70 bg-[#FAF7F2]/90 hover:bg-white text-stone-600 hover:text-stone-900 hover:border-[#A8482D]/40 active:scale-[0.98] transition-all cursor-pointer font-medium"
+              className="px-3 py-1.5 rounded-full border border-stone-300/70 bg-[#FCFBF7]/90 hover:bg-white text-stone-600 hover:text-stone-900 hover:border-[#064C3B]/40 hover:text-[#064C3B] active:scale-[0.98] transition-all cursor-pointer font-medium"
             >
               {tag.name}
             </Link>
@@ -226,7 +226,7 @@ export default function HeroLeft() {
       <div className="flex flex-wrap items-center gap-3.5 pt-2">
         <a
           href="tel:+919820012345"
-          className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full text-sm sm:text-[15px] font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#A8482D]/25 cursor-pointer"
+          className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full text-sm sm:text-[15px] font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#064C3B]/25 cursor-pointer"
         >
           <Phone className="w-4 h-4 text-white/90" />
           <span>Call Us for Appointment</span>

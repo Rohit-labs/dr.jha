@@ -5,17 +5,20 @@
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --font-handwriting: "Caveat", cursive;
   
-  --color-terracotta: #B8583B;
-  --color-terracotta-dark: #A8482D;
-  --color-sand: #F9F6F0;
-  --color-cream: #FAF7F2;
-  --color-charcoal: #1A1A1A;
+  --color-brand-primary: #064C3B;
+  --color-brand-dark: #073D32;
+  --color-brand-gold: #E5A500;
+  --color-brand-ivory: #F8F6F0;
+  --color-brand-cream: #FCFBF7;
+  --color-brand-charcoal: #26332F;
+  --color-brand-muted: #6F7773;
+  --color-brand-border: #DCDDD5;
 }
 
 @layer base {
   body {
-    background-color: #F9F6F0;
-    color: #1A1A1A;
+    background-color: #F8F6F0;
+    color: #26332F;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
@@ -33,19 +36,18 @@
   font-family: 'Caveat', cursive;
 }
 
-
 /* Subtle custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F9F6F0;
+  background: #F8F6F0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D9D2C7;
+  background: #DCDDD5;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8583B;
+  background: #064C3B;
 }

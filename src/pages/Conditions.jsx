@@ -29,11 +29,11 @@ export default function Conditions() {
 
         {/* Header */}
         <div className="max-w-3xl mb-10 sm:mb-12">
-          <span className="text-xs font-bold tracking-[0.2em] text-[#4A6453] uppercase block mb-3">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase block mb-3">
             Clinical Care Directory
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-tight mb-4">
-            Conditions <span className="italic font-normal text-[#B64D2E]">We Treat</span>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-tight mb-4">
+            Conditions <span className="italic font-normal text-[#064C3B]">We Treat</span>
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
             Explore our clinician-led condition directory to learn more about causes, symptoms, and how personalized physiotherapy and acupuncture support recovery.
@@ -47,7 +47,7 @@ export default function Conditions() {
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
               placeholder="Search condition or symptom..."
-              className="w-full pl-11 pr-4 py-2.5 rounded-full border border-stone-300 bg-white text-xs sm:text-sm text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#B64D2E]"
+              className="w-full pl-11 pr-4 py-2.5 rounded-full border border-stone-300 bg-white text-xs sm:text-sm text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#064C3B]"
             />
           </div>
         </div>

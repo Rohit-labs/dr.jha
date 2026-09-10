@@ -131,13 +131,13 @@ export default function Branches() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Headline & Value Proposition */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3A5A40]/10 text-[#3A5A40] text-xs font-bold tracking-[0.16em] uppercase">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#064C3B]/10 text-[#064C3B] text-xs font-bold tracking-[0.16em] uppercase">
                 <Compass className="w-3.5 h-3.5" />
                 <span>Our Branches</span>
               </div>
 
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1C1C1A] leading-[1.12]">
-                Our Branches: <span className="italic font-normal text-[#B64D2E]">Find Care Near You</span>
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#26332F] leading-[1.12]">
+                Our Branches: <span className="italic font-normal text-[#064C3B]">Find Care Near You</span>
               </h1>
 
               <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-xl font-normal">
@@ -148,7 +148,7 @@ export default function Branches() {
               <div className="flex flex-wrap items-center gap-3.5 pt-2">
                 <a
                   href="#locations"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] active:scale-[0.98] transition-all shadow-md shadow-[#B64D2E]/20 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all shadow-md shadow-[#064C3B]/20 cursor-pointer"
                 >
                   <MapPin className="w-4 h-4" />
                   <span>Explore Our Branches</span>
@@ -167,11 +167,11 @@ export default function Branches() {
               {/* Quick Branch Pill Indicators */}
               <div className="pt-4 border-t border-stone-200/80 flex flex-wrap items-center gap-2 text-xs text-stone-600">
                 <span className="font-medium text-stone-700">Clinic Branches:</span>
-                <a href="#mira-road" className="hover:text-[#B64D2E] font-semibold">Mira Road (MMR)</a>
+                <a href="#mira-road" className="hover:text-[#064C3B] font-semibold">Mira Road (MMR)</a>
                 <span>•</span>
-                <a href="#vasai" className="hover:text-[#B64D2E] font-semibold">Vasai West (Palghar)</a>
+                <a href="#vasai" className="hover:text-[#064C3B] font-semibold">Vasai West (Palghar)</a>
                 <span>•</span>
-                <a href="#surat" className="hover:text-[#B64D2E] font-semibold">Surat (Gujarat)</a>
+                <a href="#surat" className="hover:text-[#064C3B] font-semibold">Surat (Gujarat)</a>
               </div>
             </div>
 
@@ -220,14 +220,14 @@ export default function Branches() {
             {miraRoadBranch && (
               <div
                 id="mira-road"
-                className="bg-[#123F32] text-white rounded-[32px] sm:rounded-[36px] overflow-hidden shadow-xl shadow-stone-900/10 border border-white/10"
+                className="bg-[#064C3B] text-white rounded-[32px] sm:rounded-[36px] overflow-hidden shadow-xl shadow-stone-900/10 border border-white/10"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
                   {/* Left Content Area (58%) */}
                   <div className="lg:col-span-7 p-7 sm:p-9 lg:p-11 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-2.5 mb-2.5">
-                        <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#D66B4E]">
+                        <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#E5A500]">
                           MIRA ROAD
                         </span>
                         <span className="text-[10px] font-bold tracking-wider uppercase bg-white/10 text-stone-200 px-2.5 py-0.5 rounded-full border border-white/10">
@@ -246,21 +246,21 @@ export default function Branches() {
                       {/* Key Verified Details */}
                       <div className="space-y-3 text-xs text-stone-200 mb-8">
                         <div className="flex items-start gap-3">
-                          <MapPin className="w-4 h-4 text-[#D66B4E] shrink-0 mt-0.5" />
+                          <MapPin className="w-4 h-4 text-[#E5A500] shrink-0 mt-0.5" />
                           <address className="not-italic leading-relaxed text-stone-300">
                             {miraRoadBranch.fullAddress}
                           </address>
                         </div>
 
                         <div className="flex items-center gap-3">
-                          <Clock className="w-4 h-4 text-[#D66B4E] shrink-0" />
+                          <Clock className="w-4 h-4 text-[#E5A500] shrink-0" />
                           <span className="text-stone-300">
                             {miraRoadBranch.openingHours}
                           </span>
                         </div>
 
                         <div className="flex items-center gap-3">
-                          <Phone className="w-4 h-4 text-[#D66B4E] shrink-0" />
+                          <Phone className="w-4 h-4 text-[#E5A500] shrink-0" />
                           <span className="text-stone-200 font-semibold">
                             {miraRoadBranch.phone}
                           </span>
@@ -272,7 +272,7 @@ export default function Branches() {
                     <div className="pt-5 border-t border-white/15 flex flex-wrap items-center gap-3.5">
                       <Link
                         to="/branches/mira-road"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] active:scale-[0.98] transition-all shadow-md shadow-[#B64D2E]/20"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all shadow-md shadow-[#064C3B]/20"
                       >
                         <span>View Clinic Details</span>
                         <ArrowRight className="w-4 h-4" />
@@ -322,7 +322,7 @@ export default function Branches() {
         {/* ════════════════════════════════════════════════════════════
             SECTION 3 — CHOOSE YOUR CLINIC (PATIENT CONVENIENCE GUIDE)
         ════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#FAF8F5] py-16 sm:py-20 border-y border-stone-200/70">
+        <section className="bg-[#F8F6F0] py-16 sm:py-20 border-y border-stone-200/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
               centered
@@ -337,14 +337,14 @@ export default function Branches() {
               {branches.map((b) => (
                 <div
                   key={b.slug}
-                  className="bg-white border border-[#E8E2D8] rounded-[28px] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:border-stone-400 transition-colors"
+                  className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:border-stone-400 transition-colors"
                 >
                   <div className="space-y-4">
                     <div>
-                      <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#3A5A40] block mb-1">
+                      <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#064C3B] block mb-1">
                         {b.tag}
                       </span>
-                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A]">
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F]">
                         {b.name}
                       </h3>
                       <p className="text-xs text-stone-500 font-medium mt-0.5">
@@ -354,7 +354,7 @@ export default function Branches() {
 
                     <div className="space-y-3 pt-3 border-t border-stone-100 text-xs text-stone-600">
                       <div className="flex items-start gap-2.5">
-                        <MapPin className="w-4 h-4 text-[#B64D2E] shrink-0 mt-0.5" />
+                        <MapPin className="w-4 h-4 text-[#064C3B] shrink-0 mt-0.5" />
                         <span className="leading-relaxed text-stone-700">{b.address}</span>
                       </div>
 
@@ -387,7 +387,7 @@ export default function Branches() {
                   <div className="pt-5 mt-6 border-t border-stone-100 flex items-center justify-between">
                     <Link
                       to={`/branches/${b.slug}`}
-                      className="text-xs font-semibold text-[#123F32] hover:text-[#B64D2E] inline-flex items-center gap-1 transition-colors"
+                      className="text-xs font-semibold text-[#064C3B] hover:text-[#073D32] inline-flex items-center gap-1 transition-colors"
                     >
                       <span>View Clinic</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -422,7 +422,7 @@ export default function Branches() {
             />
             <Link
               to="/treatments"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#B64D2E] hover:underline"
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:underline"
             >
               <span>Explore full treatment directory</span>
               <ArrowRight className="w-4 h-4" />
@@ -433,13 +433,13 @@ export default function Branches() {
             {coreCareDisciplines.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+                className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#3A5A40] block mb-2">
+                  <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#064C3B] block mb-2">
                     {item.tag}
                   </span>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#1C1C1A] group-hover:text-[#B64D2E] transition-colors mb-2">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#26332F] group-hover:text-[#064C3B] transition-colors mb-2">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-[13px] text-stone-600 leading-relaxed font-normal">
@@ -450,7 +450,7 @@ export default function Branches() {
                 <div className="pt-4 mt-5 border-t border-stone-100">
                   <Link
                     to={item.link}
-                    className="text-xs font-semibold text-stone-800 hover:text-[#B64D2E] inline-flex items-center gap-1 transition-colors"
+                    className="text-xs font-semibold text-stone-800 hover:text-[#064C3B] inline-flex items-center gap-1 transition-colors"
                   >
                     <span>Learn more</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -464,7 +464,7 @@ export default function Branches() {
         {/* ════════════════════════════════════════════════════════════
             SECTION 5 — THE CLINIC EXPERIENCE
         ════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#FAF8F5] py-16 sm:py-20 border-y border-stone-200/70">
+        <section className="bg-[#F8F6F0] py-16 sm:py-20 border-y border-stone-200/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
               centered
@@ -477,7 +477,7 @@ export default function Branches() {
 
             {/* Curated Clinic Visual Triad */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white border border-[#E8E2D8] rounded-[28px] overflow-hidden shadow-xs">
+              <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] overflow-hidden shadow-xs">
                 <div className="h-56 overflow-hidden bg-stone-100">
                   <img
                     src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&auto=format&fit=crop&q=80"
@@ -496,7 +496,7 @@ export default function Branches() {
                 </div>
               </div>
 
-              <div className="bg-white border border-[#E8E2D8] rounded-[28px] overflow-hidden shadow-xs">
+              <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] overflow-hidden shadow-xs">
                 <div className="h-56 overflow-hidden bg-stone-100">
                   <img
                     src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80"
@@ -515,7 +515,7 @@ export default function Branches() {
                 </div>
               </div>
 
-              <div className="bg-white border border-[#E8E2D8] rounded-[28px] overflow-hidden shadow-xs">
+              <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] overflow-hidden shadow-xs">
                 <div className="h-56 overflow-hidden bg-stone-100">
                   <img
                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop&q=80"
@@ -554,20 +554,20 @@ export default function Branches() {
             {approachPrinciples.map((principle, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-[#E8E2D8] rounded-[28px] p-6 sm:p-7 shadow-xs flex flex-col justify-between"
+                className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-7 shadow-xs flex flex-col justify-between"
               >
                 <div>
-                  <span className="font-serif text-2xl font-bold text-[#B64D2E] block mb-3">
+                  <span className="font-serif text-2xl font-bold text-[#064C3B] block mb-3">
                     {principle.number}
                   </span>
-                  <h3 className="font-serif text-lg font-bold text-[#1C1C1A] mb-2">
+                  <h3 className="font-serif text-lg font-bold text-[#26332F] mb-2">
                     {principle.title}
                   </h3>
                   <p className="text-xs sm:text-[13px] text-stone-600 leading-relaxed font-normal">
                     {principle.description}
                   </p>
                 </div>
-                <div className="pt-4 mt-4 border-t border-stone-100 flex items-center gap-1.5 text-[11px] font-semibold text-[#3A5A40]">
+                <div className="pt-4 mt-4 border-t border-stone-100 flex items-center gap-1.5 text-[11px] font-semibold text-[#064C3B]">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>Clinical Standard</span>
                 </div>
@@ -579,7 +579,7 @@ export default function Branches() {
         {/* ════════════════════════════════════════════════════════════
             SECTION 7 — PATIENT EXPERIENCES
         ════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#FAF8F5] py-16 sm:py-20 border-y border-stone-200/70">
+        <section className="bg-[#F8F6F0] py-16 sm:py-20 border-y border-stone-200/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeading
               centered
@@ -594,11 +594,11 @@ export default function Branches() {
               {branches.map((b) => (
                 <div
                   key={b.slug}
-                  className="bg-white border border-[#E8E2D8] rounded-[28px] p-6 sm:p-7 shadow-xs flex flex-col justify-between"
+                  className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-7 shadow-xs flex flex-col justify-between"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between pb-3 border-b border-stone-100">
-                      <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#3A5A40]">
+                      <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
                         {b.name} Clinic
                       </span>
                       <span className="text-[10px] text-stone-400 font-medium">
@@ -620,7 +620,7 @@ export default function Branches() {
                         {b.reviews[0]?.location || b.city}
                       </span>
                     </div>
-                    <span className="text-[11px] font-semibold text-[#B64D2E]">
+                    <span className="text-[11px] font-semibold text-[#064C3B]">
                       ★★★★★
                     </span>
                   </div>
@@ -634,10 +634,10 @@ export default function Branches() {
             SECTION 8 — LOCATION OVERVIEW (REGIONAL CORRIDOR SCHEMATIC)
         ════════════════════════════════════════════════════════════ */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-          <div className="bg-[#123F32] text-white rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-xl shadow-stone-900/10">
+          <div className="bg-[#064C3B] text-white rounded-[32px] sm:rounded-[40px] p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-xl shadow-stone-900/10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
               <div className="lg:col-span-7 space-y-4">
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#D66B4E] block">
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#E5A500] block">
                   Regional Connectivity
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
@@ -674,13 +674,13 @@ export default function Branches() {
         {/* ════════════════════════════════════════════════════════════
             SECTION 9 — FINAL CTA
         ════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#FAF8F5] py-16 sm:py-20 border-t border-stone-200/70 text-center">
+        <section className="bg-[#F8F6F0] py-16 sm:py-20 border-t border-stone-200/70 text-center">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#3A5A40] block">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#064C3B] block">
               Begin Your Recovery
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-tight">
-              Ready to Take <span className="italic font-normal text-[#B64D2E]">the Next Step?</span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-tight">
+              Ready to Take <span className="italic font-normal text-[#064C3B]">the Next Step?</span>
             </h2>
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
               Find your nearest clinic and speak with our team about your care. We look forward to supporting your path toward pain-free movement.
@@ -689,7 +689,7 @@ export default function Branches() {
             <div className="pt-4 flex flex-wrap items-center justify-center gap-3.5">
               <a
                 href="tel:+919820012345"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#B64D2E] hover:bg-[#A34226] active:scale-[0.98] transition-all shadow-md shadow-[#B64D2E]/20 cursor-pointer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all shadow-md shadow-[#064C3B]/20 cursor-pointer"
               >
                 <Phone className="w-4 h-4" />
                 <span>Call Us for Appointment</span>

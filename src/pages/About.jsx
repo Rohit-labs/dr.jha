@@ -42,11 +42,11 @@ export default function About() {
 
         {/* Hero Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-[0.2em] text-[#4A6453] uppercase block mb-3">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase block mb-3">
             Our Foundation &amp; Philosophy
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-tight mb-4">
-            Experienced hands. <span className="italic font-normal text-[#B64D2E]">Personalized care.</span>
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-tight mb-4">
+            Experienced hands. <span className="italic font-normal text-[#064C3B]">Personalized care.</span>
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
             At Dr. Jha Physiotherapy &amp; Acupuncture Centre, we believe true rehabilitation begins with listening. Rather than relying on generic exercise sheets or temporary fixes, we design clinical protocols around each patient's biomechanics, recovery goals, and daily demands.
@@ -65,7 +65,7 @@ export default function About() {
         {/* 4 Core Pillars */}
         <div className="mb-16">
           <div className="text-center max-w-xl mx-auto mb-10">
-            <span className="text-xs font-bold tracking-[0.2em] text-[#3A5A40] uppercase block mb-2">
+            <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase block mb-2">
               Our Clinical Pillars
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900">
@@ -74,8 +74,8 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 shadow-xs space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#123F32]">
+            <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs space-y-2.5">
+              <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-lg font-bold text-stone-900">Evidence-Based</h3>
@@ -84,8 +84,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 shadow-xs space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#B64D2E]">
+            <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs space-y-2.5">
+              <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B]">
                 <HeartHandshake className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-lg font-bold text-stone-900">1-on-1 Focus</h3>
@@ -94,8 +94,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 shadow-xs space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#3A5A40]">
+            <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs space-y-2.5">
+              <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B]">
                 <Activity className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-lg font-bold text-stone-900">Integrated Care</h3>
@@ -104,8 +104,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 shadow-xs space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#123F32]">
+            <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs space-y-2.5">
+              <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B]">
                 <MapPin className="w-5 h-5" />
               </div>
               <h3 className="font-serif text-lg font-bold text-stone-900">3 Regional Clinics</h3>
@@ -117,7 +117,7 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <div className="bg-[#123F32] text-white rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
+        <div className="bg-[#064C3B] text-white rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
           <h2 className="font-serif text-3xl font-bold">Ready to Move Without Discomfort?</h2>
           <p className="text-xs sm:text-sm text-stone-300 max-w-md mx-auto leading-relaxed">
             Schedule an appointment at your nearest Dr. Jha centre and receive an individualized assessment today.
@@ -125,7 +125,7 @@ export default function About() {
           <div className="pt-3">
             <a
               href="tel:+919820012345"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] shadow-md transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white shadow-md transition-all"
             >
               <Phone className="w-4 h-4" />
               <span>Call Us for Appointment</span>

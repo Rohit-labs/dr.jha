@@ -59,7 +59,7 @@ export default function HeroRight() {
 
           {/* "Stronger Every Day" in the white space created by the wave's concave gap */}
           <div className="absolute top-[38%] -left-6 xl:-left-2 z-20 pointer-events-none select-none">
-            <div className="bg-[#FAF7F2] rounded-2xl px-4 py-3 border border-stone-200/60 shadow-[0_4px_16px_rgba(0,0,0,0.04)] -rotate-6">
+            <div className="bg-[#FCFBF7] rounded-2xl px-4 py-3 border border-[#DCDDD5] shadow-[0_4px_16px_rgba(0,0,0,0.04)] -rotate-6">
               <span className="font-handwriting text-stone-800 text-[22px] xl:text-[26px] font-bold leading-tight tracking-wide block">
                 Stronger
               </span>
@@ -85,7 +85,7 @@ export default function HeroRight() {
           {/* --- DESKTOP FLOATING GLASSMORPHIC BADGES --- */}
 
           {/* Top-Right Badge: 10+ Years Experience */}
-          <div className="flex flex-col absolute top-6 right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FAF7F2]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:scale-[1.02] transition-transform w-44">
+          <div className="flex flex-col absolute top-6 right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FCFBF7]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:scale-[1.02] transition-transform w-44">
             <div className="w-8 h-8 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 mb-2">
               <Users className="w-5 h-5 stroke-[2]" />
             </div>
@@ -98,7 +98,7 @@ export default function HeroRight() {
           </div>
 
           {/* Middle-Right Badge: 3 Locations */}
-          <div className="flex flex-col absolute top-[195px] right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FAF7F2]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:scale-[1.02] transition-transform w-44">
+          <div className="flex flex-col absolute top-[195px] right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FCFBF7]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:scale-[1.02] transition-transform w-44">
             <div className="w-8 h-8 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 mb-2">
               <MapPin className="w-5 h-5 stroke-[2]" />
             </div>
@@ -114,7 +114,7 @@ export default function HeroRight() {
           </div>
 
           {/* Bottom-Right Badge: Google Rating */}
-          <div className="flex flex-col absolute bottom-14 right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FAF7F2]/95 backdrop-blur-md border border-white/70 shadow-[0_12px_32px_rgba(0,0,0,0.08)] hover:scale-[1.02] transition-transform w-52">
+          <div className="flex flex-col absolute bottom-14 right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FCFBF7]/95 backdrop-blur-md border border-white/70 shadow-[0_12px_32px_rgba(0,0,0,0.08)] hover:scale-[1.02] transition-transform w-52">
             <div className="flex items-center justify-between mb-1.5">
               <span className="text-[11px] font-semibold text-stone-600">
                 Google Rating
@@ -129,9 +129,9 @@ export default function HeroRight() {
             <div className="flex items-baseline gap-1.5">
               <span className="font-bold text-2xl text-stone-900 leading-none">4.9</span>
               <span className="text-xs text-stone-400 font-medium">/5</span>
-              <div className="flex items-center text-amber-400 ml-1.5">
+              <div className="flex items-center text-[#E5A500] ml-1.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400 stroke-amber-400" />
+                  <Star key={i} className="w-3.5 h-3.5 fill-[#E5A500] stroke-[#E5A500]" />
                 ))}
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function HeroRight() {
           </div>
 
           {/* Bottom Pill Testimonial */}
-          <div className="flex items-center gap-3 absolute bottom-6 left-16 xl:left-20 z-20 py-2.5 px-4 rounded-full bg-[#FAF7F2]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_25px_rgba(0,0,0,0.06)] max-w-sm">
+          <div className="flex items-center gap-3 absolute bottom-6 left-16 xl:left-20 z-20 py-2.5 px-4 rounded-full bg-[#FCFBF7]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_25px_rgba(0,0,0,0.06)] max-w-sm">
             <div className="flex items-center -space-x-2 shrink-0">
               {testimonialAvatars.map((url, i) => (
                 <img key={i} src={url} alt={`Patient ${i}`} className="w-6 h-6 rounded-full border border-white object-cover shadow-xs" />
@@ -208,7 +208,7 @@ export default function HeroRight() {
           </div>
           <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-stone-200/80 shadow-xs flex items-center gap-3.5">
             <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
-              <Star className="w-5 h-5 fill-amber-400 stroke-amber-400" />
+              <Star className="w-5 h-5 fill-[#E5A500] stroke-[#E5A500]" />
             </div>
             <div>
               <div className="flex items-baseline gap-1">

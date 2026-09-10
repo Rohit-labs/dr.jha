@@ -41,39 +41,39 @@ export default function ClinicalTeam() {
   const principles = [
     {
       title: 'Personalized Treatment Plans',
-      icon: <ClipboardCheck className="w-5 h-5 text-[#2D4536] stroke-[1.6]" />,
+      icon: <ClipboardCheck className="w-5 h-5 text-[#064C3B] stroke-[1.6]" />,
     },
     {
       title: 'Evidence-Based Approach',
-      icon: <ShieldCheck className="w-5 h-5 text-[#2D4536] stroke-[1.6]" />,
+      icon: <ShieldCheck className="w-5 h-5 text-[#064C3B] stroke-[1.6]" />,
     },
     {
       title: 'Compassionate Patient Care',
-      icon: <HeartHandshake className="w-5 h-5 text-[#2D4536] stroke-[1.6]" />,
+      icon: <HeartHandshake className="w-5 h-5 text-[#064C3B] stroke-[1.6]" />,
     },
     {
       title: 'Focus on Long-Term Recovery',
-      icon: <TrendingUp className="w-5 h-5 text-[#2D4536] stroke-[1.6]" />,
+      icon: <TrendingUp className="w-5 h-5 text-[#064C3B] stroke-[1.6]" />,
     },
   ]
 
   return (
-    <section className="w-full bg-[#F5F2EC] pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-24 font-sans antialiased text-[#1A1A1A] relative overflow-hidden">
+    <section className="w-full bg-[#F8F6F0] pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-24 font-sans antialiased text-[#26332F] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ═══════════ SECTION HEADING ═══════════ */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           {/* Small Eyebrow */}
-          <div className="flex items-center justify-center gap-3 text-xs tracking-[0.2em] text-[#4A6453] uppercase font-semibold mb-3">
-            <span className="w-8 h-[1px] bg-[#4A6453]/40"></span>
+          <div className="flex items-center justify-center gap-3 text-xs tracking-[0.2em] text-[#064C3B] uppercase font-semibold mb-3">
+            <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
             MEET OUR CLINICAL TEAM
-            <span className="w-8 h-[1px] bg-[#4A6453]/40"></span>
+            <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#1A1A1A] leading-[1.12]">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#26332F] leading-[1.12]">
             Experienced hands. <br />
-            <span className="italic font-normal text-[#A6543D]">Personalized care.</span>
+            <span className="italic font-normal text-[#064C3B]">Personalized care.</span>
           </h2>
 
           {/* Supporting Paragraph */}
@@ -87,8 +87,8 @@ export default function ClinicalTeam() {
           {doctors.map((doctor, idx) => (
             <article
               key={idx}
-              className={`bg-[#FAF8F5] border border-[#E8E2D8] rounded-[28px] sm:rounded-[36px] overflow-hidden flex flex-col lg:flex-row shadow-[0_4px_24px_rgba(0,0,0,0.02)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] ${
-                doctor.isPrimary ? 'ring-1 ring-[#A6543D]/10' : ''
+              className={`bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[36px] overflow-hidden flex flex-col lg:flex-row shadow-[0_4px_24px_rgba(0,0,0,0.02)] transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] ${
+                doctor.isPrimary ? 'ring-1 ring-[#064C3B]/10' : ''
               }`}
             >
               {/* Left Side: Large Portrait / Clinical Photograph (46%) */}
@@ -102,7 +102,7 @@ export default function ClinicalTeam() {
 
                 {/* Small Contextual Pill Label on Image */}
                 <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[10.5px] font-bold tracking-[0.16em] uppercase bg-white/95 text-[#2D4536] border border-stone-200/70 shadow-xs backdrop-blur-xs">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[10.5px] font-bold tracking-[0.16em] uppercase bg-white/95 text-[#064C3B] border border-stone-200/70 shadow-xs backdrop-blur-xs">
                     {doctor.tag}
                   </span>
                 </div>
@@ -113,7 +113,7 @@ export default function ClinicalTeam() {
                 <div>
                   {/* Name & Role */}
                   <div className="space-y-1">
-                    <h3 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#1A1A1A] leading-tight">
+                    <h3 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#26332F] leading-tight">
                       {doctor.name}
                     </h3>
                     <p className="text-sm sm:text-base font-medium text-stone-600">
@@ -122,7 +122,7 @@ export default function ClinicalTeam() {
                   </div>
 
                   {/* Subtle Accent Divider */}
-                  <div className="w-12 h-px bg-[#A6543D]/40 my-6"></div>
+                  <div className="w-12 h-px bg-[#E5A500] my-6"></div>
 
                   {/* Clinical Information Rows */}
                   <div className="space-y-5">
@@ -177,7 +177,7 @@ export default function ClinicalTeam() {
                 <div className="pt-8 mt-2">
                   <a
                     href={doctor.profileHref}
-                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#1A1A1A] hover:text-[#A6543D] transition-colors group w-fit"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#26332F] hover:text-[#064C3B] transition-colors group w-fit"
                   >
                     <span>View Profile</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -190,7 +190,7 @@ export default function ClinicalTeam() {
 
         {/* ═══════════ TRUST / CARE PRINCIPLES STRIP ═══════════ */}
         <div className="max-w-6xl mx-auto mt-12 sm:mt-16">
-          <div className="bg-[#FAF8F5] border border-[#E8E2D8] rounded-2xl sm:rounded-[28px] p-5 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+          <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-2xl sm:rounded-[28px] p-5 sm:p-7 shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-stone-200/70">
               {principles.map((item, idx) => (
                 <div

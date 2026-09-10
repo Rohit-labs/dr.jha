@@ -6,8 +6,8 @@ export default function Breadcrumbs({ items = [] }) {
   if (!items || items.length === 0) return null
 
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 flex items-center text-xs text-stone-500 font-medium overflow-x-auto whitespace-nowrap">
-      <Link to="/" className="inline-flex items-center gap-1 hover:text-[#123F32] transition-colors">
+    <nav aria-label="Breadcrumb" className="mb-6 flex items-center text-xs text-[#6F7773] font-medium overflow-x-auto whitespace-nowrap">
+      <Link to="/" className="inline-flex items-center gap-1 hover:text-[#064C3B] transition-colors">
         <Home className="w-3.5 h-3.5" />
         <span>Home</span>
       </Link>
@@ -15,13 +15,13 @@ export default function Breadcrumbs({ items = [] }) {
         const isLast = index === items.length - 1
         return (
           <React.Fragment key={index}>
-            <ChevronRight className="w-3.5 h-3.5 mx-1.5 text-stone-400 shrink-0" />
+            <ChevronRight className="w-3.5 h-3.5 mx-1.5 text-[#DCDDD5] shrink-0" />
             {isLast || !item.href ? (
-              <span className="text-stone-800 font-semibold truncate max-w-[240px]">
+              <span className="text-[#26332F] font-semibold truncate max-w-[240px]">
                 {item.label}
               </span>
             ) : (
-              <Link to={item.href} className="hover:text-[#123F32] transition-colors truncate">
+              <Link to={item.href} className="hover:text-[#064C3B] transition-colors truncate">
                 {item.label}
               </Link>
             )}

@@ -14,7 +14,7 @@ export default function DoctorCard({ doctor }) {
   } = doctor
 
   return (
-    <article className="bg-[#FAF8F5] border border-[#E8E2D8] rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all group">
+    <article className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all group">
       <div>
         {/* Large Portrait Photography with Uniform Proportions */}
         <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden mb-5 bg-stone-100 relative">
@@ -26,7 +26,7 @@ export default function DoctorCard({ doctor }) {
           />
           {role && (
             <div className="absolute top-3.5 left-3.5">
-              <span className="px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/95 text-[#123F32] shadow-xs border border-stone-200/60">
+              <span className="px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/95 text-[#064C3B] shadow-xs border border-stone-200/60">
                 {role}
               </span>
             </div>
@@ -34,7 +34,7 @@ export default function DoctorCard({ doctor }) {
         </div>
 
         {/* Doctor Name & Credentials */}
-        <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 group-hover:text-[#B64D2E] transition-colors leading-tight mb-1">
+        <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 group-hover:text-[#064C3B] transition-colors leading-tight mb-1">
           {name}
         </h3>
 
@@ -44,7 +44,7 @@ export default function DoctorCard({ doctor }) {
         </p>
 
         {/* Specialization */}
-        <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#B64D2E] block mb-3">
+        <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#064C3B] block mb-3">
           {specialization}
         </span>
 
@@ -58,7 +58,7 @@ export default function DoctorCard({ doctor }) {
       {branches.length > 0 && (
         <div className="pt-4 border-t border-stone-200/70 flex items-center justify-between text-[11px] text-stone-500">
           <div className="flex items-center gap-1.5">
-            <MapPin className="w-3.5 h-3.5 text-[#3A5A40] shrink-0" />
+            <MapPin className="w-3.5 h-3.5 text-[#064C3B] shrink-0" />
             <span>{branches.join(' · ')}</span>
           </div>
           <span className="text-[10px] uppercase font-semibold text-stone-400 tracking-wider">

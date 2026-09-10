@@ -23,11 +23,11 @@ export default function Button({
   }[size] || 'px-5 py-2.5 text-xs sm:text-sm gap-2'
 
   const variantClasses = {
-    primary: 'bg-[#B64D2E] hover:bg-[#A34226] text-white shadow-sm hover:shadow',
-    secondary: 'border border-stone-300 hover:border-stone-800 text-stone-800 bg-white hover:bg-stone-50',
-    dark: 'bg-[#123F32] hover:bg-[#0E3228] text-white shadow-sm hover:shadow',
-    ghost: 'text-stone-700 hover:text-stone-950 hover:bg-stone-100/70'
-  }[variant] || 'bg-[#B64D2E] hover:bg-[#A34226] text-white shadow-sm hover:shadow'
+    primary: 'bg-[#064C3B] hover:bg-[#073D32] text-white shadow-sm hover:shadow shadow-[#064C3B]/20',
+    secondary: 'border border-[#DCDDD5] hover:border-[#064C3B] text-[#26332F] bg-white hover:bg-[#FCFBF7]',
+    dark: 'bg-[#073D32] hover:bg-[#064C3B] text-white shadow-sm hover:shadow',
+    ghost: 'text-[#26332F] hover:text-[#064C3B] hover:bg-[#064C3B]/5'
+  }[variant] || 'bg-[#064C3B] hover:bg-[#073D32] text-white shadow-sm hover:shadow shadow-[#064C3B]/20'
 
   const fullClassName = `${baseClasses} ${sizeClasses} ${variantClasses} ${className}`
 

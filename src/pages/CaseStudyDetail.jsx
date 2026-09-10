@@ -44,10 +44,10 @@ export default function CaseStudyDetail() {
 
         {/* Header */}
         <header className="mb-10 sm:mb-12">
-          <span className="text-xs font-bold tracking-[0.2em] text-[#B64D2E] uppercase block mb-3">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase block mb-3">
             {cs.category} • CLINICAL CASE SUMMARY
           </span>
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-tight mb-5">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-tight mb-5">
             {cs.title}
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
@@ -69,8 +69,8 @@ export default function CaseStudyDetail() {
 
         {/* 4 Clinical Milestones */}
         <div className="space-y-6">
-          <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-8 space-y-3">
-            <div className="flex items-center gap-2.5 text-[#B64D2E]">
+          <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-8 space-y-3">
+            <div className="flex items-center gap-2.5 text-[#064C3B]">
               <Activity className="w-5 h-5" />
               <span className="text-xs font-bold tracking-wider uppercase">01 • The Challenge</span>
             </div>
@@ -78,8 +78,8 @@ export default function CaseStudyDetail() {
             <p className="text-sm text-stone-700 leading-relaxed font-normal">{cs.challenge}</p>
           </div>
 
-          <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-8 space-y-3">
-            <div className="flex items-center gap-2.5 text-[#3A5A40]">
+          <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-8 space-y-3">
+            <div className="flex items-center gap-2.5 text-[#064C3B]">
               <ClipboardList className="w-5 h-5" />
               <span className="text-xs font-bold tracking-wider uppercase">02 • Assessment</span>
             </div>
@@ -87,8 +87,8 @@ export default function CaseStudyDetail() {
             <p className="text-sm text-stone-700 leading-relaxed font-normal">{cs.assessment}</p>
           </div>
 
-          <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-8 space-y-3">
-            <div className="flex items-center gap-2.5 text-[#123F32]">
+          <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-8 space-y-3">
+            <div className="flex items-center gap-2.5 text-[#064C3B]">
               <HeartHandshake className="w-5 h-5" />
               <span className="text-xs font-bold tracking-wider uppercase">03 • Care Plan</span>
             </div>
@@ -96,8 +96,8 @@ export default function CaseStudyDetail() {
             <p className="text-sm text-stone-700 leading-relaxed font-normal">{cs.treatment}</p>
           </div>
 
-          <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-8 space-y-3">
-            <div className="flex items-center gap-2.5 text-[#3A5A40]">
+          <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-8 space-y-3">
+            <div className="flex items-center gap-2.5 text-[#064C3B]">
               <TrendingUp className="w-5 h-5" />
               <span className="text-xs font-bold tracking-wider uppercase">04 • Outcome &amp; Progress</span>
             </div>
@@ -108,7 +108,7 @@ export default function CaseStudyDetail() {
 
         {/* Testimonial Reflection */}
         {cs.testimonial && (
-          <div className="my-10 p-7 sm:p-9 rounded-3xl bg-[#FAF8F5] border border-[#E8E2D8] text-center space-y-3">
+          <div className="my-10 p-7 sm:p-9 rounded-3xl bg-[#F4F2EC] border border-[#DCDDD5] text-center space-y-3">
             <p className="font-serif italic text-lg sm:text-xl text-stone-800 leading-snug">
               {cs.testimonial}
             </p>
@@ -124,7 +124,7 @@ export default function CaseStudyDetail() {
         </p>
 
         {/* Consultation Callout */}
-        <div className="mt-8 p-7 sm:p-9 rounded-3xl bg-[#123F32] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+        <div className="mt-8 p-7 sm:p-9 rounded-3xl bg-[#064C3B] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
           <div>
             <h3 className="font-serif text-2xl font-bold">Have a similar physical complaint?</h3>
             <p className="text-xs text-stone-300 mt-1 max-w-md">
@@ -133,7 +133,7 @@ export default function CaseStudyDetail() {
           </div>
           <a
             href="tel:+919820012345"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#A8482D] hover:bg-[#933D25] shrink-0 shadow-md"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white shrink-0 shadow-md"
           >
             <Phone className="w-4 h-4" />
             <span>Call Us for Appointment</span>
@@ -150,12 +150,12 @@ export default function CaseStudyDetail() {
               <Link
                 key={oc.slug}
                 to={`/case-studies/${oc.slug}`}
-                className="p-5 rounded-2xl bg-white border border-[#E8E2D8] hover:border-stone-400 transition-colors block group"
+                className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#DCDDD5] hover:border-stone-400 transition-colors block group"
               >
-                <span className="text-[10px] font-bold tracking-wider uppercase text-[#B64D2E] block mb-1">
+                <span className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] block mb-1">
                   {oc.category}
                 </span>
-                <strong className="font-serif text-base font-bold text-stone-900 group-hover:text-[#A8482D] block mb-1 leading-snug">
+                <strong className="font-serif text-base font-bold text-stone-900 group-hover:text-[#064C3B] block mb-1 leading-snug">
                   {oc.title}
                 </strong>
                 <span className="text-xs text-stone-500 line-clamp-2">

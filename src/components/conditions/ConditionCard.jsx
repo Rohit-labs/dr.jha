@@ -6,12 +6,12 @@ export default function ConditionCard({ condition }) {
   const { slug, category, name, shortDescription } = condition
 
   return (
-    <div className="bg-white border border-[#E8E2D8] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between group">
+    <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between group">
       <div>
-        <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#A8482D] block mb-2">
+        <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#064C3B] block mb-2">
           {category}
         </span>
-        <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] leading-tight mb-2.5 group-hover:text-[#A8482D] transition-colors">
+        <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] leading-tight mb-2.5 group-hover:text-[#064C3B] transition-colors">
           {name}
         </h2>
         <p className="text-xs sm:text-[13px] text-stone-600 leading-relaxed font-normal mb-5">
@@ -22,7 +22,7 @@ export default function ConditionCard({ condition }) {
       <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
         <Link
           to={`/conditions/${slug}`}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#123F32] group-hover:text-[#A8482D] transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] group-hover:text-[#064C3B] transition-colors"
         >
           <span>Explore Guide</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

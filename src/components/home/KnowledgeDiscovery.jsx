@@ -186,22 +186,22 @@ export default function ConditionDiscovery() {
   }, [])
 
   return (
-    <section className="w-full bg-[#F7F3EC] py-20 sm:py-24 lg:py-28 font-sans antialiased text-[#1C1C1A] relative">
+    <section className="w-full bg-[#F8F6F0] py-20 sm:py-24 lg:py-28 font-sans antialiased text-[#26332F] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ═══════════ 1. SECTION HEADING ═══════════ */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-3 text-xs tracking-[0.2em] text-[#4A6453] uppercase font-semibold mb-3">
-            <span className="w-8 h-[1px] bg-[#4A6453]/40"></span>
+          <div className="flex items-center justify-center gap-3 text-xs tracking-[0.2em] text-[#064C3B] uppercase font-semibold mb-3">
+            <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
             YOUR HEALTH, BETTER UNDERSTOOD
-            <span className="w-8 h-[1px] bg-[#4A6453]/40"></span>
+            <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#1C1C1A] leading-[1.14]">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#26332F] leading-[1.14]">
             Know what's happening. <br />
-            <span className="italic font-normal text-[#B64D2E]">Know what to do next.</span>
+            <span className="italic font-normal text-[#064C3B]">Know what to do next.</span>
           </h2>
 
           {/* Supporting Text */}
@@ -215,7 +215,7 @@ export default function ConditionDiscovery() {
           <div
             className={`w-full bg-white rounded-full p-2 pl-5 sm:pl-6 border transition-all duration-200 shadow-md shadow-stone-900/5 flex items-center justify-between gap-3 ${
               isFocused
-                ? 'border-[#B64D2E] ring-4 ring-[#B64D2E]/10'
+                ? 'border-[#064C3B] ring-4 ring-[#064C3B]/10'
                 : 'border-stone-200/90 hover:border-stone-300'
             }`}
           >
@@ -251,7 +251,7 @@ export default function ConditionDiscovery() {
 
               <a
                 href="#conditions"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#123F32] hover:bg-[#1A5242] text-white flex items-center justify-center transition-transform active:scale-95 shadow-sm shrink-0"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#064C3B] hover:bg-[#073D32] text-white flex items-center justify-center transition-transform active:scale-95 shadow-sm shrink-0"
                 aria-label="Submit search"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -279,10 +279,10 @@ export default function ConditionDiscovery() {
                         key={idx}
                         href={item.href}
                         onClick={() => setIsFocused(false)}
-                        className="p-3 rounded-2xl hover:bg-[#FAF8F5] border border-transparent hover:border-stone-200/80 transition-all flex items-start justify-between group"
+                        className="p-3 rounded-2xl hover:bg-[#FCFBF7] border border-transparent hover:border-stone-200/80 transition-all flex items-start justify-between group"
                       >
                         <div>
-                          <span className="text-xs font-bold text-stone-800 group-hover:text-[#B64D2E] transition-colors block">
+                          <span className="text-xs font-bold text-stone-800 group-hover:text-[#064C3B] transition-colors block">
                             {item.title}
                           </span>
                           <span className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
@@ -298,7 +298,7 @@ export default function ConditionDiscovery() {
                 <div className="space-y-4">
                   {Object.entries(groupedResults).map(([category, items]) => (
                     <div key={category} className="space-y-1.5">
-                      <span className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#3A5A40] block px-2">
+                      <span className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#064C3B] block px-2">
                         {category}
                       </span>
                       <div className="space-y-1">
@@ -307,17 +307,17 @@ export default function ConditionDiscovery() {
                             key={idx}
                             href={item.href}
                             onClick={() => setIsFocused(false)}
-                            className="p-2.5 rounded-xl hover:bg-[#FAF8F5] transition-colors flex items-center justify-between group"
+                            className="p-2.5 rounded-xl hover:bg-[#FCFBF7] transition-colors flex items-center justify-between group"
                           >
                             <div>
-                              <span className="text-xs sm:text-sm font-semibold text-stone-900 group-hover:text-[#B64D2E] transition-colors">
+                              <span className="text-xs sm:text-sm font-semibold text-stone-900 group-hover:text-[#064C3B] transition-colors">
                                 {item.title}
                               </span>
                               <p className="text-[11px] text-stone-500 line-clamp-1">
                                 {item.description}
                               </p>
                             </div>
-                            <span className="text-xs text-[#B64D2E] font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span className="text-xs text-[#064C3B] font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                               View →
                             </span>
                           </a>
@@ -352,7 +352,7 @@ export default function ConditionDiscovery() {
                   setQuery(topic)
                   setIsFocused(true)
                 }}
-                className="px-3.5 py-1.5 rounded-full text-xs font-medium border border-stone-300/80 bg-white/70 hover:bg-white text-stone-700 hover:text-[#123F32] hover:border-[#123F32] transition-all duration-200 cursor-pointer shadow-2xs"
+                className="px-3.5 py-1.5 rounded-full text-xs font-medium border border-stone-300/80 bg-white/70 hover:bg-white text-stone-700 hover:text-[#064C3B] hover:border-[#064C3B] transition-all duration-200 cursor-pointer shadow-2xs"
               >
                 {topic}
               </button>
@@ -365,7 +365,7 @@ export default function ConditionDiscovery() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
 
             {/* ──────── LEFT: One Large Featured Condition/Guide (Approx 58% width) ──────── */}
-            <article className="lg:col-span-7 bg-[#FAF8F5] border border-[#E8E2D8] rounded-[32px] sm:rounded-[36px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] group">
+            <article className="lg:col-span-7 bg-[#FCFBF7] border border-[#DCDDD5] rounded-[32px] sm:rounded-[36px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] group">
               <div>
                 {/* Large Featured Image */}
                 <div className="w-full h-60 sm:h-72 lg:h-80 rounded-2xl sm:rounded-3xl overflow-hidden mb-6 bg-stone-100 relative">
@@ -376,19 +376,19 @@ export default function ConditionDiscovery() {
                     loading="lazy"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.16em] uppercase bg-white/95 text-[#123F32] border border-stone-200/70 shadow-xs backdrop-blur-xs">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.16em] uppercase bg-white/95 text-[#064C3B] border border-stone-200/70 shadow-xs backdrop-blur-xs">
                       Featured Guide
                     </span>
                   </div>
                 </div>
 
                 {/* Category Label */}
-                <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#B64D2E] block mb-2">
+                <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#064C3B] block mb-2">
                   Condition Guide
                 </span>
 
                 {/* Title */}
-                <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#1C1C1A] leading-tight mb-3">
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#26332F] leading-tight mb-3">
                   Understanding Back Pain
                 </h3>
 
@@ -402,7 +402,7 @@ export default function ConditionDiscovery() {
               <div className="pt-6 mt-4 border-t border-stone-200/70">
                 <a
                   href="/conditions/back-pain"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#123F32] hover:text-[#B64D2E] transition-colors group/link w-fit"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#064C3B] transition-colors group/link w-fit"
                 >
                   <span>Explore Guide</span>
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -414,10 +414,10 @@ export default function ConditionDiscovery() {
             <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
 
               {/* Secondary Resource 1: Understanding Sciatica */}
-              <article className="bg-[#FAF8F5] border border-[#E8E2D8] rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 flex flex-col justify-between flex-1 shadow-[0_4px_24px_rgba(0,0,0,0.02)] group">
+              <article className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 flex flex-col justify-between flex-1 shadow-[0_4px_24px_rgba(0,0,0,0.02)] group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#B64D2E]">
+                    <span className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
                       Condition Guide
                     </span>
                     <div className="w-7 h-7 rounded-lg bg-stone-100 flex items-center justify-center text-stone-600">
@@ -425,7 +425,7 @@ export default function ConditionDiscovery() {
                     </div>
                   </div>
 
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] leading-tight mb-2">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] leading-tight mb-2">
                     Understanding Sciatica
                   </h3>
 
@@ -437,7 +437,7 @@ export default function ConditionDiscovery() {
                 <div className="pt-5 mt-4 border-t border-stone-200/70">
                   <a
                     href="/conditions/sciatica"
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#123F32] hover:text-[#B64D2E] transition-colors group/link"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#064C3B] transition-colors group/link"
                   >
                     <span>Read Guide</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -446,10 +446,10 @@ export default function ConditionDiscovery() {
               </article>
 
               {/* Secondary Resource 2: When should you see a physio? */}
-              <article className="bg-[#FAF8F5] border border-[#E8E2D8] rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 flex flex-col justify-between flex-1 shadow-[0_4px_24px_rgba(0,0,0,0.02)] group">
+              <article className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 flex flex-col justify-between flex-1 shadow-[0_4px_24px_rgba(0,0,0,0.02)] group">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#3A5A40]">
+                    <span className="text-[10.5px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
                       Patient Education
                     </span>
                     <div className="w-7 h-7 rounded-lg bg-stone-100 flex items-center justify-center text-stone-600">
@@ -457,7 +457,7 @@ export default function ConditionDiscovery() {
                     </div>
                   </div>
 
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] leading-tight mb-2">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] leading-tight mb-2">
                     When should you see a physiotherapist?
                   </h3>
 
@@ -469,7 +469,7 @@ export default function ConditionDiscovery() {
                 <div className="pt-5 mt-4 border-t border-stone-200/70">
                   <a
                     href="/resources/when-to-see-physio"
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#123F32] hover:text-[#B64D2E] transition-colors group/link"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#064C3B] transition-colors group/link"
                   >
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />

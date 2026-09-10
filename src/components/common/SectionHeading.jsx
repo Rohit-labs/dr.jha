@@ -6,8 +6,8 @@ export default function SectionHeading({
   highlight,
   description,
   centered = false,
-  eyebrowColor = 'text-[#3A5A40]',
-  highlightColor = 'text-[#B64D2E]',
+  eyebrowColor = 'text-[#064C3B]',
+  highlightColor = 'text-[#064C3B]',
   className = ''
 }) {
   return (
@@ -18,7 +18,7 @@ export default function SectionHeading({
         </span>
       )}
       {(title || highlight) && (
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1A] leading-tight mb-4">
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-tight mb-4">
           {title}{' '}
           {highlight && (
             <span className={`italic font-normal ${highlightColor}`}>
@@ -28,7 +28,7 @@ export default function SectionHeading({
         </h2>
       )}
       {description && (
-        <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
+        <p className="text-sm sm:text-base text-[#6F7773] leading-relaxed font-normal">
           {description}
         </p>
       )}

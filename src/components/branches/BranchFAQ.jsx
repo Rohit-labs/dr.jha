@@ -11,14 +11,14 @@ export default function BranchFAQ({ faqs = [], branchName = '' }) {
   }
 
   return (
-    <div className="bg-white border border-[#E8E2D8] rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 shadow-xs">
+    <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 shadow-xs">
       <div className="mb-6 pb-4 border-b border-stone-100 flex items-center justify-between">
         <div>
-          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#3A5A40] block mb-1">
+          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#064C3B] block mb-1">
             Visiting Guide
           </span>
-          <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1C1A] flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-[#B64D2E]" />
+          <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] flex items-center gap-2">
+            <HelpCircle className="w-5 h-5 text-[#064C3B]" />
             <span>Frequently Asked Questions ({branchName})</span>
           </h2>
         </div>
@@ -31,7 +31,7 @@ export default function BranchFAQ({ faqs = [], branchName = '' }) {
             <div
               key={index}
               className={`border rounded-2xl transition-all duration-200 overflow-hidden ${
-                isOpen ? 'border-stone-300 bg-[#FAF8F5]' : 'border-stone-200/80 bg-white hover:border-stone-300'
+                isOpen ? 'border-[#064C3B]/30 bg-[#F4F2EC]' : 'border-stone-200/80 bg-white hover:border-stone-300'
               }`}
             >
               <button
@@ -45,7 +45,7 @@ export default function BranchFAQ({ faqs = [], branchName = '' }) {
                 </span>
                 <ChevronDown
                   className={`w-4 h-4 text-stone-500 shrink-0 transition-transform duration-200 ${
-                    isOpen ? 'rotate-180 text-[#B64D2E]' : ''
+                    isOpen ? 'rotate-180 text-[#064C3B]' : ''
                   }`}
                 />
               </button>
