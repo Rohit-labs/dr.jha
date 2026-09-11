@@ -83,3 +83,4 @@ $RECYCLE.BIN/
 .cache/
 .eslintcache
 .stylelintcache
+user_input*

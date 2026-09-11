@@ -324,14 +324,13 @@ export default function Navbar() {
         <div className="w-full flex items-center justify-between gap-3 lg:gap-5 xl:gap-8">
           {/* Brand Logo */}
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            {/* Elegant Wellness Emblem */}
-            <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-[#23382B] group-hover:scale-105 transition-transform shrink-0">
-              <svg viewBox="0 0 36 36" fill="none" className="w-8 h-8 sm:w-9 sm:h-9">
-                <circle cx="18" cy="8" r="3.2" fill="#064C3B" />
-                <path d="M17 14C12 14 7 18 8 26C11 25 15 22 17 18V14Z" fill="#064C3B" />
-                <path d="M19 14C24 14 29 18 28 26C25 25 21 22 19 18V14Z" fill="#E5A500" />
-                <path d="M18 17V30C18 30 16.5 27 15 27" stroke="#064C3B" strokeWidth="2.2" strokeLinecap="round" />
-              </svg>
+            {/* Clinic Logo */}
+            <div className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
+              <img
+                src="/logo.png"
+                alt="Dr. Jha Physiotherapy & Acupuncture Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
 
             <div className="flex flex-col shrink-0">

@@ -13,13 +13,12 @@ export default function Footer() {
           {/* Col 1: Brand & Clinical Philosophy (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white border border-white/15">
-                <svg viewBox="0 0 36 36" fill="none" className="w-7 h-7">
-                  <circle cx="18" cy="8" r="3.2" fill="#FAF7F2" />
-                  <path d="M17 14C12 14 7 18 8 26C11 25 15 22 17 18V14Z" fill="#FAF7F2" />
-                  <path d="M19 14C24 14 29 18 28 26C25 25 21 22 19 18V14Z" fill="#E5A500" />
-                  <path d="M18 17V30C18 30 16.5 27 15 27" stroke="#FAF7F2" strokeWidth="2.2" strokeLinecap="round" />
-                </svg>
+              <div className="w-11 h-11 rounded-xl bg-white/95 flex items-center justify-center p-1 border border-white/20 shadow-sm shrink-0 group-hover:scale-105 transition-transform">
+                <img
+                  src="/logo.png"
+                  alt="Dr. Jha Physiotherapy & Acupuncture Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold text-white tracking-tight">
