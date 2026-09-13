@@ -271,7 +271,7 @@ export default function Branches() {
                     {/* CTAs */}
                     <div className="pt-5 border-t border-white/15 flex flex-wrap items-center gap-3.5">
                       <Link
-                        to="/branches/mira-road"
+                        to="/mira-road"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 active:scale-[0.98] transition-all shadow-md shadow-[#064C3B]/20"
                       >
                         <span>View Clinic Details</span>
@@ -386,7 +386,7 @@ export default function Branches() {
 
                   <div className="pt-5 mt-6 border-t border-stone-100 flex items-center justify-between">
                     <Link
-                      to={`/branches/${b.slug}`}
+                      to={`/${b.slug}`}
                       className="text-xs font-semibold text-[#064C3B] hover:text-[#073D32] inline-flex items-center gap-1 transition-colors"
                     >
                       <span>View Clinic</span>

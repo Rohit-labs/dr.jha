@@ -161,7 +161,7 @@ export default function OurBranches() {
               {/* CTAs */}
               <div className="pt-5 border-t border-white/15 flex flex-wrap items-center gap-3.5 sm:gap-4">
                 <Link
-                  to="/branches/mira-road"
+                  to="/mira-road"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] active:scale-[0.98] transition-all shadow-md shadow-black/20 border border-white/20"
                 >
                   <span>View Mira Road Branch</span>
@@ -243,7 +243,7 @@ export default function OurBranches() {
             {/* CTAs */}
             <div className="pt-4 border-t border-stone-200/70 flex items-center justify-between">
               <Link
-                to="/branches/vasai"
+                to="/vasai"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#073D32] transition-colors group/link"
               >
                 <span>View Vasai Branch</span>
@@ -309,7 +309,7 @@ export default function OurBranches() {
             {/* CTAs */}
             <div className="pt-4 border-t border-stone-200/70 flex items-center justify-between">
               <Link
-                to="/branches/surat"
+                to="/surat"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#073D32] transition-colors group/link"
               >
                 <span>View Surat Branch</span>
@@ -333,7 +333,7 @@ export default function OurBranches() {
         {/* ═══════════ HOMEPAGE CONVERSION STRIP ═══════════ */}
         <div className="max-w-xl mx-auto text-center mt-12 sm:mt-14 pt-6 border-t border-stone-200/70">
           <Link
-            to="/branches"
+            to="/"
             className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all shadow-xs active:scale-[0.98]"
           >
             <span>Explore All Clinics</span>

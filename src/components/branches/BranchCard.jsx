@@ -90,7 +90,7 @@ export default function BranchCard({ branch, featured = false }) {
       {/* Card Action Footers */}
       <div className="p-6 sm:p-7 pt-0 flex items-center justify-between border-t border-stone-100 mt-4">
         <Link
-          to={`/branches/${slug}`}
+          to={`/${slug}`}
           className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#064C3B] transition-colors group/link"
         >
           <span>View Clinic Details</span>

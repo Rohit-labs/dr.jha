@@ -2,8 +2,19 @@ import React from 'react'
 import { Star, ArrowRight, MapPin, CheckCircle } from 'lucide-react'
 import { reviewsData } from '../../data/reviews'
 
-export default function PatientReviews() {
+export default function PatientReviews({ branch }) {
   const { trustBadge, featuredReview, supportingReviews } = reviewsData
+
+  // If a branch is specified, check for branch-specific review
+  const branchReview = branch?.reviews?.[0]
+    ? {
+        quote: branch.reviews[0].quote,
+        author: branch.reviews[0].author,
+        branch: branch.name,
+        verified: branch.reviews[0].verified,
+        rating: 5,
+      }
+    : supportingReviews.find((r) => r.branch?.toLowerCase() === branch?.name?.toLowerCase()) || featuredReview
 
   return (
     <section
@@ -68,7 +79,7 @@ export default function PatientReviews() {
 
             {/* Featured Quote */}
             <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#FCFBF7] font-normal leading-relaxed italic mb-8 sm:mb-10 max-w-4xl">
-              {featuredReview.quote}
+              {branchReview.quote}
             </blockquote>
 
             {/* Author Attribution & Branch Meta */}
@@ -79,7 +90,7 @@ export default function PatientReviews() {
                 </div>
                 <div>
                   <cite className="not-italic text-sm sm:text-base font-semibold text-white block">
-                    — {featuredReview.author}
+                    — {branchReview.author}
                   </cite>
                   <span className="text-[11px] text-stone-400 font-normal">
                     Verified Clinic Patient
@@ -87,10 +98,10 @@ export default function PatientReviews() {
                 </div>
               </div>
 
-              {featuredReview.branch && (
+              {branchReview.branch && (
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-medium text-stone-300 w-fit">
                   <MapPin className="w-3.5 h-3.5 text-[#E5A500]" />
-                  <span>{featuredReview.branch} Branch</span>
+                  <span>{branchReview.branch} Branch</span>
                 </div>
               )}
             </div>
@@ -151,7 +162,7 @@ export default function PatientReviews() {
 
           {/* Subtle Branch Footprint */}
           <span className="text-xs text-stone-400/90 tracking-wide font-normal mt-4 sm:mt-5">
-            Patient experiences across Mira Road · Vasai · Surat
+            {branch ? `Patient experiences from our ${branch.name} clinic` : 'Patient experiences across Mira Road · Vasai · Surat'}
           </span>
 
         </div>

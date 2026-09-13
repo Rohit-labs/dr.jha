@@ -24,7 +24,7 @@ const heroSearchIndex = [
     title: `${b.name} Clinic`,
     category: 'Branch',
     description: `${b.headline} • ${b.address}`,
-    href: `/branches/${b.slug}`,
+    href: `/${b.slug}`,
   })),
   ...resources.map((r) => ({
     title: r.title,
@@ -42,7 +42,7 @@ const popularTags = [
   { name: 'Sports Injury', href: '/conditions/sports-injuries' },
 ]
 
-export default function HeroLeft() {
+export default function HeroLeft({ branch }) {
   const navigate = useNavigate()
   const [searchQuery, setSearchQuery] = useState('')
   const [showDropdown, setShowDropdown] = useState(false)
@@ -98,7 +98,7 @@ export default function HeroLeft() {
           <span className="w-2 h-2 rounded-full bg-[#064C3B]"></span>
           <span>Trusted Care</span>
           <span className="text-stone-400">•</span>
-          <span>3 Locations</span>
+          <span>{branch ? branch.name : '3 Locations'}</span>
           <span className="text-stone-400">•</span>
           <span>10+ Years</span>
         </div>
@@ -116,8 +116,9 @@ export default function HeroLeft() {
 
       {/* Subheading */}
       <p className="text-stone-600 text-base sm:text-[17px] leading-relaxed font-normal max-w-lg">
-        Expert physiotherapy, rehabilitation and acupuncture care for a
-        healthier, stronger and pain-free you.
+        {branch
+          ? `Expert physiotherapy, rehabilitation and acupuncture care in ${branch.name}.`
+          : 'Expert physiotherapy, rehabilitation and acupuncture care for a healthier, stronger and pain-free you.'}
       </p>
 
       {/* Desktop Hero Search Bar (hidden on mobile/tablet where dedicated below-navbar search bar operates) */}
@@ -225,7 +226,7 @@ export default function HeroLeft() {
       {/* Primary Action Buttons */}
       <div className="flex flex-wrap items-center gap-3.5 pt-2">
         <a
-          href="tel:+919820012345"
+          href={`tel:${branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919820012345'}`}
           className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full text-sm sm:text-[15px] font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#064C3B]/25 cursor-pointer"
         >
           <Phone className="w-4 h-4 text-white/90" />
@@ -234,7 +235,7 @@ export default function HeroLeft() {
         </a>
 
         <a
-          href="https://wa.me/"
+          href={branch?.whatsapp ? `https://wa.me/${branch.whatsapp.replace(/[^0-9]/g, '')}` : 'https://wa.me/'}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full text-sm sm:text-[15px] font-semibold text-stone-800 bg-white/80 hover:bg-white border border-stone-300/80 active:scale-[0.98] transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer"

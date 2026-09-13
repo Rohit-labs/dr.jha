@@ -53,19 +53,19 @@ export default function Footer() {
             </span>
             <ul className="space-y-3 text-xs text-stone-300">
               <li>
-                <Link to="/branches/mira-road" className="hover:text-white transition-colors block">
+                <Link to="/mira-road" className="hover:text-white transition-colors block">
                   <strong className="text-white block font-semibold">Mira Road (Flagship)</strong>
                   <span className="text-[11px] text-stone-400">Green Heritage, Shanti Park • Thane</span>
                 </Link>
               </li>
               <li>
-                <Link to="/branches/vasai" className="hover:text-white transition-colors block">
+                <Link to="/vasai" className="hover:text-white transition-colors block">
                   <strong className="text-white block font-semibold">Vasai</strong>
                   <span className="text-[11px] text-stone-400">Sai Arcade, Near Station West • Palghar</span>
                 </Link>
               </li>
               <li>
-                <Link to="/branches/surat" className="hover:text-white transition-colors block">
+                <Link to="/surat" className="hover:text-white transition-colors block">
                   <strong className="text-white block font-semibold">Surat</strong>
                   <span className="text-[11px] text-stone-400">Titanium Square, Vesu Main Road • Gujarat</span>
                 </Link>
@@ -122,6 +122,9 @@ export default function Footer() {
                 <Link to="/resources" className="hover:text-white transition-colors">Patient Knowledge Centre</Link>
               </li>
               <li>
+                <Link to="/events" className="hover:text-white transition-colors">Clinic Events & Workshops</Link>
+              </li>
+              <li>
                 <Link to="/case-studies" className="hover:text-white transition-colors">Real Recovery Journeys</Link>
               </li>
             </ul>
@@ -137,7 +140,7 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <span>Clinical Healthcare Disclaimer</span>
             <span>Privacy Policy</span>
-            <Link to="/branches" className="hover:text-white transition-colors">All Locations</Link>
+            <Link to="/" className="hover:text-white transition-colors">All Locations</Link>
           </div>
         </div>
 

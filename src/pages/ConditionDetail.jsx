@@ -223,7 +223,7 @@ export default function ConditionDetail() {
                   {condition.relatedBranches.map((b) => (
                     <Link
                       key={b.slug}
-                      to={`/branches/${b.slug}`}
+                      to={`/${b.slug}`}
                       className="flex items-center justify-between p-2.5 rounded-xl bg-white border border-stone-200/60 hover:border-stone-400 transition-colors group"
                     >
                       <div className="flex items-center gap-2">

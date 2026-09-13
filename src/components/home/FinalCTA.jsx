@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ShieldCheck, Clock, MapPin, Phone, MessageCircle } from 'lucide-react'
 
-export default function FinalCTA() {
+export default function FinalCTA({ branch }) {
   const guarantees = [
     {
       icon: <Clock className="w-4 h-4 text-[#064C3B]" />,
@@ -16,8 +16,8 @@ export default function FinalCTA() {
     },
     {
       icon: <MapPin className="w-4 h-4 text-[#064C3B]" />,
-      title: '3 Dedicated Clinics',
-      description: 'Fully equipped rehabilitation centres across Mira Road, Vasai, and Surat.'
+      title: branch ? `${branch.name} Clinic` : '3 Dedicated Clinics',
+      description: branch ? branch.address : 'Fully equipped rehabilitation centres across Mira Road, Vasai, and Surat.'
     }
   ]
 
@@ -26,6 +26,9 @@ export default function FinalCTA() {
     { name: 'Vasai', phone: '+91 98200 67890', tel: '+919820067890' },
     { name: 'Surat', phone: '+91 98200 11223', tel: '+919820011223' }
   ]
+
+  const activePhone = branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919820012345'
+  const activeWhatsapp = branch?.whatsapp ? branch.whatsapp.replace(/[^0-9]/g, '') : '919820012345'
 
   return (
     <section
@@ -67,7 +70,9 @@ export default function FinalCTA() {
 
             {/* Supporting Copy */}
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal mb-8 sm:mb-10 max-w-2xl">
-              Whether you are recovering from an injury, managing chronic pain, or seeking preventative rehabilitation, our senior physiotherapists are ready to guide your journey to lasting recovery.
+              {branch
+                ? `Whether you are recovering from an injury, managing chronic pain, or seeking preventative care, our team at ${branch.name} is ready to guide your recovery.`
+                : 'Whether you are recovering from an injury, managing chronic pain, or seeking preventative rehabilitation, our senior physiotherapists are ready to guide your journey to lasting recovery.'}
             </p>
 
             {/* 3 Peace-of-Mind Clinical Guarantees */}
@@ -93,7 +98,7 @@ export default function FinalCTA() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
               {/* Primary: Call Us for Appointment */}
               <a
-                href="tel:+919820012345"
+                href={`tel:${activePhone}`}
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] shadow-md shadow-[#064C3B]/20 hover:shadow-lg transition-all active:scale-[0.98] group"
               >
                 <Phone className="w-4 h-4" />
@@ -101,18 +106,18 @@ export default function FinalCTA() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
-              {/* Secondary: Find a Clinic */}
+              {/* Secondary: Choose Location */}
               <Link
-                to="/branches"
+                to="/"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-[#26332F] bg-white hover:bg-[#F8F6F0] border border-[#DCDDD5] hover:border-[#064C3B] transition-all shadow-xs"
               >
                 <MapPin className="w-4 h-4 text-[#064C3B]" />
-                <span>Find a Clinic</span>
+                <span>Change Location</span>
               </Link>
 
               {/* WhatsApp Secondary Option */}
               <a
-                href="https://wa.me/919820012345?text=Hello%20Dr.%20Jha%20Clinic,%20I%20would%20like%20to%20enquire%20about%20a%20consultation"
+                href={`https://wa.me/${activeWhatsapp}?text=Hello%20Dr.%20Jha%20Clinic,%20I%20would%20like%20to%20enquire%20about%20a%20consultation`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full text-sm font-semibold text-stone-700 bg-white hover:bg-stone-50 border border-[#DCDDD5] hover:border-stone-400 transition-all shadow-xs"

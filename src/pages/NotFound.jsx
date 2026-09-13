@@ -33,11 +33,11 @@ export default function NotFound() {
           </Link>
 
           <Link
-            to="/branches"
+            to="/"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-semibold text-stone-800 border border-stone-300 hover:border-stone-800 transition-colors"
           >
             <MapPin className="w-4 h-4 text-[#064C3B]" />
-            <span>Find a Clinic</span>
+            <span>Choose Clinic Location</span>
           </Link>
 
           <Link

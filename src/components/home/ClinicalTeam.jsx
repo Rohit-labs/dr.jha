@@ -14,7 +14,7 @@ import {
 } from 'lucide-react'
 import { doctors } from '../../data/team'
 
-export default function ClinicalTeam() {
+export default function ClinicalTeam({ branch }) {
   // Dr. Pranab Jha is the founder & clinical lead
   const drJha = doctors.find((doc) => doc.id === 'dr-pranab-jha') || doctors[0]
 
@@ -178,7 +178,7 @@ export default function ClinicalTeam() {
                 </Link>
 
                 <a
-                  href="tel:+919820012345"
+                  href={`tel:${branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919820012345'}`}
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all"
                 >
                   <Phone className="w-3.5 h-3.5" />

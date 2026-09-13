@@ -86,7 +86,7 @@ export default function BranchDetail() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-12 sm:pb-16">
           <Breadcrumbs
             items={[
-              { label: 'Our Locations', href: '/branches' },
+              { label: 'Our Locations', href: '/' },
               { label: branch.name }
             ]}
           />
@@ -488,7 +488,7 @@ export default function BranchDetail() {
                   {otherBranches.map((ob) => (
                     <Link
                       key={ob.slug}
-                      to={`/branches/${ob.slug}`}
+                      to={`/${ob.slug}`}
                       className="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
                     >
                       <div>
@@ -534,7 +534,7 @@ export default function BranchDetail() {
               </a>
 
               <Link
-                to="/branches"
+                to="/"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-stone-800 bg-white border border-stone-300 hover:border-stone-800 hover:bg-stone-50 active:scale-[0.98] transition-all"
               >
                 <Compass className="w-4 h-4 text-stone-500" />

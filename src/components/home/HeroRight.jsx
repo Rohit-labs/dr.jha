@@ -1,7 +1,8 @@
 import { Users, MapPin, Star, ArrowRight } from 'lucide-react'
 
-export default function HeroRight() {
+export default function HeroRight({ branch }) {
   const primaryHeroImage =
+    branch?.image ||
     'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85'
 
   const testimonialAvatars = [
@@ -97,19 +98,19 @@ export default function HeroRight() {
             </div>
           </div>
 
-          {/* Middle-Right Badge: 3 Locations */}
+          {/* Middle-Right Badge: Location */}
           <div className="flex flex-col absolute top-[195px] right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FCFBF7]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:scale-[1.02] transition-transform w-44">
             <div className="w-8 h-8 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 mb-2">
               <MapPin className="w-5 h-5 stroke-[2]" />
             </div>
-            <div className="font-bold text-3xl text-stone-900 leading-none">
-              3
+            <div className="font-bold text-xl text-stone-900 leading-none">
+              {branch ? branch.name : '3 Locations'}
             </div>
             <div className="text-xs font-semibold text-stone-800 leading-tight mt-1">
-              Locations
+              {branch ? branch.tag : 'Locations'}
             </div>
             <div className="text-[10px] font-medium text-stone-500 leading-tight mt-0.5">
-              Mira Road • Vasai • Surat
+              {branch ? branch.city : 'Mira Road • Vasai • Surat'}
             </div>
           </div>
 
@@ -202,8 +203,8 @@ export default function HeroRight() {
               <MapPin className="w-5 h-5 stroke-[2]" />
             </div>
             <div>
-              <div className="font-bold text-2xl text-stone-900 leading-none">3</div>
-              <div className="text-[11px] text-stone-500 font-medium mt-0.5">Mira Road • Vasai • Surat</div>
+              <div className="font-bold text-xl text-stone-900 leading-none">{branch ? branch.name : '3 Locations'}</div>
+              <div className="text-[11px] text-stone-500 font-medium mt-0.5">{branch ? branch.tag : 'Mira Road • Vasai • Surat'}</div>
             </div>
           </div>
           <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-stone-200/80 shadow-xs flex items-center gap-3.5">

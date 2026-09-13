@@ -22,6 +22,8 @@ import { treatments } from '../../data/treatments'
 import { resources } from '../../data/resources'
 import { caseStudies } from '../../data/caseStudies'
 import { branches } from '../../data/branches'
+import { useBranchContext } from '../../context/BranchContext'
+import LocationContextBar from './LocationContextBar'
 
 const allSearchItems = [
   ...conditions.map((c) => ({
@@ -57,12 +59,21 @@ const allSearchItems = [
     category: 'Branches',
     tag: b.tag || 'Branch',
     description: `${b.headline} • ${b.address}`,
-    href: `/branches/${b.slug}`,
+    href: `/${b.slug}`,
   })),
+  {
+    title: 'Events & Workshops',
+    category: 'Events',
+    tag: 'Events',
+    description: 'Upcoming clinic events, workshops and community health programs',
+    href: '/events',
+  },
 ]
 
 export default function Navbar() {
   const location = useLocation()
+  const { currentBranch, selectedBranchSlug } = useBranchContext()
+
   const isPathActive = (path) => {
     if (path === '/') return location.pathname === '/'
     if (path === '/resources') {
@@ -247,29 +258,6 @@ export default function Navbar() {
     actionHref: '/treatments',
   }
 
-  const branchesData = [
-    {
-      name: 'Mira Road',
-      address: 'Shop 12-14, Green Heritage, Near Shanti Park',
-      phone: '+91 98200 12345',
-      timing: '8:00 AM – 9:00 PM',
-      href: '/branches/mira-road',
-    },
-    {
-      name: 'Vasai',
-      address: '2nd Floor, Sai Arcade, Near Railway Station West',
-      phone: '+91 98200 67890',
-      timing: '8:30 AM – 8:30 PM',
-      href: '/branches/vasai',
-    },
-    {
-      name: 'Surat',
-      address: '301, Titanium Square, Vesu Main Road',
-      phone: '+91 98200 11223',
-      timing: '9:00 AM – 8:00 PM',
-      href: '/branches/surat',
-    },
-  ]
 
   const resourcesData = [
     {
@@ -320,10 +308,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full relative z-40 pt-1 pb-3 sm:pb-3.5">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 sm:pt-3">
+        <nav className="w-full relative z-40 pt-1 pb-3 sm:pb-3.5">
         <div className="w-full flex items-center justify-between gap-3 lg:gap-5 xl:gap-8">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+          <Link to={selectedBranchSlug ? `/${selectedBranchSlug}` : '/'} className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
             {/* Clinic Logo */}
             <div className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
               <img
@@ -346,18 +335,18 @@ export default function Navbar() {
           {/* ──────────────── Desktop Navigation Links ──────────────── */}
           <div className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-6 text-[13px] xl:text-[13.5px] text-stone-600 font-medium">
             
-            {/* 1. Home */}
+            {/* 1. About Us */}
             <Link
-              to="/"
+              to="/about"
               className={`relative py-2 transition-colors whitespace-nowrap ${
-                isPathActive('/')
+                isPathActive('/about')
                   ? 'text-[#064C3B] font-semibold'
                   : 'text-stone-600 hover:text-[#064C3B] font-medium'
               }`}
             >
               <span className="relative inline-block">
-                Home
-                {isPathActive('/') && (
+                About
+                {isPathActive('/about') && (
                   <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
                 )}
               </span>
@@ -553,104 +542,6 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* 4. About Us (No dropdown) */}
-            <Link
-              to="/about"
-              className={`relative py-2 transition-colors whitespace-nowrap ${
-                isPathActive('/about')
-                  ? 'text-[#064C3B] font-semibold'
-                  : 'text-stone-600 hover:text-[#064C3B] font-medium'
-              }`}
-            >
-              <span className="relative inline-block">
-                About Us
-                {isPathActive('/about') && (
-                  <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
-                )}
-              </span>
-            </Link>
-
-            {/* 5. Branches ▾ (Dedicated 3 Locations) */}
-            <div
-              className="relative py-2"
-              onMouseEnter={() => handleMouseEnter('branches')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link
-                to="/branches"
-                onClick={() => setActiveDropdown(null)}
-                className={`relative py-2 flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
-                  isPathActive('/branches')
-                    ? 'text-[#064C3B] font-semibold'
-                    : 'text-stone-600 hover:text-[#064C3B] font-medium'
-                }`}
-              >
-                <span className="relative inline-block">
-                  Branches
-                  {isPathActive('/branches') && (
-                    <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
-                  )}
-                </span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 stroke-[2.2] transition-transform duration-200 ${
-                    activeDropdown === 'branches'
-                      ? 'rotate-180 text-[#064C3B]'
-                      : isPathActive('/branches')
-                      ? 'text-[#064C3B]'
-                      : 'text-stone-400'
-                  }`}
-                />
-              </Link>
-
-              {/* Simple Dropdown for Branches */}
-              {activeDropdown === 'branches' && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-80 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-2xl shadow-xl shadow-stone-900/10 p-4 overflow-hidden">
-                    <div className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#064C3B] px-2 pb-2 mb-2 border-b border-stone-200/60 flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-[#064C3B]" />
-                      <span>Physical Clinic Locations</span>
-                    </div>
-
-                    <div className="space-y-2">
-                      {branchesData.map((branch, idx) => (
-                        <Link
-                          key={idx}
-                          to={branch.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="p-2.5 rounded-xl hover:bg-[#F4F2EC] transition-colors block group"
-                        >
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs font-bold text-stone-900 group-hover:text-[#064C3B] transition-colors">
-                              {branch.name}
-                            </span>
-                            <span className="text-[10px] text-stone-400 group-hover:translate-x-0.5 transition-transform">→</span>
-                          </div>
-                          <p className="text-[11px] text-stone-500 mt-0.5 line-clamp-1">
-                            {branch.address}
-                          </p>
-                          <div className="flex items-center justify-between text-[10px] text-stone-400 mt-1">
-                            <span>{branch.timing}</span>
-                            <span className="font-medium text-stone-600">{branch.phone}</span>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-
-                    <div className="pt-3 mt-2 border-t border-stone-200/70 px-2">
-                      <Link
-                        to="/branches"
-                        onClick={() => setActiveDropdown(null)}
-                        className="text-xs font-semibold text-[#064C3B] hover:text-[#073D32] flex items-center justify-between group"
-                      >
-                        <span>View All Branches</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
             {/* 6. Resources ▾ (Knowledge Centre) */}
             <div
               className="relative py-2"
@@ -740,7 +631,24 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* 7. Search Icon Button */}
+            {/* 5. Events */}
+            <Link
+              to="/events"
+              className={`relative py-2 transition-colors whitespace-nowrap ${
+                isPathActive('/events')
+                  ? 'text-[#064C3B] font-semibold'
+                  : 'text-stone-600 hover:text-[#064C3B] font-medium'
+              }`}
+            >
+              <span className="relative inline-block">
+                Events
+                {isPathActive('/events') && (
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
+                )}
+              </span>
+            </Link>
+
+            {/* 6. Search Icon Button */}
             <button
               type="button"
               onClick={() => setSearchModalOpen(true)}
@@ -755,7 +663,7 @@ export default function Navbar() {
           {/* ──────────────── Right CTA Button ──────────────── */}
           <div className="hidden sm:flex items-center shrink-0">
             <a
-              href="tel:+919820012345"
+              href={`tel:${currentBranch?.phone ? currentBranch.phone.replace(/[^0-9+]/g, '') : '+919820012345'}`}
               className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all duration-200 shadow-sm shadow-[#064C3B]/20 cursor-pointer whitespace-nowrap shrink-0"
             >
               <Phone className="w-3.5 h-3.5 text-white/90 shrink-0" />
@@ -781,41 +689,22 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ──────────────── Dedicated Mobile Search Bar ──────────────── */}
-        <div className="lg:hidden mt-2.5 sm:mt-3">
-          <div
-            onClick={() => setSearchModalOpen(true)}
-            className="w-full h-[50px] flex items-center gap-3 px-4 rounded-2xl bg-[#F4F2EC] hover:bg-[#EAE5DC] border border-[#DCDDD5] text-stone-700 shadow-2xs transition-colors cursor-pointer focus-within:border-[#064C3B] focus-within:ring-2 focus-within:ring-[#064C3B]/20"
-            role="search"
-          >
-            <Search className="w-[18px] h-[18px] text-stone-400 stroke-[2] shrink-0" />
-            <input
-              type="text"
-              readOnly
-              value=""
-              placeholder="Search conditions, treatments..."
-              className="w-full bg-transparent text-[13px] sm:text-sm text-stone-800 placeholder:text-stone-500 font-normal focus:outline-none cursor-pointer"
-              onClick={() => setSearchModalOpen(true)}
-              onFocus={() => setSearchModalOpen(true)}
-              aria-label="Search conditions, treatments..."
-            />
-          </div>
-        </div>
-
         {/* ──────────────── Mobile Dropdown Accordion Menu ──────────────── */}
         {mobileMenuOpen && (
           <div className="lg:hidden mt-4 p-5 rounded-3xl bg-[#FCFBF7] border border-[#DCDDD5] shadow-2xl flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
             
             {/* Home */}
             <Link
-              to="/"
+              to={selectedBranchSlug ? `/${selectedBranchSlug}` : '/'}
               onClick={() => setMobileMenuOpen(false)}
               className={`text-sm py-2 flex items-center justify-between transition-colors ${
-                isPathActive('/') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
+                (selectedBranchSlug && isPathActive(`/${selectedBranchSlug}`)) || (!selectedBranchSlug && isPathActive('/'))
+                  ? 'font-semibold text-[#064C3B]'
+                  : 'font-medium text-stone-800'
               }`}
             >
               <span>Home</span>
-              {isPathActive('/') && (
+              {((selectedBranchSlug && isPathActive(`/${selectedBranchSlug}`)) || (!selectedBranchSlug && isPathActive('/'))) && (
                 <span className="w-1.5 h-1.5 rounded-full bg-[#064C3B]"></span>
               )}
             </Link>
@@ -943,50 +832,17 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Branches Accordion */}
+            {/* Events */}
             <div className="border-t border-stone-200/60 pt-2">
-              <div className="w-full py-1 flex items-center justify-between">
-                <Link
-                  to="/branches"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm hover:text-[#064C3B] ${
-                    isPathActive('/branches') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
-                  }`}
-                >
-                  Branches
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSection('branches')}
-                  className="p-1 text-base font-semibold text-stone-500 hover:text-stone-800"
-                  aria-label="Toggle branches list"
-                >
-                  {mobileExpanded['branches'] ? '−' : '+'}
-                </button>
-              </div>
-
-              {mobileExpanded['branches'] && (
-                <div className="pl-3 pr-1 py-2 space-y-2 bg-[#F4F2EC]/70 rounded-2xl p-3 my-1">
-                  {branchesData.map((branch, idx) => (
-                    <Link
-                      key={idx}
-                      to={branch.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-xs text-stone-700 hover:text-[#064C3B] block py-1"
-                    >
-                      <span className="font-semibold">{branch.name}</span>
-                      <span className="block text-[10px] text-stone-500">{branch.address}</span>
-                    </Link>
-                  ))}
-                  <Link
-                    to="/branches"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-xs font-semibold text-[#064C3B] block pt-2 border-t border-stone-300/60"
-                  >
-                    View All Branches →
-                  </Link>
-                </div>
-              )}
+              <Link
+                to="/events"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`text-sm py-2 block ${
+                  isPathActive('/events') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
+                }`}
+              >
+                Events
+              </Link>
             </div>
 
             {/* Resources Accordion */}
@@ -1065,7 +921,7 @@ export default function Navbar() {
             {/* Call Us for Appointment CTA */}
             <div className="pt-2">
               <a
-                href="tel:+919820012345"
+                href={`tel:${currentBranch?.phone ? currentBranch.phone.replace(/[^0-9+]/g, '') : '+919820012345'}`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] shadow-md shadow-[#064C3B]/20"
               >
@@ -1076,9 +932,34 @@ export default function Navbar() {
             </div>
           </div>
         )}
-      </nav>
+        </nav>
+      </div>
 
-      {/* ──────────────── 7. SEARCH MODAL ──────────────── */}
+      {/* ──────────────── 2. Location Context Bar ──────────────── */}
+      <LocationContextBar />
+
+      {/* ──────────────── 3. Dedicated Mobile Search Bar ──────────────── */}
+      <div className="lg:hidden w-full max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-2.5">
+        <div
+          onClick={() => setSearchModalOpen(true)}
+          className="w-full h-[48px] flex items-center gap-3 px-4 rounded-2xl bg-[#F4F2EC] hover:bg-[#EAE5DC] border border-[#DCDDD5] text-stone-700 shadow-2xs transition-colors cursor-pointer focus-within:border-[#064C3B] focus-within:ring-2 focus-within:ring-[#064C3B]/20"
+          role="search"
+        >
+          <Search className="w-[18px] h-[18px] text-stone-400 stroke-[2] shrink-0" />
+          <input
+            type="text"
+            readOnly
+            value=""
+            placeholder="Search conditions, treatments..."
+            className="w-full bg-transparent text-[13px] sm:text-sm text-stone-800 placeholder:text-stone-500 font-normal focus:outline-none cursor-pointer"
+            onClick={() => setSearchModalOpen(true)}
+            onFocus={() => setSearchModalOpen(true)}
+            aria-label="Search conditions, treatments..."
+          />
+        </div>
+      </div>
+
+      {/* ──────────────── 4. SEARCH MODAL ──────────────── */}
       {searchModalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-20 px-4 bg-stone-950/40 backdrop-blur-xs animate-in fade-in duration-200 overflow-y-auto"
@@ -1133,7 +1014,7 @@ export default function Navbar() {
             {/* Filter Category Chips */}
             <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-4">
               <span className="text-xs text-stone-400 mr-1">Filter:</span>
-              {['All', 'Conditions', 'Treatments', 'Resources', 'Case Studies', 'Branches'].map((filter) => (
+              {['All', 'Conditions', 'Treatments', 'Resources', 'Case Studies', 'Branches', 'Events'].map((filter) => (
                 <button
                   key={filter}
                   type="button"
