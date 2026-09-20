@@ -137,10 +137,16 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} Dr. Jha Physiotherapy &amp; Acupuncture Centre. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <span>Clinical Healthcare Disclaimer</span>
-            <span>Privacy Policy</span>
-            <Link to="/" className="hover:text-white transition-colors">All Locations</Link>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <Link to="/terms" className="hover:text-white transition-colors">
+              Terms &amp; Conditions
+            </Link>
+            <Link to="/terms" className="hover:text-white transition-colors">
+              Healthcare Disclaimer &amp; Privacy
+            </Link>
+            <Link to="/" className="hover:text-white transition-colors">
+              All Locations
+            </Link>
           </div>
         </div>
 

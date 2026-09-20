@@ -12,6 +12,7 @@ import ResourceDetail from '../pages/ResourceDetail'
 import CaseStudies from '../pages/CaseStudies'
 import CaseStudyDetail from '../pages/CaseStudyDetail'
 import Events from '../pages/Events'
+import Terms from '../pages/Terms'
 import NotFound from '../pages/NotFound'
 
 export default function AppRoutes() {
@@ -47,7 +48,11 @@ export default function AppRoutes() {
       {/* 8. Events & Workshops Foundation */}
       <Route path="/events" element={<Events />} />
 
-      {/* 9. Fallback 404 */}
+      {/* 9. Patient Terms & Conditions */}
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/terms-and-conditions" element={<Terms />} />
+
+      {/* 10. Fallback 404 */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

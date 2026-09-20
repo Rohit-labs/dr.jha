@@ -74,7 +74,8 @@ export default function ClinicalTeam({ branch }) {
               <img
                 src={drJha.image}
                 alt={drJha.imageAlt || 'Dr. Pranab Jha - Founder & Clinical Lead'}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: drJha.imagePosition || 'center 38%' }}
                 loading="lazy"
               />
 
@@ -127,7 +128,7 @@ export default function ClinicalTeam({ branch }) {
                     </div>
                     <div>
                       <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
-                        Qualifications &amp; Training
+                        Medical Designation
                       </span>
                       <p className="text-xs sm:text-sm font-semibold text-stone-800">
                         {drJha.qualification}
@@ -145,10 +146,27 @@ export default function ClinicalTeam({ branch }) {
                         Clinical Experience
                       </span>
                       <p className="text-xs sm:text-sm font-semibold text-stone-800">
-                        10+ Years Dedicated Clinical Practice &amp; Rehabilitation
+                        {drJha.experience || '16 Years Dedicated Clinical Practice'}
                       </p>
                     </div>
                   </div>
+
+                  {/* Memberships */}
+                  {drJha.memberships && drJha.memberships.length > 0 && (
+                    <div className="flex items-start gap-3.5">
+                      <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
+                        <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
+                          Professional Memberships
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold text-stone-800">
+                          {drJha.memberships.join(' • ')}
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Specialization */}
                   <div className="flex items-start gap-3.5">

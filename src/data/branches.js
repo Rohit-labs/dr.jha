@@ -76,7 +76,7 @@ export const branches = [
       { name: 'Frozen Shoulder & Rotator Cuff', slug: 'frozen-shoulder' },
       { name: 'Sports Injuries & Sprains', slug: 'sports-injuries' }
     ],
-    doctorIds: ['dr-pranab-jha', 'doctor-2'],
+    doctorIds: ['dr-pranab-jha', 'hr-anupam-jha'],
     reviews: [
       {
         quote: '[Verified patient review for Mira Road clinic will be added here]',
@@ -172,7 +172,7 @@ export const branches = [
       { name: 'Cervical Neck Strain & Spondylosis', slug: 'neck-pain' },
       { name: 'Frozen Shoulder (Adhesive Capsulitis)', slug: 'frozen-shoulder' }
     ],
-    doctorIds: ['dr-pranab-jha', 'doctor-3'],
+    doctorIds: ['dr-pranab-jha', 'hr-shweta-jha'],
     reviews: [
       {
         quote: '[Verified patient review for Vasai clinic will be added here]',
@@ -267,7 +267,7 @@ export const branches = [
       { name: 'Cervical Neck Stiffness', slug: 'neck-pain' },
       { name: 'Shoulder Impingement & Rotator Cuff', slug: 'frozen-shoulder' }
     ],
-    doctorIds: ['dr-pranab-jha', 'doctor-4'],
+    doctorIds: ['dr-pranab-jha', 'hr-samta-salecha'],
     reviews: [
       {
         quote: '[Verified patient review for Surat clinic will be added here]',
