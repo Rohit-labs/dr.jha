@@ -23,8 +23,8 @@ export default function FinalCTA({ branch }) {
 
   const branchHelplines = [
     { name: 'Mira Road', phone: '+91 91460 36559 / +91 74983 13922', tel: '+919146036559' },
-    { name: 'Vasai', phone: '+91 98200 67890', tel: '+919820067890' },
-    { name: 'Surat', phone: '+91 98200 11223', tel: '+919820011223' }
+    { name: 'Vasai', phone: '+91 87679 33950', tel: '+918767933950' },
+    { name: 'Surat', phone: '+91 97245 94793', tel: '+919724594793' }
   ]
 
   const activePhone = branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559'

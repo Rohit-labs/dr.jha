@@ -688,7 +688,7 @@ export default function Branches() {
 
             <div className="pt-4 flex flex-wrap items-center justify-center gap-3.5">
               <a
-                href="tel:+919820012345"
+                href="tel:+919146036559"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all shadow-md shadow-[#064C3B]/20 cursor-pointer"
               >
                 <Phone className="w-4 h-4" />

@@ -16,7 +16,7 @@ export default function Home() {
     'name': 'Dr. Jha Physiotherapy & Acupuncture Centre',
     'image': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop&q=85',
     'url': 'https://drjhaphysiotherapy.com',
-    'telephone': '+919820012345',
+    'telephone': '+919146036559',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': 'Shop 12-14, Green Heritage, Near Shanti Park',

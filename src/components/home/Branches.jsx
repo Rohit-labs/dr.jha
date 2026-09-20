@@ -235,7 +235,7 @@ export default function OurBranches() {
 
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-3.5 h-3.5 text-stone-400 shrink-0" />
-                  <span className="font-medium text-stone-700">+91 98200 67890</span>
+                  <a href="tel:+918767933950" className="font-medium text-stone-700 hover:text-[#064C3B] transition-colors">+91 87679 33950</a>
                 </div>
               </div>
             </div>
@@ -301,7 +301,7 @@ export default function OurBranches() {
 
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-3.5 h-3.5 text-stone-400 shrink-0" />
-                  <span className="font-medium text-stone-700">+91 98200 11223</span>
+                  <a href="tel:+919724594793" className="font-medium text-stone-700 hover:text-[#064C3B] transition-colors">+91 97245 94793</a>
                 </div>
               </div>
             </div>

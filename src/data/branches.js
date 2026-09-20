@@ -135,8 +135,8 @@ export const branches = [
     landmark: 'Walking distance from Vasai Road Railway Station West',
     transitInfo: 'Less than a 3-minute walk from Vasai Road Station West exit. Auto and bus stand adjacent.',
     parking: 'Street and commercial parking available near Sai Arcade.',
-    phone: '+91 98200 67890',
-    whatsapp: '+91 98200 67890',
+    phone: '+91 87679 33950',
+    whatsapp: '+91 87679 33950',
     openingHours: 'Mon – Sat: 8:30 AM – 8:30 PM',
     timingDetails: [
       { days: 'Monday – Saturday', hours: '8:30 AM – 8:30 PM' },
@@ -235,8 +235,8 @@ export const branches = [
     landmark: 'Near VIP Road junction, Vesu',
     transitInfo: 'Centrally located on Vesu Main Road, easily reachable from Dumas Road and Surat Airport corridor.',
     parking: 'Ample basement and visitor surface parking in Titanium Square commercial complex.',
-    phone: '+91 98200 11223',
-    whatsapp: '+91 98200 11223',
+    phone: '+91 97245 94793',
+    whatsapp: '+91 97245 94793',
     openingHours: 'Mon – Sat: 9:00 AM – 8:00 PM',
     timingDetails: [
       { days: 'Monday – Saturday', hours: '9:00 AM – 8:00 PM' },

@@ -124,7 +124,7 @@ export default function About() {
           </p>
           <div className="pt-3">
             <a
-              href="tel:+919820012345"
+              href="tel:+919146036559"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 shadow-md transition-all"
             >
               <Phone className="w-4 h-4" />

@@ -132,7 +132,7 @@ export default function CaseStudyDetail() {
             </p>
           </div>
           <a
-            href="tel:+919820012345"
+            href="tel:+919146036559"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 shrink-0 shadow-md"
           >
             <Phone className="w-4 h-4" />

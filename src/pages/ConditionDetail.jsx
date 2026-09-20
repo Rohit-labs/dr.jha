@@ -180,7 +180,7 @@ export default function ConditionDetail() {
               </p>
               <div className="pt-2">
                 <a
-                  href="tel:+919820012345"
+                  href="tel:+919146036559"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 active:scale-[0.98] transition-all shadow-md"
                 >
                   <Phone className="w-4 h-4" />

@@ -663,7 +663,7 @@ export default function Navbar() {
           {/* ──────────────── Right CTA Button ──────────────── */}
           <div className="hidden sm:flex items-center shrink-0">
             <a
-              href={`tel:${currentBranch?.phone ? currentBranch.phone.replace(/[^0-9+]/g, '') : '+919820012345'}`}
+              href={`tel:${currentBranch?.phone ? currentBranch.phone.replace(/[^0-9+]/g, '') : '+919146036559'}`}
               className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all duration-200 shadow-sm shadow-[#064C3B]/20 cursor-pointer whitespace-nowrap shrink-0"
             >
               <Phone className="w-3.5 h-3.5 text-white/90 shrink-0" />
@@ -921,7 +921,7 @@ export default function Navbar() {
             {/* Call Us for Appointment CTA */}
             <div className="pt-2">
               <a
-                href={`tel:${currentBranch?.phone ? currentBranch.phone.replace(/[^0-9+]/g, '') : '+919820012345'}`}
+                href={`tel:${currentBranch?.phone ? currentBranch.phone.replace(/[^0-9+]/g, '') : '+919146036559'}`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] shadow-md shadow-[#064C3B]/20"
               >
