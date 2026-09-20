@@ -172,7 +172,7 @@ export const branches = [
       { name: 'Cervical Neck Strain & Spondylosis', slug: 'neck-pain' },
       { name: 'Frozen Shoulder (Adhesive Capsulitis)', slug: 'frozen-shoulder' }
     ],
-    doctorIds: ['dr-pranab-jha', 'hr-shweta-jha'],
+    doctorIds: ['hr-shweta-jha'],
     reviews: [
       {
         quote: '[Verified patient review for Vasai clinic will be added here]',
@@ -267,7 +267,7 @@ export const branches = [
       { name: 'Cervical Neck Stiffness', slug: 'neck-pain' },
       { name: 'Shoulder Impingement & Rotator Cuff', slug: 'frozen-shoulder' }
     ],
-    doctorIds: ['dr-pranab-jha', 'hr-samta-salecha'],
+    doctorIds: ['hr-samta-salecha'],
     reviews: [
       {
         quote: '[Verified patient review for Surat clinic will be added here]',

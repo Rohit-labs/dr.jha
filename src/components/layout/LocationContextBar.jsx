@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { MapPin, ChevronDown, Check } from 'lucide-react'
 import { useBranchContext } from '../../context/BranchContext'
 
@@ -134,6 +135,17 @@ export default function LocationContextBar() {
                         </button>
                       )
                     })}
+                  </div>
+
+                  {/* Link to All Locations Page */}
+                  <div className="pt-1.5 mt-1 border-t border-stone-200/60">
+                    <Link
+                      to="/locations"
+                      onClick={() => setIsOpen(false)}
+                      className="w-full text-center py-1 text-[11px] font-semibold text-[#064C3B] hover:text-[#073D32] block"
+                    >
+                      View All Clinic Details →
+                    </Link>
                   </div>
                 </div>
               </div>

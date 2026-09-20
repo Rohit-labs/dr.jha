@@ -36,7 +36,9 @@ export default function BranchDetail() {
 
   // Filter clinicians associated with this physical branch
   const branchDoctors = doctors.filter((doc) =>
-    doc.branches.includes(branch.name) || branch.doctorIds?.includes(doc.id)
+    branch.doctorIds && branch.doctorIds.length > 0
+      ? branch.doctorIds.includes(doc.id)
+      : doc.branches.includes(branch.name)
   )
 
   // Other branches for exploratory navigation

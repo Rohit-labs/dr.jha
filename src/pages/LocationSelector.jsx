@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
+import Breadcrumbs from '../components/common/Breadcrumbs'
 import { branches } from '../data/branches'
 import { useBranchContext } from '../context/BranchContext'
 import { MapPin, Clock, Phone, ArrowRight, Compass } from 'lucide-react'
@@ -18,9 +19,9 @@ export default function LocationSelector() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'MedicalClinic',
-    name: 'Dr. Jha Physiotherapy & Acupuncture Centre',
+    name: 'Dr. Jha Physiotherapy & Acupuncture Centre - All Locations',
     description: 'Multi-disciplinary physiotherapy, medical acupuncture, and rehabilitation care centres in Mira Road, Vasai, and Surat.',
-    url: 'https://drjhaphysiotherapy.com/',
+    url: 'https://drjhaphysiotherapy.com/locations',
     department: branches.map((b) => ({
       '@type': 'MedicalClinic',
       name: `Dr. Jha Centre - ${b.name}`,
@@ -39,26 +40,29 @@ export default function LocationSelector() {
   return (
     <PageContainer>
       <SEO
-        title="Select Your Clinic | Dr. Jha Physiotherapy & Acupuncture"
-        description="Welcome to Dr. Jha Physiotherapy & Acupuncture. Select your clinic location in Mira Road, Vasai, or Surat to explore specialized physical therapy and medical acupuncture."
-        canonicalUrl="https://drjhaphysiotherapy.com/"
+        title="Our Clinic Locations | Mira Road, Vasai & Surat | Dr. Jha Centre"
+        description="Explore our specialized physiotherapy and medical acupuncture clinic locations in Mira Road East (Thane), Vasai West (Palghar), and Vesu (Surat)."
+        canonicalUrl="https://drjhaphysiotherapy.com/locations"
         structuredData={structuredData}
       />
 
-      <div className="w-full py-10 sm:py-16 lg:py-20">
+      <div className="w-full py-8 sm:py-12 lg:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
+          {/* Breadcrumbs */}
+          <Breadcrumbs items={[{ label: 'Our Locations' }]} />
+
           {/* ═══════════ HEADER / WELCOME ═══════════ */}
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             {/* Pill Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FCFBF7] border border-[#DCDDD5] text-xs font-semibold text-[#064C3B] tracking-wider uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FCFBF7] border border-[#DCDDD5] text-xs font-semibold text-[#064C3B] tracking-wider uppercase mb-4 shadow-xs">
               <Compass className="w-3.5 h-3.5" />
-              <span>Welcome to Dr. Jha</span>
+              <span>Our Regional Centres</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#26332F] tracking-tight leading-[1.12] mb-4">
-              Select Your Clinic. <br />
+              Our Clinic Locations. <br />
               <span className="italic font-normal text-[#064C3B]">Personalized care, near you.</span>
             </h1>
 

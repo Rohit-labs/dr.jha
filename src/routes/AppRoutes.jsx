@@ -18,13 +18,17 @@ import NotFound from '../pages/NotFound'
 export default function AppRoutes() {
   return (
     <Routes>
-      {/* 1. Root Location Selection */}
-      <Route path="/" element={<LocationSelector />} />
+      {/* 1. Root Landing Page (Mira Road Flagship Centre) */}
+      <Route path="/" element={<BranchHome branchSlug="mira-road" />} />
 
       {/* 2. Reusable Location Homepages */}
       <Route path="/mira-road" element={<BranchHome branchSlug="mira-road" />} />
       <Route path="/vasai" element={<BranchHome branchSlug="vasai" />} />
       <Route path="/surat" element={<BranchHome branchSlug="surat" />} />
+
+      {/* 3. All Locations Directory / Selector Page */}
+      <Route path="/locations" element={<LocationSelector />} />
+      <Route path="/branches" element={<LocationSelector />} />
 
       {/* 3. About Us / Full Clinical Team */}
       <Route path="/about" element={<About />} />

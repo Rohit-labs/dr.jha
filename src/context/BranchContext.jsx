@@ -16,6 +16,7 @@ export function BranchProvider({ children }) {
   // Detect branch from current path if on a location page
   const getBranchSlugFromPath = (pathname) => {
     const cleanPath = pathname.replace(/^\//, '').toLowerCase()
+    if (cleanPath === '' || cleanPath === 'mira-road') return 'mira-road'
     return VALID_BRANCH_SLUGS.includes(cleanPath) ? cleanPath : null
   }
 
@@ -31,8 +32,8 @@ export function BranchProvider({ children }) {
         return stored
       }
     }
-    // No branch selected yet — user must choose
-    return null
+    // Default to Mira Road Flagship Centre as landing page
+    return 'mira-road'
   })
 
   // Synchronize branch with route when navigating to /mira-road, /vasai, /surat
