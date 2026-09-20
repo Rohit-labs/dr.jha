@@ -105,11 +105,24 @@ export default function BranchClinicSection({ branch }) {
                   </div>
 
                   {/* Contact */}
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-4 h-4 text-[#E5A500] shrink-0" />
-                    <span className="text-stone-200 font-semibold text-sm">
-                      {branch.phone}
-                    </span>
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-4 h-4 text-[#E5A500] shrink-0 mt-0.5" />
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href={`tel:${branch.phone.replace(/[^0-9+]/g, '')}`}
+                        className="text-stone-200 hover:text-white font-semibold text-sm hover:underline"
+                      >
+                        {branch.phone} {branch.secondaryPhone && <span className="text-xs font-normal text-stone-400">(Dr. Pranab Jha)</span>}
+                      </a>
+                      {branch.secondaryPhone && (
+                        <a
+                          href={`tel:${branch.secondaryPhone.replace(/[^0-9+]/g, '')}`}
+                          className="text-stone-200 hover:text-white font-semibold text-sm hover:underline"
+                        >
+                          {branch.secondaryPhone} <span className="text-xs font-normal text-stone-400">(Hr. Anupam Jha)</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -121,8 +134,18 @@ export default function BranchClinicSection({ branch }) {
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] active:scale-[0.98] transition-all shadow-md shadow-black/20 border border-white/20"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Call {branch.name} Desk</span>
+                  <span>{branch.secondaryPhone ? 'Call Dr. Pranab' : `Call ${branch.name} Desk`}</span>
                 </a>
+
+                {branch.secondaryPhone && (
+                  <a
+                    href={`tel:${branch.secondaryPhone.replace(/[^0-9+]/g, '')}`}
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B]/80 hover:bg-[#043328] active:scale-[0.98] transition-all shadow-md border border-white/20"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Call Hr. Anupam</span>
+                  </a>
+                )}
 
                 {branch.mapUrl && (
                   <a

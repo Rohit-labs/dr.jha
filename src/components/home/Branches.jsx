@@ -152,7 +152,7 @@ export default function OurBranches() {
                   <div className="flex items-center gap-3">
                     <Phone className="w-4 h-4 text-[#E5A500] shrink-0" />
                     <span className="text-stone-300 font-medium">
-                      +91 98200 12345
+                      +91 91460 36559 / +91 74983 13922
                     </span>
                   </div>
                 </div>

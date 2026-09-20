@@ -1,5 +1,5 @@
 import React from 'react'
-import { MapPin, Award, ShieldCheck, Clock } from 'lucide-react'
+import { MapPin, Award, ShieldCheck, Clock, Phone } from 'lucide-react'
 
 export default function DoctorCard({ doctor }) {
   const {
@@ -74,18 +74,29 @@ export default function DoctorCard({ doctor }) {
         </p>
       </div>
 
-      {/* Branch Assignment Footer */}
-      {branches.length > 0 && (
-        <div className="pt-4 border-t border-stone-200/70 flex items-center justify-between text-[11px] text-stone-500">
+      {/* Branch Assignment & Direct Contact Footer */}
+      <div className="pt-4 border-t border-stone-200/70 flex items-center justify-between text-[11px] text-stone-500 gap-2">
+        {branches.length > 0 && (
           <div className="flex items-center gap-1.5">
             <MapPin className="w-3.5 h-3.5 text-[#064C3B] shrink-0" />
             <span className="font-medium text-stone-700">{branches.join(' · ')}</span>
           </div>
+        )}
+        {doctor.phone ? (
+          <a
+            href={`tel:${doctor.phone.replace(/[^0-9+]/g, '')}`}
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#064C3B]/10 hover:bg-[#064C3B] text-[#064C3B] hover:text-white transition-colors font-semibold text-[11px] shrink-0"
+            title={`Call ${name}`}
+          >
+            <Phone className="w-3 h-3" />
+            <span>{doctor.phone}</span>
+          </a>
+        ) : (
           <span className="text-[10px] uppercase font-semibold text-stone-400 tracking-wider">
             In-Person Care
           </span>
-        </div>
-      )}
+        )}
+      </div>
     </article>
   )
 }

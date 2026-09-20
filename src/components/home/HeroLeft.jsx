@@ -48,6 +48,28 @@ export default function HeroLeft({ branch }) {
   const [showDropdown, setShowDropdown] = useState(false)
   const searchRef = useRef(null)
 
+  const branchHeroHeadings = {
+    'mira-road': {
+      line1: 'Move Without Limits.',
+      line2: 'Live With Confidence.',
+    },
+    'surat': {
+      line1: 'Restore Your Movement.',
+      line2: 'Reclaim Your Life.',
+    },
+    'vasai': {
+      line1: 'Heal With Purpose.',
+      line2: 'Move With Freedom.',
+    },
+  }
+
+  const heroHeading =
+    branch?.heroTitle ||
+    (branch?.slug && branchHeroHeadings[branch.slug.toLowerCase()]) || {
+      line1: 'Move Better.',
+      line2: 'Live Fuller.',
+    }
+
   const avatars = [
     'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80',
     'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80',
@@ -91,7 +113,7 @@ export default function HeroLeft({ branch }) {
   }, [])
 
   return (
-    <div className="flex flex-col justify-center space-y-6 sm:space-y-7 max-w-xl">
+    <div className="flex flex-col justify-center space-y-6 sm:space-y-7 max-w-xl lg:max-w-2xl">
       {/* Top Tag Pill */}
       <div>
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FCFBF7] border border-[#DCDDD5] text-xs font-semibold text-[#26332F] tracking-wide">
@@ -105,14 +127,14 @@ export default function HeroLeft({ branch }) {
       </div>
 
       {/* Main Heading */}
-      <div className="space-y-1">
-        <h1 className="font-serif text-5xl sm:text-6xl lg:text-[72px] font-bold text-[#26332F] tracking-tight leading-[1.06]">
-          Move Better.
-        </h1>
-        <h2 className="font-serif italic text-5xl sm:text-6xl lg:text-[72px] font-bold text-[#064C3B] tracking-tight leading-[1.06]">
-          Live Fuller.
-        </h2>
-      </div>
+      <h1 className="space-y-1 sm:space-y-1.5">
+        <span className="block font-serif text-[34px] min-[400px]:text-[38px] sm:text-[44px] md:text-5xl lg:text-[52px] xl:text-[58px] font-bold text-[#26332F] tracking-tight leading-[1.12] whitespace-normal sm:whitespace-nowrap">
+          {heroHeading.line1}
+        </span>
+        <span className="block font-serif italic text-[34px] min-[400px]:text-[38px] sm:text-[44px] md:text-5xl lg:text-[52px] xl:text-[58px] font-bold text-[#064C3B] tracking-tight leading-[1.12] whitespace-normal sm:whitespace-nowrap">
+          {heroHeading.line2}
+        </span>
+      </h1>
 
       {/* Subheading */}
       <p className="text-stone-600 text-base sm:text-[17px] leading-relaxed font-normal max-w-lg">
@@ -224,21 +246,31 @@ export default function HeroLeft({ branch }) {
       </div>
 
       {/* Primary Action Buttons */}
-      <div className="flex flex-wrap items-center gap-3.5 pt-2">
+      <div className="flex flex-wrap items-center gap-3 pt-2">
         <a
-          href={`tel:${branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919820012345'}`}
-          className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full text-sm sm:text-[15px] font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#064C3B]/25 cursor-pointer"
+          href={`tel:${branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559'}`}
+          className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] active:scale-[0.98] transition-all duration-200 shadow-md shadow-[#064C3B]/20 cursor-pointer"
         >
           <Phone className="w-4 h-4 text-white/90" />
-          <span>Call Us for Appointment</span>
+          <span>{branch?.secondaryPhone ? 'Call Dr. Pranab' : 'Call Us for Appointment'}</span>
           <span className="text-white/80 font-normal">→</span>
         </a>
+
+        {branch?.secondaryPhone && (
+          <a
+            href={`tel:${branch.secondaryPhone.replace(/[^0-9+]/g, '')}`}
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white/90 hover:bg-white border border-[#064C3B]/30 hover:border-[#064C3B] active:scale-[0.98] transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer"
+          >
+            <Phone className="w-3.5 h-3.5 text-[#064C3B]" />
+            <span>Call Hr. Anupam</span>
+          </a>
+        )}
 
         <a
           href={branch?.whatsapp ? `https://wa.me/${branch.whatsapp.replace(/[^0-9]/g, '')}` : 'https://wa.me/'}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full text-sm sm:text-[15px] font-semibold text-stone-800 bg-white/80 hover:bg-white border border-stone-300/80 active:scale-[0.98] transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer"
+          className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-stone-800 bg-white/80 hover:bg-white border border-stone-300/80 active:scale-[0.98] transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer"
         >
           {/* Custom WhatsApp Icon */}
           <svg

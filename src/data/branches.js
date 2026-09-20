@@ -16,6 +16,10 @@ export const branches = [
     name: 'Mira Road',
     tag: 'Flagship Centre',
     headline: 'Physiotherapy & Acupuncture in Mira Road',
+    heroTitle: {
+      line1: 'Move Without Limits.',
+      line2: 'Live With Confidence.'
+    },
     city: 'Mira Road East, Thane',
     state: 'Maharashtra',
     pincode: '401107',
@@ -24,8 +28,13 @@ export const branches = [
     landmark: 'Opposite Shanti Park complex',
     transitInfo: '5 minutes by auto from Mira Road Railway Station East. Accessible via Western Express Highway.',
     parking: 'Convenient ground-level visitor parking available near Green Heritage.',
-    phone: '+91 98200 12345',
-    whatsapp: '+91 98200 12345',
+    phone: '+91 91460 36559',
+    secondaryPhone: '+91 74983 13922',
+    phones: [
+      { label: 'Dr. Pranab Jha', number: '+91 91460 36559', tel: '+919146036559' },
+      { label: 'Hr. Anupam Jha', number: '+91 74983 13922', tel: '+917498313922' }
+    ],
+    whatsapp: '+91 91460 36559',
     openingHours: 'Mon – Sat: 8:00 AM – 9:00 PM | Sun: 9:00 AM – 1:00 PM',
     timingDetails: [
       { days: 'Monday – Saturday', hours: '8:00 AM – 9:00 PM' },
@@ -88,7 +97,7 @@ export const branches = [
     faqs: [
       {
         question: 'How do I schedule an appointment at the Mira Road clinic?',
-        answer: 'You can call our direct helpline at +91 98200 12345 to reserve an initial consultation slot with our specialists.'
+        answer: 'You can call our direct helplines at +91 91460 36559 (Dr. Pranab Jha) or +91 74983 13922 (Hr. Anupam Jha) to reserve a consultation slot with our specialists.'
       },
       {
         question: 'Is parking available near the Mira Road branch?',
@@ -114,6 +123,10 @@ export const branches = [
     name: 'Vasai',
     tag: 'Clinical Centre',
     headline: 'Physiotherapy & Acupuncture in Vasai',
+    heroTitle: {
+      line1: 'Heal With Purpose.',
+      line2: 'Move With Freedom.'
+    },
     city: 'Vasai West, Palghar',
     state: 'Maharashtra',
     pincode: '401202',
@@ -210,6 +223,10 @@ export const branches = [
     name: 'Surat',
     tag: 'Regional Centre',
     headline: 'Physiotherapy & Acupuncture in Surat',
+    heroTitle: {
+      line1: 'Restore Your Movement.',
+      line2: 'Reclaim Your Life.'
+    },
     city: 'Vesu, Surat',
     state: 'Gujarat',
     pincode: '395007',

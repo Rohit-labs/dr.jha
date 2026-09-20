@@ -163,7 +163,7 @@ export default function ClinicalTeam({ branch }) {
           </p>
         </div>
 
-        {/* ═══════════ CAROUSEL SELECTOR TABS (MIRA ROAD) ═══════════ */}
+        {/* ═══════════ CAROUSEL SELECTOR TABS (FOR MULTI-DOCTOR BRANCHES) ═══════════ */}
         {isCarousel && (
           <div className="max-w-xl mx-auto mb-6 sm:mb-8 flex items-center justify-center gap-2 sm:gap-3 p-1.5 rounded-full bg-[#FCFBF7] border border-[#DCDDD5] shadow-xs">
             {branchDoctors.map((doc, idx) => (
@@ -365,11 +365,11 @@ export default function ClinicalTeam({ branch }) {
                   </Link>
 
                   <a
-                    href={`tel:${branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919820012345'}`}
+                    href={`tel:${activeDoctor?.phone ? activeDoctor.phone.replace(/[^0-9+]/g, '') : (branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559')}`}
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>Call for Appointment</span>
+                    <span>Call {activeDoctor.name}: {activeDoctor.phone || branch?.phone || '+91 91460 36559'}</span>
                   </a>
                 </div>
 

@@ -22,13 +22,13 @@ export default function FinalCTA({ branch }) {
   ]
 
   const branchHelplines = [
-    { name: 'Mira Road', phone: '+91 98200 12345', tel: '+919820012345' },
+    { name: 'Mira Road', phone: '+91 91460 36559 / +91 74983 13922', tel: '+919146036559' },
     { name: 'Vasai', phone: '+91 98200 67890', tel: '+919820067890' },
     { name: 'Surat', phone: '+91 98200 11223', tel: '+919820011223' }
   ]
 
-  const activePhone = branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919820012345'
-  const activeWhatsapp = branch?.whatsapp ? branch.whatsapp.replace(/[^0-9]/g, '') : '919820012345'
+  const activePhone = branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559'
+  const activeWhatsapp = branch?.whatsapp ? branch.whatsapp.replace(/[^0-9]/g, '') : '919146036559'
 
   return (
     <section
@@ -102,9 +102,20 @@ export default function FinalCTA({ branch }) {
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] shadow-md shadow-[#064C3B]/20 hover:shadow-lg transition-all active:scale-[0.98] group"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call Us for Appointment</span>
+                <span>{branch?.secondaryPhone ? 'Call Dr. Pranab' : 'Call Us for Appointment'}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
+
+              {/* Secondary Call if available (e.g. Hr. Anupam on Mira Road) */}
+              {branch?.secondaryPhone && (
+                <a
+                  href={`tel:${branch.secondaryPhone.replace(/[^0-9+]/g, '')}`}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-[#064C3B] bg-white hover:bg-[#F8F6F0] border border-[#064C3B]/40 hover:border-[#064C3B] transition-all shadow-xs"
+                >
+                  <Phone className="w-4 h-4 text-[#064C3B]" />
+                  <span>Call Hr. Anupam</span>
+                </a>
+              )}
 
               {/* Secondary: Choose Location */}
               <Link

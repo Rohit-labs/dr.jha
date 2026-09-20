@@ -335,7 +335,7 @@ export default function Terms() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <a
-                    href="tel:+919820012345"
+                    href="tel:+919146036559"
                     className="p-4 rounded-2xl bg-white border border-stone-200/80 hover:border-[#064C3B] flex items-center gap-3.5 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B] group-hover:bg-[#064C3B] group-hover:text-white transition-colors shrink-0">
@@ -346,7 +346,7 @@ export default function Terms() {
                         Telephone Helpline
                       </span>
                       <span className="text-xs sm:text-sm font-semibold text-stone-900">
-                        +91 98200 12345
+                        +91 91460 36559 / +91 74983 13922
                       </span>
                     </div>
                   </a>
@@ -395,7 +395,7 @@ export default function Terms() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="tel:+919820012345"
+                href="tel:+919146036559"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-stone-200 bg-white/10 hover:bg-white/15 border border-white/10 transition-all"
               >
                 <Phone className="w-3.5 h-3.5" />
