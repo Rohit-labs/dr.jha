@@ -62,6 +62,34 @@ const allSearchItems = [
     href: `/${b.slug}`,
   })),
   {
+    title: 'Neurological Conditions & Rehabilitation',
+    category: 'Conditions',
+    tag: 'Neurology',
+    description: 'Stroke, Parkinson’s, Bell’s palsy, neuropathy, ataxia, and functional neuro-rehabilitation',
+    href: '/neurological-conditions',
+  },
+  {
+    title: 'Orthopaedic & Musculoskeletal Conditions',
+    category: 'Conditions',
+    tag: 'Orthopaedics',
+    description: 'Spine, shoulder, knee, hip, arthritis, fractures, and sports injuries rehabilitation',
+    href: '/orthopaedic-conditions',
+  },
+  {
+    title: 'Systemic & General Health Conditions',
+    category: 'Conditions',
+    tag: 'Systemic',
+    description: 'Women’s health, pulmonary, cardiac rehab, metabolic deconditioning, and chronic fatigue supportive care',
+    href: '/systemic-conditions',
+  },
+  {
+    title: 'Specialized & Aesthetic Wellness Care',
+    category: 'Conditions',
+    tag: 'Specialized',
+    description: 'Skin & hair, vertigo, tinnitus, aesthetic facial acupuncture, height & posture, and general wellness care',
+    href: '/specialized-conditions',
+  },
+  {
     title: 'Events & Workshops',
     category: 'Events',
     tag: 'Events',
@@ -157,45 +185,58 @@ export default function Navbar() {
     subtitle: 'Evidence-based recovery protocols tailored to your diagnosis',
     categories: [
       {
-        heading: 'PAIN & MOBILITY',
+        heading: 'NEUROLOGICAL CONDITIONS',
+        href: '/neurological-conditions',
         items: [
-          'Back Pain',
-          'Neck Pain',
-          'Knee Pain',
-          'Shoulder Pain',
-          'Sciatica',
-          'Arthritis',
-          'Heel Pain & Plantar Fasciitis',
+          { name: 'Stroke & Paralysis Rehabilitation', href: '/neurological-conditions#stroke-paralysis' },
+          { name: "Parkinson's & Neurodegenerative", href: '/neurological-conditions#neurodegenerative' },
+          { name: "Bell's Palsy & Facial Paralysis", href: '/neurological-conditions#cranial-nerve' },
+          { name: 'Cerebellar Ataxia & Balance', href: '/neurological-conditions#ataxia-balance' },
+          { name: 'Peripheral Neuropathy & Foot Drop', href: '/neurological-conditions#peripheral-neuromuscular' },
+          { name: 'Cerebral Palsy & Motor Disorders', href: '/neurological-conditions#developmental' },
+          { name: 'Functional Neuro Rehabilitation', href: '/neurological-conditions#functional-rehab' },
         ],
       },
       {
-        heading: 'NEUROLOGICAL',
+        heading: 'ORTHOPAEDIC & MUSCULOSKELETAL',
+        href: '/orthopaedic-conditions',
         items: [
-          'Stroke Rehabilitation',
-          "Parkinson's Rehabilitation",
-          "Facial / Bell's Palsy",
-          'Peripheral Neuropathy',
-          'Spinal Cord Injury',
-          'Cerebral Palsy',
-          'Multiple Sclerosis',
+          { name: 'Spine & Back Conditions', href: '/orthopaedic-conditions#spine-back' },
+          { name: 'Shoulder & Rotator Cuff Care', href: '/orthopaedic-conditions#shoulder' },
+          { name: 'Knee Pain & Ligament Injuries', href: '/orthopaedic-conditions#knee' },
+          { name: 'Hip & Pelvic Rehabilitation', href: '/orthopaedic-conditions#hip-pelvis' },
+          { name: 'Elbow, Wrist & Hand Care', href: '/orthopaedic-conditions#elbow-wrist-hand' },
+          { name: 'Ankle, Foot & Plantar Fasciitis', href: '/orthopaedic-conditions#ankle-foot' },
+          { name: 'Arthritis & Joint Stiffness', href: '/orthopaedic-conditions#arthritis-joints' },
+          { name: 'Fracture & Post-Surgical Rehab', href: '/orthopaedic-conditions#fracture-post-surgical' },
         ],
       },
       {
-        heading: 'SPORTS & INJURY',
+        heading: 'SYSTEMIC & GENERAL HEALTH',
+        href: '/systemic-conditions',
         items: [
-          'Sports Injuries',
-          'Tennis Elbow',
-          "Golfer's Elbow",
-          'Other Musculoskeletal Injuries',
+          { name: 'Women’s Health & Pelvic Care', href: '/systemic-conditions#womens-health' },
+          { name: 'Respiratory & Pulmonary Rehab', href: '/systemic-conditions#respiratory-pulmonary' },
+          { name: 'Cardiac & Cardiovascular Rehab', href: '/systemic-conditions#cardiac-rehab' },
+          { name: 'Digestive & Abdominal Care', href: '/systemic-conditions#digestive-abdominal' },
+          { name: 'Metabolic & Lifestyle Recovery', href: '/systemic-conditions#metabolic-lifestyle' },
+          { name: 'Chronic Fatigue & General Health', href: '/systemic-conditions#chronic-health' },
+          { name: 'Autoimmune & Rheumatological Care', href: '/systemic-conditions#autoimmune-rheumatological' },
+          { name: 'Post-Illness & ICU Recovery', href: '/systemic-conditions#post-illness-recovery' },
         ],
       },
       {
-        heading: 'OTHER',
+        heading: 'SPECIALIZED & WELLNESS CARE',
+        href: '/specialized-conditions',
         items: [
-          'Vertigo & Balance',
-          "Women's Health",
-          'Geriatric Rehabilitation',
-          'Post-Surgical Rehabilitation',
+          { name: 'Skin & Hair Supportive Care', href: '/specialized-conditions#skin-hair' },
+          { name: 'Eye, Ear & Vestibular (Vertigo)', href: '/specialized-conditions#eye-ear-vestibular' },
+          { name: 'Aesthetic & Cosmetic Wellness', href: '/specialized-conditions#aesthetic-cosmetic' },
+          { name: 'Height, Growth & Posture', href: '/specialized-conditions#height-posture' },
+          { name: 'Women’s Health & Pelvic Care', href: '/specialized-conditions#womens-health' },
+          { name: 'Respiratory & Pulmonary Care', href: '/specialized-conditions#respiratory-pulmonary' },
+          { name: 'Digestive & Abdominal Health', href: '/specialized-conditions#digestive-abdominal' },
+          { name: 'General Wellness & Lifestyle', href: '/specialized-conditions#general-wellness' },
         ],
       },
     ],
@@ -411,21 +452,50 @@ export default function Navbar() {
                     <div className="grid grid-cols-4 gap-6">
                       {conditionsData.categories.map((cat, idx) => (
                         <div key={idx} className="space-y-3">
-                          <h4 className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
-                            {cat.heading}
-                          </h4>
+                          {cat.href ? (
+                            <Link
+                              to={cat.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#064C3B] hover:text-[#073D32] hover:underline group/heading transition-colors inline leading-snug"
+                            >
+                              <span>{cat.heading}</span>
+                              <ArrowRight className="inline-block w-3 h-3 ml-1.5 align-middle -mt-0.5 group-hover/heading:translate-x-0.5 transition-transform shrink-0" />
+                            </Link>
+                          ) : (
+                            <h4 className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
+                              {cat.heading}
+                            </h4>
+                          )}
                           <ul className="space-y-2">
-                            {cat.items.map((item, itemIdx) => (
-                              <li key={itemIdx}>
-                                <a
-                                  href={`#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5"
-                                >
-                                  {item}
-                                </a>
-                              </li>
-                            ))}
+                            {cat.items.map((item, itemIdx) => {
+                              const label = typeof item === 'string' ? item : item.name
+                              const href = typeof item === 'string'
+                                ? `#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`
+                                : item.href
+                              const isInternal = href.startsWith('/')
+
+                              return (
+                                <li key={itemIdx}>
+                                  {isInternal ? (
+                                    <Link
+                                      to={href}
+                                      onClick={() => setActiveDropdown(null)}
+                                      className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5"
+                                    >
+                                      {label}
+                                    </Link>
+                                  ) : (
+                                    <a
+                                      href={href}
+                                      onClick={() => setActiveDropdown(null)}
+                                      className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5"
+                                    >
+                                      {label}
+                                    </a>
+                                  )}
+                                </li>
+                              )
+                            })}
                           </ul>
                         </div>
                       ))}
@@ -433,14 +503,14 @@ export default function Navbar() {
 
                     {/* Subtle bottom note / highlight */}
                     <div className="mt-6 pt-4 border-t border-stone-200/60 flex items-center justify-between text-[11px] text-stone-500 bg-[#F4F2EC]/60 -mx-8 -mb-8 px-8 py-3.5">
-                      <span>Suffering from an unlisted symptom? Our specialists diagnose complex cases.</span>
-                      <a
-                        href="#book"
+                      <span>Looking for stroke, Parkinson's or nerve care? Explore our dedicated program.</span>
+                      <Link
+                        to="/neurological-conditions"
                         onClick={() => setActiveDropdown(null)}
                         className="font-semibold text-stone-800 hover:text-[#064C3B] flex items-center gap-1"
                       >
-                        Consult a Physiotherapist <ArrowRight className="w-3 h-3" />
-                      </a>
+                        Neurological Rehabilitation Page <ArrowRight className="w-3 h-3" />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -735,21 +805,50 @@ export default function Navbar() {
                 <div className="pl-3 pr-1 py-2 space-y-4 bg-[#F4F2EC]/70 rounded-2xl p-3 my-1">
                   {conditionsData.categories.map((cat, idx) => (
                     <div key={idx}>
-                      <p className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] mb-1.5">
-                        {cat.heading}
-                      </p>
+                      {cat.href ? (
+                        <Link
+                          to={cat.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] hover:underline mb-1.5 inline leading-snug"
+                        >
+                          <span>{cat.heading}</span>
+                          <ArrowRight className="inline-block w-2.5 h-2.5 ml-1 align-middle -mt-0.5" />
+                        </Link>
+                      ) : (
+                        <p className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] mb-1.5">
+                          {cat.heading}
+                        </p>
+                      )}
                       <ul className="space-y-1.5 pl-2">
-                        {cat.items.map((item, itemIdx) => (
-                          <li key={itemIdx}>
-                            <a
-                              href={`#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="text-xs text-stone-600 hover:text-[#064C3B] block py-0.5"
-                            >
-                              {item}
-                            </a>
-                          </li>
-                        ))}
+                        {cat.items.map((item, itemIdx) => {
+                          const label = typeof item === 'string' ? item : item.name
+                          const href = typeof item === 'string'
+                            ? `#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`
+                            : item.href
+                          const isInternal = href.startsWith('/')
+
+                          return (
+                            <li key={itemIdx}>
+                              {isInternal ? (
+                                <Link
+                                  to={href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="text-xs text-stone-600 hover:text-[#064C3B] block py-0.5"
+                                >
+                                  {label}
+                                </Link>
+                              ) : (
+                                <a
+                                  href={href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="text-xs text-stone-600 hover:text-[#064C3B] block py-0.5"
+                                >
+                                  {label}
+                                </a>
+                              )}
+                            </li>
+                          )
+                        })}
                       </ul>
                     </div>
                   ))}

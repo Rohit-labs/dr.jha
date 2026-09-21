@@ -15,11 +15,85 @@ import {
   MapPin
 } from 'lucide-react'
 
+// Smart mapping for direct condition URLs -> Dedicated Pillar Section Anchor
+const CONDITION_SLUG_MAP = {
+  // Neurological
+  'stroke': '/neurological-conditions#stroke-paralysis',
+  'stroke-paralysis': '/neurological-conditions#stroke-paralysis',
+  'hemiplegia': '/neurological-conditions#stroke-paralysis',
+  'paralysis': '/neurological-conditions#stroke-paralysis',
+  'parkinsons': '/neurological-conditions#neurodegenerative',
+  'neurodegenerative': '/neurological-conditions#neurodegenerative',
+  'bells-palsy': '/neurological-conditions#facial-nerve',
+  'facial-nerve': '/neurological-conditions#facial-nerve',
+  'facial-palsy': '/neurological-conditions#facial-nerve',
+  'ataxia': '/neurological-conditions#ataxia-balance',
+  'ataxia-balance': '/neurological-conditions#ataxia-balance',
+  'neuropathy': '/neurological-conditions#neuropathies',
+  'neuropathies': '/neurological-conditions#neuropathies',
+  'diabetic-neuropathy': '/neurological-conditions#neuropathies',
+  'cerebral-palsy': '/neurological-conditions#cerebral-palsy',
+  'functional-neurological': '/neurological-conditions#functional-neurological',
+
+  // Orthopaedic
+  'spine-back': '/orthopaedic-conditions#spine-back',
+  'sciatica': '/orthopaedic-conditions#spine-back',
+  'slip-disc': '/orthopaedic-conditions#spine-back',
+  'cervical-spondylosis': '/orthopaedic-conditions#spine-back',
+  'lumbar-spondylosis': '/orthopaedic-conditions#spine-back',
+  'shoulder': '/orthopaedic-conditions#shoulder',
+  'shoulder-pain': '/orthopaedic-conditions#shoulder',
+  'rotator-cuff': '/orthopaedic-conditions#shoulder',
+  'knee': '/orthopaedic-conditions#knee',
+  'hip-pelvis': '/orthopaedic-conditions#hip-pelvis',
+  'elbow-wrist-hand': '/orthopaedic-conditions#elbow-wrist-hand',
+  'tennis-elbow': '/orthopaedic-conditions#elbow-wrist-hand',
+  'carpal-tunnel': '/orthopaedic-conditions#elbow-wrist-hand',
+  'ankle-foot': '/orthopaedic-conditions#ankle-foot',
+  'plantar-fasciitis': '/orthopaedic-conditions#ankle-foot',
+  'arthritis': '/orthopaedic-conditions#arthritis',
+  'osteoarthritis': '/orthopaedic-conditions#arthritis',
+  'sports-injuries': '/orthopaedic-conditions#sports-injuries',
+  'post-surgical': '/orthopaedic-conditions#post-surgical',
+  'postural-imbalances': '/orthopaedic-conditions#postural-imbalances',
+
+  // Systemic
+  'womens-health': '/systemic-conditions#womens-health',
+  'pcos': '/systemic-conditions#womens-health',
+  'pelvic-pain': '/systemic-conditions#womens-health',
+  'respiratory-pulmonary': '/systemic-conditions#respiratory-pulmonary',
+  'asthma': '/systemic-conditions#respiratory-pulmonary',
+  'copd': '/systemic-conditions#respiratory-pulmonary',
+  'cardiac-rehab': '/systemic-conditions#cardiac-rehab',
+  'digestive-metabolic': '/systemic-conditions#digestive-metabolic',
+  'ibs': '/systemic-conditions#digestive-metabolic',
+  'metabolic-lifestyle': '/systemic-conditions#metabolic-lifestyle',
+  'chronic-fatigue': '/systemic-conditions#chronic-fatigue',
+  'fibromyalgia': '/systemic-conditions#chronic-fatigue',
+  'autoimmune-support': '/systemic-conditions#autoimmune-support',
+  'post-illness-icu': '/systemic-conditions#post-illness-icu',
+
+  // Specialized
+  'skin-hair': '/specialized-conditions#skin-hair',
+  'acne': '/specialized-conditions#skin-hair',
+  'hair-fall': '/specialized-conditions#skin-hair',
+  'eye-ear-vestibular': '/specialized-conditions#eye-ear-vestibular',
+  'tinnitus': '/specialized-conditions#eye-ear-vestibular',
+  'vertigo': '/specialized-conditions#eye-ear-vestibular',
+  'aesthetic-acupuncture': '/specialized-conditions#aesthetic-acupuncture',
+  'posture-ergonomics': '/specialized-conditions#posture-ergonomics',
+  'general-wellness': '/specialized-conditions#general-wellness'
+}
+
 export default function ConditionDetail() {
   const { slug } = useParams()
   const condition = getConditionBySlug(slug)
 
   if (!condition) {
+    const targetAnchor = CONDITION_SLUG_MAP[slug]
+    if (targetAnchor) {
+      return <Navigate to={targetAnchor} replace />
+    }
     return <Navigate to="/conditions" replace />
   }
 

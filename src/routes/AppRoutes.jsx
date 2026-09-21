@@ -13,6 +13,10 @@ import CaseStudies from '../pages/CaseStudies'
 import CaseStudyDetail from '../pages/CaseStudyDetail'
 import Events from '../pages/Events'
 import Terms from '../pages/Terms'
+import NeurologicalConditions from '../pages/NeurologicalConditions'
+import OrthopaedicConditions from '../pages/OrthopaedicConditions'
+import SystemicConditions from '../pages/SystemicConditions'
+import SpecializedConditions from '../pages/SpecializedConditions'
 import NotFound from '../pages/NotFound'
 
 export default function AppRoutes() {
@@ -35,6 +39,17 @@ export default function AppRoutes() {
 
       {/* 4. Conditions We Treat */}
       <Route path="/conditions" element={<Conditions />} />
+      <Route path="/neurological-conditions" element={<NeurologicalConditions />} />
+      <Route path="/conditions/neurological-conditions" element={<NeurologicalConditions />} />
+      <Route path="/orthopaedic-conditions" element={<OrthopaedicConditions />} />
+      <Route path="/orthopaedic-musculoskeletal-conditions" element={<OrthopaedicConditions />} />
+      <Route path="/conditions/orthopaedic-conditions" element={<OrthopaedicConditions />} />
+      <Route path="/systemic-conditions" element={<SystemicConditions />} />
+      <Route path="/systemic-health-conditions" element={<SystemicConditions />} />
+      <Route path="/conditions/systemic-conditions" element={<SystemicConditions />} />
+      <Route path="/specialized-conditions" element={<SpecializedConditions />} />
+      <Route path="/wellness-conditions" element={<SpecializedConditions />} />
+      <Route path="/conditions/specialized-conditions" element={<SpecializedConditions />} />
       <Route path="/conditions/:slug" element={<ConditionDetail />} />
 
       {/* 5. Treatments & Modalities */}
