@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
@@ -10,10 +10,7 @@ import {
   HeartHandshake,
   TrendingUp,
   Phone,
-  Clock,
-  ChevronLeft,
-  ChevronRight,
-  UserCheck
+  Clock
 } from 'lucide-react'
 import { doctors } from '../../data/team'
 
@@ -49,66 +46,6 @@ export default function ClinicalTeam({ branch }) {
     return [doctors[0]]
   }, [branch])
 
-  // Active doctor slide index
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
-  const [touchStartX, setTouchStartX] = useState(null)
-  const [touchEndX, setTouchEndX] = useState(null)
-
-  // Reset index if branch changes
-  useEffect(() => {
-    setCurrentIndex(0)
-  }, [branch?.slug])
-
-  const totalDoctors = branchDoctors.length
-  const isCarousel = totalDoctors > 1
-
-  const nextSlide = useCallback(() => {
-    if (totalDoctors > 1) {
-      setCurrentIndex((prev) => (prev + 1) % totalDoctors)
-    }
-  }, [totalDoctors])
-
-  const prevSlide = useCallback(() => {
-    if (totalDoctors > 1) {
-      setCurrentIndex((prev) => (prev - 1 + totalDoctors) % totalDoctors)
-    }
-  }, [totalDoctors])
-
-  // Autoplay for carousel (pauses on hover or touch)
-  useEffect(() => {
-    if (!isCarousel || isPaused) return
-
-    const timer = setInterval(() => {
-      nextSlide()
-    }, 6500)
-
-    return () => clearInterval(timer)
-  }, [isCarousel, isPaused, nextSlide])
-
-  // Touch handlers for mobile swipe
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.targetTouches[0].clientX)
-  }
-
-  const handleTouchMove = (e) => {
-    setTouchEndX(e.targetTouches[0].clientX)
-  }
-
-  const handleTouchEnd = () => {
-    if (!touchStartX || !touchEndX) return
-    const diff = touchStartX - touchEndX
-    if (diff > 50) {
-      nextSlide()
-    } else if (diff < -50) {
-      prevSlide()
-    }
-    setTouchStartX(null)
-    setTouchEndX(null)
-  }
-
-  const activeDoctor = branchDoctors[currentIndex] || branchDoctors[0] || doctors[0]
-
   const principles = [
     {
       title: 'Personalized Treatment Plans',
@@ -137,7 +74,7 @@ export default function ClinicalTeam({ branch }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ═══════════ SECTION HEADING ═══════════ */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 text-xs tracking-[0.2em] text-[#064C3B] uppercase font-semibold mb-3">
             <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
@@ -163,131 +100,82 @@ export default function ClinicalTeam({ branch }) {
           </p>
         </div>
 
-        {/* ═══════════ CAROUSEL SELECTOR TABS (FOR MULTI-DOCTOR BRANCHES) ═══════════ */}
-        {isCarousel && (
-          <div className="max-w-xl mx-auto mb-6 sm:mb-8 flex items-center justify-center gap-2 sm:gap-3 p-1.5 rounded-full bg-[#FCFBF7] border border-[#DCDDD5] shadow-xs">
-            {branchDoctors.map((doc, idx) => (
-              <button
-                key={doc.id}
-                type="button"
-                onClick={() => setCurrentIndex(idx)}
-                className={`flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
-                  currentIndex === idx
-                    ? 'bg-[#064C3B] text-white shadow-sm'
-                    : 'text-stone-700 hover:text-[#064C3B] hover:bg-[#F4F2EC]'
-                }`}
-              >
-                <UserCheck className={`w-3.5 h-3.5 transition-colors ${currentIndex === idx ? 'text-[#E5A500]' : 'text-stone-400'}`} />
-                <span>{doc.name}</span>
-                <span className="hidden md:inline text-[11px] opacity-80 font-normal">
-                  ({doc.role.split('&')[0].trim()})
-                </span>
-              </button>
-            ))}
-          </div>
-        )}
+        {/* ═══════════ DOCTORS DISPLAY ═══════════ */}
+        {branchDoctors.length > 1 ? (
+          /* ────── MULTI-DOCTOR: SIDE-BY-SIDE CARDS (MIRA ROAD) ────── */
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {branchDoctors.map((doc) => {
+              const callNumber = doc.phone
+                ? doc.phone.replace(/[^0-9+]/g, '')
+                : (branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559')
+              const shortName = doc.id === 'dr-pranab-jha' ? 'Dr. Pranab' : 'Hr. Anupam'
 
-        {/* ═══════════ STATIC CARD FRAME WITH IN-PLACE DATA & PHOTO TRANSITION ═══════════ */}
-        <div
-          className="max-w-5xl mx-auto relative group/slider"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {/* Static Card Skeleton */}
-          <article className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[36px] overflow-hidden flex flex-col lg:flex-row shadow-[0_4px_24px_rgba(0,0,0,0.02)] ring-1 ring-[#064C3B]/10">
-            
-            {/* ──────────────── Left Column: Cross-Fading Portrait Photos (44%) ──────────────── */}
-            <div className="lg:w-[44%] relative overflow-hidden bg-stone-100 min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]">
-              {branchDoctors.map((doctor, idx) => {
-                const isActive = idx === currentIndex
-                return (
-                  <img
-                    key={doctor.id}
-                    src={doctor.image}
-                    alt={doctor.imageAlt || `${doctor.name} - ${doctor.role}`}
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out ${
-                      isActive
-                        ? 'opacity-100 scale-100 z-10'
-                        : 'opacity-0 scale-[1.03] z-0 pointer-events-none'
-                    }`}
-                    style={{ objectPosition: doctor.imagePosition || 'center 25%' }}
-                    loading="lazy"
-                  />
-                )
-              })}
+              return (
+                <article
+                  key={doc.id}
+                  className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[36px] overflow-hidden flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] ring-1 ring-[#064C3B]/10 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-all group"
+                >
+                  <div>
+                    {/* Portrait Photography */}
+                    <div className="relative overflow-hidden bg-stone-100 h-72 sm:h-80 w-full">
+                      <img
+                        src={doc.image}
+                        alt={doc.imageAlt || `${doc.name} - ${doc.role}`}
+                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        style={{ objectPosition: doc.imagePosition || 'center 25%' }}
+                        loading="lazy"
+                      />
 
-              {/* Doctor Role Badge (Dynamic in-place transition) */}
-              <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-20">
-                <span className="inline-flex items-center px-3.5 py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase bg-white/95 text-[#064C3B] border border-stone-200/80 shadow-xs backdrop-blur-xs transition-all duration-300">
-                  {activeDoctor.role}
-                </span>
-              </div>
+                      {/* Role Tag Badge */}
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="inline-flex items-center px-3.5 py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold tracking-[0.14em] uppercase bg-white/95 text-[#064C3B] border border-stone-200/80 shadow-xs backdrop-blur-xs">
+                          {doc.id === 'dr-pranab-jha' ? 'FOUNDER & CLINICAL LEAD' : doc.role.toUpperCase()}
+                        </span>
+                      </div>
 
-              {/* Active Clinics Pill at Bottom */}
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 z-20">
-                <div className="bg-[#073D32]/90 backdrop-blur-md rounded-xl px-4 py-2.5 text-white flex items-center justify-between text-xs border border-white/10 shadow-md">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-3.5 h-3.5 text-[#E5A500]" />
-                    <span className="font-medium">Direct Clinical Practice</span>
-                  </div>
-                  <span className="font-semibold text-white/90">
-                    {activeDoctor.branches ? activeDoctor.branches.join(' • ') : branch?.name || 'Mira Road'}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* ──────────────── Right Column: In-Place Cross-Fading Clinical Data (56%) ──────────────── */}
-            <div className="lg:w-[56%] p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-between">
-              
-              {/* Stacked Doctor Content Container */}
-              <div className="relative min-h-[380px] sm:min-h-[360px] lg:min-h-[390px]">
-                {branchDoctors.map((doctor, idx) => {
-                  const isActive = idx === currentIndex
-                  return (
-                    <div
-                      key={doctor.id}
-                      className={`transition-all duration-500 ease-out ${
-                        isActive
-                          ? 'opacity-100 translate-y-0 relative z-10'
-                          : 'opacity-0 translate-y-3 absolute inset-0 pointer-events-none z-0'
-                      }`}
-                    >
-                      {/* Name & Role Header */}
-                      <div className="space-y-1.5">
-                        <div className="flex items-center justify-between">
-                          <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#26332F] leading-tight">
-                            {doctor.name}
-                          </h3>
-
-                          {/* Carousel Counter */}
-                          {isCarousel && (
-                            <span className="text-[11px] font-bold tracking-wider text-stone-500 uppercase bg-[#F4F2EC] px-2.5 py-1 rounded-full border border-[#DCDDD5]">
-                              {idx + 1} / {totalDoctors}
-                            </span>
-                          )}
+                      {/* Experience Badge */}
+                      {doc.experience && (
+                        <div className="absolute top-4 right-4 z-10">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide bg-[#073D32]/90 text-white shadow-xs backdrop-blur-xs border border-white/10">
+                            <Clock className="w-3.5 h-3.5 text-[#E5A500]" />
+                            <span>{doc.experience}</span>
+                          </span>
                         </div>
+                      )}
 
-                        <p className="text-sm sm:text-base font-semibold text-[#064C3B]">
-                          {doctor.role}
+                      {/* Active Clinic Location Pill */}
+                      <div className="absolute bottom-4 left-4 z-10">
+                        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-semibold bg-[#073D32]/90 text-white shadow-xs backdrop-blur-xs border border-white/10">
+                          <MapPin className="w-3.5 h-3.5 text-[#E5A500]" />
+                          <span>{doc.branches ? doc.branches.join(' • ') : 'Mira Road Centre'}</span>
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Clinician Content Body */}
+                    <div className="p-6 sm:p-8">
+                      {/* Name & Role Header */}
+                      <div className="space-y-1">
+                        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#26332F] leading-tight group-hover:text-[#064C3B] transition-colors">
+                          {doc.name}
+                        </h3>
+                        <p className="text-xs sm:text-sm font-semibold text-[#064C3B]">
+                          {doc.role}
                         </p>
                       </div>
 
-                      {/* Subtle Accent Divider */}
-                      <div className="w-14 h-0.5 bg-[#E5A500] my-5"></div>
+                      {/* Accent Divider */}
+                      <div className="w-12 h-0.5 bg-[#E5A500] my-4"></div>
 
-                      {/* Clinical Bio / Overview */}
+                      {/* Bio */}
                       <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6 font-normal">
-                        {doctor.description}
+                        {doc.description}
                       </p>
 
                       {/* Credentials & Details List */}
-                      <div className="space-y-3.5">
-                        {/* Medical Designation */}
-                        <div className="flex items-start gap-3.5">
+                      <div className="space-y-3.5 pt-2 border-t border-stone-200/70">
+                        {/* Qualification */}
+                        <div className="flex items-start gap-3">
                           <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
                             <GraduationCap className="w-4 h-4 stroke-[1.8]" />
                           </div>
@@ -296,45 +184,13 @@ export default function ClinicalTeam({ branch }) {
                               Medical Designation
                             </span>
                             <p className="text-xs sm:text-sm font-semibold text-stone-800">
-                              {doctor.qualification}
+                              {doc.qualification}
                             </p>
                           </div>
                         </div>
-
-                        {/* Clinical Experience */}
-                        <div className="flex items-start gap-3.5">
-                          <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
-                            <Clock className="w-4 h-4 stroke-[1.8]" />
-                          </div>
-                          <div>
-                            <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
-                              Clinical Experience
-                            </span>
-                            <p className="text-xs sm:text-sm font-semibold text-stone-800">
-                              {doctor.experience || 'Dedicated Clinical Practice'}
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Memberships */}
-                        {doctor.memberships && doctor.memberships.length > 0 && (
-                          <div className="flex items-start gap-3.5">
-                            <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
-                              <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
-                            </div>
-                            <div>
-                              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
-                                Professional Memberships
-                              </span>
-                              <p className="text-xs sm:text-sm font-semibold text-stone-800">
-                                {doctor.memberships.join(' • ')}
-                              </p>
-                            </div>
-                          </div>
-                        )}
 
                         {/* Specialization */}
-                        <div className="flex items-start gap-3.5">
+                        <div className="flex items-start gap-3">
                           <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
                             <Activity className="w-4 h-4 stroke-[1.8]" />
                           </div>
@@ -343,19 +199,178 @@ export default function ClinicalTeam({ branch }) {
                               Specialized Focus
                             </span>
                             <p className="text-xs sm:text-sm font-semibold text-stone-800">
-                              {doctor.specialization}
+                              {doc.specialization}
                             </p>
                           </div>
                         </div>
+
+                        {/* Memberships */}
+                        {doc.memberships && doc.memberships.length > 0 && (
+                          <div className="flex items-start gap-3">
+                            <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
+                              <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
+                            </div>
+                            <div>
+                              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
+                                Professional Memberships
+                              </span>
+                              <p className="text-xs sm:text-sm font-semibold text-stone-800">
+                                {doc.memberships.join(' • ')}
+                              </p>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
-                  )
-                })}
+                  </div>
+
+                  {/* Actions Footer */}
+                  <div className="p-6 sm:p-8 pt-0 flex flex-wrap items-center gap-3">
+                    <a
+                      href={`tel:${callNumber}`}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] transition-all shadow-xs active:scale-[0.98]"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>Call {shortName}: {doc.phone || '+91 91460 36559'}</span>
+                    </a>
+
+                    <Link
+                      to="/about"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all"
+                    >
+                      <span>Full Profile</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        ) : (
+          /* ────── SINGLE DOCTOR (VASAI / SURAT): EXPANSIVE EDITORIAL CARD ────── */
+          <div className="max-w-5xl mx-auto">
+            <article className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[36px] overflow-hidden flex flex-col lg:flex-row shadow-[0_4px_24px_rgba(0,0,0,0.02)] ring-1 ring-[#064C3B]/10">
+              
+              {/* Left Column: Portrait Photo (44%) */}
+              <div className="lg:w-[44%] relative overflow-hidden bg-stone-100 min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]">
+                <img
+                  src={branchDoctors[0].image}
+                  alt={branchDoctors[0].imageAlt || `${branchDoctors[0].name} - ${branchDoctors[0].role}`}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: branchDoctors[0].imagePosition || 'center 25%' }}
+                  loading="lazy"
+                />
+
+                {/* Doctor Role Badge */}
+                <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-20">
+                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase bg-white/95 text-[#064C3B] border border-stone-200/80 shadow-xs backdrop-blur-xs">
+                    {branchDoctors[0].role}
+                  </span>
+                </div>
+
+                {/* Active Clinics Pill at Bottom */}
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-5 sm:left-5 sm:right-5 z-20">
+                  <div className="bg-[#073D32]/90 backdrop-blur-md rounded-xl px-4 py-2.5 text-white flex items-center justify-between text-xs border border-white/10 shadow-md">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-3.5 h-3.5 text-[#E5A500]" />
+                      <span className="font-medium">Direct Clinical Practice</span>
+                    </div>
+                    <span className="font-semibold text-white/90">
+                      {branchDoctors[0].branches ? branchDoctors[0].branches.join(' • ') : branch?.name || 'Clinic'}
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              {/* Static Bottom Actions & Controls Bar */}
-              <div className="pt-6 sm:pt-8 mt-6 border-t border-stone-200/70 flex flex-wrap items-center justify-between gap-4">
-                <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              {/* Right Column: Clinical Details (56%) */}
+              <div className="lg:w-[56%] p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-between">
+                <div>
+                  {/* Name & Role Header */}
+                  <div className="space-y-1.5">
+                    <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#26332F] leading-tight">
+                      {branchDoctors[0].name}
+                    </h3>
+                    <p className="text-sm sm:text-base font-semibold text-[#064C3B]">
+                      {branchDoctors[0].role}
+                    </p>
+                  </div>
+
+                  {/* Subtle Accent Divider */}
+                  <div className="w-14 h-0.5 bg-[#E5A500] my-5"></div>
+
+                  {/* Clinical Bio / Overview */}
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6 font-normal">
+                    {branchDoctors[0].description}
+                  </p>
+
+                  {/* Credentials & Details List */}
+                  <div className="space-y-3.5">
+                    {/* Medical Designation */}
+                    <div className="flex items-start gap-3.5">
+                      <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
+                        <GraduationCap className="w-4 h-4 stroke-[1.8]" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
+                          Medical Designation
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold text-stone-800">
+                          {branchDoctors[0].qualification}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Clinical Experience */}
+                    <div className="flex items-start gap-3.5">
+                      <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
+                        <Clock className="w-4 h-4 stroke-[1.8]" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
+                          Clinical Experience
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold text-stone-800">
+                          {branchDoctors[0].experience || 'Dedicated Clinical Practice'}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Memberships */}
+                    {branchDoctors[0].memberships && branchDoctors[0].memberships.length > 0 && (
+                      <div className="flex items-start gap-3.5">
+                        <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
+                          <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
+                            Professional Memberships
+                          </span>
+                          <p className="text-xs sm:text-sm font-semibold text-stone-800">
+                            {branchDoctors[0].memberships.join(' • ')}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Specialization */}
+                    <div className="flex items-start gap-3.5">
+                      <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
+                        <Activity className="w-4 h-4 stroke-[1.8]" />
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
+                          Specialized Focus
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold text-stone-800">
+                          {branchDoctors[0].specialization}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Actions Bar */}
+                <div className="pt-6 sm:pt-8 mt-6 border-t border-stone-200/70 flex flex-wrap items-center gap-3 sm:gap-4">
                   <Link
                     to="/about"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] transition-all shadow-sm active:scale-[0.98]"
@@ -365,60 +380,19 @@ export default function ClinicalTeam({ branch }) {
                   </Link>
 
                   <a
-                    href={`tel:${activeDoctor?.phone ? activeDoctor.phone.replace(/[^0-9+]/g, '') : (branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559')}`}
+                    href={`tel:${branchDoctors[0]?.phone ? branchDoctors[0].phone.replace(/[^0-9+]/g, '') : (branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559')}`}
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>Call {activeDoctor.name}: {activeDoctor.phone || branch?.phone || '+91 91460 36559'}</span>
+                    <span>Call {branchDoctors[0].name}: {branchDoctors[0].phone || branch?.phone || '+91 91460 36559'}</span>
                   </a>
                 </div>
 
-                {/* Slider Arrow Controls */}
-                {isCarousel && (
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={prevSlide}
-                      className="w-10 h-10 rounded-full bg-white border border-[#DCDDD5] flex items-center justify-center text-stone-700 hover:text-[#064C3B] hover:border-[#064C3B] hover:bg-[#F4F2EC] shadow-xs active:scale-95 transition-all cursor-pointer"
-                      aria-label="Previous Doctor"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={nextSlide}
-                      className="w-10 h-10 rounded-full bg-white border border-[#DCDDD5] flex items-center justify-center text-stone-700 hover:text-[#064C3B] hover:border-[#064C3B] hover:bg-[#F4F2EC] shadow-xs active:scale-95 transition-all cursor-pointer"
-                      aria-label="Next Doctor"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-                  </div>
-                )}
               </div>
 
-            </div>
-
-          </article>
-
-          {/* Carousel Bottom Indicator Dots */}
-          {isCarousel && (
-            <div className="flex items-center justify-center gap-2.5 mt-4">
-              {branchDoctors.map((_, dotIdx) => (
-                <button
-                  key={dotIdx}
-                  type="button"
-                  onClick={() => setCurrentIndex(dotIdx)}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    currentIndex === dotIdx
-                      ? 'w-8 bg-[#064C3B]'
-                      : 'w-2 bg-stone-300 hover:bg-stone-400'
-                  }`}
-                  aria-label={`Go to Doctor ${dotIdx + 1}`}
-                />
-              ))}
-            </div>
-          )}
-        </div>
+            </article>
+          </div>
+        )}
 
         {/* ═══════════ TRUST / CARE PRINCIPLES STRIP ═══════════ */}
         <div className="max-w-5xl mx-auto mt-12 sm:mt-16">
