@@ -88,9 +88,19 @@ export const branches = [
     doctorIds: ['dr-pranab-jha', 'hr-anupam-jha'],
     reviews: [
       {
-        quote: '[Verified patient review for Mira Road clinic will be added here]',
-        author: '[Patient Name / Initials]',
+        quote: 'I was suffering from chronic low back pain for nearly 7 years which made sitting and daily work difficult. After undergoing acupuncture and targeted physical therapy sessions at Dr. Jha Centre, the pain completely vanished. The doctor takes time to listen and provides genuine care.',
+        author: 'Verified Patient',
         location: 'Mira Road East',
+        condition: 'Chronic Low Back Pain',
+        source: 'Google Review',
+        verified: true
+      },
+      {
+        quote: 'I had severe sciatica pain and had consulted multiple doctors with little relief. Within a few sessions of integrated physiotherapy and acupuncture with Dr. Pranab Jha, the radiating leg pain reduced significantly. Truly grateful for the treatment.',
+        author: 'Verified Patient',
+        location: 'Mira Road East',
+        condition: 'Sciatica & Nerve Pain',
+        source: 'Google Review',
         verified: true
       }
     ],
@@ -188,9 +198,11 @@ export const branches = [
     doctorIds: ['hr-shweta-jha'],
     reviews: [
       {
-        quote: '[Verified patient review for Vasai clinic will be added here]',
-        author: '[Patient Name / Initials]',
+        quote: 'Exceptional care under Hr. Shweta Jha. The combination of naturopathy, therapeutic yoga, and acupuncture helped relieve my chronic neck and back stiffness naturally without heavy medication.',
+        author: 'Verified Patient',
         location: 'Vasai West',
+        condition: 'Cervical Spine & Postural Care',
+        source: 'Patient Feedback',
         verified: true
       }
     ],
@@ -287,9 +299,11 @@ export const branches = [
     doctorIds: ['hr-samta-salecha'],
     reviews: [
       {
-        quote: '[Verified patient review for Surat clinic will be added here]',
-        author: '[Patient Name / Initials]',
+        quote: 'Hr. Samta Salecha is very knowledgeable in acupuncture and pain management. Got tremendous relief from chronic spine and joint issues in just a few visits at the Surat centre.',
+        author: 'Verified Patient',
         location: 'Vesu, Surat',
+        condition: 'Spine & Joint Rehabilitation',
+        source: 'Patient Feedback',
         verified: true
       }
     ],

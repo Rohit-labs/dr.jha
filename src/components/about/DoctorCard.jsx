@@ -20,12 +20,12 @@ export default function DoctorCard({ doctor }) {
     <article className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[32px] p-6 sm:p-7 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all group">
       <div>
         {/* Large Portrait Photography with Uniform Proportions */}
-        <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden mb-5 bg-stone-100 relative">
+        <div className="w-full h-72 sm:h-80 md:h-[340px] rounded-2xl overflow-hidden mb-5 bg-stone-100 relative">
           <img
             src={image}
             alt={imageAlt || `${name}, clinical practitioner at Dr. Jha Centre`}
             className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-            style={{ objectPosition: imagePosition || 'center 20%' }}
+            style={{ objectPosition: imagePosition || 'center 20%', ...doctor.imageStyle }}
             loading="lazy"
           />
           {role && (

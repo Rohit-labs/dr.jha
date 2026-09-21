@@ -134,9 +134,22 @@ export default function Footer() {
 
         {/* Bottom Legal & Ethics Note */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-400">
-          <p>
-            © {new Date().getFullYear()} Dr. Jha Physiotherapy &amp; Acupuncture Centre. All rights reserved.
-          </p>
+          <div className="space-y-1 text-center sm:text-left">
+            <p>
+              © {new Date().getFullYear()} Dr. Jha Physiotherapy &amp; Acupuncture Centre. All rights reserved.
+            </p>
+            <p className="text-[10.5px] text-stone-400">
+              Made by{' '}
+              <a
+                href="https://zoenexstudios.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-300 hover:text-white font-medium transition-colors hover:underline"
+              >
+                zoenexstudios.in
+              </a>
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <Link to="/terms" className="hover:text-white transition-colors">
               Terms &amp; Conditions
@@ -144,7 +157,7 @@ export default function Footer() {
             <Link to="/terms" className="hover:text-white transition-colors">
               Healthcare Disclaimer &amp; Privacy
             </Link>
-            <Link to="/" className="hover:text-white transition-colors">
+            <Link to="/locations" className="hover:text-white transition-colors">
               All Locations
             </Link>
           </div>
