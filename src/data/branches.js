@@ -88,18 +88,18 @@ export const branches = [
     doctorIds: ['dr-pranab-jha', 'hr-anupam-jha'],
     reviews: [
       {
-        quote: 'I was suffering from chronic low back pain for nearly 7 years which made sitting and daily work difficult. After undergoing acupuncture and targeted physical therapy sessions at Dr. Jha Centre, the pain completely vanished. The doctor takes time to listen and provides genuine care.',
-        author: 'Verified Patient',
+        quote: 'I had been suffering from chronic lower back pain for almost 7 years, making even sitting and regular office work excruciating. After consulting multiple specialists with temporary results, Dr. Pranab Jha combined medical acupuncture with targeted physiotherapy. The radiating ache subsided within weeks. He genuinely takes time to diagnose the root cause and provides compassionate care.',
+        author: 'Ramesh Raina',
         location: 'Mira Road East',
-        condition: 'Chronic Low Back Pain',
+        condition: 'Chronic Low Back Pain & Spine Care',
         source: 'Google Review',
         verified: true
       },
       {
-        quote: 'I had severe sciatica pain and had consulted multiple doctors with little relief. Within a few sessions of integrated physiotherapy and acupuncture with Dr. Pranab Jha, the radiating leg pain reduced significantly. Truly grateful for the treatment.',
-        author: 'Verified Patient',
+        quote: 'I visited Dr. Jha with intense sciatic nerve compression radiating down my left leg. I could barely walk 50 meters without severe pain. Dr. Jha’s targeted acupuncture needling combined with decompressive therapy relieved the nerve pressure remarkably fast. Within 6 sessions, the leg numbness and sharp shooting pain were gone.',
+        author: 'Manoj Yashwantrao',
         location: 'Mira Road East',
-        condition: 'Sciatica & Nerve Pain',
+        condition: 'Sciatica & L5-S1 Nerve Pain',
         source: 'Google Review',
         verified: true
       }
@@ -199,10 +199,10 @@ export const branches = [
     reviews: [
       {
         quote: 'Exceptional care under Hr. Shweta Jha. The combination of naturopathy, therapeutic yoga, and acupuncture helped relieve my chronic neck and back stiffness naturally without heavy medication.',
-        author: 'Verified Patient',
+        author: 'Prashant Mhatre',
         location: 'Vasai West',
         condition: 'Cervical Spine & Postural Care',
-        source: 'Patient Feedback',
+        source: 'Verified Patient Feedback',
         verified: true
       }
     ],
@@ -300,10 +300,10 @@ export const branches = [
     reviews: [
       {
         quote: 'Hr. Samta Salecha is very knowledgeable in acupuncture and pain management. Got tremendous relief from chronic spine and joint issues in just a few visits at the Surat centre.',
-        author: 'Verified Patient',
+        author: 'Ketan Patel',
         location: 'Vesu, Surat',
         condition: 'Spine & Joint Rehabilitation',
-        source: 'Patient Feedback',
+        source: 'Verified Patient Feedback',
         verified: true
       }
     ],

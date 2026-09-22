@@ -5,10 +5,7 @@ import {
   GraduationCap,
   Activity,
   MapPin,
-  ClipboardCheck,
   ShieldCheck,
-  HeartHandshake,
-  TrendingUp,
   Phone,
   Clock
 } from 'lucide-react'
@@ -45,29 +42,6 @@ export default function ClinicalTeam({ branch }) {
 
     return [doctors[0]]
   }, [branch])
-
-  const principles = [
-    {
-      title: 'Personalized Treatment Plans',
-      icon: <ClipboardCheck className="w-5 h-5 text-[#064C3B] stroke-[1.7]" />,
-      desc: 'Customized protocols designed around your specific biomechanics and daily routine.'
-    },
-    {
-      title: 'Evidence-Based Approach',
-      icon: <ShieldCheck className="w-5 h-5 text-[#064C3B] stroke-[1.7]" />,
-      desc: 'Techniques grounded in validated physical medicine and rehabilitation research.'
-    },
-    {
-      title: 'Dedicated 1-on-1 Focus',
-      icon: <HeartHandshake className="w-5 h-5 text-[#064C3B] stroke-[1.7]" />,
-      desc: 'Hands-on clinician attention without rushed multi-patient sessions.'
-    },
-    {
-      title: 'Focus on Long-Term Recovery',
-      icon: <TrendingUp className="w-5 h-5 text-[#064C3B] stroke-[1.7]" />,
-      desc: 'Sustainable relief and functional strength to prevent recurrent pain episodes.'
-    },
-  ]
 
   return (
     <section className="w-full bg-[#F8F6F0] pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-24 font-sans antialiased text-[#26332F] relative overflow-hidden">
@@ -393,32 +367,6 @@ export default function ClinicalTeam({ branch }) {
             </article>
           </div>
         )}
-
-        {/* ═══════════ TRUST / CARE PRINCIPLES STRIP ═══════════ */}
-        <div className="max-w-5xl mx-auto mt-12 sm:mt-16">
-          <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-2xl sm:rounded-[28px] p-6 sm:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-stone-200/70">
-              {principles.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={`flex flex-col gap-2.5 ${
-                    idx !== 0 ? 'pt-5 sm:pt-0 sm:pl-6' : ''
-                  }`}
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center shrink-0">
-                    {item.icon}
-                  </div>
-                  <h4 className="text-xs sm:text-[13px] font-bold text-stone-900 leading-snug">
-                    {item.title}
-                  </h4>
-                  <p className="text-[11px] sm:text-xs text-stone-500 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
       </div>
     </section>

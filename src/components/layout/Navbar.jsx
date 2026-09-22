@@ -190,11 +190,11 @@ export default function Navbar() {
         items: [
           { name: 'Stroke & Paralysis Rehabilitation', href: '/neurological-conditions#stroke-paralysis' },
           { name: "Parkinson's & Neurodegenerative", href: '/neurological-conditions#neurodegenerative' },
-          { name: "Bell's Palsy & Facial Paralysis", href: '/neurological-conditions#cranial-nerve' },
+          { name: "Bell's Palsy & Facial Paralysis", href: '/neurological-conditions#facial-nerve' },
           { name: 'Cerebellar Ataxia & Balance', href: '/neurological-conditions#ataxia-balance' },
-          { name: 'Peripheral Neuropathy & Foot Drop', href: '/neurological-conditions#peripheral-neuromuscular' },
-          { name: 'Cerebral Palsy & Motor Disorders', href: '/neurological-conditions#developmental' },
-          { name: 'Functional Neuro Rehabilitation', href: '/neurological-conditions#functional-rehab' },
+          { name: 'Peripheral Neuropathy & Foot Drop', href: '/neurological-conditions#neuropathies' },
+          { name: 'Cerebral Palsy & Motor Disorders', href: '/neurological-conditions#cerebral-palsy' },
+          { name: 'Functional Neuro Rehabilitation', href: '/neurological-conditions#functional-neurological' },
         ],
       },
       {
@@ -207,8 +207,8 @@ export default function Navbar() {
           { name: 'Hip & Pelvic Rehabilitation', href: '/orthopaedic-conditions#hip-pelvis' },
           { name: 'Elbow, Wrist & Hand Care', href: '/orthopaedic-conditions#elbow-wrist-hand' },
           { name: 'Ankle, Foot & Plantar Fasciitis', href: '/orthopaedic-conditions#ankle-foot' },
-          { name: 'Arthritis & Joint Stiffness', href: '/orthopaedic-conditions#arthritis-joints' },
-          { name: 'Fracture & Post-Surgical Rehab', href: '/orthopaedic-conditions#fracture-post-surgical' },
+          { name: 'Arthritis & Joint Stiffness', href: '/orthopaedic-conditions#arthritis' },
+          { name: 'Fracture & Post-Surgical Rehab', href: '/orthopaedic-conditions#post-surgical' },
         ],
       },
       {
@@ -218,11 +218,11 @@ export default function Navbar() {
           { name: 'Women’s Health & Pelvic Care', href: '/systemic-conditions#womens-health' },
           { name: 'Respiratory & Pulmonary Rehab', href: '/systemic-conditions#respiratory-pulmonary' },
           { name: 'Cardiac & Cardiovascular Rehab', href: '/systemic-conditions#cardiac-rehab' },
-          { name: 'Digestive & Abdominal Care', href: '/systemic-conditions#digestive-abdominal' },
+          { name: 'Digestive & Abdominal Care', href: '/systemic-conditions#digestive-metabolic' },
           { name: 'Metabolic & Lifestyle Recovery', href: '/systemic-conditions#metabolic-lifestyle' },
-          { name: 'Chronic Fatigue & General Health', href: '/systemic-conditions#chronic-health' },
-          { name: 'Autoimmune & Rheumatological Care', href: '/systemic-conditions#autoimmune-rheumatological' },
-          { name: 'Post-Illness & ICU Recovery', href: '/systemic-conditions#post-illness-recovery' },
+          { name: 'Chronic Fatigue & General Health', href: '/systemic-conditions#chronic-fatigue' },
+          { name: 'Autoimmune & Rheumatological Care', href: '/systemic-conditions#autoimmune-support' },
+          { name: 'Post-Illness & ICU Recovery', href: '/systemic-conditions#post-illness-icu' },
         ],
       },
       {
@@ -231,11 +231,11 @@ export default function Navbar() {
         items: [
           { name: 'Skin & Hair Supportive Care', href: '/specialized-conditions#skin-hair' },
           { name: 'Eye, Ear & Vestibular (Vertigo)', href: '/specialized-conditions#eye-ear-vestibular' },
-          { name: 'Aesthetic & Cosmetic Wellness', href: '/specialized-conditions#aesthetic-cosmetic' },
-          { name: 'Height, Growth & Posture', href: '/specialized-conditions#height-posture' },
-          { name: 'Women’s Health & Pelvic Care', href: '/specialized-conditions#womens-health' },
-          { name: 'Respiratory & Pulmonary Care', href: '/specialized-conditions#respiratory-pulmonary' },
-          { name: 'Digestive & Abdominal Health', href: '/specialized-conditions#digestive-abdominal' },
+          { name: 'Aesthetic & Cosmetic Wellness', href: '/specialized-conditions#aesthetic-acupuncture' },
+          { name: 'Height, Growth & Posture', href: '/specialized-conditions#posture-ergonomics' },
+          { name: 'Women’s Health & Pelvic Care', href: '/specialized-conditions#womens-health-spec' },
+          { name: 'Respiratory & Pulmonary Care', href: '/specialized-conditions#respiratory-spec' },
+          { name: 'Digestive & Abdominal Health', href: '/specialized-conditions#digestive-spec' },
           { name: 'General Wellness & Lifestyle', href: '/specialized-conditions#general-wellness' },
         ],
       },
@@ -449,23 +449,28 @@ export default function Navbar() {
                     </div>
 
                     {/* 4 Categories */}
-                    <div className="grid grid-cols-4 gap-6">
+                    <div className="grid grid-cols-4 gap-6 xl:gap-8">
                       {conditionsData.categories.map((cat, idx) => (
-                        <div key={idx} className="space-y-3">
-                          {cat.href ? (
-                            <Link
-                              to={cat.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#064C3B] hover:text-[#073D32] hover:underline group/heading transition-colors inline leading-snug"
-                            >
-                              <span>{cat.heading}</span>
-                              <ArrowRight className="inline-block w-3 h-3 ml-1.5 align-middle -mt-0.5 group-hover/heading:translate-x-0.5 transition-transform shrink-0" />
-                            </Link>
-                          ) : (
-                            <h4 className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
-                              {cat.heading}
-                            </h4>
-                          )}
+                        <div key={idx} className="flex flex-col">
+                          {/* Heading with generous bottom space & dividing line */}
+                          <div className="pb-3.5 mb-4 border-b border-stone-200/75">
+                            {cat.href ? (
+                              <Link
+                                to={cat.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#064C3B] hover:text-[#0b6b53] group/heading flex items-center justify-between transition-colors leading-snug"
+                              >
+                                <span>{cat.heading}</span>
+                                <ArrowRight className="w-3 h-3 text-[#064C3B] group-hover/heading:translate-x-1 transition-transform shrink-0 ml-1.5" />
+                              </Link>
+                            ) : (
+                              <h4 className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
+                                {cat.heading}
+                              </h4>
+                            )}
+                          </div>
+
+                          {/* Subheadings with comfortable spacing and hover animation */}
                           <ul className="space-y-2">
                             {cat.items.map((item, itemIdx) => {
                               const label = typeof item === 'string' ? item : item.name
@@ -480,7 +485,7 @@ export default function Navbar() {
                                     <Link
                                       to={href}
                                       onClick={() => setActiveDropdown(null)}
-                                      className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5"
+                                      className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-1 transition-all block py-1 font-normal leading-relaxed hover:font-medium"
                                     >
                                       {label}
                                     </Link>
@@ -488,7 +493,7 @@ export default function Navbar() {
                                     <a
                                       href={href}
                                       onClick={() => setActiveDropdown(null)}
-                                      className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5"
+                                      className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-1 transition-all block py-1 font-normal leading-relaxed hover:font-medium"
                                     >
                                       {label}
                                     </a>

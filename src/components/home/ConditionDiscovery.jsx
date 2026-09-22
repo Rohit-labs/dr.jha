@@ -1,90 +1,215 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Activity, Sparkles, Shield, ChevronRight } from 'lucide-react'
-import { conditions } from '../../data/conditions'
+import {
+  ArrowRight,
+  Brain,
+  Bone,
+  HeartPulse,
+  Sparkles,
+  ChevronRight,
+  CheckCircle2,
+  Activity,
+  Shield
+} from 'lucide-react'
 
-export default function ConditionDiscovery() {
-  // Select the 6 core conditions for the homepage discovery
-  const featuredSlugs = [
-    'back-pain',
-    'sciatica',
-    'knee-pain',
-    'neck-pain',
-    'frozen-shoulder',
-    'sports-injuries',
+export default function ConditionDiscovery({ branch }) {
+  const pillars = [
+    {
+      id: 'neurological',
+      title: 'Neurological Conditions',
+      subtitle: 'Neurological Rehabilitation & Supportive Care',
+      tag: 'NEURO-MOTOR CARE',
+      badge: '7 Clinical Domains',
+      icon: <Brain className="w-6 h-6 text-[#064C3B]" />,
+      description:
+        'Individualized physiotherapy and medical acupuncture for stroke, paralysis, Parkinson’s, Bell’s palsy, peripheral neuropathies, and ataxia.',
+      href: '/neurological-conditions',
+      color: 'from-[#064C3B]/5 via-transparent to-transparent',
+      borderColor: 'hover:border-[#064C3B]/50',
+      tagBg: 'bg-[#064C3B]/10 text-[#064C3B]',
+      featuredItems: [
+        'Stroke / Hemiplegia Recovery',
+        "Bell's Palsy & Facial Paralysis",
+        "Parkinson's & Neurodegenerative",
+        'Diabetic & Peripheral Neuropathy'
+      ]
+    },
+    {
+      id: 'orthopaedic',
+      title: 'Orthopaedic & Musculoskeletal',
+      subtitle: 'Pain Management & Joint Rehabilitation',
+      tag: 'SPINE & JOINTS',
+      badge: '10 Clinical Domains',
+      icon: <Bone className="w-6 h-6 text-[#064C3B]" />,
+      description:
+        'Targeted relief for acute & chronic spine issues, slip disc, sciatica, frozen shoulder, knee osteoarthritis, and post-surgical recovery.',
+      href: '/orthopaedic-conditions',
+      color: 'from-[#B8583B]/5 via-transparent to-transparent',
+      borderColor: 'hover:border-[#B8583B]/50',
+      tagBg: 'bg-[#B8583B]/10 text-[#B8583B]',
+      featuredItems: [
+        'Neck, Back Pain & Sciatica',
+        'Frozen Shoulder & Rotator Cuff',
+        'Knee Arthritis & Ligament Care',
+        'Post-Surgical & Fracture Rehab'
+      ]
+    },
+    {
+      id: 'systemic',
+      title: 'Systemic & General Health',
+      subtitle: 'Integrative Physical & Pulmonary Supportive Care',
+      tag: 'VITAL SYSTEM CARE',
+      badge: '8 Clinical Domains',
+      icon: <HeartPulse className="w-6 h-6 text-[#064C3B]" />,
+      description:
+        'Physiotherapy and acupuncture supportive care for women’s health, PCOS, respiratory rehab, chronic fatigue, and post-illness recovery.',
+      href: '/systemic-conditions',
+      color: 'from-[#064C3B]/5 via-transparent to-transparent',
+      borderColor: 'hover:border-[#064C3B]/50',
+      tagBg: 'bg-[#064C3B]/10 text-[#064C3B]',
+      featuredItems: [
+        'Women’s Health & PCOS Support',
+        'Asthma & Pulmonary Rehabilitation',
+        'Cardiac & Circulatory Recovery',
+        'Chronic Fatigue & Pain Syndromes'
+      ]
+    },
+    {
+      id: 'specialized',
+      title: 'Specialized & Wellness Care',
+      subtitle: 'Aesthetic, Sensory & Lifestyle Medicine',
+      tag: 'SPECIALIZED CLINICAL',
+      badge: '9 Clinical Domains',
+      icon: <Sparkles className="w-6 h-6 text-[#064C3B]" />,
+      description:
+        'Integrative therapies for vertigo, tinnitus, cosmetic facial acupuncture, hair fall supportive care, posture correction, and stress relief.',
+      href: '/specialized-conditions',
+      color: 'from-[#E5A500]/5 via-transparent to-transparent',
+      borderColor: 'hover:border-[#E5A500]/50',
+      tagBg: 'bg-[#E5A500]/15 text-[#9E6E00]',
+      featuredItems: [
+        'Cosmetic Facial Acupuncture',
+        'Tinnitus & Vertigo (Vestibular)',
+        'Skin & Hair Supportive Care',
+        'Height, Posture & Alignment'
+      ]
+    }
   ]
 
-  const featuredConditions = featuredSlugs
-    .map((slug) => conditions.find((c) => c.slug === slug))
-    .filter(Boolean)
+  // Top search queries linking directly to sections
+  const quickConditions = [
+    { label: 'Sciatica Relief', href: '/orthopaedic-conditions#spine-back' },
+    { label: 'Stroke Rehabilitation', href: '/neurological-conditions#stroke-paralysis' },
+    { label: "Bell's Palsy", href: '/neurological-conditions#facial-nerve' },
+    { label: 'Frozen Shoulder', href: '/orthopaedic-conditions#shoulder' },
+    { label: 'Slip Disc & Spine', href: '/orthopaedic-conditions#spine-back' },
+    { label: 'Knee Osteoarthritis', href: '/orthopaedic-conditions#knee' },
+    { label: 'PCOS Supportive Care', href: '/systemic-conditions#womens-health' },
+    { label: 'Vertigo & Balance', href: '/specialized-conditions#eye-ear-vestibular' },
+    { label: 'Parkinson’s Mobility', href: '/neurological-conditions#neurodegenerative' },
+    { label: 'Plantar Fasciitis', href: '/orthopaedic-conditions#ankle-foot' },
+    { label: 'Cosmetic Acupuncture', href: '/specialized-conditions#aesthetic-acupuncture' },
+    { label: 'Post-Surgical Rehab', href: '/orthopaedic-conditions#post-surgical' }
+  ]
 
   return (
-    <section className="w-full bg-[#F8F6F0] pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-24 font-sans antialiased text-[#26332F] relative">
+    <section className="w-full bg-[#F8F6F0] pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 font-sans antialiased text-[#26332F] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ═══════════ SECTION HEADING ═══════════ */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-3 text-xs tracking-[0.2em] text-[#064C3B] uppercase font-semibold mb-3">
             <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
-            WHAT WE HELP WITH
+            <span>WHAT WE TREAT &bull; 4 CLINICAL PILLARS</span>
             <span className="w-8 h-[1px] bg-[#064C3B]/40"></span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-[#26332F] leading-[1.12]">
-            Targeted care for <br />
-            <span className="italic font-normal text-[#064C3B]">common and complex conditions.</span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#26332F] leading-[1.14]">
+            Comprehensive Care for <br />
+            <span className="italic font-normal text-[#064C3B]">
+              Neurological, Orthopaedic &amp; Systemic Health
+            </span>
           </h2>
 
           {/* Supporting Paragraph */}
-          <p className="text-sm sm:text-base text-stone-600 max-w-xl mx-auto mt-4 leading-relaxed font-normal">
-            Whether addressing acute spinal discomfort, nerve impingement, or recovering from athletic strain, our personalized clinical protocols aim for lasting functional restoration.
+          <p className="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto mt-4 leading-relaxed font-normal">
+            At Dr. Jha Physiotherapy &amp; Acupuncture Centre, our evidence-based clinical protocols span four specialized disciplines, delivering targeted restoration across 34 clinical categories.
           </p>
         </div>
 
-        {/* ═══════════ 6 CORE CONDITIONS GRID ═══════════ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {featuredConditions.map((condition) => (
+        {/* ═══════════ 4 CLINICAL PILLARS GRID ═══════════ */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {pillars.map((pillar) => (
             <div
-              key={condition.slug}
-              className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-[#064C3B]/40 hover:shadow-[0_8px_30px_rgba(6,76,59,0.06)] group"
+              key={pillar.id}
+              className={`bg-[#FCFBF7] border border-[#DCDDD5] rounded-[30px] p-6 sm:p-8 lg:p-9 flex flex-col justify-between transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_36px_rgba(6,76,59,0.08)] hover:-translate-y-0.5 group relative overflow-hidden ${pillar.borderColor}`}
             >
-              <div>
-                {/* Category Pill */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#064C3B]/5 text-[#064C3B] border border-[#064C3B]/10">
-                    {condition.category || 'PAIN & MOBILITY'}
-                  </span>
-                  <span className="text-[11px] font-medium text-stone-400">
-                    Evidence-Based
+              {/* Background gradient accent */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${pillar.color} pointer-events-none`} />
+
+              <div className="relative z-10">
+                {/* Header Badge Row */}
+                <div className="flex items-center justify-between gap-3 mb-5">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-12 h-12 rounded-2xl bg-[#F4F2EC] flex items-center justify-center border border-stone-200/80 group-hover:scale-105 transition-transform">
+                      {pillar.icon}
+                    </div>
+                    <div>
+                      <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase ${pillar.tagBg}`}>
+                        {pillar.tag}
+                      </span>
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-stone-500 bg-white/90 border border-stone-200 px-3 py-1 rounded-full shadow-xs">
+                    {pillar.badge}
                   </span>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] leading-snug mb-3 group-hover:text-[#064C3B] transition-colors">
-                  <Link to={`/conditions/${condition.slug}`}>
-                    {condition.name}
+                {/* Pillar Title */}
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#26332F] leading-tight mb-2 group-hover:text-[#064C3B] transition-colors">
+                  <Link to={pillar.href}>
+                    {pillar.title}
                   </Link>
                 </h3>
 
-                {/* Short Description */}
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
-                  {condition.shortDescription}
+                <p className="text-xs sm:text-sm font-medium text-[#B8583B] mb-3">
+                  {pillar.subtitle}
                 </p>
+
+                {/* Description */}
+                <p className="text-xs sm:text-[13px] text-stone-600 leading-relaxed font-normal mb-6">
+                  {pillar.description}
+                </p>
+
+                {/* Key Highlights / Subsections */}
+                <div className="bg-white/80 border border-stone-200/70 rounded-2xl p-4 mb-6">
+                  <div className="text-[11px] font-semibold text-stone-400 uppercase tracking-wider mb-2.5">
+                    Common Conditions Treated:
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {pillar.featuredItems.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-stone-700">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#064C3B] shrink-0" />
+                        <span className="line-clamp-1">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Action Link at Bottom */}
-              <div className="pt-6 mt-6 border-t border-stone-200/70 flex items-center justify-between">
+              <div className="relative z-10 pt-5 border-t border-stone-200/70 flex items-center justify-between">
                 <Link
-                  to={`/conditions/${condition.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] group-hover:text-[#073D32] transition-colors"
+                  to={pillar.href}
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#064C3B] group-hover:text-[#073D32] transition-colors"
                 >
-                  <span>Learn more &amp; treatment</span>
+                  <span>Explore All {pillar.badge} &amp; Protocols</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
-                <div className="w-8 h-8 rounded-full bg-[#F4F2EC] flex items-center justify-center text-[#064C3B] opacity-80 group-hover:opacity-100 group-hover:bg-[#064C3B] group-hover:text-white transition-all">
+                <div className="w-9 h-9 rounded-full bg-[#F4F2EC] flex items-center justify-center text-[#064C3B] group-hover:bg-[#064C3B] group-hover:text-white transition-all shadow-xs">
                   <ChevronRight className="w-4 h-4" />
                 </div>
               </div>
@@ -92,14 +217,42 @@ export default function ConditionDiscovery() {
           ))}
         </div>
 
+        {/* ═══════════ DIRECT JUMP TAGS (QUICK ACCESS) ═══════════ */}
+        <div className="mt-12 sm:mt-16 bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-stone-200/70">
+            <div className="flex items-center gap-2">
+              <Activity className="w-4 h-4 text-[#064C3B]" />
+              <h4 className="text-xs sm:text-sm font-bold text-stone-900 tracking-wide uppercase">
+                Frequently Searched Conditions — Direct Anchor Access
+              </h4>
+            </div>
+            <span className="text-[11px] text-stone-400 font-medium">
+              Click to jump directly to diagnosis protocol
+            </span>
+          </div>
+
+          <div className="flex flex-wrap gap-2 sm:gap-2.5">
+            {quickConditions.map((cond, idx) => (
+              <Link
+                key={idx}
+                to={cond.href}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-white text-stone-700 border border-stone-200/80 hover:border-[#064C3B] hover:text-[#064C3B] hover:bg-[#FAF7F2] transition-all duration-200 shadow-2xs hover:scale-[1.02]"
+              >
+                <span>{cond.label}</span>
+                <ChevronRight className="w-3 h-3 text-[#064C3B] opacity-60" />
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* ═══════════ EXPLORE ALL CONDITIONS CTA ═══════════ */}
-        <div className="text-center mt-12 sm:mt-16">
+        <div className="text-center mt-10 sm:mt-14">
           <Link
             to="/conditions"
-            className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all shadow-xs active:scale-[0.98]"
+            className="inline-flex items-center gap-3 px-9 py-4 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] transition-all shadow-md active:scale-[0.98] group"
           >
-            <span>Explore All Conditions &amp; Symptoms</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Browse Complete Clinical Directory (34 Categories)</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
