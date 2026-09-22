@@ -13,6 +13,7 @@ import CaseStudies from '../pages/CaseStudies'
 import CaseStudyDetail from '../pages/CaseStudyDetail'
 import Events from '../pages/Events'
 import Terms from '../pages/Terms'
+import FAQs from '../pages/FAQs'
 import NeurologicalConditions from '../pages/NeurologicalConditions'
 import OrthopaedicConditions from '../pages/OrthopaedicConditions'
 import SystemicConditions from '../pages/SystemicConditions'
@@ -71,7 +72,11 @@ export default function AppRoutes() {
       <Route path="/terms" element={<Terms />} />
       <Route path="/terms-and-conditions" element={<Terms />} />
 
-      {/* 10. Fallback 404 */}
+      {/* 10. Frequently Asked Questions (FAQs) */}
+      <Route path="/faqs" element={<FAQs />} />
+      <Route path="/faq" element={<FAQs />} />
+
+      {/* 11. Fallback 404 */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

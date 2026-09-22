@@ -19,7 +19,9 @@ import {
   MessageSquare,
   ShieldCheck,
   Stethoscope,
-  Filter
+  Filter,
+  BookOpen,
+  Award
 } from 'lucide-react'
 
 export default function Conditions() {
@@ -661,6 +663,11 @@ export default function Conditions() {
             Explore our clinician-curated directory spanning neurological rehabilitation, orthopaedic and spine care, systemic supportive therapy, and specialized aesthetic wellness. Each condition is managed with individualized physiotherapy and medical acupuncture protocols.
           </p>
 
+          <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs text-emerald-900">
+            <Award className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+            <span>Clinical Information Sourced from Wikipedia &amp; Peer-Reviewed Medical Consensus</span>
+          </div>
+
           {/* Search Box */}
           <div className="mt-6 relative max-w-lg">
             <Search className="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" />
@@ -864,6 +871,44 @@ export default function Conditions() {
             ))}
           </div>
         )}
+
+        {/* ════════════════ EVIDENCE-BASED SOURCES & REFERENCE INTEGRITY ════════════════ */}
+        <div className="mt-16 bg-[#FCFBF7] border border-[#DCDDD5] rounded-[32px] p-8 sm:p-10 shadow-xs">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-stone-200/70">
+            <div>
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#064C3B] uppercase block mb-1">
+                EVIDENCE-BASED CLINICAL INTEGRITY
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#26332F]">
+                Authoritative Medical Sources &amp; Clinical Consensus
+              </h2>
+            </div>
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 shrink-0">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <span>Verified Clinical Literature</span>
+            </span>
+          </div>
+
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal mt-5 mb-6">
+            All diagnostic terminology, pathophysiology mechanisms, clinical red flags, and multimodal rehabilitation protocols across our 4 domains are compiled and cross-referenced with internationally recognized clinical databases and medical consensus:
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {[
+              { name: 'Wikipedia', desc: 'Medical Consensus & ICD-11' },
+              { name: 'WHO', desc: 'Global Health Guidelines' },
+              { name: 'Cochrane', desc: 'Systematic Reviews' },
+              { name: 'NICE UK', desc: 'Clinical Care Protocols' },
+              { name: 'Mayo Clinic', desc: 'Pathology References' },
+              { name: 'BJSM & APTA', desc: 'Sports Rehabilitation' }
+            ].map((src, idx) => (
+              <div key={idx} className="p-3.5 rounded-2xl bg-[#F4F2EC] border border-stone-200/70 text-center">
+                <span className="text-xs font-bold text-[#064C3B] block mb-0.5">{src.name}</span>
+                <span className="text-[10px] text-stone-500 leading-tight block">{src.desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* ════════════════ CLINICAL CONSULTATION CARD ════════════════ */}
         <div className="mt-16 sm:mt-20 bg-[#073D32] text-white rounded-[32px] p-8 sm:p-12 shadow-xl">
