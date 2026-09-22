@@ -127,6 +127,11 @@ export default function Footer() {
               <li>
                 <Link to="/case-studies" className="hover:text-white transition-colors">Real Recovery Journeys</Link>
               </li>
+              <li>
+                <Link to="/faqs" className="hover:text-[#E5A500] font-medium transition-colors flex items-center gap-1">
+                  <span>Frequently Asked Questions (FAQs)</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -151,6 +156,9 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <Link to="/faqs" className="hover:text-white transition-colors">
+              FAQs
+            </Link>
             <Link to="/terms" className="hover:text-white transition-colors">
               Terms &amp; Conditions
             </Link>

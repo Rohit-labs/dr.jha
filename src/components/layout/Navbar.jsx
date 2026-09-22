@@ -90,6 +90,20 @@ const allSearchItems = [
     href: '/specialized-conditions',
   },
   {
+    title: 'Frequently Asked Questions (FAQs)',
+    category: 'FAQs',
+    tag: 'Help & FAQs',
+    description: '20 comprehensive questions and answers on treatments, acupuncture safety, session duration, stroke rehab, locations, and booking',
+    href: '/faqs',
+  },
+  {
+    title: 'Acupuncture Safety & Session Details',
+    category: 'FAQs',
+    tag: 'Acupuncture',
+    description: 'Is acupuncture painful or safe? Sterile disposable needles and holistic clinical protocols explained',
+    href: '/faqs',
+  },
+  {
     title: 'Events & Workshops',
     category: 'Events',
     tag: 'Events',
@@ -305,33 +319,33 @@ export default function Navbar() {
       heading: 'HEALTH & REHABILITATION',
       icon: <Activity className="w-4 h-4 text-[#064C3B]" />,
       items: [
-        'Condition Guides',
-        'Physiotherapy Articles',
-        'Rehabilitation Tips',
+        { label: 'Condition Guides', href: '/resources' },
+        { label: 'Physiotherapy Articles', href: '/resources' },
+        { label: 'Rehabilitation Tips', href: '/resources' },
       ],
     },
     {
       heading: 'PATIENT STORIES',
       icon: <Sparkles className="w-4 h-4 text-[#E5A500]" />,
       items: [
-        'Case Studies',
-        'Recovery Journeys',
+        { label: 'Case Studies', href: '/case-studies' },
+        { label: 'Recovery Journeys', href: '/case-studies' },
       ],
     },
     {
-      heading: 'HELP',
-      icon: <HelpCircle className="w-4 h-4 text-stone-600" />,
+      heading: 'HELP & GUIDANCE',
+      icon: <HelpCircle className="w-4 h-4 text-[#064C3B]" />,
       items: [
-        'FAQs',
-        'Common Questions',
+        { label: 'Frequently Asked Questions (FAQs)', href: '/faqs' },
+        { label: 'Acupuncture Safety & Process', href: '/faqs' },
       ],
     },
     {
-      heading: 'MEDIA',
+      heading: 'COMMUNITY & MEDIA',
       icon: <Video className="w-4 h-4 text-stone-600" />,
       items: [
-        'Videos',
-        'Educational Content',
+        { label: 'Clinic Events & Workshops', href: '/events' },
+        { label: 'Patient Knowledge Centre', href: '/resources' },
       ],
     },
   ]
@@ -670,13 +684,13 @@ export default function Navbar() {
                           <ul className="space-y-1.5 pl-5">
                             {cat.items.map((item, itemIdx) => (
                               <li key={itemIdx}>
-                                <a
-                                  href={`#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                                <Link
+                                  to={item.href || '/resources'}
                                   onClick={() => setActiveDropdown(null)}
                                   className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block"
                                 >
-                                  {item}
-                                </a>
+                                  {item.label}
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -976,13 +990,13 @@ export default function Navbar() {
                       <ul className="space-y-1 pl-2">
                         {cat.items.map((item, itemIdx) => (
                           <li key={itemIdx}>
-                            <a
-                              href={`#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                            <Link
+                              to={item.href || '/resources'}
                               onClick={() => setMobileMenuOpen(false)}
                               className="text-xs text-stone-600 hover:text-[#064C3B] block py-0.5"
                             >
-                              {item}
-                            </a>
+                              {item.label}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -997,6 +1011,19 @@ export default function Navbar() {
                   </Link>
                 </div>
               )}
+            </div>
+
+            {/* FAQs Direct Link */}
+            <div className="border-t border-stone-200/60 pt-2">
+              <Link
+                to="/faqs"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`text-sm py-2 block ${
+                  isPathActive('/faqs') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
+                }`}
+              >
+                FAQs (20 Common Questions)
+              </Link>
             </div>
 
             {/* Mobile Search Button */}
