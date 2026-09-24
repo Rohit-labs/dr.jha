@@ -1,8 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MapPin, Clock, Phone, ExternalLink, Navigation, Car, MessageCircle } from 'lucide-react'
 
 export default function BranchClinicSection({ branch }) {
   if (!branch) return null
+
+  const isMiraRoad =
+    branch.slug === 'mira-road' ||
+    branch.name?.toLowerCase().includes('mira road')
+
+  const isSurat =
+    branch.slug === 'surat' ||
+    branch.name?.toLowerCase().includes('surat')
+
+  const [miraActiveIndex, setMiraActiveIndex] = useState(0)
+  const [suratActiveIndex, setSuratActiveIndex] = useState(0)
+
+  const miraRoadImages = [
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (2).png'),
+      fallback: '/images/clinics/mira-road-clinic-2.png',
+      caption: 'Treatment bays and rehabilitation suites at Mira Road',
+    },
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (3).png'),
+      fallback: '/images/clinics/mira-road-clinic-3.png',
+      caption: 'Dedicated clinical consultation and therapy areas',
+    },
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (4).png'),
+      fallback: '/images/clinics/mira-road-clinic-4.png',
+      caption: 'Modern physiotherapy and sterile acupuncture facility',
+    },
+  ]
+
+  const suratImages = [
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic2.jpeg'),
+      fallback: '/images/clinics/surat-clinic-2.jpeg',
+      caption: 'Clinical consultation and therapy evaluation suite at Surat',
+    },
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic3.jpeg'),
+      fallback: '/images/clinics/surat-clinic-3.jpeg',
+      caption: 'Advanced physiotherapy and electrotherapy rehabilitation station',
+    },
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic4.jpeg'),
+      fallback: '/images/clinics/surat-clinic-4.jpeg',
+      caption: 'Private medical acupuncture and therapeutic cupping bay',
+    },
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic5.jpeg'),
+      fallback: '/images/clinics/surat-clinic-5.jpeg',
+      caption: 'Targeted spine mobilization and musculoskeletal recovery area',
+    },
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic8.jpeg'),
+      fallback: '/images/clinics/surat-clinic-8.jpeg',
+      caption: 'Modern clinical reception and patient care facility in Vesu',
+    },
+  ]
 
   return (
     <section className="w-full bg-[#F8F6F0] py-16 sm:py-20 lg:py-24 font-sans antialiased text-[#26332F] relative overflow-hidden border-y border-stone-200/70">
@@ -175,38 +232,194 @@ export default function BranchClinicSection({ branch }) {
 
             {/* Right Photo & Gallery Area (42%) */}
             <div className="lg:col-span-5 relative flex flex-col justify-between bg-stone-900 overflow-hidden min-h-[320px] lg:min-h-full">
-              <div className="h-full w-full relative">
-                <img
-                  src={branch.image}
-                  alt={`Dr. Jha clinic facility in ${branch.name}`}
-                  className="w-full h-full object-cover object-center"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <span className="text-[10px] font-bold tracking-widest uppercase bg-white/20 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/20 inline-block mb-1">
-                    {branch.name} Facility
-                  </span>
-                  <p className="text-xs text-stone-200 line-clamp-1">
-                    {branch.headline}
-                  </p>
-                </div>
-              </div>
+              {isMiraRoad ? (
+                <>
+                  {/* Clickable Main Image (click changes image) */}
+                  <div
+                    onClick={() => setMiraActiveIndex((prev) => (prev + 1) % miraRoadImages.length)}
+                    className="h-full w-full relative cursor-pointer group select-none overflow-hidden"
+                    title="Click image to view next facility photo"
+                  >
+                    <img
+                      key={miraActiveIndex}
+                      src={miraRoadImages[miraActiveIndex].url}
+                      onError={(e) => {
+                        if (e.target.src !== miraRoadImages[miraActiveIndex].fallback) {
+                          e.target.src = miraRoadImages[miraActiveIndex].fallback
+                        }
+                      }}
+                      alt={miraRoadImages[miraActiveIndex].caption}
+                      className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-[1.02]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25 pointer-events-none"></div>
 
-              {/* Gallery Thumbnails if available */}
-              {branch.gallery && branch.gallery.length > 0 && (
-                <div className="p-3 bg-black/40 backdrop-blur-xs grid grid-cols-3 gap-2 border-t border-white/10">
-                  {branch.gallery.slice(0, 3).map((item, idx) => (
-                    <div key={idx} className="h-14 rounded-lg overflow-hidden border border-white/20 bg-stone-800">
-                      <img
-                        src={item.url}
-                        alt={item.caption || `${branch.name} clinic view ${idx + 1}`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                    {/* Top status pill (no arrows, clean indicator) */}
+                    <div className="absolute top-4 right-4 pointer-events-none">
+                      <span className="text-[10px] font-semibold bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20 text-stone-200 shadow-sm">
+                        {miraActiveIndex + 1} / {miraRoadImages.length} • Click to next
+                      </span>
                     </div>
-                  ))}
-                </div>
+
+                    {/* Bottom Caption Overlay */}
+                    <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
+                      <span className="text-[10px] font-bold tracking-widest uppercase bg-white/20 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/20 inline-block mb-1">
+                        Mira Road Facility
+                      </span>
+                      <p className="text-xs text-stone-200 line-clamp-1">
+                        {miraRoadImages[miraActiveIndex].caption}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Clickable Thumbnail Strip in same format (no arrows) */}
+                  <div className="p-3 bg-black/50 backdrop-blur-xs grid grid-cols-3 gap-2 border-t border-white/10">
+                    {miraRoadImages.map((item, idx) => {
+                      const isActive = miraActiveIndex === idx
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setMiraActiveIndex(idx)
+                          }}
+                          className={`h-14 rounded-lg overflow-hidden border transition-all cursor-pointer relative ${
+                            isActive
+                              ? 'border-[#E5A500] ring-2 ring-[#E5A500]/60 opacity-100 scale-[1.02]'
+                              : 'border-white/20 opacity-60 hover:opacity-100 hover:border-white/40'
+                          }`}
+                          aria-label={`View facility photo ${idx + 1}`}
+                          title={`Click to view facility photo ${idx + 1}`}
+                        >
+                          <img
+                            src={item.url}
+                            onError={(e) => {
+                              if (e.target.src !== item.fallback) {
+                                e.target.src = item.fallback
+                              }
+                            }}
+                            alt={item.caption}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </button>
+                      )
+                    })}
+                  </div>
+                </>
+              ) : isSurat ? (
+                <>
+                  {/* Clickable Main Image for Surat (click changes image) */}
+                  <div
+                    onClick={() => setSuratActiveIndex((prev) => (prev + 1) % suratImages.length)}
+                    className="h-full w-full relative cursor-pointer group select-none overflow-hidden"
+                    title="Click image to view next facility photo"
+                  >
+                    <img
+                      key={suratActiveIndex}
+                      src={suratImages[suratActiveIndex].url}
+                      onError={(e) => {
+                        if (e.target.src !== suratImages[suratActiveIndex].fallback) {
+                          e.target.src = suratImages[suratActiveIndex].fallback
+                        }
+                      }}
+                      alt={suratImages[suratActiveIndex].caption}
+                      className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-[1.02]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25 pointer-events-none"></div>
+
+                    {/* Top status pill (no arrows, clean indicator) */}
+                    <div className="absolute top-4 right-4 pointer-events-none">
+                      <span className="text-[10px] font-semibold bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20 text-stone-200 shadow-sm">
+                        {suratActiveIndex + 1} / {suratImages.length} • Click to next
+                      </span>
+                    </div>
+
+                    {/* Bottom Caption Overlay */}
+                    <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
+                      <span className="text-[10px] font-bold tracking-widest uppercase bg-white/20 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/20 inline-block mb-1">
+                        Surat Facility
+                      </span>
+                      <p className="text-xs text-stone-200 line-clamp-1">
+                        {suratImages[suratActiveIndex].caption}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Clickable Thumbnail Strip in same format (no arrows, 5 thumbnails) */}
+                  <div className="p-2.5 sm:p-3 bg-black/50 backdrop-blur-xs grid grid-cols-5 gap-1.5 sm:gap-2 border-t border-white/10">
+                    {suratImages.map((item, idx) => {
+                      const isActive = suratActiveIndex === idx
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setSuratActiveIndex(idx)
+                          }}
+                          className={`h-12 sm:h-14 rounded-lg overflow-hidden border transition-all cursor-pointer relative ${
+                            isActive
+                              ? 'border-[#E5A500] ring-2 ring-[#E5A500]/60 opacity-100 scale-[1.02]'
+                              : 'border-white/20 opacity-60 hover:opacity-100 hover:border-white/40'
+                          }`}
+                          aria-label={`View Surat facility photo ${idx + 1}`}
+                          title={`Click to view Surat facility photo ${idx + 1}`}
+                        >
+                          <img
+                            src={item.url}
+                            onError={(e) => {
+                              if (e.target.src !== item.fallback) {
+                                e.target.src = item.fallback
+                              }
+                            }}
+                            alt={item.caption}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </button>
+                      )
+                    })}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="h-full w-full relative">
+                    <img
+                      src={branch.image}
+                      alt={`Dr. Jha clinic facility in ${branch.name}`}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <span className="text-[10px] font-bold tracking-widest uppercase bg-white/20 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/20 inline-block mb-1">
+                        {branch.name} Facility
+                      </span>
+                      <p className="text-xs text-stone-200 line-clamp-1">
+                        {branch.headline}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Gallery Thumbnails if available */}
+                  {branch.gallery && branch.gallery.length > 0 && (
+                    <div className="p-3 bg-black/40 backdrop-blur-xs grid grid-cols-3 gap-2 border-t border-white/10">
+                      {branch.gallery.slice(0, 3).map((item, idx) => (
+                        <div key={idx} className="h-14 rounded-lg overflow-hidden border border-white/20 bg-stone-800">
+                          <img
+                            src={item.url}
+                            alt={item.caption || `${branch.name} clinic view ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
               )}
             </div>
 

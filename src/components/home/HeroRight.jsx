@@ -1,226 +1,221 @@
-import { Users, MapPin, Star, ArrowRight } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 export default function HeroRight({ branch }) {
-  const primaryHeroImage =
-    branch?.image ||
-    'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85'
+  const location = useLocation()
+  const isSurat = branch?.slug === 'surat' || location.pathname.toLowerCase().includes('/surat')
 
-  const testimonialAvatars = [
-    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&h=80&q=80',
-    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=80&h=80&q=80',
-    'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=80&h=80&q=80',
-  ]
+  const defaultMain = isSurat
+    ? '/images/treatments/exercise-therapy2.jpeg'
+    : '/images/treatments/exercise-therapy.jpeg'
+
+  const defaultTop = isSurat
+    ? '/images/treatments/cosmetic-acupuncture.jpeg'
+    : '/images/treatments/exercise-therapy3.jpeg'
+
+  const defaultBottom = isSurat
+    ? '/images/treatments/shockwave-therapy2.jpeg'
+    : '/images/treatments/laser-therapy2.jpeg'
+
+  const [mainImgSrc, setMainImgSrc] = useState(defaultMain)
+  const [topImgSrc, setTopImgSrc] = useState(defaultTop)
+  const [bottomImgSrc, setBottomImgSrc] = useState(defaultBottom)
+
+  useEffect(() => {
+    setMainImgSrc(defaultMain)
+    setTopImgSrc(defaultTop)
+    setBottomImgSrc(defaultBottom)
+  }, [isSurat, defaultMain, defaultTop, defaultBottom])
+
+  const mainFallback = isSurat
+    ? '/Dr Jha photos/treatment photos/Exercise therapy2.jpeg'
+    : '/Dr Jha photos/treatment photos/Exercise therapy.jpeg'
+
+  const topFallback = isSurat
+    ? '/images/treatments/cosmetic-acupuncture-laser.jpeg'
+    : '/Dr Jha photos/treatment photos/Exercise therapy3.jpeg'
+
+  const bottomFallback = isSurat
+    ? '/Dr Jha photos/treatment photos/Shockwave therapy2.jpeg'
+    : '/Dr Jha photos/treatment photos/LASER therapy2.jpeg'
+
+  const mainAlt = isSurat
+    ? 'Physiotherapist providing exercise therapy in Surat clinic'
+    : 'Physiotherapist providing hands-on exercise rehabilitation therapy'
+
+  const topAlt = isSurat
+    ? 'Cosmetic acupuncture and facial laser therapy in Surat clinic'
+    : 'Manual therapy and specialized musculoskeletal joint mobilization'
+
+  const bottomAlt = isSurat
+    ? 'Advanced clinical shockwave therapy treatment in Surat clinic'
+    : 'Advanced clinical laser therapy for deep tissue healing and pain relief'
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center">
-      {/* Main Visual Frame */}
-      <div className="relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[620px] flex items-center justify-center">
-
-        {/* ====== DESKTOP VIEW (lg+): Wavy S-Curve via native SVG ====== */}
-        <div className="hidden lg:block w-full h-[620px] relative select-none">
-          <svg
-            viewBox="0 0 600 660"
-            className="w-full h-full block"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <clipPath id="hero-wave-curve">
-                {/*
-                  True wavy S-curve on the left edge:
-                  - Starts at top-left (~x=140) curving concave inward
-                  - Swings OUT to the left forming a convex bulge around y=200-350
-                  - Swings back IN (concave) around y=400-500
-                  - Then exits near bottom-left (~x=80)
-                  This creates a visible wave / S shape, not a single ellipse.
-                */}
-                <path d="
-                  M 160 0
-                  C 120 60, 60 110, 50 180
-                  C 38 260, 90 310, 100 360
-                  C 110 410, 60 470, 40 530
-                  C 25 575, 60 630, 80 660
-                  L 560 660
-                  Q 600 660 600 620
-                  L 600 40
-                  Q 600 0 560 0
-                  Z
-                " />
-              </clipPath>
-            </defs>
-
-            {/* Masked Photo */}
-            <image
-              href={primaryHeroImage}
-              width="600"
-              height="660"
-              preserveAspectRatio="xMidYMid slice"
-              clipPath="url(#hero-wave-curve)"
+    <div className="w-full mt-6 lg:mt-0">
+      {/* Main Relative Composition Container */}
+      <div className="relative w-full max-w-[520px] sm:max-w-[580px] lg:max-w-[680px] aspect-[0.95/1] mx-auto overflow-visible select-none">
+        
+        {/* ========================================================
+            1. DECORATIVE SVG BACKGROUND (Blobs, Curves, Botanical Leaves)
+            ======================================================== */}
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible"
+          viewBox="0 0 680 715"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          {/* Large soft organic sage blobs behind photography */}
+          <g opacity="0.95">
+            {/* Upper-left large sage blob */}
+            <path
+              d="M 120 140 C 40 180 25 300 70 400 C 115 500 200 550 310 530 C 420 510 470 430 460 310 C 450 190 390 90 280 70 C 190 55 160 120 120 140 Z"
+              fill="#E8EEDC"
             />
-          </svg>
+            {/* Lower-right very light sage blob */}
+            <path
+              d="M 380 340 C 310 410 330 540 400 610 C 470 680 590 695 650 630 C 710 565 715 450 665 375 C 615 300 450 270 380 340 Z"
+              fill="#F1F4E9"
+            />
+            {/* Top-right pale sage accent blob */}
+            <path
+              d="M 440 60 C 390 100 410 190 470 230 C 530 270 630 250 665 190 C 700 130 675 50 605 25 C 535 0 490 20 440 60 Z"
+              fill="#E8EEDC"
+              opacity="0.65"
+            />
+          </g>
 
-          {/* "Stronger Every Day" in the white space created by the wave's concave gap */}
-          <div className="absolute top-[38%] -left-6 xl:-left-2 z-20 pointer-events-none select-none">
-            <div className="bg-[#FCFBF7] rounded-2xl px-4 py-3 border border-[#DCDDD5] shadow-[0_4px_16px_rgba(0,0,0,0.04)] -rotate-6">
-              <span className="font-handwriting text-stone-800 text-[22px] xl:text-[26px] font-bold leading-tight tracking-wide block">
-                Stronger
-              </span>
-              <span className="font-handwriting text-stone-800 text-[22px] xl:text-[26px] font-bold leading-tight tracking-wide block">
-                Every Day
-              </span>
-              {/* Curved accent underline */}
-              <svg
-                className="w-20 h-4 text-stone-600 mt-0.5 overflow-visible"
-                viewBox="0 0 80 16"
-                fill="none"
-              >
-                <path
-                  d="M 4 8 C 24 16, 58 16, 76 4"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-          </div>
+          {/* Thin curved botanical line 1 (Left flank rising upward) */}
+          <path
+            d="M 55 620 C 15 510 30 370 70 270 C 95 205 140 145 195 95 C 235 58 280 42 330 38"
+            stroke="#02663D"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            opacity="0.7"
+          />
 
-          {/* --- DESKTOP FLOATING GLASSMORPHIC BADGES --- */}
+          {/* Botanical Leaves Cluster 1 - along left curve */}
+          <g fill="#02663D" opacity="0.85">
+            {/* Leaf pair near top left curve */}
+            <path d="M 185 105 C 175 90 155 92 152 108 C 162 118 180 115 185 105 Z" />
+            <path d="M 195 95 C 205 82 225 86 226 102 C 214 110 198 105 195 95 Z" />
+            {/* Leaf along mid-left curve */}
+            <path d="M 72 265 C 58 255 42 265 44 282 C 58 288 72 278 72 265 Z" />
+            <path d="M 80 280 C 85 295 102 300 110 288 C 105 272 90 270 80 280 Z" />
+            {/* Leaf along lower-left curve */}
+            <path d="M 40 430 C 25 425 15 440 22 455 C 36 458 46 445 40 430 Z" />
+            <path d="M 48 445 C 56 458 72 460 78 448 C 72 435 58 435 48 445 Z" />
+            {/* Small accent sprig at bottom left */}
+            <path d="M 52 610 C 40 600 32 612 38 625 C 50 626 58 618 52 610 Z" />
+          </g>
 
-          {/* Top-Right Badge: 10+ Years Experience */}
-          <div className="flex flex-col absolute top-6 right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FCFBF7]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:scale-[1.02] transition-transform w-44">
-            <div className="w-8 h-8 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 mb-2">
-              <Users className="w-5 h-5 stroke-[2]" />
-            </div>
-            <div className="font-bold text-3xl text-stone-900 leading-none">
-              10+
-            </div>
-            <div className="text-[11px] font-medium text-stone-500 leading-tight mt-1.5">
-              Years of Clinical Experience
-            </div>
-          </div>
+          {/* Thin curved botanical line 2 (Top right background accent) */}
+          <path
+            d="M 470 35 C 540 48 620 85 655 155 C 675 195 678 245 660 290"
+            stroke="#02663D"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            opacity="0.65"
+          />
 
-          {/* Middle-Right Badge: Location */}
-          <div className="flex flex-col absolute top-[195px] right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FCFBF7]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:scale-[1.02] transition-transform w-44">
-            <div className="w-8 h-8 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 mb-2">
-              <MapPin className="w-5 h-5 stroke-[2]" />
-            </div>
-            <div className="font-bold text-xl text-stone-900 leading-none">
-              {branch ? branch.name : '3 Locations'}
-            </div>
-            <div className="text-xs font-semibold text-stone-800 leading-tight mt-1">
-              {branch ? branch.tag : 'Locations'}
-            </div>
-            <div className="text-[10px] font-medium text-stone-500 leading-tight mt-0.5">
-              {branch ? branch.city : 'Mira Road • Vasai • Surat'}
-            </div>
-          </div>
+          {/* Botanical Leaves Cluster 2 - top right */}
+          <g fill="#02663D" opacity="0.8">
+            <path d="M 530 45 C 538 30 558 32 562 48 C 550 58 534 54 530 45 Z" />
+            <path d="M 610 80 C 625 70 642 80 640 98 C 626 102 612 92 610 80 Z" />
+            <path d="M 655 150 C 670 145 682 160 678 175 C 662 178 652 165 655 150 Z" />
+            <path d="M 662 215 C 678 215 685 232 676 245 C 662 244 654 228 662 215 Z" />
+          </g>
+        </svg>
 
-          {/* Bottom-Right Badge: Google Rating */}
-          <div className="flex flex-col absolute bottom-14 right-6 xl:right-8 z-20 p-4 rounded-2xl bg-[#FCFBF7]/95 backdrop-blur-md border border-white/70 shadow-[0_12px_32px_rgba(0,0,0,0.08)] hover:scale-[1.02] transition-transform w-52">
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="text-[11px] font-semibold text-stone-600">
-                Google Rating
-              </span>
-              <svg className="w-4 h-4" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
-                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z" />
-                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
-                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
-              </svg>
-            </div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-bold text-2xl text-stone-900 leading-none">4.9</span>
-              <span className="text-xs text-stone-400 font-medium">/5</span>
-              <div className="flex items-center text-[#E5A500] ml-1.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-[#E5A500] stroke-[#E5A500]" />
-                ))}
-              </div>
-            </div>
-            <div className="text-[10px] text-stone-500 font-medium mt-1">
-              From 1,000+ patient reviews
-            </div>
-          </div>
-
-          {/* Bottom Pill Testimonial */}
-          <div className="flex items-center gap-3 absolute bottom-6 left-16 xl:left-20 z-20 py-2.5 px-4 rounded-full bg-[#FCFBF7]/90 backdrop-blur-md border border-white/70 shadow-[0_8px_25px_rgba(0,0,0,0.06)] max-w-sm">
-            <div className="flex items-center -space-x-2 shrink-0">
-              {testimonialAvatars.map((url, i) => (
-                <img key={i} src={url} alt={`Patient ${i}`} className="w-6 h-6 rounded-full border border-white object-cover shadow-xs" />
-              ))}
-            </div>
-            <p className="text-[11.5px] font-medium text-stone-700 italic truncate">
-              "Professional, caring and truly effective treatment."
-            </p>
-            <button type="button" className="w-6 h-6 rounded-full bg-stone-200/90 hover:bg-stone-300 text-stone-700 flex items-center justify-center shrink-0 transition-colors cursor-pointer" aria-label="Next review">
-              <ArrowRight className="w-3 h-3" />
-            </button>
-          </div>
-        </div>
-
-        {/* ====== MOBILE & TABLET VIEW (< lg) ====== */}
-        <div className="block lg:hidden w-full h-[460px] sm:h-[520px] rounded-3xl overflow-hidden relative shadow-lg">
+        {/* ========================================================
+            2. MAIN DOMINANT IMAGE
+            ======================================================== */}
+        <div
+          className="absolute top-[5%] left-[4%] w-[70%] h-[80%] z-10"
+          style={{
+            filter: 'drop-shadow(0 20px 45px rgba(0,0,0,0.08))',
+          }}
+        >
           <img
-            src={primaryHeroImage}
-            alt="Physiotherapist treating patient"
-            className="w-full h-full object-cover object-center"
+            src={mainImgSrc}
+            onError={() => setMainImgSrc(mainFallback)}
+            alt={mainAlt}
             loading="eager"
+            className="w-full h-full object-cover rounded-[55px_55px_150px_70px] sm:rounded-[75px_75px_190px_90px] border-4 sm:border-[6px] border-[#F8F6F0]/90"
           />
         </div>
-      </div>
 
-      {/* --- MOBILE & TABLET RESPONSIVE BADGES (< lg) --- */}
-      <div className="lg:hidden w-full mt-6 space-y-4">
-        {/* Mobile Testimonial Card */}
-        <div className="w-full flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white/80 backdrop-blur-sm border border-stone-200/80 shadow-sm">
-          <div className="flex items-center gap-2.5">
-            <div className="flex items-center -space-x-2 shrink-0">
-              {testimonialAvatars.map((url, i) => (
-                <img key={i} src={url} alt={`Patient ${i}`} className="w-6 h-6 rounded-full border border-white object-cover" />
-              ))}
-            </div>
-            <p className="text-xs font-medium text-stone-700 italic">
-              "Professional, caring and truly effective treatment."
-            </p>
-          </div>
-          <span className="w-6 h-6 rounded-full bg-stone-100 flex items-center justify-center text-stone-600 shrink-0">
-            <ArrowRight className="w-3 h-3" />
-          </span>
+        {/* ========================================================
+            3. TOP IMAGE CARD
+            ======================================================== */}
+        <div
+          className="absolute top-[9%] right-[2%] w-[36%] h-[41%] z-20"
+          style={{
+            filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.09))',
+          }}
+        >
+          <img
+            src={topImgSrc}
+            onError={() => setTopImgSrc(topFallback)}
+            alt={topAlt}
+            loading="lazy"
+            className="w-full h-full object-cover rounded-[32px] sm:rounded-[42px] border-[6px] sm:border-[8px] border-[#F8F6F0]"
+          />
         </div>
 
-        {/* Mobile 3-Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-          <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-stone-200/80 shadow-xs flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 shrink-0">
-              <Users className="w-5 h-5 stroke-[2]" />
-            </div>
-            <div>
-              <div className="font-bold text-2xl text-stone-900 leading-none">10+</div>
-              <div className="text-[11px] text-stone-500 font-medium mt-0.5">Years Experience</div>
-            </div>
-          </div>
-          <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-stone-200/80 shadow-xs flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-stone-800 shrink-0">
-              <MapPin className="w-5 h-5 stroke-[2]" />
-            </div>
-            <div>
-              <div className="font-bold text-xl text-stone-900 leading-none">{branch ? branch.name : '3 Locations'}</div>
-              <div className="text-[11px] text-stone-500 font-medium mt-0.5">{branch ? branch.tag : 'Mira Road • Vasai • Surat'}</div>
-            </div>
-          </div>
-          <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-stone-200/80 shadow-xs flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 shrink-0">
-              <Star className="w-5 h-5 fill-[#E5A500] stroke-[#E5A500]" />
-            </div>
-            <div>
-              <div className="flex items-baseline gap-1">
-                <span className="font-bold text-2xl text-stone-900 leading-none">4.9</span>
-                <span className="text-[11px] text-stone-400 font-medium">/5</span>
-              </div>
-              <div className="text-[11px] text-stone-500 font-medium mt-0.5">1,000+ Reviews</div>
-            </div>
+        {/* ========================================================
+            4. BOTTOM IMAGE CARD
+            ======================================================== */}
+        <div
+          className="absolute bottom-[5%] right-[1%] w-[40%] h-[40%] z-20"
+          style={{
+            filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.09))',
+          }}
+        >
+          <img
+            src={bottomImgSrc}
+            onError={() => setBottomImgSrc(bottomFallback)}
+            alt={bottomAlt}
+            loading="lazy"
+            className="w-full h-full object-cover rounded-[32px] sm:rounded-[42px] border-[6px] sm:border-[8px] border-[#F8F6F0]"
+          />
+        </div>
+
+        {/* ========================================================
+            5. "STRONGER EVERY DAY" FLOATING CARD (Shifted 60px down, 21px left)
+            ======================================================== */}
+        <div className="absolute bottom-[20%] sm:bottom-[22%] lg:bottom-[24%] left-[40%] sm:left-[43%] lg:left-[45%] -translate-x-[21px] translate-y-[60px] z-30 pointer-events-none select-none">
+          <div
+            className="bg-[#FCFBF7] rounded-2xl px-3.5 py-2 sm:px-4 sm:py-2.5 border border-[#DCDDD5]/90 shadow-[0_10px_28px_rgba(0,0,0,0.08)] transition-transform duration-300"
+            style={{ transform: 'rotate(-3deg)' }}
+          >
+            <span className="font-handwriting text-[#26332F] text-[19px] sm:text-[22px] lg:text-[25px] font-bold leading-tight tracking-wide block">
+              Stronger
+            </span>
+            <span className="font-handwriting text-[#26332F] text-[19px] sm:text-[22px] lg:text-[25px] font-bold leading-tight tracking-wide block">
+              Every Day
+            </span>
+            {/* Delicate hand-drawn botanical green underline */}
+            <svg
+              className="w-16 sm:w-20 h-3.5 text-[#02663D] mt-0.5 overflow-visible"
+              viewBox="0 0 80 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M 3 6 C 22 13, 54 13, 77 3"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
         </div>
+
       </div>
     </div>
   )
 }
+
