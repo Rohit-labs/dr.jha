@@ -12,8 +12,13 @@ export default function BranchClinicSection({ branch }) {
     branch.slug === 'surat' ||
     branch.name?.toLowerCase().includes('surat')
 
+  const isVasai =
+    branch.slug === 'vasai' ||
+    branch.name?.toLowerCase().includes('vasai')
+
   const [miraActiveIndex, setMiraActiveIndex] = useState(0)
   const [suratActiveIndex, setSuratActiveIndex] = useState(0)
+  const [vasaiActiveIndex, setVasaiActiveIndex] = useState(0)
 
   const miraRoadImages = [
     {
@@ -58,6 +63,24 @@ export default function BranchClinicSection({ branch }) {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic8.jpeg'),
       fallback: '/images/clinics/surat-clinic-8.jpeg',
       caption: 'Modern clinical reception and patient care facility in Vesu',
+    },
+  ]
+
+  const vasaiImages = [
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
+      fallback: '/images/clinics/vasai-clinic-2.jpeg',
+      caption: 'Clinical consultation and therapy evaluation bays at Vasai',
+    },
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic4.jpeg'),
+      fallback: '/images/clinics/vasai-clinic-4.jpeg',
+      caption: 'Advanced physiotherapy and spine rehabilitation suite',
+    },
+    {
+      url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic5.jpeg'),
+      fallback: '/images/clinics/vasai-clinic-5.jpeg',
+      caption: 'Specialized medical acupuncture and recovery station',
     },
   ]
 
@@ -367,6 +390,82 @@ export default function BranchClinicSection({ branch }) {
                           }`}
                           aria-label={`View Surat facility photo ${idx + 1}`}
                           title={`Click to view Surat facility photo ${idx + 1}`}
+                        >
+                          <img
+                            src={item.url}
+                            onError={(e) => {
+                              if (e.target.src !== item.fallback) {
+                                e.target.src = item.fallback
+                              }
+                            }}
+                            alt={item.caption}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </button>
+                      )
+                    })}
+                  </div>
+                </>
+              ) : isVasai ? (
+                <>
+                  {/* Clickable Main Image for Vasai (click changes image) */}
+                  <div
+                    onClick={() => setVasaiActiveIndex((prev) => (prev + 1) % vasaiImages.length)}
+                    className="h-full w-full relative cursor-pointer group select-none overflow-hidden"
+                    title="Click image to view next facility photo"
+                  >
+                    <img
+                      key={vasaiActiveIndex}
+                      src={vasaiImages[vasaiActiveIndex].url}
+                      onError={(e) => {
+                        if (e.target.src !== vasaiImages[vasaiActiveIndex].fallback) {
+                          e.target.src = vasaiImages[vasaiActiveIndex].fallback
+                        }
+                      }}
+                      alt={vasaiImages[vasaiActiveIndex].caption}
+                      className="w-full h-full object-cover object-center transition-all duration-300 group-hover:scale-[1.02]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25 pointer-events-none"></div>
+
+                    {/* Top status pill (no arrows, clean indicator) */}
+                    <div className="absolute top-4 right-4 pointer-events-none">
+                      <span className="text-[10px] font-semibold bg-black/60 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20 text-stone-200 shadow-sm">
+                        {vasaiActiveIndex + 1} / {vasaiImages.length} • Click to next
+                      </span>
+                    </div>
+
+                    {/* Bottom Caption Overlay */}
+                    <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
+                      <span className="text-[10px] font-bold tracking-widest uppercase bg-white/20 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/20 inline-block mb-1">
+                        Vasai Facility
+                      </span>
+                      <p className="text-xs text-stone-200 line-clamp-1">
+                        {vasaiImages[vasaiActiveIndex].caption}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Clickable Thumbnail Strip in same format (no arrows, 3 thumbnails) */}
+                  <div className="p-3 bg-black/50 backdrop-blur-xs grid grid-cols-3 gap-2 border-t border-white/10">
+                    {vasaiImages.map((item, idx) => {
+                      const isActive = vasaiActiveIndex === idx
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            setVasaiActiveIndex(idx)
+                          }}
+                          className={`h-14 rounded-lg overflow-hidden border transition-all cursor-pointer relative ${
+                            isActive
+                              ? 'border-[#E5A500] ring-2 ring-[#E5A500]/60 opacity-100 scale-[1.02]'
+                              : 'border-white/20 opacity-60 hover:opacity-100 hover:border-white/40'
+                          }`}
+                          aria-label={`View Vasai facility photo ${idx + 1}`}
+                          title={`Click to view Vasai facility photo ${idx + 1}`}
                         >
                           <img
                             src={item.url}
