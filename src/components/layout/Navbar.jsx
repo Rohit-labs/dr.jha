@@ -263,53 +263,44 @@ export default function Navbar() {
     subtitle: 'Comprehensive manual therapy, rehabilitation, and acupuncture care',
     categories: [
       {
-        heading: 'PHYSIOTHERAPY',
+        heading: 'PHYSIOTHERAPY & REHAB',
         items: [
-          'Orthopaedic Physiotherapy',
-          'Sports Physiotherapy',
-          'Neurological Rehabilitation',
-          'Post-Surgical Rehabilitation',
-          'Geriatric Physiotherapy',
-          "Women's Health Physiotherapy",
-          'Home Physiotherapy',
+          { name: 'Physiotherapy & Rehabilitation', href: '/treatments/physiotherapy' },
+          { name: 'Exercise Therapy & Biomechanics', href: '/treatments/exercise-therapy' },
+          { name: 'Manual Therapy & Mobilization', href: '/treatments/manual-therapy' },
+          { name: 'Dry Needling & Myofascial', href: '/treatments/dry-needling' },
         ],
       },
       {
-        heading: 'ACUPUNCTURE & TRADITIONAL',
+        heading: 'ACUPUNCTURE & SPECIALIZED',
         items: [
-          'Medical Acupuncture',
-          'Electro Acupuncture',
-          'Dry Needling',
-          'Cupping Therapy',
-          'Auricular Acupuncture',
-          'Moxibustion',
+          { name: 'Medical Acupuncture & Pain', href: '/treatments/acupuncture' },
+          { name: 'Scalp Acupuncture (Neuro)', href: '/treatments/scalp-acupuncture' },
+          { name: 'Auriculotherapy (Ear Seeds)', href: '/treatments/auriculotherapy' },
+          { name: 'Bloodletting (Micro-Bleeding)', href: '/treatments/bloodletting-therapy' },
+          { name: 'Cosmetic Acupuncture + LASER', href: '/treatments/cosmetic-acupuncture-laser' },
         ],
       },
       {
-        heading: 'MANUAL & EXERCISE THERAPY',
+        heading: 'CUPPING & DETOXIFICATION',
         items: [
-          'Manual Therapy',
-          'Joint Mobilization',
-          'Myofascial Release',
-          'Trigger Point Therapy',
-          'Therapeutic Exercise',
-          'Strength & Conditioning',
-          'Balance & Gait Training',
+          { name: 'Dry Cupping Therapy', href: '/treatments/dry-cupping-therapy' },
+          { name: 'Wet Cupping Therapy (Hijama)', href: '/treatments/wet-cupping-therapy' },
+          { name: 'Fire Cupping Therapy', href: '/treatments/fire-cupping' },
+          { name: 'Gua Sha Therapy (IASTM)', href: '/treatments/guasa-therapy' },
         ],
       },
       {
-        heading: 'ADVANCED MODALITIES',
+        heading: 'ADVANCED & THERMAL',
         items: [
-          'Shockwave Therapy',
-          'LASER Therapy',
-          'IFT / TENS',
-          'Ultrasound',
-          'EMS / NMES',
-          'SWD',
+          { name: 'High & Low LASER (LLLT)', href: '/treatments/laser-therapy' },
+          { name: 'Shockwave Therapy (ESWT)', href: '/treatments/shockwave-therapy' },
+          { name: 'Moxibustion Therapy', href: '/treatments/moxibustion-therapy' },
+          { name: 'Ginger Moxibustion', href: '/treatments/ginger-moxibustion' },
         ],
       },
     ],
-    actionText: 'View All Treatments →',
+    actionText: 'View All 17 Modalities →',
     actionHref: '/treatments',
   }
 
@@ -599,17 +590,23 @@ export default function Navbar() {
                             {cat.heading}
                           </h4>
                           <ul className="space-y-2">
-                            {cat.items.map((item, itemIdx) => (
-                              <li key={itemIdx}>
-                                <a
-                                  href={`#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5"
-                                >
-                                  {item}
-                                </a>
-                              </li>
-                            ))}
+                            {cat.items.map((item, itemIdx) => {
+                              const label = typeof item === 'string' ? item : item.name
+                              const href = typeof item === 'string'
+                                ? `/treatments/${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`
+                                : item.href
+                              return (
+                                <li key={itemIdx}>
+                                  <Link
+                                    to={href}
+                                    onClick={() => setActiveDropdown(null)}
+                                    className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5 font-normal hover:font-medium"
+                                  >
+                                    {label}
+                                  </Link>
+                                </li>
+                              )
+                            })}
                           </ul>
                         </div>
                       ))}
@@ -912,17 +909,23 @@ export default function Navbar() {
                         {cat.heading}
                       </p>
                       <ul className="space-y-1.5 pl-2">
-                        {cat.items.map((item, itemIdx) => (
-                          <li key={itemIdx}>
-                            <a
-                              href={`#${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="text-xs text-stone-600 hover:text-[#064C3B] block py-0.5"
-                            >
-                              {item}
-                            </a>
-                          </li>
-                        ))}
+                        {cat.items.map((item, itemIdx) => {
+                          const label = typeof item === 'string' ? item : item.name
+                          const href = typeof item === 'string'
+                            ? `/treatments/${item.toLowerCase().replace(/[^a-z0-9]/g, '-')}`
+                            : item.href
+                          return (
+                            <li key={itemIdx}>
+                              <Link
+                                to={href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="text-xs text-stone-600 hover:text-[#064C3B] block py-0.5"
+                              >
+                                {label}
+                              </Link>
+                            </li>
+                          )
+                        })}
                       </ul>
                     </div>
                   ))}

@@ -1,8 +1,10 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import TreatmentCard from './TreatmentCard'
 import { Search, Sparkles, Filter } from 'lucide-react'
 
 export default function TreatmentList({ treatments }) {
+  const location = useLocation()
   const [selectedCategory, setSelectedCategory] = useState('ALL')
   const [searchQuery, setSearchQuery] = useState('')
 
@@ -15,6 +17,27 @@ export default function TreatmentList({ treatments }) {
     })
     return cats
   }, [treatments])
+
+  // Handle hash navigation if user lands on /treatments#specific-slug
+  useEffect(() => {
+    const hash = location.hash?.replace('#', '')
+    if (hash) {
+      const targetTreatment = treatments.find(
+        (t) => t.slug === hash || t.name.toLowerCase().replace(/[^a-z0-9]/g, '-') === hash
+      )
+      if (targetTreatment) {
+        // If current category filters it out, reset to ALL
+        setSelectedCategory('ALL')
+        setSearchQuery('')
+        setTimeout(() => {
+          const el = document.getElementById(targetTreatment.slug)
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          }
+        }, 150)
+      }
+    }
+  }, [location.hash, treatments])
 
   const filteredTreatments = useMemo(() => {
     return treatments.filter((t) => {

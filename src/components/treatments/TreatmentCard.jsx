@@ -6,7 +6,10 @@ export default function TreatmentCard({ treatment }) {
   const { slug, category, name, shortDescription, benefits = [], image, video, gallery = [] } = treatment
 
   return (
-    <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-5 sm:p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+    <div
+      id={slug}
+      className="scroll-mt-28 bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-5 sm:p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+    >
       <div>
         {/* Treatment Image Visual */}
         {image && (
