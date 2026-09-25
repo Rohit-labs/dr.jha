@@ -195,7 +195,7 @@ export const branches = [
       { name: 'Cervical Neck Strain & Spondylosis', slug: 'neck-pain' },
       { name: 'Frozen Shoulder (Adhesive Capsulitis)', slug: 'frozen-shoulder' }
     ],
-    doctorIds: ['hr-shweta-jha'],
+    doctorIds: ['dr-pranab-jha', 'hr-shweta-jha'],
     reviews: [
       {
         quote: 'Exceptional care under Hr. Shweta Jha. The combination of naturopathy, therapeutic yoga, and acupuncture helped relieve my chronic neck and back stiffness naturally without heavy medication.',
@@ -296,7 +296,7 @@ export const branches = [
       { name: 'Cervical Neck Stiffness', slug: 'neck-pain' },
       { name: 'Shoulder Impingement & Rotator Cuff', slug: 'frozen-shoulder' }
     ],
-    doctorIds: ['hr-samta-salecha'],
+    doctorIds: ['dr-pranab-jha', 'hr-samta-salecha'],
     reviews: [
       {
         quote: 'Hr. Samta Salecha is very knowledgeable in acupuncture and pain management. Got tremendous relief from chronic spine and joint issues in just a few visits at the Surat centre.',

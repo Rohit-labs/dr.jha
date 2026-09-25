@@ -29,7 +29,7 @@ export default function ResourceCard({ resource }) {
 
       <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
         <Link
-          to={`/resources/${slug}`}
+          to={`/blogs/${slug}`}
           className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] group-hover:text-[#064C3B] transition-colors"
         >
           <span>Read Article</span>

@@ -22,11 +22,11 @@ export default function ClinicalTeam({ branch }) {
     }
 
     if (branch.slug === 'vasai') {
-      return doctors.filter((doc) => doc.id === 'hr-shweta-jha')
+      return doctors.filter((doc) => doc.id === 'dr-pranab-jha' || doc.id === 'hr-shweta-jha')
     }
 
     if (branch.slug === 'surat') {
-      return doctors.filter((doc) => doc.id === 'hr-samta-salecha')
+      return doctors.filter((doc) => doc.id === 'dr-pranab-jha' || doc.id === 'hr-samta-salecha')
     }
 
     if (branch.slug === 'mira-road') {
@@ -67,22 +67,22 @@ export default function ClinicalTeam({ branch }) {
             {branch?.slug === 'mira-road' || !branch
               ? 'Under the clinical leadership of Dr. Pranab Jha and Hr. Anupam Jha, our Mira Road centre combines evidence-based physiotherapy and medical acupuncture for lasting recovery.'
               : branch?.slug === 'vasai'
-              ? 'Under Hr. Shweta Jha, our Vasai centre delivers specialized naturopathy, therapeutic yoga, and acupuncture care tailored to your recovery.'
+              ? 'Under the clinical leadership of Dr. Pranab Jha and Hr. Shweta Jha, our Vasai centre delivers specialized physiotherapy, naturopathy, therapeutic yoga, and acupuncture care tailored to your recovery.'
               : branch?.slug === 'surat'
-              ? 'Under Hr. Samta Salecha, our Surat clinic provides advanced acupuncture medicine and dedicated musculoskeletal rehabilitation.'
+              ? 'Under the clinical leadership of Dr. Pranab Jha and Hr. Samta Salecha, our Surat clinic provides advanced acupuncture medicine and dedicated musculoskeletal rehabilitation.'
               : 'Our clinical specialists combine evidence-based rehabilitation and medical acupuncture to help you regain pain-free movement.'}
           </p>
         </div>
 
         {/* ═══════════ DOCTORS DISPLAY ═══════════ */}
         {branchDoctors.length > 1 ? (
-          /* ────── MULTI-DOCTOR: SIDE-BY-SIDE CARDS (MIRA ROAD) ────── */
+          /* ────── MULTI-DOCTOR: SIDE-BY-SIDE CARDS ────── */
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {branchDoctors.map((doc) => {
               const callNumber = doc.phone
                 ? doc.phone.replace(/[^0-9+]/g, '')
                 : (branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559')
-              const shortName = doc.id === 'dr-pranab-jha' ? 'Dr. Pranab' : 'Hr. Anupam'
+              const shortName = doc.name.split(' ').slice(0, 2).join(' ')
 
               return (
                 <article

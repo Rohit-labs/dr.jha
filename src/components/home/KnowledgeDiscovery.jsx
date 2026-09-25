@@ -105,22 +105,22 @@ const searchIndex = [
     href: '/treatments/manual-therapy',
   },
 
-  // Resources / Guides
+  // Resources / Blogs / Guides
   {
     type: 'resource',
-    category: 'RESOURCES',
+    category: 'BLOGS & GUIDES',
     title: 'Understanding Back Pain Guide',
     slug: 'understanding-back-pain',
     description: 'A clinician-written guide on causes, red flags and recovery paths.',
-    href: '/resources/understanding-back-pain',
+    href: '/blogs/understanding-back-pain',
   },
   {
     type: 'resource',
-    category: 'RESOURCES',
+    category: 'BLOGS & GUIDES',
     title: 'Exercises & Recovery Tips for the Spine',
     slug: 'spine-recovery-exercises',
     description: 'Gentle core and spinal stabilization movements for home care.',
-    href: '/resources/spine-recovery-exercises',
+    href: '/blogs/spine-recovery-exercises',
   },
 
   // Case Studies
@@ -468,7 +468,7 @@ export default function ConditionDiscovery() {
 
                 <div className="pt-5 mt-4 border-t border-stone-200/70">
                   <a
-                    href="/resources/when-to-see-physio"
+                    href="/blogs/when-to-see-physio"
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#064C3B] hover:text-[#064C3B] transition-colors group/link"
                   >
                     <span>Read Article</span>

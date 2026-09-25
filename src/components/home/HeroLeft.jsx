@@ -28,9 +28,9 @@ const heroSearchIndex = [
   })),
   ...resources.map((r) => ({
     title: r.title,
-    category: 'Resource',
+    category: 'Blog',
     description: r.summary || '',
-    href: `/resources/${r.slug}`,
+    href: `/blogs/${r.slug}`,
   })),
 ]
 

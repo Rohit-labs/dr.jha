@@ -15,7 +15,7 @@ export const doctors = [
     experience: '16 Years Experience',
     memberships: ['MIAP (Member of Indian Association of Physiotherapists)'],
     specialization: 'Physiotherapy, Rehabilitation & Medical Acupuncture',
-    branches: ['Mira Road'],
+    branches: ['Mira Road', 'Vasai', 'Surat'],
     phone: '+91 91460 36559',
     image: '/dr-pranab-jha.jpg',
     imageAlt: 'Dr. Pranab Jha, Founder and Clinical Lead at Dr. Jha Physiotherapy & Acupuncture Centre',

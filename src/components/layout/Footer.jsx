@@ -119,7 +119,7 @@ export default function Footer() {
                 <Link to="/treatments/dry-needling" className="hover:text-white transition-colors">Dry Needling</Link>
               </li>
               <li>
-                <Link to="/resources" className="hover:text-white transition-colors">Patient Knowledge Centre</Link>
+                <Link to="/blogs" className="hover:text-white transition-colors">Clinical Blogs &amp; Patient Guides</Link>
               </li>
               <li>
                 <Link to="/events" className="hover:text-white transition-colors">Clinic Events & Workshops</Link>

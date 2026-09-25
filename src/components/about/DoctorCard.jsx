@@ -77,9 +77,11 @@ export default function DoctorCard({ doctor }) {
       {/* Branch Assignment & Direct Contact Footer */}
       <div className="pt-4 border-t border-stone-200/70 flex items-center justify-between text-[11px] text-stone-500 gap-2">
         {branches.length > 0 && (
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
             <MapPin className="w-3.5 h-3.5 text-[#064C3B] shrink-0" />
-            <span className="font-medium text-stone-700">{branches.join(' · ')}</span>
+            <span className="font-medium text-stone-700">
+              {branches.length >= 3 ? 'All Branches (Mira Road · Vasai · Surat)' : branches.join(' · ')}
+            </span>
           </div>
         )}
         {doctor.phone ? (

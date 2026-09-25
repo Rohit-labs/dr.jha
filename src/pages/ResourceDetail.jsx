@@ -11,7 +11,7 @@ export default function ResourceDetail() {
   const resource = getResourceBySlug(slug)
 
   if (!resource) {
-    return <Navigate to="/resources" replace />
+    return <Navigate to="/blogs" replace />
   }
 
   const articleStructuredData = {
@@ -39,14 +39,14 @@ export default function ResourceDetail() {
       <SEO
         title={resource.pageTitle}
         description={resource.metaDescription}
-        canonicalUrl={`https://drjhaphysiotherapy.com/resources/${resource.slug}`}
+        canonicalUrl={`https://drjhaphysiotherapy.com/blogs/${resource.slug}`}
         structuredData={articleStructuredData}
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <Breadcrumbs
           items={[
-            { label: 'Resources', href: '/resources' },
+            { label: 'Blogs', href: '/blogs' },
             { label: resource.title }
           ]}
         />
@@ -114,16 +114,16 @@ export default function ResourceDetail() {
           </div>
         </div>
 
-        {/* Other Resources */}
+        {/* Other Resources / Blogs */}
         <div className="mt-14 pt-8 border-t border-stone-200">
           <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-stone-400 block mb-4">
-            More from the Knowledge Centre
+            More from our Clinical Blogs
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {otherResources.map((or) => (
               <Link
                 key={or.slug}
-                to={`/resources/${or.slug}`}
+                to={`/blogs/${or.slug}`}
                 className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#DCDDD5] hover:border-stone-400 transition-colors block group"
               >
                 <span className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] block mb-1">

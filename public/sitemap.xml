@@ -203,7 +203,12 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Resources, Case Studies & Events -->
+  <!-- Blogs, Resources, Case Studies & Events -->
+  <url>
+    <loc>https://drjhaphysiotherapy.com/blogs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://drjhaphysiotherapy.com/resources</loc>
     <changefreq>weekly</changefreq>

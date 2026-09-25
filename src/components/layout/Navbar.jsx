@@ -42,10 +42,10 @@ const allSearchItems = [
   })),
   ...resources.map((r) => ({
     title: r.title,
-    category: 'Resources',
-    tag: r.category || 'Guide',
+    category: 'Blogs',
+    tag: r.category || 'Blog',
     description: r.summary || '',
-    href: `/resources/${r.slug}`,
+    href: `/blogs/${r.slug}`,
   })),
   ...caseStudies.map((cs) => ({
     title: cs.title,
@@ -118,8 +118,10 @@ export default function Navbar() {
 
   const isPathActive = (path) => {
     if (path === '/') return location.pathname === '/'
-    if (path === '/resources') {
+    if (path === '/blogs' || path === '/resources') {
       return (
+        location.pathname === '/blogs' ||
+        location.pathname.startsWith('/blogs/') ||
         location.pathname === '/resources' ||
         location.pathname.startsWith('/resources/') ||
         location.pathname === '/case-studies' ||
@@ -305,38 +307,43 @@ export default function Navbar() {
   }
 
 
-  const resourcesData = [
+  const blogsData = [
     {
-      heading: 'HEALTH & REHABILITATION',
-      icon: <Activity className="w-4 h-4 text-[#064C3B]" />,
+      heading: 'CLINICAL ARTICLES & GUIDES',
+      icon: <BookOpen className="w-4 h-4 text-[#064C3B]" />,
       items: [
-        { label: 'Condition Guides', href: '/resources' },
-        { label: 'Physiotherapy Articles', href: '/resources' },
-        { label: 'Rehabilitation Tips', href: '/resources' },
+        { label: 'Understanding Back Pain & Recovery', href: '/blogs/understanding-back-pain' },
+        { label: 'Understanding Sciatica & Nerve Relief', href: '/blogs/understanding-sciatica' },
+        { label: 'When Should You See a Physiotherapist?', href: '/blogs/when-to-see-physio' },
+        { label: 'All Articles & Clinical Guides →', href: '/blogs' },
       ],
     },
     {
-      heading: 'PATIENT STORIES',
+      heading: 'PATIENT RECOVERY CASE STUDIES',
       icon: <Sparkles className="w-4 h-4 text-[#E5A500]" />,
       items: [
-        { label: 'Case Studies', href: '/case-studies' },
-        { label: 'Recovery Journeys', href: '/case-studies' },
+        { label: 'Sports Knee Sprain Rehabilitation', href: '/case-studies/sports-rehab-knee' },
+        { label: 'Chronic Back Pain & Posture Relief', href: '/case-studies/back-pain-recovery' },
+        { label: 'Stroke & Neurological Independence', href: '/case-studies/regaining-independence' },
+        { label: 'All Real Recovery Journeys →', href: '/case-studies' },
       ],
     },
     {
-      heading: 'HELP & GUIDANCE',
+      heading: 'FAQS & PATIENT GUIDANCE',
       icon: <HelpCircle className="w-4 h-4 text-[#064C3B]" />,
       items: [
-        { label: 'Frequently Asked Questions (FAQs)', href: '/faqs' },
-        { label: 'Acupuncture Safety & Process', href: '/faqs' },
+        { label: '20 Common Patient FAQs', href: '/faqs' },
+        { label: 'Medical Acupuncture Safety & Process', href: '/faqs' },
+        { label: 'First Evaluation Session Overview', href: '/faqs' },
       ],
     },
     {
-      heading: 'COMMUNITY & MEDIA',
-      icon: <Video className="w-4 h-4 text-stone-600" />,
+      heading: 'COMMUNITY & WORKSHOPS',
+      icon: <Video className="w-4 h-4 text-[#064C3B]" />,
       items: [
-        { label: 'Clinic Events & Workshops', href: '/events' },
-        { label: 'Patient Knowledge Centre', href: '/resources' },
+        { label: 'Spine Health Camps & Seminars', href: '/events' },
+        { label: 'Senior Mobility & Balance Programs', href: '/events' },
+        { label: 'View Upcoming Clinic Events →', href: '/events' },
       ],
     },
   ]
@@ -628,68 +635,74 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* 6. Resources ▾ (Knowledge Centre) */}
+            {/* 6. Blogs ▾ (Clinical Insights & Knowledge Domain) */}
             <div
               className="relative py-2"
-              onMouseEnter={() => handleMouseEnter('resources')}
+              onMouseEnter={() => handleMouseEnter('blogs')}
               onMouseLeave={handleMouseLeave}
             >
               <Link
-                to="/resources"
+                to="/blogs"
                 onClick={() => setActiveDropdown(null)}
                 className={`relative py-2 flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer ${
-                  isPathActive('/resources')
+                  isPathActive('/blogs')
                     ? 'text-[#064C3B] font-semibold'
                     : 'text-stone-600 hover:text-[#064C3B] font-medium'
                 }`}
               >
                 <span className="relative inline-block">
-                  Resources
-                  {isPathActive('/resources') && (
+                  Blogs
+                  {isPathActive('/blogs') && (
                     <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
                   )}
                 </span>
                 <ChevronDown
                   className={`w-3.5 h-3.5 stroke-[2.2] transition-transform duration-200 ${
-                    activeDropdown === 'resources'
+                    activeDropdown === 'blogs'
                       ? 'rotate-180 text-[#064C3B]'
-                      : isPathActive('/resources')
+                      : isPathActive('/blogs')
                       ? 'text-[#064C3B]'
                       : 'text-stone-400'
                   }`}
                 />
               </Link>
 
-              {/* Dropdown for Resources */}
-              {activeDropdown === 'resources' && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[540px] z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[24px] shadow-2xl shadow-stone-900/10 p-6 overflow-hidden">
-                    <div className="flex items-baseline justify-between pb-3 mb-4 border-b border-stone-200/70">
+              {/* Dropdown for Blogs */}
+              {activeDropdown === 'blogs' && (
+                <div className="fixed left-4 right-4 max-w-6xl mx-auto top-[60px] xl:top-[66px] z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] shadow-2xl shadow-stone-900/10 p-7 lg:p-8 overflow-hidden">
+                    <div className="flex items-baseline justify-between pb-4 mb-5 border-b border-stone-200/70">
                       <div>
-                        <h4 className="font-serif text-base font-bold text-stone-900">
-                          Patient Knowledge Centre
+                        <h4 className="font-serif text-xl font-bold text-stone-900">
+                          Blogs &amp; Clinical Insights
                         </h4>
-                        <p className="text-[11px] text-stone-500">
-                          Clinical guides, rehab insights & recovery stories
+                        <p className="text-xs text-stone-500 mt-0.5">
+                          Evidence-based articles, patient case studies, recovery journeys &amp; FAQs
                         </p>
                       </div>
-                      <BookOpen className="w-4 h-4 text-stone-400" />
+                      <Link
+                        to="/blogs"
+                        onClick={() => setActiveDropdown(null)}
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#064C3B] hover:text-[#073D32] transition-colors"
+                      >
+                        <span>Explore All Blogs &amp; Articles →</span>
+                      </Link>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-5">
-                      {resourcesData.map((cat, idx) => (
-                        <div key={idx} className="space-y-2">
+                    <div className="grid grid-cols-4 gap-6">
+                      {blogsData.map((cat, idx) => (
+                        <div key={idx} className="space-y-3">
                           <div className="flex items-center gap-1.5 text-[11px] font-bold tracking-[0.14em] uppercase text-[#064C3B]">
                             {cat.icon}
                             <span>{cat.heading}</span>
                           </div>
-                          <ul className="space-y-1.5 pl-5">
+                          <ul className="space-y-2">
                             {cat.items.map((item, itemIdx) => (
                               <li key={itemIdx}>
                                 <Link
-                                  to={item.href || '/resources'}
+                                  to={item.href || '/blogs'}
                                   onClick={() => setActiveDropdown(null)}
-                                  className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block"
+                                  className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5 font-normal hover:font-medium leading-snug"
                                 >
                                   {item.label}
                                 </Link>
@@ -700,16 +713,14 @@ export default function Navbar() {
                       ))}
                     </div>
 
-                    <div className="pt-4 mt-5 border-t border-stone-200/70 flex items-center justify-between">
-                      <span className="text-[11px] text-stone-500">
-                        Updated weekly with certified physiotherapist insights
-                      </span>
+                    <div className="mt-6 pt-4 border-t border-stone-200/60 flex items-center justify-between text-[11px] text-stone-500 bg-[#F4F2EC]/60 -mx-8 -mb-8 px-8 py-3.5">
+                      <span>Updated weekly with certified clinician insights and real patient recovery documentation.</span>
                       <Link
-                        to="/resources"
+                        to="/case-studies"
                         onClick={() => setActiveDropdown(null)}
-                        className="text-xs font-semibold text-[#064C3B] hover:text-[#073D32] flex items-center gap-1"
+                        className="font-semibold text-stone-800 hover:text-[#064C3B] flex items-center gap-1"
                       >
-                        Explore All Resources →
+                        View All Patient Case Studies <ArrowRight className="w-3 h-3" />
                       </Link>
                     </div>
                   </div>
@@ -966,40 +977,41 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Resources Accordion */}
+            {/* Blogs Accordion */}
             <div className="border-t border-stone-200/60 pt-2">
               <div className="w-full py-1 flex items-center justify-between">
                 <Link
-                  to="/resources"
+                  to="/blogs"
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm hover:text-[#064C3B] ${
-                    isPathActive('/resources') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
+                    isPathActive('/blogs') ? 'font-semibold text-[#064C3B]' : 'font-medium text-stone-800'
                   }`}
                 >
-                  Resources
+                  Blogs
                 </Link>
                 <button
                   type="button"
-                  onClick={() => toggleMobileSection('resources')}
+                  onClick={() => toggleMobileSection('blogs')}
                   className="p-1 text-base font-semibold text-stone-500 hover:text-stone-800"
-                  aria-label="Toggle resources list"
+                  aria-label="Toggle blogs list"
                 >
-                  {mobileExpanded['resources'] ? '−' : '+'}
+                  {mobileExpanded['blogs'] ? '−' : '+'}
                 </button>
               </div>
 
-              {mobileExpanded['resources'] && (
-                <div className="pl-3 pr-1 py-2 space-y-3 bg-[#F4F2EC]/70 rounded-2xl p-3 my-1">
-                  {resourcesData.map((cat, idx) => (
+              {mobileExpanded['blogs'] && (
+                <div className="pl-3 pr-1 py-2 space-y-4 bg-[#F4F2EC]/70 rounded-2xl p-3 my-1">
+                  {blogsData.map((cat, idx) => (
                     <div key={idx}>
-                      <p className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] mb-1">
-                        {cat.heading}
+                      <p className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] mb-1.5 flex items-center gap-1.5">
+                        {cat.icon}
+                        <span>{cat.heading}</span>
                       </p>
-                      <ul className="space-y-1 pl-2">
+                      <ul className="space-y-1.5 pl-2">
                         {cat.items.map((item, itemIdx) => (
                           <li key={itemIdx}>
                             <Link
-                              to={item.href || '/resources'}
+                              to={item.href || '/blogs'}
                               onClick={() => setMobileMenuOpen(false)}
                               className="text-xs text-stone-600 hover:text-[#064C3B] block py-0.5"
                             >
@@ -1011,11 +1023,11 @@ export default function Navbar() {
                     </div>
                   ))}
                   <Link
-                    to="/resources"
+                    to="/blogs"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-xs font-semibold text-[#064C3B] block pt-2 border-t border-stone-300/60"
                   >
-                    Explore All Resources →
+                    Explore All Blogs &amp; Articles →
                   </Link>
                 </div>
               )}

@@ -57,7 +57,9 @@ export default function AppRoutes() {
       <Route path="/treatments" element={<Treatments />} />
       <Route path="/treatments/:slug" element={<TreatmentDetail />} />
 
-      {/* 6. Patient Knowledge Centre (Resources) */}
+      {/* 6. Patient Knowledge Centre (Blogs & Resources) */}
+      <Route path="/blogs" element={<Resources />} />
+      <Route path="/blogs/:slug" element={<ResourceDetail />} />
       <Route path="/resources" element={<Resources />} />
       <Route path="/resources/:slug" element={<ResourceDetail />} />
 
