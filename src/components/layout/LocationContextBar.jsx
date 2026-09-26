@@ -118,9 +118,6 @@ export default function LocationContextBar() {
                               <span className={`text-xs leading-none ${isSelected ? 'font-bold' : 'font-semibold'}`}>
                                 {b.name}
                               </span>
-                              <span className="text-[9px] font-medium tracking-wide uppercase px-1.5 py-0.5 rounded bg-stone-200/70 text-stone-600">
-                                {b.tag}
-                              </span>
                             </div>
                             <p className="text-[10.5px] text-stone-500 mt-0.5 line-clamp-1">
                               {b.city}

@@ -35,11 +35,16 @@ const heroSearchIndex = [
 ]
 
 const popularTags = [
-  { name: 'Back Pain', href: '/conditions/back-pain' },
-  { name: 'Knee Pain', href: '/conditions/knee-pain' },
-  { name: 'Neck Pain', href: '/conditions/neck-pain' },
-  { name: 'Sciatica', href: '/conditions/sciatica' },
-  { name: 'Sports Injury', href: '/conditions/sports-injuries' },
+  { name: 'Back Pain',        href: '/conditions/back-pain' },
+  { name: 'Sciatica',         href: '/conditions/sciatica' },
+  { name: 'Knee Pain',        href: '/conditions/knee-pain' },
+  { name: 'Neck Pain',        href: '/conditions/neck-pain' },
+  { name: 'Frozen Shoulder',  href: '/conditions/frozen-shoulder' },
+  { name: "Bell's Palsy",     href: '/conditions/bells-palsy' },
+  { name: 'Vertigo',          href: '/conditions/vertigo' },
+  { name: 'Sports Injury',    href: '/conditions/sports-injuries' },
+  { name: "Parkinson's",      href: '/conditions/parkinsons' },
+  { name: 'Plantar Fasciitis',href: '/conditions/plantar-fasciitis' },
 ]
 
 export default function HeroLeft({ branch }) {
@@ -69,13 +74,6 @@ export default function HeroLeft({ branch }) {
       line1: 'Move Better.',
       line2: 'Live Fuller.',
     }
-
-  const avatars = [
-    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80',
-    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80',
-    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80',
-  ]
 
   const filteredResults = searchQuery.trim()
     ? heroSearchIndex.filter((item) => {
@@ -281,31 +279,6 @@ export default function HeroLeft({ branch }) {
           </svg>
           <span>WhatsApp Us</span>
         </a>
-      </div>
-
-      {/* Social Proof Avatar Bar */}
-      <div className="flex items-center gap-3.5 pt-3">
-        {/* Avatar Stack */}
-        <div className="flex items-center -space-x-2.5">
-          {avatars.map((url, i) => (
-            <img
-              key={i}
-              src={url}
-              alt={`Patient ${i + 1}`}
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-white object-cover shadow-xs"
-            />
-          ))}
-        </div>
-
-        {/* Text */}
-        <div className="flex flex-col">
-          <span className="text-xs sm:text-[13px] font-bold text-stone-900 leading-tight">
-            Trusted by 5,000+ patients
-          </span>
-          <span className="text-[11px] sm:text-xs text-stone-500 font-medium leading-tight">
-            Real people. Real recovery.
-          </span>
-        </div>
       </div>
     </div>
   )

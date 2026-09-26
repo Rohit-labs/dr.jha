@@ -100,9 +100,6 @@ export default function BranchDetail() {
                 <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase">
                   {branch.city}
                 </span>
-                <span className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-stone-200/80 text-stone-700">
-                  {branch.tag}
-                </span>
               </div>
 
               {/* Single H1 per branch page */}
@@ -217,10 +214,6 @@ export default function BranchDetail() {
                   <div className="flex justify-between pb-2 border-b border-stone-100">
                     <span className="font-medium text-stone-800">Primary Location:</span>
                     <span>{branch.city}</span>
-                  </div>
-                  <div className="flex justify-between pb-2 border-b border-stone-100">
-                    <span className="font-medium text-stone-800">Branch Classification:</span>
-                    <span className="font-semibold text-[#064C3B]">{branch.tag}</span>
                   </div>
                   <div className="flex justify-between pb-2 border-b border-stone-100">
                     <span className="font-medium text-stone-800">Postal Code:</span>

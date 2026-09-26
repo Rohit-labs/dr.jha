@@ -8,7 +8,6 @@ import ClinicalTeam from '../components/home/ClinicalTeam'
 import ConditionDiscovery from '../components/home/ConditionDiscovery'
 import BranchClinicSection from '../components/branches/BranchClinicSection'
 import PatientReviews from '../components/home/PatientReviews'
-import FinalCTA from '../components/home/FinalCTA'
 import NotFound from './NotFound'
 import { getBranchBySlug } from '../data/branches'
 import { useBranchContext } from '../context/BranchContext'
@@ -83,9 +82,6 @@ export default function BranchHome({ branchSlug: propSlug }) {
 
       {/* 6. Patient Reviews */}
       <PatientReviews branch={branch} />
-
-      {/* 7. Appointment Consultation CTA */}
-      <FinalCTA branch={branch} />
     </PageContainer>
   )
 }

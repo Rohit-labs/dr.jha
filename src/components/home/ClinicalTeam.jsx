@@ -7,6 +7,7 @@ import {
   MapPin,
   ShieldCheck,
   Phone,
+  Award,
   Clock
 } from 'lucide-react'
 import { doctors } from '../../data/team'
@@ -87,7 +88,7 @@ export default function ClinicalTeam({ branch }) {
               return (
                 <article
                   key={doc.id}
-                  className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[36px] overflow-hidden flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] ring-1 ring-[#064C3B]/10 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-all group"
+                  className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] sm:rounded-[36px] overflow-hidden flex flex-col shadow-[0_4px_24px_rgba(0,0,0,0.02)] ring-1 ring-[#064C3B]/10 hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-all group"
                 >
                   <div>
                     {/* Portrait Photography */}
@@ -107,15 +108,7 @@ export default function ClinicalTeam({ branch }) {
                         </span>
                       </div>
 
-                      {/* Experience Badge */}
-                      {doc.experience && (
-                        <div className="absolute top-4 right-4 z-10">
-                          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide bg-[#073D32]/90 text-white shadow-xs backdrop-blur-xs border border-white/10">
-                            <Clock className="w-3.5 h-3.5 text-[#E5A500]" />
-                            <span>{doc.experience}</span>
-                          </span>
-                        </div>
-                      )}
+                      {/* Experience Badge — removed from image, shown in content below */}
 
                       {/* Active Clinic Location Pill */}
                       <div className="absolute bottom-4 left-4 z-10">
@@ -148,6 +141,22 @@ export default function ClinicalTeam({ branch }) {
 
                       {/* Credentials & Details List */}
                       <div className="space-y-3.5 pt-2 border-t border-stone-200/70">
+                        {/* Clinical Experience */}
+                        {doc.experience && (
+                          <div className="flex items-start gap-3">
+                            <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
+                              <Award className="w-4 h-4 stroke-[1.8]" />
+                            </div>
+                            <div>
+                              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
+                                Clinical Experience
+                              </span>
+                              <p className="text-xs sm:text-sm font-semibold text-stone-800">
+                                {doc.experience}
+                              </p>
+                            </div>
+                          </div>
+                        )}
                         {/* Qualification */}
                         <div className="flex items-start gap-3">
                           <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
@@ -195,29 +204,29 @@ export default function ClinicalTeam({ branch }) {
                           </div>
                         )}
                       </div>
+
+                      {/* Actions — attached directly below credentials, no floating gap */}
+                      <div className="mt-5 pt-4 border-t border-stone-200/70 flex flex-wrap items-center gap-3">
+                        <a
+                          href={`tel:${callNumber}`}
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] transition-all shadow-xs active:scale-[0.98]"
+                        >
+                          <Phone className="w-3.5 h-3.5" />
+                          <span>Call {shortName}: {doc.phone || '+91 91460 36559'}</span>
+                        </a>
+
+                        <Link
+                          to="/about"
+                          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all"
+                        >
+                          <span>Full Profile</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
-
-                  {/* Actions Footer */}
-                  <div className="p-6 sm:p-8 pt-0 flex flex-wrap items-center gap-3">
-                    <a
-                      href={`tel:${callNumber}`}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] transition-all shadow-xs active:scale-[0.98]"
-                    >
-                      <Phone className="w-3.5 h-3.5" />
-                      <span>Call {shortName}: {doc.phone || '+91 91460 36559'}</span>
-                    </a>
-
-                    <Link
-                      to="/about"
-                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all"
-                    >
-                      <span>Full Profile</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
                 </article>
-              )
+                )
             })}
           </div>
         ) : (
@@ -279,7 +288,22 @@ export default function ClinicalTeam({ branch }) {
 
                   {/* Credentials & Details List */}
                   <div className="space-y-3.5">
-                    {/* Medical Designation */}
+                    {/* Clinical Experience */}
+                    {branchDoctors[0].experience && (
+                      <div className="flex items-start gap-3.5">
+                        <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
+                          <Award className="w-4 h-4 stroke-[1.8]" />
+                        </div>
+                        <div>
+                          <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-stone-400 block mb-0.5">
+                            Clinical Experience
+                          </span>
+                          <p className="text-xs sm:text-sm font-semibold text-stone-800">
+                            {branchDoctors[0].experience}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                     <div className="flex items-start gap-3.5">
                       <div className="w-8 h-8 rounded-lg bg-[#F4F2EC] flex items-center justify-center shrink-0 text-[#064C3B] mt-0.5">
                         <GraduationCap className="w-4 h-4 stroke-[1.8]" />

@@ -142,9 +142,6 @@ export default function BranchSwitcher({ mobile = false, onSelect }) {
                         <span className="text-xs font-bold leading-none">
                           {b.name}
                         </span>
-                        <span className="text-[9px] font-medium tracking-wide uppercase px-1.5 py-0.5 rounded bg-stone-200/70 text-stone-600">
-                          {b.tag}
-                        </span>
                       </div>
                       <p className="text-[10.5px] text-stone-500 mt-1 line-clamp-1">
                         {b.city}

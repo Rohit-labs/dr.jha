@@ -35,10 +35,9 @@ export const branches = [
       { label: 'Hr. Anupam Jha', number: '+91 74983 13922', tel: '+917498313922' }
     ],
     whatsapp: '+91 91460 36559',
-    openingHours: 'Mon – Sat: 8:00 AM – 9:00 PM | Sun: 9:00 AM – 1:00 PM',
+    openingHours: 'Mon – Sun: 9:00 AM – 10:00 PM',
     timingDetails: [
-      { days: 'Monday – Saturday', hours: '8:00 AM – 9:00 PM' },
-      { days: 'Sunday', hours: '9:00 AM – 1:00 PM' }
+      { days: 'Monday – Sunday', hours: '9:00 AM – 10:00 PM' }
     ],
     shortDescription: 'Our flagship multi-disciplinary facility providing specialized physiotherapy, medical acupuncture, and advanced rehabilitation in Mira Road.',
     description: 'Our flagship clinical facility in Mira Road provides advanced multi-disciplinary physiotherapy, traditional acupuncture, and pain management in a modern, compassionate environment.',

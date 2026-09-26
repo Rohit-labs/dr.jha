@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MapPin, Clock, Phone, ExternalLink, Navigation, Car, MessageCircle } from 'lucide-react'
+import { MapPin, Clock, Phone, ExternalLink, Navigation, MessageCircle } from 'lucide-react'
 
 export default function BranchClinicSection({ branch }) {
   if (!branch) return null
@@ -118,9 +118,6 @@ export default function BranchClinicSection({ branch }) {
                   <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#E5A500]">
                     {branch.name}
                   </span>
-                  <span className="text-[10px] font-bold tracking-wider uppercase bg-white/10 text-stone-200 px-2.5 py-0.5 rounded-full border border-white/10">
-                    {branch.tag}
-                  </span>
                 </div>
 
                 {/* Title */}
@@ -151,15 +148,6 @@ export default function BranchClinicSection({ branch }) {
                       <Navigation className="w-4 h-4 text-[#E5A500] shrink-0 mt-0.5" />
                       <span className="text-stone-300 text-xs leading-relaxed">
                         {branch.transitInfo}
-                      </span>
-                    </div>
-                  )}
-
-                  {branch.parking && (
-                    <div className="flex items-start gap-3">
-                      <Car className="w-4 h-4 text-[#E5A500] shrink-0 mt-0.5" />
-                      <span className="text-stone-300 text-xs leading-relaxed">
-                        {branch.parking}
                       </span>
                     </div>
                   )}

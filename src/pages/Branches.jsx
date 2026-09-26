@@ -341,9 +341,6 @@ export default function Branches() {
                 >
                   <div className="space-y-4">
                     <div>
-                      <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#064C3B] block mb-1">
-                        {b.tag}
-                      </span>
                       <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F]">
                         {b.name}
                       </h3>

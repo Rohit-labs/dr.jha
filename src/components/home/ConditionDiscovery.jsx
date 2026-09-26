@@ -44,9 +44,9 @@ export default function ConditionDiscovery({ branch }) {
       description:
         'Targeted relief for acute & chronic spine issues, slip disc, sciatica, frozen shoulder, knee osteoarthritis, and post-surgical recovery.',
       href: '/orthopaedic-conditions',
-      color: 'from-[#B8583B]/5 via-transparent to-transparent',
-      borderColor: 'hover:border-[#B8583B]/50',
-      tagBg: 'bg-[#B8583B]/10 text-[#B8583B]',
+      color: 'from-[#064C3B]/5 via-transparent to-transparent',
+      borderColor: 'hover:border-[#064C3B]/50',
+      tagBg: 'bg-[#064C3B]/10 text-[#064C3B]',
       featuredItems: [
         'Neck, Back Pain & Sciatica',
         'Frozen Shoulder & Rotator Cuff',
@@ -84,9 +84,9 @@ export default function ConditionDiscovery({ branch }) {
       description:
         'Integrative therapies for vertigo, tinnitus, cosmetic facial acupuncture, hair fall supportive care, posture correction, and stress relief.',
       href: '/specialized-conditions',
-      color: 'from-[#E5A500]/5 via-transparent to-transparent',
-      borderColor: 'hover:border-[#E5A500]/50',
-      tagBg: 'bg-[#E5A500]/15 text-[#9E6E00]',
+      color: 'from-[#064C3B]/5 via-transparent to-transparent',
+      borderColor: 'hover:border-[#064C3B]/50',
+      tagBg: 'bg-[#064C3B]/10 text-[#064C3B]',
       featuredItems: [
         'Cosmetic Facial Acupuncture',
         'Tinnitus & Vertigo (Vestibular)',
@@ -100,16 +100,15 @@ export default function ConditionDiscovery({ branch }) {
   const quickConditions = [
     { label: 'Sciatica Relief', href: '/orthopaedic-conditions#spine-back' },
     { label: 'Stroke Rehabilitation', href: '/neurological-conditions#stroke-paralysis' },
-    { label: "Bell's Palsy", href: '/neurological-conditions#facial-nerve' },
+    { label: "Bell's Palsy", href: '/neurological-conditions#cranial-nerve' },
     { label: 'Frozen Shoulder', href: '/orthopaedic-conditions#shoulder' },
-    { label: 'Slip Disc & Spine', href: '/orthopaedic-conditions#spine-back' },
     { label: 'Knee Osteoarthritis', href: '/orthopaedic-conditions#knee' },
     { label: 'PCOS Supportive Care', href: '/systemic-conditions#womens-health' },
     { label: 'Vertigo & Balance', href: '/specialized-conditions#eye-ear-vestibular' },
     { label: 'Parkinson’s Mobility', href: '/neurological-conditions#neurodegenerative' },
     { label: 'Plantar Fasciitis', href: '/orthopaedic-conditions#ankle-foot' },
-    { label: 'Cosmetic Acupuncture', href: '/specialized-conditions#aesthetic-acupuncture' },
-    { label: 'Post-Surgical Rehab', href: '/orthopaedic-conditions#post-surgical' }
+    { label: 'Cosmetic Acupuncture', href: '/specialized-conditions#aesthetic-cosmetic' },
+    { label: 'Post-Surgical Rehab', href: '/orthopaedic-conditions#fracture-post-surgical' }
   ]
 
   return (
@@ -142,9 +141,10 @@ export default function ConditionDiscovery({ branch }) {
         {/* ═══════════ 4 CLINICAL PILLARS GRID ═══════════ */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {pillars.map((pillar) => (
-            <div
+            <Link
               key={pillar.id}
-              className={`bg-[#FCFBF7] border border-[#DCDDD5] rounded-[30px] p-6 sm:p-8 lg:p-9 flex flex-col justify-between transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_36px_rgba(6,76,59,0.08)] hover:-translate-y-0.5 group relative overflow-hidden ${pillar.borderColor}`}
+              to={pillar.href}
+              className={`bg-[#FCFBF7] border border-[#DCDDD5] rounded-[30px] p-6 sm:p-8 lg:p-9 flex flex-col justify-between transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_36px_rgba(6,76,59,0.08)] hover:-translate-y-0.5 group relative overflow-hidden cursor-pointer ${pillar.borderColor}`}
             >
               {/* Background gradient accent */}
               <div className={`absolute inset-0 bg-gradient-to-br ${pillar.color} pointer-events-none`} />
@@ -169,12 +169,10 @@ export default function ConditionDiscovery({ branch }) {
 
                 {/* Pillar Title */}
                 <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#26332F] leading-tight mb-2 group-hover:text-[#064C3B] transition-colors">
-                  <Link to={pillar.href}>
-                    {pillar.title}
-                  </Link>
+                  {pillar.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm font-medium text-[#B8583B] mb-3">
+                <p className="text-xs sm:text-sm font-medium text-[#064C3B] mb-3">
                   {pillar.subtitle}
                 </p>
 
@@ -201,19 +199,16 @@ export default function ConditionDiscovery({ branch }) {
 
               {/* Action Link at Bottom */}
               <div className="relative z-10 pt-5 border-t border-stone-200/70 flex items-center justify-between">
-                <Link
-                  to={pillar.href}
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#064C3B] group-hover:text-[#073D32] transition-colors"
-                >
+                <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#064C3B] group-hover:text-[#073D32] transition-colors">
                   <span>Explore All {pillar.badge} &amp; Protocols</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </span>
 
                 <div className="w-9 h-9 rounded-full bg-[#F4F2EC] flex items-center justify-center text-[#064C3B] group-hover:bg-[#064C3B] group-hover:text-white transition-all shadow-xs">
                   <ChevronRight className="w-4 h-4" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

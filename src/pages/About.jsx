@@ -9,8 +9,6 @@ import {
   Activity,
   HeartHandshake,
   ShieldCheck,
-  Phone,
-  ArrowRight,
   MapPin
 } from 'lucide-react'
 
@@ -75,40 +73,48 @@ export default function About() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B]">
-                <ShieldCheck className="w-5 h-5" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B] shrink-0">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-lg font-bold text-stone-900">Evidence-Based</h3>
               </div>
-              <h3 className="font-serif text-lg font-bold text-stone-900">Evidence-Based</h3>
               <p className="text-xs text-stone-600 leading-relaxed">
                 Treatment decisions rooted in modern joint kinematics and validated rehabilitation science.
               </p>
             </div>
 
             <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B]">
-                <HeartHandshake className="w-5 h-5" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B] shrink-0">
+                  <HeartHandshake className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-lg font-bold text-stone-900">1-on-1 Focus</h3>
               </div>
-              <h3 className="font-serif text-lg font-bold text-stone-900">1-on-1 Focus</h3>
               <p className="text-xs text-stone-600 leading-relaxed">
                 Personalized clinician attention without crowded assembly-line setups.
               </p>
             </div>
 
             <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B]">
-                <Activity className="w-5 h-5" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B] shrink-0">
+                  <Activity className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-lg font-bold text-stone-900">Integrated Care</h3>
               </div>
-              <h3 className="font-serif text-lg font-bold text-stone-900">Integrated Care</h3>
               <p className="text-xs text-stone-600 leading-relaxed">
                 Seamless combination of manual therapy, exercises, and acupuncture where indicated.
               </p>
             </div>
 
             <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs space-y-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B]">
-                <MapPin className="w-5 h-5" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-[#F4F2EC] flex items-center justify-center text-[#064C3B] shrink-0">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-lg font-bold text-stone-900">3 Regional Clinics</h3>
               </div>
-              <h3 className="font-serif text-lg font-bold text-stone-900">3 Regional Clinics</h3>
               <p className="text-xs text-stone-600 leading-relaxed">
                 Consistent clinical protocols across Mira Road, Vasai, and Surat.
               </p>
@@ -116,23 +122,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="bg-[#073D32] text-white rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
-          <h2 className="font-serif text-3xl font-bold">Ready to Move Without Discomfort?</h2>
-          <p className="text-xs sm:text-sm text-stone-300 max-w-md mx-auto leading-relaxed">
-            Schedule an appointment at your nearest Dr. Jha centre and receive an individualized assessment today.
-          </p>
-          <div className="pt-3">
-            <a
-              href="tel:+919146036559"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 shadow-md transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              <span>Call Us for Appointment</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
 
       </div>
     </PageContainer>

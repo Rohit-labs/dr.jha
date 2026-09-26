@@ -6,7 +6,6 @@ import {
   Menu,
   X,
   ArrowRight,
-  Search,
   MapPin,
   FileText,
   HelpCircle,
@@ -387,7 +386,24 @@ export default function Navbar() {
 
           {/* ──────────────── Desktop Navigation Links ──────────────── */}
           <div className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-6 text-[13px] xl:text-[13.5px] text-stone-600 font-medium">
-            
+
+            {/* 0. Home */}
+            <Link
+              to={selectedBranchSlug ? `/${selectedBranchSlug}` : '/'}
+              className={`relative py-2 transition-colors whitespace-nowrap ${
+                (selectedBranchSlug && isPathActive(`/${selectedBranchSlug}`)) || (!selectedBranchSlug && isPathActive('/'))
+                  ? 'text-[#064C3B] font-semibold'
+                  : 'text-stone-600 hover:text-[#064C3B] font-medium'
+              }`}
+            >
+              <span className="relative inline-block">
+                Home
+                {((selectedBranchSlug && isPathActive(`/${selectedBranchSlug}`)) || (!selectedBranchSlug && isPathActive('/'))) && (
+                  <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-[#064C3B] rounded-full transition-all duration-200"></span>
+                )}
+              </span>
+            </Link>
+
             {/* 1. About Us */}
             <Link
               to="/about"
@@ -745,16 +761,7 @@ export default function Navbar() {
               </span>
             </Link>
 
-            {/* 6. Search Icon Button */}
-            <button
-              type="button"
-              onClick={() => setSearchModalOpen(true)}
-              className="p-2 rounded-full text-stone-600 hover:text-[#064C3B] hover:bg-stone-200/50 transition-colors cursor-pointer"
-              aria-label="Open search"
-              title="Search conditions, treatments, symptoms"
-            >
-              <Search className="w-4 h-4 stroke-[2.2]" />
-            </button>
+
           </div>
 
           {/* ──────────────── Right CTA Button ──────────────── */}
@@ -1046,23 +1053,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Search Button */}
-            <div className="border-t border-stone-200/60 pt-3">
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false)
-                  setSearchModalOpen(true)
-                }}
-                className="w-full flex items-center justify-between p-3 rounded-2xl bg-[#F4F2EC] border border-[#DCDDD5] text-stone-700 text-xs font-medium hover:bg-[#EAE5DC] transition-colors cursor-pointer"
-              >
-                <span className="flex items-center gap-2">
-                  <Search className="w-4 h-4 text-stone-400" />
-                  Search conditions, treatments...
-                </span>
-                <span className="text-[10px] text-stone-400 font-mono">⌘K</span>
-              </button>
-            </div>
+
 
             {/* Call Us for Appointment CTA */}
             <div className="pt-2">
@@ -1084,26 +1075,7 @@ export default function Navbar() {
       {/* ──────────────── 2. Location Context Bar ──────────────── */}
       <LocationContextBar />
 
-      {/* ──────────────── 3. Dedicated Mobile Search Bar ──────────────── */}
-      <div className="lg:hidden w-full max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-2.5">
-        <div
-          onClick={() => setSearchModalOpen(true)}
-          className="w-full h-[48px] flex items-center gap-3 px-4 rounded-2xl bg-[#F4F2EC] hover:bg-[#EAE5DC] border border-[#DCDDD5] text-stone-700 shadow-2xs transition-colors cursor-pointer focus-within:border-[#064C3B] focus-within:ring-2 focus-within:ring-[#064C3B]/20"
-          role="search"
-        >
-          <Search className="w-[18px] h-[18px] text-stone-400 stroke-[2] shrink-0" />
-          <input
-            type="text"
-            readOnly
-            value=""
-            placeholder="Search conditions, treatments..."
-            className="w-full bg-transparent text-[13px] sm:text-sm text-stone-800 placeholder:text-stone-500 font-normal focus:outline-none cursor-pointer"
-            onClick={() => setSearchModalOpen(true)}
-            onFocus={() => setSearchModalOpen(true)}
-            aria-label="Search conditions, treatments..."
-          />
-        </div>
-      </div>
+
 
       {/* ──────────────── 4. SEARCH MODAL ──────────────── */}
       {searchModalOpen && (

@@ -89,15 +89,6 @@ export default function LocationSelector() {
                       loading="eager"
                     />
                     <div className="absolute top-4 left-4">
-                      <span
-                        className={`px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-xs backdrop-blur-xs ${
-                          branch.slug === 'mira-road'
-                            ? 'bg-[#064C3B] text-white'
-                            : 'bg-white/95 text-[#064C3B] border border-stone-200/80'
-                        }`}
-                      >
-                        {branch.tag}
-                      </span>
                     </div>
                   </div>
 
