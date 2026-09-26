@@ -2,225 +2,225 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Home & Locations -->
   <url>
-    <loc>https://drjhaphysiotherapy.com/</loc>
+    <loc>https://drjhaphysio.in/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/mira-road</loc>
+    <loc>https://drjhaphysio.in/mira-road</loc>
     <changefreq>weekly</changefreq>
     <priority>0.98</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/vasai</loc>
+    <loc>https://drjhaphysio.in/vasai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.98</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/surat</loc>
+    <loc>https://drjhaphysio.in/surat</loc>
     <changefreq>weekly</changefreq>
     <priority>0.98</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/locations</loc>
+    <loc>https://drjhaphysio.in/locations</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/about</loc>
+    <loc>https://drjhaphysio.in/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Clinical Condition Pillars -->
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions</loc>
+    <loc>https://drjhaphysio.in/conditions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/neurological-conditions</loc>
+    <loc>https://drjhaphysio.in/neurological-conditions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/orthopaedic-conditions</loc>
+    <loc>https://drjhaphysio.in/orthopaedic-conditions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/systemic-conditions</loc>
+    <loc>https://drjhaphysio.in/systemic-conditions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/specialized-conditions</loc>
+    <loc>https://drjhaphysio.in/specialized-conditions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <!-- High-Intent Condition Landing Direct Slugs -->
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/sciatica</loc>
+    <loc>https://drjhaphysio.in/conditions/sciatica</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/back-pain</loc>
+    <loc>https://drjhaphysio.in/conditions/back-pain</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/knee-pain</loc>
+    <loc>https://drjhaphysio.in/conditions/knee-pain</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/neck-pain</loc>
+    <loc>https://drjhaphysio.in/conditions/neck-pain</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/frozen-shoulder</loc>
+    <loc>https://drjhaphysio.in/conditions/frozen-shoulder</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/stroke</loc>
+    <loc>https://drjhaphysio.in/conditions/stroke</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/bells-palsy</loc>
+    <loc>https://drjhaphysio.in/conditions/bells-palsy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/pcos</loc>
+    <loc>https://drjhaphysio.in/conditions/pcos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/vertigo</loc>
+    <loc>https://drjhaphysio.in/conditions/vertigo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/conditions/tinnitus</loc>
+    <loc>https://drjhaphysio.in/conditions/tinnitus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
   <!-- Treatments -->
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments</loc>
+    <loc>https://drjhaphysio.in/treatments</loc>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/physiotherapy</loc>
+    <loc>https://drjhaphysio.in/treatments/physiotherapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/acupuncture</loc>
+    <loc>https://drjhaphysio.in/treatments/acupuncture</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/dry-cupping-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/dry-cupping-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/wet-cupping-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/wet-cupping-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/auriculotherapy</loc>
+    <loc>https://drjhaphysio.in/treatments/auriculotherapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/bloodletting-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/bloodletting-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/cosmetic-acupuncture-laser</loc>
+    <loc>https://drjhaphysio.in/treatments/cosmetic-acupuncture-laser</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/fire-cupping</loc>
+    <loc>https://drjhaphysio.in/treatments/fire-cupping</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/laser-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/laser-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/shockwave-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/shockwave-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/guasa-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/guasa-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/scalp-acupuncture</loc>
+    <loc>https://drjhaphysio.in/treatments/scalp-acupuncture</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/moxibustion-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/moxibustion-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/ginger-moxibustion</loc>
+    <loc>https://drjhaphysio.in/treatments/ginger-moxibustion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/exercise-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/exercise-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/manual-therapy</loc>
+    <loc>https://drjhaphysio.in/treatments/manual-therapy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/treatments/dry-needling</loc>
+    <loc>https://drjhaphysio.in/treatments/dry-needling</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Blogs, Resources, Case Studies & Events -->
   <url>
-    <loc>https://drjhaphysiotherapy.com/blogs</loc>
+    <loc>https://drjhaphysio.in/blogs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/resources</loc>
+    <loc>https://drjhaphysio.in/resources</loc>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/case-studies</loc>
+    <loc>https://drjhaphysio.in/case-studies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://drjhaphysiotherapy.com/events</loc>
+    <loc>https://drjhaphysio.in/events</loc>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>

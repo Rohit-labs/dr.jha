@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://drjhaphysiotherapy.com/sitemap.xml
+Sitemap: https://drjhaphysio.in/sitemap.xml
