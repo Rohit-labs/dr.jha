@@ -12,7 +12,7 @@ export default function Events() {
       <SEO
         title="Events & Workshops | Dr. Jha Physiotherapy & Acupuncture"
         description="Stay connected with upcoming events, workshops and activities from Dr. Jha Centre across Mira Road, Vasai, and Surat."
-        canonicalUrl="https://drjhaphysiotherapy.com/events"
+        canonicalUrl="https://drjhaphysio.in/events"
       />
 
       <div className="w-full py-8 sm:py-12 lg:py-16">

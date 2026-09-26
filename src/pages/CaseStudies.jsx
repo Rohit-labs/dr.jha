@@ -11,7 +11,7 @@ export default function CaseStudies() {
       <SEO
         title="Real Recovery Stories & Case Studies | Dr. Jha Centre"
         description="Explore real patient rehabilitation journeys and functional recovery milestones achieved at Dr. Jha Centre across Mira Road, Vasai, and Surat."
-        canonicalUrl="https://drjhaphysiotherapy.com/case-studies"
+        canonicalUrl="https://drjhaphysio.in/case-studies"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

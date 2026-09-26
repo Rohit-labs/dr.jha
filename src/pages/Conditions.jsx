@@ -622,7 +622,7 @@ export default function Conditions() {
         title="Conditions We Treat — Physiotherapy & Medical Acupuncture | Dr. Jha"
         description="Comprehensive clinical directory of 34+ conditions treated across Mira Road, Vasai, and Surat. Neuro-rehabilitation, spine & joint pain relief, women's health & specialized care."
         keywords="conditions treated dr jha, physiotherapy clinic mira road, acupuncture vasai, pain relief surat, stroke rehab, sciatica clinic, frozen shoulder, bells palsy"
-        canonicalUrl="https://drjhaphysiotherapy.com/conditions"
+        canonicalUrl="https://drjhaphysio.in/conditions"
         structuredData={{
           '@context': 'https://schema.org',
           '@graph': [
@@ -630,7 +630,7 @@ export default function Conditions() {
             {
               '@type': 'MedicalWebPage',
               'name': 'Conditions We Treat | Dr. Jha Physiotherapy & Acupuncture Centre',
-              'url': 'https://drjhaphysiotherapy.com/conditions',
+              'url': 'https://drjhaphysio.in/conditions',
               'description': 'Comprehensive directory of 34 clinical conditions treated with evidence-based physiotherapy and medical acupuncture.',
               'about': pillars.flatMap((p) =>
                 p.sections.map((s) => ({

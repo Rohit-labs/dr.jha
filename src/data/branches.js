@@ -124,7 +124,7 @@ export const branches = [
     seo: {
       pageTitle: 'Physiotherapy & Acupuncture in Mira Road | Dr. Jha Centre',
       metaDescription: 'Visit Dr. Jha Physiotherapy & Acupuncture Centre in Mira Road. Specialized orthopaedic, neurological, and sports rehabilitation care.',
-      canonicalUrl: 'https://drjhaphysiotherapy.com/mira-road'
+      canonicalUrl: 'https://drjhaphysio.in/mira-road'
     }
   },
   {
@@ -226,7 +226,7 @@ export const branches = [
     seo: {
       pageTitle: 'Physiotherapy & Acupuncture in Vasai | Dr. Jha Centre',
       metaDescription: 'Dr. Jha Physiotherapy & Acupuncture Centre in Vasai West. Personalized rehabilitation, chronic pain relief, and functional movement care.',
-      canonicalUrl: 'https://drjhaphysiotherapy.com/vasai'
+      canonicalUrl: 'https://drjhaphysio.in/vasai'
     }
   },
   {
@@ -323,7 +323,7 @@ export const branches = [
     seo: {
       pageTitle: 'Physiotherapy & Acupuncture in Surat | Dr. Jha Centre',
       metaDescription: 'Premier physiotherapy and acupuncture clinic in Vesu, Surat. Advanced rehabilitation, pain relief, and personalized therapy plans.',
-      canonicalUrl: 'https://drjhaphysiotherapy.com/surat'
+      canonicalUrl: 'https://drjhaphysio.in/surat'
     }
   }
 ]

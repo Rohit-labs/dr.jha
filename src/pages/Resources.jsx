@@ -11,7 +11,7 @@ export default function Resources() {
       <SEO
         title="Clinical Blogs & Patient Knowledge Centre | Dr. Jha Physiotherapy"
         description="Clinician-authored condition guides, physiotherapy recovery tips, and educational articles to help you understand your recovery."
-        canonicalUrl="https://drjhaphysiotherapy.com/blogs"
+        canonicalUrl="https://drjhaphysio.in/blogs"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

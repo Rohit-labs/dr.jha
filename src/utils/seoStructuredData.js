@@ -7,8 +7,8 @@ export const CLINIC_ORGANIZATION = {
   '@type': 'MedicalBusiness',
   'name': 'Dr Jha Physiotherapy & Acupuncture Centre',
   'alternateName': 'Dr. Jha Physiotherapy',
-  'url': 'https://drjhaphysiotherapy.com',
-  'logo': 'https://drjhaphysiotherapy.com/logo.png',
+  'url': 'https://drjhaphysio.in',
+  'logo': 'https://drjhaphysio.in/logo.png',
   'description': 'Comprehensive evidence-based physiotherapy, neurological rehabilitation, and medical acupuncture clinics across Mira Road, Vasai, and Surat.',
   'founder': {
     '@type': 'Physician',

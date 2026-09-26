@@ -51,7 +51,7 @@ export default function FAQs() {
       <SEO
         title="Frequently Asked Questions (FAQs) | Dr. Jha Physiotherapy & Acupuncture"
         description="Find answers to common questions about physiotherapy, medical acupuncture, session duration, stroke rehab, laser therapy, shockwave therapy, clinic locations, and appointment bookings."
-        canonicalUrl="https://drjhaphysiotherapy.com/faqs"
+        canonicalUrl="https://drjhaphysio.in/faqs"
         structuredData={structuredData}
       />
 

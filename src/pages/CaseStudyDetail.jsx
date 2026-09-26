@@ -30,7 +30,7 @@ export default function CaseStudyDetail() {
       <SEO
         title={cs.pageTitle}
         description={cs.metaDescription}
-        canonicalUrl={`https://drjhaphysiotherapy.com/case-studies/${cs.slug}`}
+        canonicalUrl={`https://drjhaphysio.in/case-studies/${cs.slug}`}
         ogImage={cs.image}
       />
 

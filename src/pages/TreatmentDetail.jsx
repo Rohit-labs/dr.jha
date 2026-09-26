@@ -34,7 +34,7 @@ export default function TreatmentDetail() {
       <SEO
         title={treatment.pageTitle}
         description={treatment.metaDescription}
-        canonicalUrl={`https://drjhaphysiotherapy.com/treatments/${treatment.slug}`}
+        canonicalUrl={`https://drjhaphysio.in/treatments/${treatment.slug}`}
       />
 
       {/* Fullscreen Photo Lightbox Modal */}

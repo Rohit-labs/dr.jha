@@ -22,7 +22,7 @@ export default function About() {
     'worksFor': {
       '@type': 'MedicalClinic',
       'name': 'Dr. Jha Physiotherapy & Acupuncture Centre',
-      'url': 'https://drjhaphysiotherapy.com'
+      'url': 'https://drjhaphysio.in'
     }
   }
 
@@ -31,7 +31,7 @@ export default function About() {
       <SEO
         title="About Dr. Pranab Jha & Clinical Philosophy | Dr. Jha Centre"
         description="Learn about Dr. Pranab Jha, our clinical team, and our evidence-based multi-disciplinary physiotherapy and acupuncture approach."
-        canonicalUrl="https://drjhaphysiotherapy.com/about"
+        canonicalUrl="https://drjhaphysio.in/about"
         structuredData={physicianStructuredData}
       />
 

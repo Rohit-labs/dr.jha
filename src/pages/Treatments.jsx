@@ -11,7 +11,7 @@ export default function Treatments() {
       <SEO
         title="Treatments & Modalities | Dr. Jha Physiotherapy & Acupuncture Centre"
         description="Explore evidence-based physiotherapy, medical acupuncture, manual therapy, and rehabilitation modalities at Dr. Jha Centre."
-        canonicalUrl="https://drjhaphysiotherapy.com/treatments"
+        canonicalUrl="https://drjhaphysio.in/treatments"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

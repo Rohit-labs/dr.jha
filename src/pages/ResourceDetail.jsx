@@ -28,7 +28,7 @@ export default function ResourceDetail() {
     'publisher': {
       '@type': 'Organization',
       'name': 'Dr. Jha Physiotherapy & Acupuncture Centre',
-      'url': 'https://drjhaphysiotherapy.com'
+      'url': 'https://drjhaphysio.in'
     }
   }
 
@@ -39,7 +39,7 @@ export default function ResourceDetail() {
       <SEO
         title={resource.pageTitle}
         description={resource.metaDescription}
-        canonicalUrl={`https://drjhaphysiotherapy.com/blogs/${resource.slug}`}
+        canonicalUrl={`https://drjhaphysio.in/blogs/${resource.slug}`}
         structuredData={articleStructuredData}
       />
 

@@ -251,11 +251,11 @@ export default function SystemicConditions() {
         title="Women's Health, Respiratory Rehab & Systemic Care | Dr. Jha (Mira Road, Vasai, Surat)"
         description="Integrative physiotherapy & acupuncture supportive care for PCOS, pelvic floor rehab, asthma, COPD, chronic fatigue & metabolic health across Mira Road, Vasai, and Surat."
         keywords="PCOS supportive acupuncture mira road, pelvic floor physiotherapy vasai, asthma respiratory rehabilitation surat, chronic fatigue syndrome clinic, post icu physiotherapy mumbai, dr jha clinic"
-        canonicalUrl="https://drjhaphysiotherapy.com/systemic-conditions"
+        canonicalUrl="https://drjhaphysio.in/systemic-conditions"
         structuredData={createConditionPillarSchema({
           title: "Systemic & General Health Conditions | Dr. Jha Centre",
           description: "Integrated physiotherapy and acupuncture supportive care for women's health, respiratory rehab, cardiac recovery, metabolic deconditioning, and chronic fatigue across Mira Road, Vasai, and Surat.",
-          url: "https://drjhaphysiotherapy.com/systemic-conditions",
+          url: "https://drjhaphysio.in/systemic-conditions",
           sections
         })}
       />

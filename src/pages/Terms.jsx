@@ -24,7 +24,7 @@ export default function Terms() {
     '@type': 'WebPage',
     name: 'Terms & Conditions for Patients | Dr. Jha Physiotherapy & Acupuncture Centre',
     description: 'Terms and conditions, patient privacy guidelines, online tele-consultation protocols, and physical clinic policies for Dr. Jha Physiotherapy & Acupuncture Centre.',
-    url: 'https://drjhaphysiotherapy.com/terms'
+    url: 'https://drjhaphysio.in/terms'
   }
 
   return (
@@ -32,7 +32,7 @@ export default function Terms() {
       <SEO
         title="Terms & Conditions for Patients | Dr. Jha Centre"
         description="Review the patient terms and conditions, healthcare authorization, tele-consultation policies, and data privacy guidelines for Dr. Jha Physiotherapy & Acupuncture Centre."
-        canonicalUrl="https://drjhaphysiotherapy.com/terms"
+        canonicalUrl="https://drjhaphysio.in/terms"
         structuredData={termsStructuredData}
       />
 

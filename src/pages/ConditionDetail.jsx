@@ -114,7 +114,7 @@ export default function ConditionDetail() {
     '@type': 'MedicalWebPage',
     'name': condition.name,
     'description': condition.metaDescription,
-    'url': `https://drjhaphysiotherapy.com/conditions/${condition.slug}`,
+    'url': `https://drjhaphysio.in/conditions/${condition.slug}`,
     'about': {
       '@type': 'MedicalCondition',
       'name': condition.name,
@@ -131,7 +131,7 @@ export default function ConditionDetail() {
       <SEO
         title={condition.pageTitle}
         description={condition.metaDescription}
-        canonicalUrl={`https://drjhaphysiotherapy.com/conditions/${condition.slug}`}
+        canonicalUrl={`https://drjhaphysio.in/conditions/${condition.slug}`}
         structuredData={{
           '@context': 'https://schema.org',
           '@graph': [faqStructuredData, medicalWebPageData].filter(Boolean)

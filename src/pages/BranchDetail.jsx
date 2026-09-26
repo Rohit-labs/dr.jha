@@ -50,7 +50,7 @@ export default function BranchDetail() {
     '@type': 'MedicalClinic',
     name: `Dr. Jha Physiotherapy & Acupuncture Centre - ${branch.name}`,
     image: branch.image,
-    url: `https://drjhaphysiotherapy.com/branches/${branch.slug}`,
+    url: `https://drjhaphysio.in/branches/${branch.slug}`,
     telephone: branch.phone,
     address: {
       '@type': 'PostalAddress',
@@ -76,7 +76,7 @@ export default function BranchDetail() {
       <SEO
         title={branch.seo?.pageTitle || `Physiotherapy & Acupuncture in ${branch.name} | Dr. Jha Centre`}
         description={branch.seo?.metaDescription || branch.description}
-        canonicalUrl={branch.seo?.canonicalUrl || `https://drjhaphysiotherapy.com/branches/${branch.slug}`}
+        canonicalUrl={branch.seo?.canonicalUrl || `https://drjhaphysio.in/branches/${branch.slug}`}
         ogImage={branch.image}
         structuredData={structuredData}
       />

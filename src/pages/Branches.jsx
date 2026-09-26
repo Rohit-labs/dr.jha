@@ -96,7 +96,7 @@ export default function Branches() {
     '@type': 'MedicalClinic',
     name: 'Dr. Jha Physiotherapy & Acupuncture Centre - Clinic Network',
     description: 'Specialized multi-disciplinary physiotherapy and acupuncture centres located in Mira Road, Vasai, and Surat.',
-    url: 'https://drjhaphysiotherapy.com/branches',
+    url: 'https://drjhaphysio.in/branches',
     department: branches.map((b) => ({
       '@type': 'MedicalClinic',
       name: `Dr. Jha Centre - ${b.name}`,
@@ -117,7 +117,7 @@ export default function Branches() {
       <SEO
         title="Our Branches | Mira Road, Vasai & Surat | Dr. Jha Physiotherapy"
         description="Find a Dr. Jha Physiotherapy & Acupuncture clinic near you in Mira Road, Vasai, or Surat. Three physical clinic branches, one standard of personalized clinical care."
-        canonicalUrl="https://drjhaphysiotherapy.com/branches"
+        canonicalUrl="https://drjhaphysio.in/branches"
         structuredData={structuredData}
       />
 

@@ -271,11 +271,11 @@ export default function SpecializedConditions() {
         title="Cosmetic Acupuncture, Vertigo & Wellness Care | Dr. Jha (Mira Road, Vasai, Surat)"
         description="Specialized acupuncture & physiotherapy supportive care for skin rejuvenation, acne, hair fall, vertigo, tinnitus, and posture alignment across Mira Road, Vasai, and Surat."
         keywords="cosmetic acupuncture mira road, facial rejuvenation vasai, vertigo vestibular physiotherapy surat, tinnitus supportive acupuncture, hair fall acupuncture, posture correction mumbai"
-        canonicalUrl="https://drjhaphysiotherapy.com/specialized-conditions"
+        canonicalUrl="https://drjhaphysio.in/specialized-conditions"
         structuredData={createConditionPillarSchema({
           title: "Specialized & Aesthetic Wellness Care | Dr. Jha Centre",
           description: "Integrative physiotherapy and acupuncture supportive care for skin, hair, vertigo, tinnitus, aesthetic facial acupuncture, height and posture, and women's health across Mira Road, Vasai, and Surat.",
-          url: "https://drjhaphysiotherapy.com/specialized-conditions",
+          url: "https://drjhaphysio.in/specialized-conditions",
           sections
         })}
       />

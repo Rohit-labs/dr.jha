@@ -15,7 +15,7 @@ export default function Home() {
     '@type': 'MedicalClinic',
     'name': 'Dr. Jha Physiotherapy & Acupuncture Centre',
     'image': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop&q=85',
-    'url': 'https://drjhaphysiotherapy.com',
+    'url': 'https://drjhaphysio.in',
     'telephone': '+919146036559',
     'address': {
       '@type': 'PostalAddress',
@@ -52,7 +52,7 @@ export default function Home() {
       <SEO
         title="Dr. Jha Physiotherapy & Acupuncture Centre | Move Better. Live Fuller."
         description="Expert physiotherapy, rehabilitation, and medical acupuncture care across Mira Road, Vasai, and Surat. Personalized treatment plans for pain-free living."
-        canonicalUrl="https://drjhaphysiotherapy.com/"
+        canonicalUrl="https://drjhaphysio.in/"
         structuredData={homeStructuredData}
       />
 

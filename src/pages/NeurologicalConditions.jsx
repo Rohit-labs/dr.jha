@@ -226,11 +226,11 @@ export default function NeurologicalConditions() {
         title="Neurological Conditions & Stroke Rehabilitation in Mira Road, Vasai, Surat | Dr. Jha"
         description="Individualized physiotherapy & acupuncture supportive care for stroke, hemiplegia, Parkinson's, Bell's palsy, diabetic neuropathy & ataxia across Mira Road, Vasai, and Surat."
         keywords="stroke rehabilitation mira road, bell's palsy acupuncture vasai, hemiplegia physiotherapy surat, parkinson rehab mumbai, diabetic neuropathy acupuncture, dr jha physiotherapy"
-        canonicalUrl="https://drjhaphysiotherapy.com/neurological-conditions"
+        canonicalUrl="https://drjhaphysio.in/neurological-conditions"
         structuredData={createConditionPillarSchema({
           title: "Neurological Conditions & Rehabilitation | Dr. Jha Centre",
           description: "Evidence-based physiotherapy and acupuncture supportive care for stroke, paralysis, Bell's palsy, ataxia, and neuropathies across Mira Road, Vasai, and Surat.",
-          url: "https://drjhaphysiotherapy.com/neurological-conditions",
+          url: "https://drjhaphysio.in/neurological-conditions",
           sections
         })}
       />

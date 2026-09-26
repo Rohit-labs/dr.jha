@@ -21,7 +21,7 @@ export default function LocationSelector() {
     '@type': 'MedicalClinic',
     name: 'Dr. Jha Physiotherapy & Acupuncture Centre - All Locations',
     description: 'Multi-disciplinary physiotherapy, medical acupuncture, and rehabilitation care centres in Mira Road, Vasai, and Surat.',
-    url: 'https://drjhaphysiotherapy.com/locations',
+    url: 'https://drjhaphysio.in/locations',
     department: branches.map((b) => ({
       '@type': 'MedicalClinic',
       name: `Dr. Jha Centre - ${b.name}`,
@@ -42,7 +42,7 @@ export default function LocationSelector() {
       <SEO
         title="Our Clinic Locations | Mira Road, Vasai & Surat | Dr. Jha Centre"
         description="Explore our specialized physiotherapy and medical acupuncture clinic locations in Mira Road East (Thane), Vasai West (Palghar), and Vesu (Surat)."
-        canonicalUrl="https://drjhaphysiotherapy.com/locations"
+        canonicalUrl="https://drjhaphysio.in/locations"
         structuredData={structuredData}
       />
 

@@ -328,11 +328,11 @@ export default function OrthopaedicConditions() {
         title="Orthopaedic Physiotherapy, Sciatica & Joint Pain Relief | Dr. Jha (Mira Road, Vasai, Surat)"
         description="Evidence-based physiotherapy & acupuncture for sciatica, slip disc, cervical spondylosis, frozen shoulder, knee arthritis & sports injuries across Mira Road, Vasai, and Surat."
         keywords="sciatica pain treatment mira road, slip disc physiotherapy vasai, frozen shoulder acupuncture surat, knee osteoarthritis rehabilitation, cervical spondylosis clinic mumbai, dr jha physiotherapy"
-        canonicalUrl="https://drjhaphysiotherapy.com/orthopaedic-conditions"
+        canonicalUrl="https://drjhaphysio.in/orthopaedic-conditions"
         structuredData={createConditionPillarSchema({
           title: "Orthopaedic & Musculoskeletal Conditions | Dr. Jha Centre",
           description: "Comprehensive physiotherapy and acupuncture pain management and rehabilitation for spine, shoulder, knee, hip, sports injuries, and post-surgery care across Mira Road, Vasai, and Surat.",
-          url: "https://drjhaphysiotherapy.com/orthopaedic-conditions",
+          url: "https://drjhaphysio.in/orthopaedic-conditions",
           sections
         })}
       />
