@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
-import CopyDirectLink from '../components/conditions/CopyDirectLink'
 import { CLINIC_ORGANIZATION } from '../utils/seoStructuredData'
 import { useBranchContext } from '../context/BranchContext'
 import {
@@ -857,11 +856,6 @@ export default function Conditions() {
                           <span>Explore Protocol &amp; Care</span>
                           <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                         </Link>
-                        <CopyDirectLink
-                          targetPath={pillar.pageHref}
-                          sectionId={sec.id}
-                          title={sec.title}
-                        />
                       </div>
                     </div>
                   ))}

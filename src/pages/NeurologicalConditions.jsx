@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
-import CopyDirectLink from '../components/conditions/CopyDirectLink'
 import { createConditionPillarSchema } from '../utils/seoStructuredData'
 import { useBranchContext } from '../context/BranchContext'
 import {
@@ -360,7 +359,6 @@ export default function NeurologicalConditions() {
                           CLINICAL REHABILITATION
                         </span>
                       </div>
-                      <CopyDirectLink sectionId={sec.id} title={sec.title} />
                     </div>
 
                   <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#26332F] leading-snug">
