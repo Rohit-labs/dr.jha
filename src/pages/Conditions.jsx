@@ -769,15 +769,34 @@ export default function Conditions() {
             </button>
           </div>
         ) : (
-          <div className="space-y-16 sm:space-y-20">
-            {filteredPillars.map((pillar) => (
-              <section key={pillar.id} className="space-y-6">
-                
-                {/* Pillar Header Card */}
-                <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xs">
-                  <div className="max-w-2xl space-y-2">
+          <div className="space-y-8 sm:space-y-10">
+            {filteredPillars.map((pillar) => {
+              const isNeurologicalPillar = pillar.id === 'neurological'
+              const isOrthopaedicPillar = pillar.id === 'orthopaedic'
+              const isSystemicPillar = pillar.id === 'systemic'
+              const isSpecializedPillar = pillar.id === 'specialized'
+              const isHighlightedPillar = isNeurologicalPillar || isOrthopaedicPillar || isSystemicPillar || isSpecializedPillar
+
+              const sectionClass = isHighlightedPillar
+                ? 'bg-[#F3F1EC] border-[#E2DED4]'
+                : 'bg-[#FCFBF7] border-[#DCDDD5]'
+
+              const headerClass = isHighlightedPillar
+                ? 'border-[#E2DED4] bg-[#F8F6F1]'
+                : 'border-[#DCDDD5]'
+
+              const badgeClass = isHighlightedPillar
+                ? 'bg-[#064C3B]/10'
+                : 'bg-[#064C3B]/10'
+
+              return (
+              <section key={pillar.id} className={`border rounded-[32px] overflow-hidden shadow-xs ${sectionClass}`}>
+
+                {/* ── Pillar Header ── */}
+                <div className={`p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 border-b ${headerClass}`}>
+                  <div className="space-y-1.5">
                     <div className="flex items-center gap-2">
-                      <span className="p-2 rounded-xl bg-[#064C3B]/10">{pillar.icon}</span>
+                      <span className={`p-2 rounded-xl ${badgeClass}`}>{pillar.icon}</span>
                       <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#064C3B]">
                         {pillar.badge}
                       </span>
@@ -785,26 +804,26 @@ export default function Conditions() {
                     <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#26332F]">
                       {pillar.title}
                     </h2>
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal max-w-2xl">
                       {pillar.description}
                     </p>
                   </div>
 
                   <Link
                     to={pillar.pageHref}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] transition-all shadow-md shrink-0 self-start md:self-auto group"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] transition-all shadow-md shrink-0 self-start sm:self-auto group"
                   >
                     <span>Explore Full Clinical Guide</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
 
-                {/* Subsections Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+                {/* ── Section cards inside the pillar container ── */}
+                <div className="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                   {pillar.sections.map((sec) => (
                     <div
                       key={sec.id}
-                      className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xs hover:border-[#064C3B]/60 hover:shadow-md transition-all group"
+                      className={`border rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:shadow-sm transition-all group ${isHighlightedPillar ? 'bg-[#FAF9F6] border-[#E7E1D8] hover:border-[#064C3B]/50' : 'bg-white border-[#DCDDD5] hover:border-[#064C3B]/50'}`}
                     >
                       <div>
                         {/* Header Pill & ID */}
@@ -847,7 +866,7 @@ export default function Conditions() {
                         </div>
                       </div>
 
-                      {/* Direct Subsection Link with Highlight Effect */}
+                      {/* Direct Subsection Link */}
                       <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
                         <Link
                           to={`${pillar.pageHref}#${sec.id}`}
@@ -862,7 +881,8 @@ export default function Conditions() {
                 </div>
 
               </section>
-            ))}
+              )
+            })}
           </div>
         )}
 
@@ -937,9 +957,9 @@ export default function Conditions() {
             </a>
             <Link
               to="/locations"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-stone-300 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#073D32] bg-white hover:bg-stone-100 transition-all shadow-md"
             >
-              <span>View Mira Road, Vasai &amp; Surat Centres</span>
+              <span>View All Branches</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

@@ -24,7 +24,7 @@ export const branches = [
     state: 'Maharashtra',
     pincode: '401107',
     address: 'Shop 12-14, Green Heritage, Near Shanti Park',
-    fullAddress: 'Shop 12-14, Green Heritage, Near Shanti Park, Mira Road East, Thane, Maharashtra 401107',
+    fullAddress: 'Shop 12-14, Green Heritage, Near Shanti Park, Mira Road East, Thane 401107, Maharashtra',
     landmark: 'Opposite Shanti Park complex',
     transitInfo: '5 minutes by auto from Mira Road Railway Station East. Accessible via Western Express Highway.',
     parking: 'Convenient ground-level visitor parking available near Green Heritage.',
@@ -44,7 +44,7 @@ export const branches = [
     about: 'Established as our primary rehabilitation facility in the Mumbai Metropolitan Region, the Mira Road clinic integrates modern physiotherapy, manual mobilization, and sterile medical acupuncture under the clinical guidance of Dr. Pranab Jha. The clinic is equipped with dedicated treatment bays, therapeutic exercise areas, and specialized modalities for complex spinal, nerve, and joint recovery.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Mira+Road',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Mira+Road',
-    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&auto=format&fit=crop&q=80',
+    image: '/images/clinics/mira-road-clinic-2.png',
     gallery: [
       {
         url: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&auto=format&fit=crop&q=80',
@@ -140,7 +140,7 @@ export const branches = [
     state: 'Maharashtra',
     pincode: '401202',
     address: '2nd Floor, Sai Arcade, Near Railway Station West',
-    fullAddress: '2nd Floor, Sai Arcade, Near Railway Station West, Vasai, Maharashtra 401202',
+    fullAddress: '2nd Floor, Sai Arcade, Near Railway Station West, Vasai 401202, Maharashtra',
     landmark: 'Walking distance from Vasai Road Railway Station West',
     transitInfo: 'Less than a 3-minute walk from Vasai Road Station West exit. Auto and bus stand adjacent.',
     parking: 'Street and commercial parking available near Sai Arcade.',
@@ -156,7 +156,7 @@ export const branches = [
     about: 'Serving the growing community of Vasai-Virar and the Palghar region, our Vasai clinic offers dedicated physical therapy, chronic pain relief, and functional movement training. Located on the second floor of Sai Arcade just moments from the railway terminus, this clinic allows convenient daily access for commuters, seniors, and recovering surgical patients.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Vasai',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Vasai',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&auto=format&fit=crop&q=80',
+    image: '/images/clinics/vasai-clinic-2.jpeg',
     gallery: [
       {
         url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&auto=format&fit=crop&q=80',
@@ -242,7 +242,7 @@ export const branches = [
     state: 'Gujarat',
     pincode: '395007',
     address: '301, Titanium Square, Vesu Main Road',
-    fullAddress: '301, Titanium Square, Vesu Main Road, Surat, Gujarat 395007',
+    fullAddress: '301, Titanium Square, Vesu Main Road, Surat 395007, Gujarat',
     landmark: 'Near VIP Road junction, Vesu',
     transitInfo: 'Centrally located on Vesu Main Road, easily reachable from Dumas Road and Surat Airport corridor.',
     parking: 'Ample basement and visitor surface parking in Titanium Square commercial complex.',
@@ -258,7 +258,7 @@ export const branches = [
     about: 'Extending our clinical standards to South Gujarat, the Surat centre in Vesu provides specialized orthopaedic rehabilitation, athletic injury conditioning, and therapeutic acupuncture. Designed to offer a calm, modern setting, the clinic accommodates patients seeking focused care for chronic pain, posture correction, and post-operative recovery.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Surat',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Surat',
-    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=900&auto=format&fit=crop&q=80',
+    image: '/images/clinics/surat-clinic-2.jpeg',
     gallery: [
       {
         url: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=900&auto=format&fit=crop&q=80',

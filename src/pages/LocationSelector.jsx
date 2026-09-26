@@ -93,7 +93,7 @@ export default function LocationSelector() {
                   </div>
 
                   {/* Body Content */}
-                  <div className="p-6 sm:p-7 space-y-4">
+                  <div className="p-6 sm:p-7 space-y-3">
                     <div>
                       <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#064C3B] block mb-1">
                         {branch.city}
@@ -101,39 +101,39 @@ export default function LocationSelector() {
                       <h2 className="font-serif text-2xl font-bold text-[#26332F] leading-tight">
                         {branch.name}
                       </h2>
-                      <p className="text-xs text-stone-600 mt-2 line-clamp-2 leading-relaxed font-normal">
+                      <p className="text-xs text-stone-600 mt-2 leading-relaxed font-normal">
                         {branch.shortDescription}
                       </p>
                     </div>
 
                     {/* Quick Metadata */}
-                    <div className="space-y-2.5 text-xs text-stone-600 pt-2 border-t border-stone-100">
-                      <div className="flex items-start gap-2.5">
-                        <MapPin className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
-                        <span className="leading-relaxed line-clamp-1">{branch.address}</span>
+                    <div className="space-y-2.5 text-xs pt-2 border-t border-stone-100">
+                      <div className="flex items-start gap-2.5 text-black font-semibold">
+                        <MapPin className="w-4 h-4 text-black shrink-0 mt-0.5" />
+                        <span className="leading-relaxed text-black font-semibold">{branch.fullAddress}</span>
                       </div>
 
-                      <div className="flex items-center gap-2.5">
-                        <Clock className="w-4 h-4 text-stone-400 shrink-0" />
-                        <span className="line-clamp-1">{branch.openingHours}</span>
+                      <div className="flex items-start gap-2.5 text-black font-semibold">
+                        <Clock className="w-4 h-4 text-black shrink-0 mt-0.5" />
+                        <span className="leading-relaxed text-black font-semibold">{branch.openingHours}</span>
                       </div>
 
-                      <div className="flex items-center gap-2.5">
-                        <Phone className="w-4 h-4 text-stone-400 shrink-0" />
-                        <span className="font-semibold text-stone-800">{branch.phone}</span>
+                      <div className="flex items-center gap-2.5 text-black font-semibold">
+                        <Phone className="w-4 h-4 text-black shrink-0" />
+                        <span className="font-semibold text-black">{branch.phone}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Select Clinic CTA */}
-                <div className="p-6 sm:p-7 pt-0">
+                <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-0">
                   <button
                     type="button"
                     onClick={() => handleSelectBranch(branch.slug)}
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] group-hover:shadow-md group-hover:shadow-[#064C3B]/20 transition-all duration-200 active:scale-[0.98] cursor-pointer"
                   >
-                    <span>Enter {branch.name} Clinic</span>
+                    <span>View {branch.name}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>

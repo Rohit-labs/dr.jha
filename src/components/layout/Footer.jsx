@@ -1,6 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { MapPin, Phone, Clock, ArrowRight, Calendar } from 'lucide-react'
+import { MapPin, Phone, Clock, ArrowRight, Calendar, Youtube, Facebook, Instagram } from 'lucide-react'
+
+const socialLinks = [
+  { label: 'YouTube', href: 'https://www.youtube.com/', icon: Youtube },
+  { label: 'Facebook', href: 'https://www.facebook.com/', icon: Facebook },
+  { label: 'Instagram', href: 'https://www.instagram.com/', icon: Instagram }
+]
 
 export default function Footer() {
   return (
@@ -43,6 +49,21 @@ export default function Footer() {
                 <span>Call Us for Appointment</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
+
+              <div className="mt-3 flex items-center gap-2.5">
+                {socialLinks.map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-white/15 bg-white/5 text-stone-200 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
