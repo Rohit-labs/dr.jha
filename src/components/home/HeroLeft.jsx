@@ -141,8 +141,8 @@ export default function HeroLeft({ branch }) {
           : 'Expert physiotherapy, rehabilitation and acupuncture care for a healthier, stronger and pain-free you.'}
       </p>
 
-      {/* Desktop Hero Search Bar (hidden on mobile/tablet where dedicated below-navbar search bar operates) */}
-      <div ref={searchRef} className="hidden lg:block relative w-full pt-1">
+      {/* Hero Search Bar */}
+      <div ref={searchRef} className="relative w-full pt-1">
         <form
           onSubmit={handleSearchSubmit}
           className="w-full relative flex items-center bg-white rounded-full p-1.5 sm:p-2 pl-5 sm:pl-6 border border-stone-200/90 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-stone-300 focus-within:border-[#064C3B] focus-within:ring-4 focus-within:ring-[#064C3B]/10 transition-all duration-200"
