@@ -3,7 +3,7 @@ import { Star, ExternalLink, MapPin, CheckCircle, ShieldCheck } from 'lucide-rea
 import { reviewsData } from '../../data/reviews'
 
 export default function PatientReviews({ branch }) {
-  const { trustBadge, featuredReview, supportingReviews } = reviewsData
+  const { featuredReview, supportingReviews } = reviewsData
 
   const googleReviewsUrl = 'https://www.google.com/search?q=dr+jha+mira+road#lrd=0x3be7b1f88d09710d:0xc181b2fa261f6c42,1,,,,'
 
@@ -73,33 +73,6 @@ export default function PatientReviews({ branch }) {
             <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal pt-1 max-w-xl">
               Unedited feedback from verified patients treated at Dr. Jha Physiotherapy &amp; Acupuncture Centre. Click any review to view on Google.
             </p>
-          </div>
-
-          {/* Google Trust Indicator Badge */}
-          <div className="shrink-0">
-            <a
-              href={googleReviewsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex flex-col sm:flex-row sm:items-center gap-3 px-5 py-3.5 rounded-2xl bg-white hover:bg-stone-50 border border-stone-200/90 shadow-sm transition-all group/badge"
-            >
-              <div className="flex items-center gap-1 text-[#E5A500]" aria-label={`${trustBadge.starCount} out of 5 stars`}>
-                {Array.from({ length: trustBadge.starCount }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current stroke-none" />
-                ))}
-              </div>
-              <div className="sm:border-l sm:border-stone-200 sm:pl-3">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xs sm:text-sm font-bold tracking-wide text-stone-900 block">
-                    {trustBadge.label}
-                  </span>
-                  <ExternalLink className="w-3.5 h-3.5 text-stone-400 group-hover/badge:text-[#064C3B] transition-colors" />
-                </div>
-                <span className="text-[11px] text-stone-500 font-medium">
-                  {trustBadge.subtitle}
-                </span>
-              </div>
-            </a>
           </div>
 
         </div>

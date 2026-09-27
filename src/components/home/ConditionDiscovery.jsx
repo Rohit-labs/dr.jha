@@ -178,27 +178,15 @@ export default function ConditionDiscovery({ branch }) {
               <div className={`absolute inset-0 bg-gradient-to-br ${pillar.color} pointer-events-none`} />
 
               <div className="relative z-10">
-                {/* Header Badge Row */}
-                <div className="flex items-center justify-between gap-3 mb-5">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-12 h-12 rounded-2xl bg-[#F4F2EC] flex items-center justify-center border border-stone-200/80 group-hover:scale-105 transition-transform">
-                      {pillar.icon}
-                    </div>
-                    <div>
-                      <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase ${pillar.tagBg}`}>
-                        {pillar.tag}
-                      </span>
-                    </div>
-                  </div>
-                  <span className="text-xs font-semibold text-stone-500 bg-white/90 border border-stone-200 px-3 py-1 rounded-full shadow-xs">
-                    {pillar.badge}
-                  </span>
-                </div>
-
                 {/* Pillar Title */}
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#26332F] leading-tight mb-2 group-hover:text-[#064C3B] transition-colors">
-                  {pillar.title}
-                </h3>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-[#F4F2EC] flex items-center justify-center border border-stone-200/80 group-hover:scale-105 transition-transform shrink-0">
+                    {pillar.icon}
+                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] leading-tight group-hover:text-[#064C3B] transition-colors">
+                    {pillar.title}
+                  </h3>
+                </div>
 
                 <p className="text-xs sm:text-sm font-medium text-[#064C3B] mb-3">
                   {pillar.subtitle}
@@ -228,7 +216,7 @@ export default function ConditionDiscovery({ branch }) {
               {/* Action Link at Bottom */}
               <div className="relative z-10 pt-5 border-t border-stone-200/70 flex items-center justify-between">
                 <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#064C3B] group-hover:text-[#073D32] transition-colors">
-                  <span>Explore All {pillar.badge} &amp; Protocols</span>
+                  <span>Explore All Clinical Protocols</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </span>
 

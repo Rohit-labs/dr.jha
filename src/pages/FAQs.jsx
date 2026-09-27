@@ -7,7 +7,6 @@ import { generalFaqs, faqCategories, getFaqStructuredData } from '../data/faqs'
 import { useBranchContext } from '../context/BranchContext'
 import {
   HelpCircle,
-  Search,
   ChevronDown,
   Phone,
   MessageSquare,
@@ -21,26 +20,17 @@ import {
 
 export default function FAQs() {
   const { currentBranch } = useBranchContext()
-  const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [openFaqId, setOpenFaqId] = useState(1) // Open first FAQ by default
   const branchPhone = (currentBranch?.phone || '+919146036559').replace(/[^0-9+]/g, '')
   const branchWhatsapp = branchPhone.replace(/[^0-9]/g, '')
 
-  // Filter FAQs based on category and search query
+  // Filter FAQs based on category.
   const filteredFaqs = useMemo(() => {
     return generalFaqs.filter((faq) => {
-      const matchesCategory =
-        selectedCategory === 'all' || faq.category === selectedCategory
-
-      const matchesSearch =
-        searchQuery.trim() === '' ||
-        faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
-
-      return matchesCategory && matchesSearch
+      return selectedCategory === 'all' || faq.category === selectedCategory
     })
-  }, [selectedCategory, searchQuery])
+  }, [selectedCategory])
 
   const toggleFaq = (id) => {
     setOpenFaqId((prev) => (prev === id ? null : id))
@@ -62,7 +52,7 @@ export default function FAQs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <Breadcrumbs items={[{ label: 'Frequently Asked Questions' }]} />
 
-        {/* ═══════════ 1. HERO HEADER & SEARCH ═══════════ */}
+        {/* ═══════════ 1. HERO HEADER ═══════════ */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#064C3B]/10 text-[#064C3B] text-xs font-bold tracking-wider uppercase mb-4 border border-[#064C3B]/15">
             <HelpCircle className="w-3.5 h-3.5" />
@@ -77,26 +67,6 @@ export default function FAQs() {
             Clear, clinical answers about our physiotherapy protocols, medical acupuncture safety, advanced modalities, and appointment procedures across our centres.
           </p>
 
-          {/* Search Input Bar */}
-          <div className="mt-8 max-w-xl mx-auto relative">
-            <Search className="w-5 h-5 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search questions (e.g., acupuncture pain, session time, referral)..."
-              className="w-full pl-12 pr-10 py-3.5 rounded-full bg-[#FCFBF7] border border-[#DCDDD5] text-stone-800 placeholder-stone-400 text-sm focus:outline-hidden focus:border-[#064C3B] focus:ring-2 focus:ring-[#064C3B]/15 shadow-xs transition-all"
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={() => setSearchQuery('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold text-stone-400 hover:text-stone-700 cursor-pointer"
-              >
-                Clear
-              </button>
-            )}
-          </div>
         </div>
 
         {/* ═══════════ 2. CATEGORY PILL SELECTOR ═══════════ */}
@@ -171,17 +141,16 @@ export default function FAQs() {
                 No matching questions found
               </h3>
               <p className="text-xs sm:text-sm text-stone-500 mb-4">
-                Try searching for a different keyword or browse all questions.
+                Browse another category to find the information you need.
               </p>
               <button
                 type="button"
                 onClick={() => {
-                  setSearchQuery('')
                   setSelectedCategory('all')
                 }}
                 className="px-5 py-2 rounded-full text-xs font-semibold bg-[#064C3B] text-white hover:bg-[#073D32] transition-colors cursor-pointer"
               >
-                Reset Search Filters
+                View All Questions
               </button>
             </div>
           )}
@@ -233,10 +202,12 @@ export default function FAQs() {
             className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#DCDDD5] hover:border-[#064C3B] hover:shadow-md transition-all group flex flex-col justify-between"
           >
             <div>
-              <Activity className="w-6 h-6 text-[#064C3B] mb-2" />
-              <h3 className="font-serif text-base font-bold text-stone-900 group-hover:text-[#064C3B] transition-colors mb-1">
-                Conditions We Treat
-              </h3>
+              <div className="flex items-center gap-3 mb-2">
+                <Activity className="w-6 h-6 text-[#064C3B] shrink-0" />
+                <h3 className="font-serif text-base font-bold text-stone-900 group-hover:text-[#064C3B] transition-colors">
+                  Conditions We Treat
+                </h3>
+              </div>
               <p className="text-xs text-stone-500 leading-relaxed">
                 Explore dedicated protocols for spine, nerve, stroke, and joint pain.
               </p>
@@ -252,10 +223,12 @@ export default function FAQs() {
             className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#DCDDD5] hover:border-[#064C3B] hover:shadow-md transition-all group flex flex-col justify-between"
           >
             <div>
-              <Stethoscope className="w-6 h-6 text-[#064C3B] mb-2" />
-              <h3 className="font-serif text-base font-bold text-stone-900 group-hover:text-[#064C3B] transition-colors mb-1">
-                Therapies &amp; Modalities
-              </h3>
+              <div className="flex items-center gap-3 mb-2">
+                <Stethoscope className="w-6 h-6 text-[#064C3B] shrink-0" />
+                <h3 className="font-serif text-base font-bold text-stone-900 group-hover:text-[#064C3B] transition-colors">
+                  Therapies &amp; Modalities
+                </h3>
+              </div>
               <p className="text-xs text-stone-500 leading-relaxed">
                 Learn about physical therapy, sterile acupuncture, and laser therapy.
               </p>
@@ -271,10 +244,12 @@ export default function FAQs() {
             className="p-5 rounded-2xl bg-[#FCFBF7] border border-[#DCDDD5] hover:border-[#064C3B] hover:shadow-md transition-all group flex flex-col justify-between"
           >
             <div>
-              <MapPin className="w-6 h-6 text-[#064C3B] mb-2" />
-              <h3 className="font-serif text-base font-bold text-stone-900 group-hover:text-[#064C3B] transition-colors mb-1">
-                Our Clinic Locations
-              </h3>
+              <div className="flex items-center gap-3 mb-2">
+                <MapPin className="w-6 h-6 text-[#064C3B] shrink-0" />
+                <h3 className="font-serif text-base font-bold text-stone-900 group-hover:text-[#064C3B] transition-colors">
+                  Our Clinic Locations
+                </h3>
+              </div>
               <p className="text-xs text-stone-500 leading-relaxed">
                 Find addresses, timings, and directions for Mira Road, Vasai, and Surat.
               </p>

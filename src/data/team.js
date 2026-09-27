@@ -41,7 +41,7 @@ export const doctors = [
     id: 'hr-shweta-jha',
     name: 'Shweta Jha',
     role: 'Naturopathy & Yoga Doctor',
-    qualification: 'NDDY – Naturopathy and Yoga Doctor',
+    qualification: 'MB Accupenture',
     experience: '10 Years Experience',
     memberships: ['Maharashtra Council of Acupuncture'],
     specialization: 'Naturopathy, Yoga Therapy & Acupuncture',
