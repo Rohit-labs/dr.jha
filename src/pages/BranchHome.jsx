@@ -8,6 +8,7 @@ import ClinicalTeam from '../components/home/ClinicalTeam'
 import ConditionDiscovery from '../components/home/ConditionDiscovery'
 import BranchClinicSection from '../components/branches/BranchClinicSection'
 import PatientReviews from '../components/home/PatientReviews'
+import FollowPrompt from '../components/home/FollowPrompt'
 import NotFound from './NotFound'
 import { getBranchBySlug } from '../data/branches'
 import { useBranchContext } from '../context/BranchContext'
@@ -82,6 +83,8 @@ export default function BranchHome({ branchSlug: propSlug }) {
 
       {/* 6. Patient Reviews */}
       <PatientReviews branch={branch} />
+
+      <FollowPrompt />
     </PageContainer>
   )
 }
