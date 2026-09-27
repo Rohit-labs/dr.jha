@@ -112,7 +112,7 @@ export default function ConditionDiscovery({ branch }) {
   ]
 
   return (
-    <section className="w-full bg-[#F8F6F0] pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 font-sans antialiased text-[#26332F] relative overflow-hidden">
+    <section className="w-full bg-[#F8F6F0] pt-4 sm:pt-6 lg:pt-8 pb-16 sm:pb-20 lg:pb-24 font-sans antialiased text-[#26332F] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ═══════════ SECTION HEADING ═══════════ */}

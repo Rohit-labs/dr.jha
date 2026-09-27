@@ -77,7 +77,7 @@ function LocationSchematic() {
 
 export default function OurBranches() {
   return (
-    <section className="w-full bg-[#F8F6F0] py-20 sm:py-24 lg:py-28 font-sans antialiased text-[#26332F] relative overflow-hidden">
+    <section className="w-full bg-[#F8F6F0] pt-10 sm:pt-12 lg:pt-16 pb-20 sm:pb-24 lg:pb-28 font-sans antialiased text-[#26332F] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ═══════════ TOP HEADING & LOCATION SCHEMATIC ═══════════ */}
