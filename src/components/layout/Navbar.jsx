@@ -624,17 +624,19 @@ export default function Navbar() {
                     </div>
 
                     {/* 4 Categories */}
-                    <div className="grid grid-cols-4 gap-6">
+                    <div className="grid grid-cols-4 gap-6 xl:gap-8">
                       {treatmentsData.categories.map((cat, idx) => (
-                        <div key={idx} className="space-y-3">
-                          <Link
-                            to={`/treatments?section=${treatmentSections[idx]?.id || ''}`}
-                            onClick={() => setActiveDropdown(null)}
-                            className="inline-flex items-center gap-1 text-[11px] font-bold tracking-[0.16em] uppercase text-[#064C3B] hover:text-[#073D32] transition-colors group/treatment-section"
-                          >
-                            {cat.heading}
-                            <ArrowRight className="w-3 h-3 group-hover/treatment-section:translate-x-0.5 transition-transform" />
-                          </Link>
+                        <div key={idx} className="flex flex-col">
+                          <div className="pb-3.5 mb-4 border-b border-stone-200/75">
+                            <Link
+                              to={`/treatments?section=${treatmentSections[idx]?.id || ''}`}
+                              onClick={() => setActiveDropdown(null)}
+                              className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#064C3B] hover:text-[#0b6b53] group/treatment-section flex items-center justify-between transition-colors leading-snug"
+                            >
+                              <span>{cat.heading}</span>
+                              <ArrowRight className="w-3 h-3 text-[#064C3B] group-hover/treatment-section:translate-x-1 transition-transform shrink-0 ml-1.5" />
+                            </Link>
+                          </div>
                           <ul className="space-y-2">
                             {cat.items.map((item, itemIdx) => {
                               const label = typeof item === 'string' ? item : item.name
@@ -646,7 +648,7 @@ export default function Navbar() {
                                   <Link
                                     to={href}
                                     onClick={() => setActiveDropdown(null)}
-                                    className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-0.5 transition-all block py-0.5 font-normal hover:font-medium"
+                                    className="text-xs text-stone-600 hover:text-[#064C3B] hover:translate-x-1 transition-all block py-1 font-normal leading-relaxed hover:font-medium"
                                   >
                                     {label}
                                   </Link>
