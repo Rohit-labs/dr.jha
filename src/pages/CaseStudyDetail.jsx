@@ -4,6 +4,7 @@ import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getCaseStudyBySlug, caseStudies } from '../data/caseStudies'
+import { useBranchContext } from '../context/BranchContext'
 import {
   Activity,
   ClipboardList,
@@ -18,6 +19,7 @@ import {
 export default function CaseStudyDetail() {
   const { slug } = useParams()
   const cs = getCaseStudyBySlug(slug)
+  const { currentBranch } = useBranchContext()
 
   if (!cs) {
     return <Navigate to="/case-studies" replace />
@@ -128,11 +130,11 @@ export default function CaseStudyDetail() {
           <div>
             <h3 className="font-serif text-2xl font-bold">Have a similar physical complaint?</h3>
             <p className="text-xs text-stone-300 mt-1 max-w-md">
-              Schedule an evaluation with our physical therapy team at our Mira Road, Vasai, or Surat clinics.
+              Schedule an evaluation with our physical therapy team at the {currentBranch?.name || 'Dr. Jha'} clinic.
             </p>
           </div>
           <a
-            href="tel:+919146036559"
+            href={`tel:${(currentBranch?.phone || '+919146036559').replace(/[^0-9+]/g, '')}`}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 shrink-0 shadow-md"
           >
             <Phone className="w-4 h-4" />

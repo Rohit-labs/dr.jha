@@ -4,8 +4,11 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import CaseStudyCard from '../components/case-studies/CaseStudyCard'
 import { caseStudies } from '../data/caseStudies'
+import { useBranchContext } from '../context/BranchContext'
 
 export default function CaseStudies() {
+  const { currentBranch } = useBranchContext()
+
   return (
     <PageContainer>
       <SEO
@@ -26,7 +29,7 @@ export default function CaseStudies() {
             Real Recovery <span className="italic font-normal text-[#064C3B]">Journeys</span>
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
-            Every recovery is unique. Explore how structured assessment, manual therapy, and progressive active rehabilitation help patients regain everyday function and athletic confidence.
+            Every recovery is unique. Explore how structured assessment, manual therapy, and progressive active rehabilitation at the {currentBranch?.name || 'Dr. Jha'} clinic help patients regain everyday function and athletic confidence.
           </p>
         </div>
 

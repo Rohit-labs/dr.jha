@@ -4,9 +4,12 @@ import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { events } from '../data/events'
+import { useBranchContext } from '../context/BranchContext'
 import { Calendar, ArrowRight, Bell, Sparkles } from 'lucide-react'
 
 export default function Events() {
+  const { currentBranch } = useBranchContext()
+
   return (
     <PageContainer>
       <SEO
@@ -31,7 +34,7 @@ export default function Events() {
             </h1>
 
             <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-              Stay connected with upcoming events, workshops and activities from Dr. Jha.
+              Stay connected with upcoming events, workshops and activities from the {currentBranch?.name || 'Dr. Jha'} clinic.
             </p>
           </div>
 

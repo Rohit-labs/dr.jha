@@ -117,6 +117,23 @@ export default function Navbar() {
 
   const isPathActive = (path) => {
     if (path === '/') return location.pathname === '/'
+    if (path === '/conditions') {
+      const conditionRoutes = [
+        '/neurological-conditions',
+        '/orthopaedic-conditions',
+        '/orthopaedic-musculoskeletal-conditions',
+        '/systemic-conditions',
+        '/systemic-health-conditions',
+        '/specialized-conditions',
+        '/wellness-conditions'
+      ]
+
+      return (
+        location.pathname === '/conditions' ||
+        location.pathname.startsWith('/conditions/') ||
+        conditionRoutes.some((route) => location.pathname === route || location.pathname.startsWith(`${route}/`))
+      )
+    }
     if (path === '/blogs' || path === '/resources') {
       return (
         location.pathname === '/blogs' ||

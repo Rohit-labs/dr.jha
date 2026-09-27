@@ -3,7 +3,7 @@ import { ArrowRight, ShieldCheck, Clock, MapPin, Phone, MessageCircle, Award, Ch
 
 export default function FinalCTA({ branch }) {
   const activePhone = branch?.phone ? branch.phone.replace(/[^0-9+]/g, '') : '+919146036559'
-  const activeWhatsapp = branch?.whatsapp ? branch.whatsapp.replace(/[^0-9]/g, '') : '919146036559'
+  const activeWhatsapp = activePhone.replace(/[^0-9]/g, '')
 
   const promiseItems = [
     {

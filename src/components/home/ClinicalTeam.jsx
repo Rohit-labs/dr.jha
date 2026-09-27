@@ -16,7 +16,7 @@ export default function ClinicalTeam({ branch }) {
   // Determine which doctors belong to the current branch
   const branchDoctors = useMemo(() => {
     if (!branch) {
-      // Default: Mira Road team (Dr. Pranab Jha & Hr. Anupam Jha)
+      // Default: Mira Road team (Dr. Pranab Jha & Anupam Jha)
       return doctors.filter(
         (doc) => doc.id === 'dr-pranab-jha' || doc.id === 'hr-anupam-jha'
       )
@@ -66,9 +66,9 @@ export default function ClinicalTeam({ branch }) {
           {/* Supporting Paragraph */}
           <p className="text-sm sm:text-base text-stone-600 max-w-xl mx-auto mt-4 leading-relaxed font-normal">
             {branch?.slug === 'mira-road' || !branch
-              ? 'Under the clinical leadership of Dr. Pranab Jha and Hr. Anupam Jha, our Mira Road centre combines evidence-based physiotherapy and medical acupuncture for lasting recovery.'
+              ? 'Under the clinical leadership of Dr. Pranab Jha and Anupam Jha, our Mira Road centre combines evidence-based physiotherapy and medical acupuncture for lasting recovery.'
               : branch?.slug === 'vasai'
-              ? 'Under the clinical leadership of Dr. Pranab Jha and Hr. Shweta Jha, our Vasai centre delivers specialized physiotherapy, naturopathy, therapeutic yoga, and acupuncture care tailored to your recovery.'
+              ? 'Under the clinical leadership of Dr. Pranab Jha and Shweta Jha, our Vasai centre delivers specialized physiotherapy, naturopathy, therapeutic yoga, and acupuncture care tailored to your recovery.'
               : branch?.slug === 'surat'
               ? 'Under the clinical leadership of Dr. Pranab Jha and Hr. Samta Salecha, our Surat clinic provides advanced acupuncture medicine and dedicated musculoskeletal rehabilitation.'
               : 'Our clinical specialists combine evidence-based rehabilitation and medical acupuncture to help you regain pain-free movement.'}

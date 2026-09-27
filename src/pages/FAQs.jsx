@@ -4,6 +4,7 @@ import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { generalFaqs, faqCategories, getFaqStructuredData } from '../data/faqs'
+import { useBranchContext } from '../context/BranchContext'
 import {
   HelpCircle,
   Search,
@@ -19,9 +20,12 @@ import {
 } from 'lucide-react'
 
 export default function FAQs() {
+  const { currentBranch } = useBranchContext()
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [openFaqId, setOpenFaqId] = useState(1) // Open first FAQ by default
+  const branchPhone = (currentBranch?.phone || '+919146036559').replace(/[^0-9+]/g, '')
+  const branchWhatsapp = branchPhone.replace(/[^0-9]/g, '')
 
   // Filter FAQs based on category and search query
   const filteredFaqs = useMemo(() => {
@@ -209,7 +213,7 @@ export default function FAQs() {
               </a>
 
               <a
-                href="https://wa.me/919146036559"
+                href={`https://wa.me/${branchWhatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-[#FCFBF7] hover:bg-white shadow-md transition-all text-center"

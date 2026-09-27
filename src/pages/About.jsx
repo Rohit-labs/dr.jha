@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import DoctorCard from '../components/about/DoctorCard'
 import { doctors } from '../data/team'
+import { useBranchContext } from '../context/BranchContext'
 import {
   Activity,
   HeartHandshake,
@@ -12,7 +13,18 @@ import {
   MapPin
 } from 'lucide-react'
 
+const branchDoctorIds = {
+  'mira-road': ['dr-pranab-jha', 'hr-anupam-jha'],
+  vasai: ['dr-pranab-jha', 'hr-shweta-jha'],
+  surat: ['dr-pranab-jha', 'hr-samta-salecha']
+}
+
 export default function About() {
+  const { currentBranch } = useBranchContext()
+  const branchDoctors = currentBranch
+    ? doctors.filter((doctor) => branchDoctorIds[currentBranch.slug]?.includes(doctor.id))
+    : doctors
+
   const physicianStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'Physician',
@@ -54,7 +66,7 @@ export default function About() {
         {/* ═══════════ OUR CLINICAL TEAM (2 × 2 DOCTOR GRID) ═══════════ */}
         <section aria-label="Our Clinical Team" className="mb-16 sm:mb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {doctors.map((doctor) => (
+            {branchDoctors.map((doctor) => (
               <DoctorCard key={doctor.id} doctor={doctor} />
             ))}
           </div>

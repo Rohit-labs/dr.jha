@@ -30,9 +30,14 @@ export const branches = [
     parking: 'Convenient ground-level visitor parking available near Green Heritage.',
     phone: '+91 91460 36559',
     secondaryPhone: '+91 74983 13922',
+    socials: {
+      youtube: 'https://youtube.com/@dr.jhahealthhub?si=KHKvh-9kBvZelXT1',
+      facebook: 'https://www.facebook.com/Drjhahealthlab?rdid=mqnpl0d79hohRlkY&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17mFYS6bCK%2F#',
+      instagram: 'https://www.instagram.com/drjhaphysiotherapy?igsi=dmgxdGJ1ejhsNnJq'
+    },
     phones: [
       { label: 'Dr. Pranab Jha', number: '+91 91460 36559', tel: '+919146036559' },
-      { label: 'Hr. Anupam Jha', number: '+91 74983 13922', tel: '+917498313922' }
+      { label: 'Anupam Jha', number: '+91 74983 13922', tel: '+917498313922' }
     ],
     whatsapp: '+91 91460 36559',
     openingHours: 'Mon – Sun: 9:00 AM – 10:00 PM',
@@ -106,7 +111,7 @@ export const branches = [
     faqs: [
       {
         question: 'How do I schedule an appointment at the Mira Road clinic?',
-        answer: 'You can call our direct helplines at +91 91460 36559 (Dr. Pranab Jha) or +91 74983 13922 (Hr. Anupam Jha) to reserve a consultation slot with our specialists.'
+        answer: 'You can call our direct helplines at +91 91460 36559 (Dr. Pranab Jha) or +91 74983 13922 (Anupam Jha) to reserve a consultation slot with our specialists.'
       },
       {
         question: 'Is parking available near the Mira Road branch?',
@@ -146,6 +151,11 @@ export const branches = [
     parking: 'Street and commercial parking available near Sai Arcade.',
     phone: '+91 87679 33950',
     whatsapp: '+91 87679 33950',
+    socials: {
+      youtube: 'https://youtube.com/@dr.jhahealthhub?si=KHKvh-9kBvZelXT1',
+      facebook: 'https://www.facebook.com/Drjhahealthlab?rdid=mqnpl0d79hohRlkY&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17mFYS6bCK%2F#',
+      instagram: 'https://www.instagram.com/jha_acupuncture/'
+    },
     openingHours: 'Mon – Sat: 8:30 AM – 8:30 PM',
     timingDetails: [
       { days: 'Monday – Saturday', hours: '8:30 AM – 8:30 PM' },
@@ -197,7 +207,7 @@ export const branches = [
     doctorIds: ['dr-pranab-jha', 'hr-shweta-jha'],
     reviews: [
       {
-        quote: 'Exceptional care under Hr. Shweta Jha. The combination of naturopathy, therapeutic yoga, and acupuncture helped relieve my chronic neck and back stiffness naturally without heavy medication.',
+        quote: 'Exceptional care under Shweta Jha. The combination of naturopathy, therapeutic yoga, and acupuncture helped relieve my chronic neck and back stiffness naturally without heavy medication.',
         author: 'Prashant Mhatre',
         location: 'Vasai West',
         condition: 'Cervical Spine & Postural Care',
@@ -248,6 +258,11 @@ export const branches = [
     parking: 'Ample basement and visitor surface parking in Titanium Square commercial complex.',
     phone: '+91 97245 94793',
     whatsapp: '+91 97245 94793',
+    socials: {
+      youtube: 'https://youtube.com/@dr.jhahealthhub?si=KHKvh-9kBvZelXT1',
+      facebook: 'https://www.facebook.com/Drjhahealthlab?rdid=mqnpl0d79hohRlkY&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17mFYS6bCK%2F#',
+      instagram: 'https://www.instagram.com/drjhahealthcarecentre?stkn=MWswMmVhMzN5d3MwZA=='
+    },
     openingHours: 'Mon – Sat: 9:00 AM – 8:00 PM',
     timingDetails: [
       { days: 'Monday – Saturday', hours: '9:00 AM – 8:00 PM' },

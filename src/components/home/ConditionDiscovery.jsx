@@ -138,8 +138,36 @@ export default function ConditionDiscovery({ branch }) {
           </p>
         </div>
 
+        {/* ═══════════ DIRECT JUMP TAGS (QUICK ACCESS) ═══════════ */}
+        <div className="mt-8 sm:mt-10 bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-stone-200/70">
+            <div className="flex items-center gap-2">
+              <Activity className="w-4 h-4 text-[#064C3B]" />
+              <h4 className="text-xs sm:text-sm font-bold text-stone-900 tracking-wide uppercase">
+                Frequently Searched Conditions — Direct Anchor Access
+              </h4>
+            </div>
+            <span className="text-[11px] text-stone-400 font-medium">
+              Click to jump directly to diagnosis protocol
+            </span>
+          </div>
+
+          <div className="flex flex-wrap gap-2 sm:gap-2.5">
+            {quickConditions.map((cond, idx) => (
+              <Link
+                key={idx}
+                to={cond.href}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-white text-stone-700 border border-stone-200/80 hover:border-[#064C3B] hover:text-[#064C3B] hover:bg-[#FAF7F2] transition-all duration-200 shadow-2xs hover:scale-[1.02]"
+              >
+                <span>{cond.label}</span>
+                <ChevronRight className="w-3 h-3 text-[#064C3B] opacity-60" />
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* ═══════════ 4 CLINICAL PILLARS GRID ═══════════ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {pillars.map((pillar) => (
             <Link
               key={pillar.id}
@@ -210,34 +238,6 @@ export default function ConditionDiscovery({ branch }) {
               </div>
             </Link>
           ))}
-        </div>
-
-        {/* ═══════════ DIRECT JUMP TAGS (QUICK ACCESS) ═══════════ */}
-        <div className="mt-12 sm:mt-16 bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-stone-200/70">
-            <div className="flex items-center gap-2">
-              <Activity className="w-4 h-4 text-[#064C3B]" />
-              <h4 className="text-xs sm:text-sm font-bold text-stone-900 tracking-wide uppercase">
-                Frequently Searched Conditions — Direct Anchor Access
-              </h4>
-            </div>
-            <span className="text-[11px] text-stone-400 font-medium">
-              Click to jump directly to diagnosis protocol
-            </span>
-          </div>
-
-          <div className="flex flex-wrap gap-2 sm:gap-2.5">
-            {quickConditions.map((cond, idx) => (
-              <Link
-                key={idx}
-                to={cond.href}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-white text-stone-700 border border-stone-200/80 hover:border-[#064C3B] hover:text-[#064C3B] hover:bg-[#FAF7F2] transition-all duration-200 shadow-2xs hover:scale-[1.02]"
-              >
-                <span>{cond.label}</span>
-                <ChevronRight className="w-3 h-3 text-[#064C3B] opacity-60" />
-              </Link>
-            ))}
-          </div>
         </div>
 
         {/* ═══════════ EXPLORE ALL CONDITIONS CTA ═══════════ */}

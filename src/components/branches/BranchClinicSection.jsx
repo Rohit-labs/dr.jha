@@ -187,7 +187,7 @@ export default function BranchClinicSection({ branch }) {
                           href={`tel:${branch.secondaryPhone.replace(/[^0-9+]/g, '')}`}
                           className="text-stone-200 hover:text-white font-semibold text-sm hover:underline"
                         >
-                          {branch.secondaryPhone} <span className="text-xs font-normal text-stone-400">(Hr. Anupam Jha)</span>
+                          {branch.secondaryPhone} <span className="text-xs font-normal text-stone-400">(Anupam Jha)</span>
                         </a>
                       )}
                     </div>
@@ -227,9 +227,9 @@ export default function BranchClinicSection({ branch }) {
                   </a>
                 )}
 
-                {branch.whatsapp && (
+                {branch.phone && (
                   <a
-                    href={`https://wa.me/${branch.whatsapp.replace(/[^0-9]/g, '')}`}
+                    href={`https://wa.me/${branch.phone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-4 py-3 rounded-full text-xs sm:text-sm font-medium text-white/90 hover:text-white border border-white/20 transition-all hover:bg-white/5"

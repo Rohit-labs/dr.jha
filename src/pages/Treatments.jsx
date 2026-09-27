@@ -4,8 +4,38 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import TreatmentList from '../components/treatments/TreatmentList'
 import { treatments } from '../data/treatments'
+import { useBranchContext } from '../context/BranchContext'
 
 export default function Treatments() {
+  const { currentBranch } = useBranchContext()
+  const branchTreatments = currentBranch?.treatments?.map((branchTreatment, index) => {
+    const treatment = treatments.find((item) => item.slug === branchTreatment.slug)
+    if (!treatment) return null
+
+    return {
+      ...treatment,
+      name: branchTreatment.name,
+      category: branchTreatment.category || treatment.category,
+      image: branchTreatment.image || treatment.image,
+      gallery: branchTreatment.gallery || treatment.gallery,
+      video: branchTreatment.video || treatment.video,
+      cardId: `${branchTreatment.slug}-${index}`
+    }
+  }).filter(Boolean) || treatments
+
+  const configuredSlugs = new Set(branchTreatments.map((treatment) => treatment.slug))
+  const additionalTreatments = currentBranch
+    ? treatments
+        .filter((treatment) => !configuredSlugs.has(treatment.slug))
+        .map((treatment) => ({
+          ...treatment,
+          cardId: `${treatment.slug}-catalog`
+        }))
+    : []
+  const availableTreatments = currentBranch
+    ? [...branchTreatments, ...additionalTreatments]
+    : treatments
+
   return (
     <PageContainer>
       <SEO
@@ -31,7 +61,7 @@ export default function Treatments() {
         </div>
 
         {/* Treatments Grid */}
-        <TreatmentList treatments={treatments} />
+        <TreatmentList treatments={availableTreatments} />
 
       </div>
     </PageContainer>

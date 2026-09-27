@@ -4,11 +4,13 @@ import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getResourceBySlug, resources } from '../data/resources'
+import { useBranchContext } from '../context/BranchContext'
 import { Clock, Phone, ArrowRight, BookOpen, Stethoscope } from 'lucide-react'
 
 export default function ResourceDetail() {
   const { slug } = useParams()
   const resource = getResourceBySlug(slug)
+  const { currentBranch } = useBranchContext()
 
   if (!resource) {
     return <Navigate to="/blogs" replace />
@@ -100,11 +102,11 @@ export default function ResourceDetail() {
             Experiencing Persistent Pain or Mobility Issues?
           </h3>
           <p className="text-xs sm:text-sm text-stone-300 max-w-xl leading-relaxed">
-            Reading articles is a helpful first step, but an individualized physical assessment identifies the precise mechanical source of discomfort. Schedule a consultation at our Mira Road, Vasai, or Surat clinics.
+            Reading articles is a helpful first step, but an individualized physical assessment identifies the precise mechanical source of discomfort. Contact the {currentBranch?.name || 'Dr. Jha'} clinic for guidance.
           </p>
           <div className="pt-2">
             <a
-              href="tel:+919146036559"
+              href={`tel:${(currentBranch?.phone || '+919146036559').replace(/[^0-9+]/g, '')}`}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 transition-colors"
             >
               <Phone className="w-4 h-4" />

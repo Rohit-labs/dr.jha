@@ -265,7 +265,7 @@ export default function HeroLeft({ branch }) {
         )}
 
         <a
-          href={branch?.whatsapp ? `https://wa.me/${branch.whatsapp.replace(/[^0-9]/g, '')}` : 'https://wa.me/'}
+          href={`https://wa.me/${(branch?.phone || '+919146036559').replace(/[^0-9]/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-stone-800 bg-white/80 hover:bg-white border border-stone-300/80 active:scale-[0.98] transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer"

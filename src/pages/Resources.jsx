@@ -4,8 +4,11 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import ResourceCard from '../components/resources/ResourceCard'
 import { resources } from '../data/resources'
+import { useBranchContext } from '../context/BranchContext'
 
 export default function Resources() {
+  const { currentBranch } = useBranchContext()
+
   return (
     <PageContainer>
       <SEO
@@ -26,7 +29,7 @@ export default function Resources() {
             Educational Guides &amp; <span className="italic font-normal text-[#064C3B]">Clinical Blogs</span>
           </h1>
           <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
-            Understand the mechanics of pain, when to seek therapy, and what evidence-based rehabilitation entails through our certified clinician guides.
+            Understand the mechanics of pain, when to seek therapy, and what evidence-based rehabilitation entails through our certified clinician guides at the {currentBranch?.name || 'Dr. Jha'} clinic.
           </p>
         </div>
 

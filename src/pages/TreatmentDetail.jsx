@@ -4,6 +4,7 @@ import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getTreatmentBySlug, treatments } from '../data/treatments'
+import { useBranchContext } from '../context/BranchContext'
 import {
   CheckCircle2,
   Phone,
@@ -21,6 +22,7 @@ import {
 export default function TreatmentDetail() {
   const { slug } = useParams()
   const treatment = getTreatmentBySlug(slug)
+  const { currentBranch } = useBranchContext()
   const [activePhoto, setActivePhoto] = useState(null)
 
   if (!treatment) {
@@ -265,11 +267,11 @@ export default function TreatmentDetail() {
                 Experience {treatment.name}
               </h3>
               <p className="text-xs text-stone-300 leading-relaxed">
-                Consult with our experienced physiotherapists and acupuncture specialists to determine if this modality is ideal for your recovery.
+                Consult with our experienced physiotherapists and acupuncture specialists at the {currentBranch?.name || 'Dr. Jha'} clinic to determine if this modality is ideal for your recovery.
               </p>
               <div className="pt-2">
                 <a
-                  href="tel:+919146036559"
+                  href={`tel:${(currentBranch?.phone || '+919146036559').replace(/[^0-9+]/g, '')}`}
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 active:scale-[0.98] transition-all shadow-md"
                 >
                   <Phone className="w-4 h-4" />

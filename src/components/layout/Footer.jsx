@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { MapPin, Phone, Clock, ArrowRight, Calendar, Youtube, Facebook, Instagram } from 'lucide-react'
-
-const socialLinks = [
-  { label: 'YouTube', href: 'https://www.youtube.com/', icon: Youtube },
-  { label: 'Facebook', href: 'https://www.facebook.com/', icon: Facebook },
-  { label: 'Instagram', href: 'https://www.instagram.com/', icon: Instagram }
-]
+import { useBranchContext } from '../../context/BranchContext'
 
 export default function Footer() {
+  const { currentBranch } = useBranchContext()
+  const socialLinks = [
+    { label: 'YouTube', href: currentBranch?.socials?.youtube, icon: Youtube },
+    { label: 'Facebook', href: currentBranch?.socials?.facebook, icon: Facebook },
+    { label: 'Instagram', href: currentBranch?.socials?.instagram, icon: Instagram }
+  ].filter((social) => social.href)
+
   return (
     <footer className="w-full bg-[#073D32] text-[#F8F6F0] pt-16 pb-12 font-sans antialiased border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +44,7 @@ export default function Footer() {
 
             <div className="pt-2">
               <a
-                href="tel:+919146036559"
+                href={`tel:${(currentBranch?.phone || '+919146036559').replace(/[^0-9+]/g, '')}`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#064C3B] hover:bg-[#053C2F] border border-white/20 transition-colors shadow-sm"
               >
                 <Phone className="w-3.5 h-3.5" />
@@ -75,7 +77,7 @@ export default function Footer() {
             <ul className="space-y-3 text-xs text-stone-300">
               <li>
                 <Link to="/mira-road" className="hover:text-white transition-colors block">
-                  <strong className="text-white block font-semibold">Mira Road (Flagship)</strong>
+                  <strong className="text-white block font-semibold">Mira Road</strong>
                   <span className="text-[11px] text-stone-400">Green Heritage, Shanti Park • Thane</span>
                 </Link>
               </li>

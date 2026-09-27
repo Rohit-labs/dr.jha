@@ -104,7 +104,7 @@ export default function BranchInfo({ branch }) {
         </div>
       </div>
 
-      <BranchMap mapUrl={mapUrl} whatsapp={whatsapp} />
+      <BranchMap mapUrl={mapUrl} whatsapp={phone} />
     </div>
   )
 }

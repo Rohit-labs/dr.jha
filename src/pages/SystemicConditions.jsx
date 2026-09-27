@@ -30,7 +30,7 @@ export default function SystemicConditions() {
   // Branch contact details
   const phone = currentBranch?.phone || '+919146036559'
   const cleanPhone = phone.replace(/[^0-9+]/g, '')
-  const whatsapp = currentBranch?.whatsapp || '9146036559'
+  const whatsapp = phone.replace(/[^0-9]/g, '')
 
   // Smooth scrolling with offset and temporary highlight
   const scrollToSection = (id) => {
@@ -245,6 +245,28 @@ export default function SystemicConditions() {
     }
   ]
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries.filter((entry) => entry.isIntersecting)
+        if (visibleSections.length > 0) {
+          const currentSection = visibleSections.reduce((current, entry) =>
+            entry.intersectionRatio > current.intersectionRatio ? entry : current
+          )
+          setHighlightedId(currentSection.target.id)
+        }
+      },
+      { rootMargin: '-110px 0px -65% 0px', threshold: [0, 0.25, 0.5, 1] }
+    )
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id)
+      if (element) observer.observe(element)
+    })
+
+    return () => observer.disconnect()
+  }, [sections])
+
   return (
     <PageContainer>
       <SEO
@@ -272,14 +294,11 @@ export default function SystemicConditions() {
         <div className="mt-4 mb-12 sm:mb-16">
           <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase mb-3">
             <HeartPulse className="w-4 h-4 text-[#064C3B]" />
-            <span>SYSTEMIC &amp; GENERAL HEALTH CONDITIONS</span>
+            <span>INTEGRATIVE SUPPORTIVE HEALTHCARE</span>
           </div>
 
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#26332F] leading-[1.14] max-w-4xl mb-6">
-            Integrated Physiotherapy &amp; <br />
-            <span className="italic font-normal text-[#064C3B]">
-              Acupuncture-Based Supportive Care
-            </span>
+            Systemic &amp; General Health Conditions
           </h1>
 
           <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-[28px] p-6 sm:p-9 shadow-sm relative overflow-hidden">
@@ -291,25 +310,6 @@ export default function SystemicConditions() {
                 Our clinical approach focuses on <span className="text-[#064C3B] font-semibold">symptom management</span>, <span className="text-[#064C3B] font-semibold">improving physical function</span>, <span className="text-[#064C3B] font-semibold">supporting recovery</span>, and <span className="text-[#064C3B] font-semibold">enhancing quality of life</span>, wherever appropriate.
               </p>
 
-              {/* Action Buttons */}
-              <div className="pt-3 flex flex-wrap items-center gap-3 sm:gap-4">
-                <a
-                  href={`tel:${cleanPhone}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] shadow-md transition-all active:scale-[0.98]"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>Call for Health Consultation</span>
-                </a>
-                <a
-                  href={`https://wa.me/${whatsapp}?text=${encodeURIComponent('Hello Dr. Jha Centre, I would like to inquire about supportive care for a systemic health condition.')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] hover:bg-[#F8F6F0] transition-all"
-                >
-                  <MessageSquare className="w-4 h-4 text-[#25D366]" />
-                  <span>WhatsApp Inquiry</span>
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -321,7 +321,7 @@ export default function SystemicConditions() {
           </div>
           <div className="flex flex-wrap gap-2 sm:gap-2.5">
             {sections.map((sec) => {
-              const isActive = (highlightedId === sec.id) || (location.hash === `#${sec.id}`)
+              const isActive = highlightedId === sec.id
               return (
                 <button
                   key={sec.id}
@@ -336,9 +336,6 @@ export default function SystemicConditions() {
                       : 'bg-[#F4F2EC] text-stone-700 hover:bg-[#064C3B] hover:text-white border-stone-200/70 hover:scale-[1.02]'
                   }`}
                 >
-                  <span className={`text-[10px] font-mono ${isActive ? 'text-white/80' : 'opacity-60'}`}>
-                    {sec.number}
-                  </span>
                   <span>{sec.title.split('(')[0].split('&')[0]}</span>
                 </button>
               )
@@ -375,11 +372,6 @@ export default function SystemicConditions() {
                   <div className="lg:col-span-5 space-y-4">
                     <div className="flex items-center justify-between gap-3 flex-wrap">
                       <div className="flex items-center gap-2.5">
-                        <span className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold font-mono transition-colors ${
-                          isHighlighted ? 'bg-[#064C3B] text-white' : 'bg-[#064C3B]/10 text-[#064C3B]'
-                        }`}>
-                          {sec.number}
-                        </span>
                         <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#064C3B]">
                           SUPPORTIVE CARE
                         </span>
@@ -418,9 +410,6 @@ export default function SystemicConditions() {
                   <div className="lg:col-span-7 bg-[#F4F2EC]/70 border border-stone-200/80 rounded-2xl p-5 sm:p-7">
                     <div className="text-xs font-bold text-[#26332F] uppercase tracking-wider mb-4 flex items-center justify-between border-b border-stone-200 pb-2.5">
                       <span>Conditions Managed in This Category</span>
-                      <span className="text-[11px] font-normal text-stone-500">
-                        {sec.items.length} Diagnoses
-                      </span>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -443,10 +432,10 @@ export default function SystemicConditions() {
                       </span>
                       <a
                         href={`tel:${cleanPhone}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#064C3B] hover:text-[#073D32]"
+                        className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] shadow-sm transition-colors"
                       >
-                        <span>Inquire for this condition</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
+                        <Phone className="w-3.5 h-3.5" />
+                        <span>Call for condition assessment</span>
                       </a>
                     </div>
                   </div>
@@ -549,7 +538,16 @@ export default function SystemicConditions() {
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#073D32] shadow-md transition-all active:scale-[0.98]"
             >
               <Phone className="w-4 h-4" />
-              <span>Call Us ({phone})</span>
+              <span>Call for Health Consultation</span>
+            </a>
+            <a
+              href={`https://wa.me/${whatsapp}?text=${encodeURIComponent('Hello Dr. Jha Centre, I would like to inquire about supportive care for a systemic health condition.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white border border-[#DCDDD5] hover:border-[#064C3B] transition-all"
+            >
+              <MessageSquare className="w-4 h-4 text-[#25D366]" />
+              <span>Send WhatsApp Inquiry</span>
             </a>
             <Link
               to="/locations"

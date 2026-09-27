@@ -30,7 +30,7 @@ export default function Conditions() {
 
   const phone = currentBranch?.phone || '+919146036559'
   const cleanPhone = phone.replace(/[^0-9+]/g, '')
-  const whatsapp = currentBranch?.whatsapp || '9146036559'
+  const whatsapp = phone.replace(/[^0-9]/g, '')
 
   // Master 4-Pillar Clinical Data
   const pillars = [
@@ -622,7 +622,7 @@ export default function Conditions() {
         title="Conditions We Treat — Physiotherapy & Medical Acupuncture | Dr. Jha"
         description="Comprehensive clinical directory of 34+ conditions treated across Mira Road, Vasai, and Surat. Neuro-rehabilitation, spine & joint pain relief, women's health & specialized care."
         keywords="conditions treated dr jha, physiotherapy clinic mira road, acupuncture vasai, pain relief surat, stroke rehab, sciatica clinic, frozen shoulder, bells palsy"
-        canonicalUrl="https://drjhaphysio.in/conditions"
+        canonicalUrl="https://drjhaphysiotherapy.com/conditions"
         structuredData={{
           '@context': 'https://schema.org',
           '@graph': [
@@ -630,7 +630,7 @@ export default function Conditions() {
             {
               '@type': 'MedicalWebPage',
               'name': 'Conditions We Treat | Dr. Jha Physiotherapy & Acupuncture Centre',
-              'url': 'https://drjhaphysio.in/conditions',
+              'url': 'https://drjhaphysiotherapy.com/conditions',
               'description': 'Comprehensive directory of 34 clinical conditions treated with evidence-based physiotherapy and medical acupuncture.',
               'about': pillars.flatMap((p) =>
                 p.sections.map((s) => ({
@@ -821,26 +821,15 @@ export default function Conditions() {
                 {/* ── Section cards inside the pillar container ── */}
                 <div className="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                   {pillar.sections.map((sec) => (
-                    <div
+                    <Link
                       key={sec.id}
+                      to={`${pillar.pageHref}#${sec.id}`}
                       className={`border rounded-2xl p-5 sm:p-6 flex flex-col justify-between hover:shadow-sm transition-all group ${isHighlightedPillar ? 'bg-[#FAF9F6] border-[#E7E1D8] hover:border-[#064C3B]/50' : 'bg-white border-[#DCDDD5] hover:border-[#064C3B]/50'}`}
                     >
                       <div>
-                        {/* Header Pill & ID */}
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-[10px] font-mono font-bold text-[#064C3B] bg-[#064C3B]/10 px-2 py-0.5 rounded-full">
-                            DOM-{sec.number}
-                          </span>
-                          <span className="text-[11px] font-medium text-stone-400">
-                            {sec.items.length} Diagnoses
-                          </span>
-                        </div>
-
                         {/* Title */}
                         <h3 className="font-serif text-lg sm:text-xl font-bold text-[#26332F] leading-snug mb-2 group-hover:text-[#064C3B] transition-colors">
-                          <Link to={`${pillar.pageHref}#${sec.id}`}>
-                            {sec.title}
-                          </Link>
+                          {sec.title}
                         </h3>
 
                         {/* Tagline */}
@@ -868,15 +857,12 @@ export default function Conditions() {
 
                       {/* Direct Subsection Link */}
                       <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
-                        <Link
-                          to={`${pillar.pageHref}#${sec.id}`}
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#064C3B] group-hover:text-[#073D32] transition-colors"
-                        >
+                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#064C3B] group-hover:text-[#073D32] transition-colors">
                           <span>Explore Protocol &amp; Care</span>
                           <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        </span>
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
 
@@ -944,7 +930,7 @@ export default function Conditions() {
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 shadow-md transition-all active:scale-[0.98]"
             >
               <Phone className="w-4 h-4" />
-              <span>Call For Assessment ({phone})</span>
+              <span>Call For Assessment</span>
             </a>
             <a
               href={`https://wa.me/${whatsapp}?text=${encodeURIComponent('Hello Dr. Jha Centre, I would like to consult regarding a condition assessment.')}`}

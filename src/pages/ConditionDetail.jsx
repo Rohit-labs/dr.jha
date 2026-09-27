@@ -4,6 +4,7 @@ import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getConditionBySlug, conditions } from '../data/conditions'
+import { useBranchContext } from '../context/BranchContext'
 import {
   Activity,
   CheckCircle2,
@@ -85,6 +86,9 @@ const CONDITION_SLUG_MAP = {
 export default function ConditionDetail() {
   const { slug } = useParams()
   const condition = getConditionBySlug(slug)
+  const { currentBranch } = useBranchContext()
+  const branchPhone = (currentBranch?.phone || '+919146036559').replace(/[^0-9+]/g, '')
+  const branchWhatsapp = branchPhone.replace(/[^0-9]/g, '')
 
   if (!condition) {
     const targetAnchor = CONDITION_SLUG_MAP[slug]
@@ -393,7 +397,7 @@ export default function ConditionDetail() {
               </p>
               <div className="pt-2 space-y-2.5">
                 <a
-                  href="tel:+919146036559"
+                  href={`tel:${branchPhone}`}
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] border border-white/20 active:scale-[0.98] transition-all shadow-md"
                 >
                   <Phone className="w-4 h-4" />
@@ -401,7 +405,7 @@ export default function ConditionDetail() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href={`https://wa.me/9146036559?text=${encodeURIComponent(`Hello Dr. Jha Centre, I would like to book a consultation regarding ${condition.name}.`)}`}
+                  href={`https://wa.me/${branchWhatsapp}?text=${encodeURIComponent(`Hello Dr. Jha Centre, I would like to book a consultation regarding ${condition.name}.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#073D32] bg-white hover:bg-stone-100 transition-all shadow-md"
@@ -414,7 +418,7 @@ export default function ConditionDetail() {
             {/* Related Treatments */}
             {condition.relatedTreatments && (
               <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs">
-                <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-stone-400 block mb-3">
+                <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#064C3B] block mb-3">
                   Recommended Treatments
                 </span>
                 <div className="space-y-2.5">
@@ -427,7 +431,7 @@ export default function ConditionDetail() {
                       <span className="text-xs font-semibold text-stone-800 group-hover:text-[#064C3B]">
                         {t.name}
                       </span>
-                      <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:translate-x-0.5 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 text-[#064C3B] group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   ))}
                 </div>
@@ -463,7 +467,7 @@ export default function ConditionDetail() {
             {/* Other Conditions Directory */}
             <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 shadow-xs">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-stone-400">
+                <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
                   Other Clinical Conditions
                 </span>
                 <Link to="/conditions" className="text-[11px] font-semibold text-[#064C3B] hover:underline">
@@ -478,7 +482,7 @@ export default function ConditionDetail() {
                     className="flex items-center justify-between text-xs font-medium text-stone-700 hover:text-[#064C3B] py-1.5 border-b border-stone-100 last:border-0 group"
                   >
                     <span>{oc.name}</span>
-                    <ArrowRight className="w-3 h-3 text-stone-300 group-hover:text-[#064C3B] group-hover:translate-x-0.5 transition-all" />
+                    <ArrowRight className="w-3 h-3 text-[#064C3B] group-hover:translate-x-0.5 transition-all" />
                   </Link>
                 ))}
               </div>

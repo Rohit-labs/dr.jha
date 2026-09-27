@@ -460,9 +460,9 @@ export default function BranchDetail() {
                     </a>
                   )}
 
-                  {branch.whatsapp && (
+                  {branch.phone && (
                     <a
-                      href={`https://wa.me/${branch.whatsapp.replace(/[^0-9]/g, '')}`}
+                      href={`https://wa.me/${branch.phone.replace(/[^0-9]/g, '')}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/40 transition-colors"
