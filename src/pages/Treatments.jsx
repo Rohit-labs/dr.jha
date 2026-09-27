@@ -19,6 +19,7 @@ export default function Treatments() {
       image: branchTreatment.image || treatment.image,
       gallery: branchTreatment.gallery || treatment.gallery,
       video: branchTreatment.video || treatment.video,
+      variantName: branchTreatment.name,
       cardId: `${branchTreatment.slug}-${index}`
     }
   }).filter(Boolean) || treatments

@@ -1,12 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle2, Video, Sparkles } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react'
 
 export default function TreatmentCard({ treatment }) {
-  const { slug, cardId, category, name, shortDescription, benefits = [], image, video, gallery = [] } = treatment
+  const { slug, cardId, variantName, category, name, shortDescription, benefits = [], image } = treatment
+  const detailHref = variantName
+    ? `/treatments/${slug}?variant=${encodeURIComponent(variantName)}`
+    : `/treatments/${slug}`
 
   return (
-    <div
+    <Link
+      to={detailHref}
       id={cardId || slug}
       className="scroll-mt-28 bg-[#FCFBF7] border border-[#DCDDD5] rounded-2xl sm:rounded-3xl p-3 sm:p-6 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
     >
@@ -30,20 +34,6 @@ export default function TreatmentCard({ treatment }) {
               </span>
             </div>
 
-            {/* Video / Gallery count badge */}
-            <div className="absolute bottom-3 right-3 flex items-center gap-1.5">
-              {video && (
-                <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-white bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-md">
-                  <Video className="w-3 h-3 text-[#E5A500]" />
-                  Video
-                </span>
-              )}
-              {gallery.length > 1 && (
-                <span className="inline-flex items-center text-[10px] font-medium text-white bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-md">
-                  {gallery.length} Photos
-                </span>
-              )}
-            </div>
           </div>
         )}
 
@@ -54,9 +44,7 @@ export default function TreatmentCard({ treatment }) {
         )}
 
         <h2 className="font-serif text-sm sm:text-2xl font-bold text-[#26332F] leading-snug mb-1.5 sm:mb-2.5 group-hover:text-[#064C3B] transition-colors">
-          <Link to={`/treatments/${slug}`}>
-            {name}
-          </Link>
+          {name}
         </h2>
         
         <p className="text-[10px] sm:text-sm text-stone-600 leading-relaxed font-normal mb-3 sm:mb-5 line-clamp-2">
@@ -76,15 +64,12 @@ export default function TreatmentCard({ treatment }) {
       </div>
 
       <div className="pt-3 sm:pt-4 border-t border-stone-200/80 flex items-center justify-between gap-1 mt-2">
-        <Link
-          to={`/treatments/${slug}`}
-          className="inline-flex items-center gap-1 text-[10px] sm:text-sm font-semibold text-[#064C3B] hover:text-[#043328] group-hover:underline transition-all"
-        >
+        <span className="inline-flex items-center gap-1 text-[10px] sm:text-sm font-semibold text-[#064C3B] group-hover:underline transition-all">
           <span>Explore Modality</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-        </Link>
+        </span>
         <span className="hidden sm:inline text-[11px] text-stone-400 font-medium">In-Clinic Session</span>
       </div>
-    </div>
+    </Link>
   )
 }
