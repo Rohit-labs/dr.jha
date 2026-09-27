@@ -48,7 +48,7 @@ export default function Treatments() {
         <Breadcrumbs items={[{ label: 'Treatments' }]} />
 
         {/* Header */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
+        <div className="max-w-3xl mb-6 sm:mb-8">
           <span className="text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase block mb-3">
             Therapeutic Approaches
           </span>

@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import { conditions } from '../../data/conditions'
 import { treatments } from '../../data/treatments'
+import { treatmentSections } from '../../data/treatmentSections'
 import { resources } from '../../data/resources'
 import { caseStudies } from '../../data/caseStudies'
 import { branches } from '../../data/branches'
@@ -626,9 +627,14 @@ export default function Navbar() {
                     <div className="grid grid-cols-4 gap-6">
                       {treatmentsData.categories.map((cat, idx) => (
                         <div key={idx} className="space-y-3">
-                          <h4 className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#064C3B]">
+                          <Link
+                            to={`/treatments?section=${treatmentSections[idx]?.id || ''}`}
+                            onClick={() => setActiveDropdown(null)}
+                            className="inline-flex items-center gap-1 text-[11px] font-bold tracking-[0.16em] uppercase text-[#064C3B] hover:text-[#073D32] transition-colors group/treatment-section"
+                          >
                             {cat.heading}
-                          </h4>
+                            <ArrowRight className="w-3 h-3 group-hover/treatment-section:translate-x-0.5 transition-transform" />
+                          </Link>
                           <ul className="space-y-2">
                             {cat.items.map((item, itemIdx) => {
                               const label = typeof item === 'string' ? item : item.name
@@ -655,13 +661,13 @@ export default function Navbar() {
                     {/* Bottom CTA strip */}
                     <div className="mt-6 pt-4 border-t border-stone-200/60 flex items-center justify-between text-[11px] text-stone-500 bg-[#F4F2EC]/60 -mx-8 -mb-8 px-8 py-3.5">
                       <span>Personalized multi-disciplinary plans combining manual therapy, rehab & acupuncture.</span>
-                      <a
-                        href="#book"
+                      <Link
+                        to={treatmentsData.actionHref}
                         onClick={() => setActiveDropdown(null)}
                         className="font-semibold text-stone-800 hover:text-[#064C3B] flex items-center gap-1"
                       >
-                        Schedule an Evaluation <ArrowRight className="w-3 h-3" />
-                      </a>
+                        View All Treatments <ArrowRight className="w-3 h-3" />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -940,9 +946,14 @@ export default function Navbar() {
                 <div className="pl-3 pr-1 py-2 space-y-4 bg-[#F4F2EC]/70 rounded-2xl p-3 my-1">
                   {treatmentsData.categories.map((cat, idx) => (
                     <div key={idx}>
-                      <p className="text-[10px] font-bold tracking-wider uppercase text-[#064C3B] mb-1.5">
+                      <Link
+                        to={`/treatments?section=${treatmentSections[idx]?.id || ''}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider uppercase text-[#064C3B] hover:text-[#073D32] mb-1.5"
+                      >
                         {cat.heading}
-                      </p>
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
                       <ul className="space-y-1.5 pl-2">
                         {cat.items.map((item, itemIdx) => {
                           const label = typeof item === 'string' ? item : item.name

@@ -2,22 +2,20 @@ import React, { useState, useMemo, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import TreatmentCard from './TreatmentCard'
 import { Search, Sparkles, Filter } from 'lucide-react'
+import { treatmentSections } from '../../data/treatmentSections'
 
 export default function TreatmentList({ treatments }) {
   const location = useLocation()
-  const [selectedCategory, setSelectedCategory] = useState('ALL')
+  const [selectedSection, setSelectedSection] = useState(() => {
+    const section = new URLSearchParams(location.search).get('section')
+    return treatmentSections.some((item) => item.id === section) ? section : 'ALL'
+  })
   const [searchQuery, setSearchQuery] = useState('')
-  const [showAllCategories, setShowAllCategories] = useState(false)
 
-  const categories = useMemo(() => {
-    const cats = ['ALL']
-    treatments.forEach((t) => {
-      if (t.category && !cats.includes(t.category)) {
-        cats.push(t.category)
-      }
-    })
-    return cats
-  }, [treatments])
+  useEffect(() => {
+    const section = new URLSearchParams(location.search).get('section')
+    setSelectedSection(treatmentSections.some((item) => item.id === section) ? section : 'ALL')
+  }, [location.search])
 
   // Handle hash navigation if user lands on /treatments#specific-slug
   useEffect(() => {
@@ -28,7 +26,7 @@ export default function TreatmentList({ treatments }) {
       )
       if (targetTreatment) {
         // If current category filters it out, reset to ALL
-        setSelectedCategory('ALL')
+        setSelectedSection('ALL')
         setSearchQuery('')
         setTimeout(() => {
           const el = document.getElementById(targetTreatment.cardId || targetTreatment.slug)
@@ -41,16 +39,18 @@ export default function TreatmentList({ treatments }) {
   }, [location.hash, treatments])
 
   const filteredTreatments = useMemo(() => {
+    const activeSection = treatmentSections.find((section) => section.id === selectedSection)
+
     return treatments.filter((t) => {
-      const matchesCat = selectedCategory === 'ALL' || t.category === selectedCategory
+      const matchesSection = !activeSection || activeSection.slugs.includes(t.slug)
       const matchesSearch =
         !searchQuery.trim() ||
         t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         t.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
         t.category.toLowerCase().includes(searchQuery.toLowerCase())
-      return matchesCat && matchesSearch
+      return matchesSection && matchesSearch
     })
-  }, [treatments, selectedCategory, searchQuery])
+  }, [treatments, selectedSection, searchQuery])
 
   return (
     <div className="space-y-8">
@@ -77,33 +77,28 @@ export default function TreatmentList({ treatments }) {
         </div>
       </div>
 
-      {/* Category Pills */}
+      {/* Primary Treatment Sections */}
       <div className="flex flex-wrap items-center gap-2 pb-2">
-        {categories.map((cat, index) => {
-          const isActive = selectedCategory === cat
+        {['ALL', ...treatmentSections.map((section) => section.id)].map((sectionId) => {
+          const isActive = selectedSection === sectionId
+          const label = sectionId === 'ALL'
+            ? 'All Modalities'
+            : treatmentSections.find((section) => section.id === sectionId).label
+
           return (
             <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`${index >= 5 && !showAllCategories ? 'hidden sm:inline-flex' : 'inline-flex'} whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer ${
+              key={sectionId}
+              onClick={() => setSelectedSection(sectionId)}
+              className={`inline-flex whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer ${
                 isActive
                   ? 'bg-[#064C3B] text-white shadow-sm'
                   : 'bg-[#F4F2EC] text-stone-700 hover:bg-stone-200 border border-stone-200/60'
               }`}
             >
-              {cat === 'ALL' ? 'All Modalities' : cat}
+              {label}
             </button>
           )
         })}
-        {categories.length > 5 && (
-          <button
-            type="button"
-            onClick={() => setShowAllCategories((visible) => !visible)}
-            className="inline-flex sm:hidden whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold tracking-wider text-[#064C3B] bg-white border border-[#064C3B]/25 hover:bg-[#F4F2EC] transition-all cursor-pointer"
-          >
-            {showAllCategories ? 'Show Less' : `More Categories (${categories.length - 5})`}
-          </button>
-        )}
       </div>
 
       {/* Grid of Treatment Cards */}
@@ -118,7 +113,7 @@ export default function TreatmentList({ treatments }) {
           <p className="font-serif text-lg text-stone-700">No treatments matched your criteria.</p>
           <button
             onClick={() => {
-              setSelectedCategory('ALL')
+              setSelectedSection('ALL')
               setSearchQuery('')
             }}
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-semibold text-white bg-[#064C3B] hover:bg-[#043328] transition-colors"

@@ -615,6 +615,7 @@ export default function Conditions() {
 
   // Total count of categories
   const totalSectionsCount = pillars.reduce((sum, p) => sum + p.sections.length, 0)
+  const filteredSectionsCount = filteredPillars.reduce((sum, p) => sum + p.sections.length, 0)
 
   return (
     <PageContainer>
@@ -648,7 +649,7 @@ export default function Conditions() {
         <Breadcrumbs items={[{ label: 'Conditions Directory' }]} />
 
         {/* ════════════════ HERO HEADER ════════════════ */}
-        <div className="max-w-3xl mb-10 sm:mb-12">
+        <div className="max-w-3xl mb-4 sm:mb-6">
           <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#064C3B] uppercase mb-3">
             <Stethoscope className="w-4 h-4 text-[#064C3B]" />
             <span>CLINICAL CARE DIRECTORY &bull; 4 COMPREHENSIVE DOMAINS</span>
@@ -667,15 +668,18 @@ export default function Conditions() {
             <span>Clinical Information Sourced from Wikipedia &amp; Peer-Reviewed Medical Consensus</span>
           </div>
 
-          {/* Search Box */}
-          <div className="mt-6 relative max-w-lg">
-            <Search className="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" />
+        </div>
+
+        {/* Search Box */}
+        <div className="mb-6 sm:mb-8 bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-4 sm:p-6 shadow-xs flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="relative w-full md:flex-1 min-w-0">
+            <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
               placeholder="Search by diagnosis (e.g., Sciatica, Bell's Palsy, Vertigo, ACL, PCOS)..."
-              className="w-full pl-11 pr-4 py-3 rounded-full border border-stone-300 bg-white text-xs sm:text-sm text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#064C3B] focus:ring-2 focus:ring-[#064C3B]/20 shadow-xs"
+              className="w-full pl-10 pr-16 py-2.5 rounded-full text-xs sm:text-sm bg-white border border-stone-200 focus:outline-none focus:border-[#064C3B] focus:ring-1 focus:ring-[#064C3B] transition-all"
             />
             {filter && (
               <button
@@ -686,6 +690,10 @@ export default function Conditions() {
                 Clear
               </button>
             )}
+          </div>
+
+          <div className="text-xs text-stone-500 font-medium whitespace-nowrap">
+            Showing <span className="font-bold text-[#064C3B]">{filteredSectionsCount}</span> of {totalSectionsCount} clinical categories
           </div>
         </div>
 
