@@ -54,7 +54,7 @@ export const doctors = [
   },
   {
     id: 'hr-samta-salecha',
-    name: 'Samta Salecha',
+    name: 'Hr Samta Salecha',
     role: 'Acupuncture Specialist',
     qualification: 'M.D.Ac (Doctor of Medicine in Acupuncture)',
     experience: '15 Years Experience',
