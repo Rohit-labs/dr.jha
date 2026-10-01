@@ -23,7 +23,7 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3 group">
               <div className="w-11 h-11 rounded-xl bg-white/95 flex items-center justify-center p-1 border border-white/20 shadow-sm shrink-0 group-hover:scale-105 transition-transform">
                 <img
-                  src="/logo.png"
+                  src={encodeURI('/Dr Jha photos/Logo/logo.png')}
                   alt="Dr. Jha Physiotherapy & Acupuncture Logo"
                   className="w-full h-full object-contain"
                 />

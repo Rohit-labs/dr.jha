@@ -17,7 +17,7 @@ export const doctors = [
     specialization: 'Physiotherapy, Rehabilitation & Medical Acupuncture',
     branches: ['Mira Road', 'Vasai', 'Surat'],
     phone: '+91 91460 36559',
-    image: '/dr-pranab-jha.jpg',
+    image: encodeURI('/Dr Jha photos/Dr photos/dr-pranab-jha.jpg'),
     imageAlt: 'Dr. Pranab Jha, Founder and Clinical Lead at Dr. Jha Physiotherapy & Acupuncture Centre',
     imagePosition: 'center 38%',
     description: 'Over 16 years of direct clinical practice treating complex spinal disorders, chronic nerve pain, and sports rehabilitation through an integrated physical therapy and medical acupuncture approach.'
@@ -32,7 +32,7 @@ export const doctors = [
     specialization: 'Medical Acupuncture & Alternative Medicine',
     branches: ['Mira Road'],
     phone: '+91 74983 13922',
-    image: '/hr-anupam-jha.jpg',
+    image: encodeURI('/Dr Jha photos/Dr photos/hr-anupam-jha.jpg'),
     imageAlt: 'Anupam Jha, Acupuncture Practitioner at Dr. Jha Centre',
     imagePosition: 'center 20%',
     description: '15 years of clinical practice in classical and medical acupuncture, trigger point release, and meridian-based holistic healing for chronic pain and rehabilitation.'
@@ -47,7 +47,7 @@ export const doctors = [
     specialization: 'Naturopathy, Yoga Therapy & Acupuncture',
     branches: ['Vasai'],
     phone: '+91 87679 33950',
-    image: '/hr-shweta-jha.jpg',
+    image: encodeURI('/Dr Jha photos/Dr photos/hr-shweta-jha.jpg'),
     imageAlt: 'Shweta Jha, Naturopathy and Yoga Doctor at Dr. Jha Centre Vasai Branch',
     imagePosition: 'center 25%',
     description: 'A decade of clinical experience combining natural healing modalities, therapeutic yoga, and acupuncture protocols for lasting musculoskeletal and lifestyle recovery.'
@@ -62,7 +62,7 @@ export const doctors = [
     specialization: 'Acupuncture & Alternative Medicine',
     branches: ['Surat'],
     phone: '+91 97245 94793',
-    image: '/hr-samta-salecha.jpg',
+    image: encodeURI('/Dr Jha photos/Dr photos/hr-samta-salecha.jpg'),
     imageAlt: 'Samta Salecha, Acupuncture Specialist at Dr. Jha Centre Surat Branch',
     imagePosition: 'center 20%',
     description: '15 years of specialized experience in acupuncture medicine, neuro-meridian stimulation, and musculoskeletal recovery at the Surat centre.'

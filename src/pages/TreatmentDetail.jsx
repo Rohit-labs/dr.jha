@@ -43,6 +43,12 @@ export default function TreatmentDetail() {
     return <Navigate to="/treatments" replace />
   }
 
+  const branchKey = currentBranch?.slug
+  const activeImage = (branchKey && treatment.branchImages?.[branchKey]) || treatment.image
+  const activeGallery = (branchKey && treatment.branchImages?.[branchKey])
+    ? [treatment.branchImages[branchKey], ...(treatment.gallery || []).filter((g) => g !== treatment.branchImages[branchKey])]
+    : (treatment.gallery || [])
+
   const otherTreatments = treatments.filter((t) => t.slug !== treatment.slug)
 
   return (
@@ -103,11 +109,11 @@ export default function TreatmentDetail() {
         </div>
 
         {/* Featured Treatment Banner Image */}
-        {treatment.image && (
+        {activeImage && (
           <div className="mb-10 sm:mb-14 rounded-3xl overflow-hidden bg-stone-100 border border-[#DCDDD5] shadow-sm relative group">
             <div className="aspect-[16/9] sm:aspect-[21/9] w-full relative">
               <img
-                src={treatment.image}
+                src={activeImage}
                 alt={treatment.name}
                 className="w-full h-full object-cover"
               />
@@ -123,7 +129,7 @@ export default function TreatmentDetail() {
                   </h2>
                 </div>
                 <button
-                  onClick={() => setActivePhoto(treatment.image)}
+                  onClick={() => setActivePhoto(activeImage)}
                   className="self-start sm:self-auto inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white text-xs font-medium transition-colors cursor-pointer"
                 >
                   <Maximize2 className="w-3.5 h-3.5" />
@@ -151,7 +157,7 @@ export default function TreatmentDetail() {
             </article>
 
             {/* Photo Gallery & Real Clinical Media */}
-            {treatment.gallery && treatment.gallery.length > 0 && (
+            {activeGallery && activeGallery.length > 0 && (
               <div className="bg-[#FCFBF7] border border-[#DCDDD5] rounded-3xl p-6 sm:p-9 shadow-xs space-y-5">
                 <div className="flex items-center justify-between">
                   <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#26332F] flex items-center gap-2">
@@ -161,7 +167,7 @@ export default function TreatmentDetail() {
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-                  {treatment.gallery.map((photo, idx) => (
+                  {activeGallery.map((photo, idx) => (
                     <div
                       key={idx}
                       onClick={() => setActivePhoto(photo)}

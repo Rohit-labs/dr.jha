@@ -70,7 +70,7 @@ export default function BranchHome({ branchSlug: propSlug }) {
       <Hero branch={branch} />
 
       {/* 2. Explore Care areas */}
-      <ExploreCare />
+      <ExploreCare branch={branch} />
 
       {/* 3. Featured Doctor / Dr. Pranab Jha */}
       <ClinicalTeam branch={branch} />

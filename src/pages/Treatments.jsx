@@ -12,11 +12,12 @@ export default function Treatments() {
     const treatment = treatments.find((item) => item.slug === branchTreatment.slug)
     if (!treatment) return null
 
+    const branchImage = (currentBranch?.slug && treatment.branchImages?.[currentBranch.slug]) || treatment.image
     return {
       ...treatment,
       name: branchTreatment.name,
       category: branchTreatment.category || treatment.category,
-      image: branchTreatment.image || treatment.image,
+      image: branchTreatment.image || branchImage,
       gallery: branchTreatment.gallery || treatment.gallery,
       video: branchTreatment.video || treatment.video,
       variantName: branchTreatment.name,
@@ -30,6 +31,7 @@ export default function Treatments() {
         .filter((treatment) => !configuredSlugs.has(treatment.slug))
         .map((treatment) => ({
           ...treatment,
+          image: (currentBranch?.slug && treatment.branchImages?.[currentBranch.slug]) || treatment.image,
           cardId: `${treatment.slug}-catalog`
         }))
     : []
