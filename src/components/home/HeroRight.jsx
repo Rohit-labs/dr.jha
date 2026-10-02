@@ -3,19 +3,45 @@ import { useLocation } from 'react-router-dom'
 
 export default function HeroRight({ branch }) {
   const location = useLocation()
-  const isSurat = branch?.slug === 'surat' || location.pathname.toLowerCase().includes('/surat')
+  const pathname = location.pathname.toLowerCase()
 
-  const defaultMain = isSurat
-    ? '/images/treatments/exercise-therapy2.jpeg'
-    : '/images/treatments/exercise-therapy.jpeg'
+  const isSurat =
+    branch?.slug === 'surat' ||
+    pathname.includes('/surat')
 
-  const defaultTop = isSurat
-    ? '/images/treatments/cosmetic-acupuncture.jpeg'
-    : '/images/treatments/exercise-therapy3.jpeg'
+  const isVasai =
+    branch?.slug === 'vasai' ||
+    pathname.includes('/vasai')
 
-  const defaultBottom = isSurat
-    ? '/images/treatments/shockwave-therapy2.jpeg'
-    : '/images/treatments/laser-therapy2.jpeg'
+  const isMiraRoad =
+    branch?.slug === 'mira-road' ||
+    pathname.includes('/mira-road') ||
+    pathname === '/'
+
+  // Branch-specific treatment photos (Mira Road / default reverted to original)
+  let defaultMain = encodeURI('/Dr Jha photos/treatment photos/Exercise therapy.jpeg')
+  let defaultTop = encodeURI('/Dr Jha photos/treatment photos/Exercise therapy3.jpeg')
+  let defaultBottom = encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
+
+  let mainAlt = 'Physiotherapist providing hands-on exercise rehabilitation therapy'
+  let topAlt = 'Manual therapy and specialized musculoskeletal joint mobilization'
+  let bottomAlt = 'Advanced clinical laser therapy for deep tissue healing and pain relief'
+
+  if (isSurat) {
+    defaultMain = encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg')
+    defaultTop = encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg')
+    defaultBottom = encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg')
+    mainAlt = 'Physiotherapist providing exercise therapy in Surat clinic'
+    topAlt = 'Advanced clinical LASER photobiomodulation in Surat clinic'
+    bottomAlt = 'Advanced clinical shockwave therapy treatment in Surat clinic'
+  } else if (isVasai) {
+    defaultMain = encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    defaultTop = encodeURI('/Dr Jha photos/treatment photos/Guasa therapy1.jpeg')
+    defaultBottom = encodeURI('/Dr Jha photos/treatment photos/Dry cupping therapy.jpeg')
+    mainAlt = 'Naturopathy, yoga and acupuncture therapy at Vasai clinic'
+    topAlt = 'Traditional Gua Sha therapy and soft tissue mobilization at Vasai clinic'
+    bottomAlt = 'Myofascial cupping and joint rehabilitation at Vasai clinic'
+  }
 
   const [mainImgSrc, setMainImgSrc] = useState(defaultMain)
   const [topImgSrc, setTopImgSrc] = useState(defaultTop)
@@ -25,31 +51,7 @@ export default function HeroRight({ branch }) {
     setMainImgSrc(defaultMain)
     setTopImgSrc(defaultTop)
     setBottomImgSrc(defaultBottom)
-  }, [isSurat, defaultMain, defaultTop, defaultBottom])
-
-  const mainFallback = isSurat
-    ? '/Dr Jha photos/treatment photos/Exercise therapy2.jpeg'
-    : '/Dr Jha photos/treatment photos/Exercise therapy.jpeg'
-
-  const topFallback = isSurat
-    ? '/images/treatments/cosmetic-acupuncture-laser.jpeg'
-    : '/Dr Jha photos/treatment photos/Exercise therapy3.jpeg'
-
-  const bottomFallback = isSurat
-    ? '/Dr Jha photos/treatment photos/Shockwave therapy2.jpeg'
-    : '/Dr Jha photos/treatment photos/LASER therapy2.jpeg'
-
-  const mainAlt = isSurat
-    ? 'Physiotherapist providing exercise therapy in Surat clinic'
-    : 'Physiotherapist providing hands-on exercise rehabilitation therapy'
-
-  const topAlt = isSurat
-    ? 'Cosmetic acupuncture and facial laser therapy in Surat clinic'
-    : 'Manual therapy and specialized musculoskeletal joint mobilization'
-
-  const bottomAlt = isSurat
-    ? 'Advanced clinical shockwave therapy treatment in Surat clinic'
-    : 'Advanced clinical laser therapy for deep tissue healing and pain relief'
+  }, [defaultMain, defaultTop, defaultBottom])
 
   return (
     <div className="w-full mt-6 lg:mt-0">
@@ -139,7 +141,6 @@ export default function HeroRight({ branch }) {
         >
           <img
             src={mainImgSrc}
-            onError={() => setMainImgSrc(mainFallback)}
             alt={mainAlt}
             loading="eager"
             className="w-full h-full object-cover rounded-[55px_55px_150px_70px] sm:rounded-[75px_75px_190px_90px] border-4 sm:border-[6px] border-[#F8F6F0]/90"
@@ -157,7 +158,6 @@ export default function HeroRight({ branch }) {
         >
           <img
             src={topImgSrc}
-            onError={() => setTopImgSrc(topFallback)}
             alt={topAlt}
             loading="lazy"
             className="w-full h-full object-cover rounded-[32px] sm:rounded-[42px] border-[6px] sm:border-[8px] border-[#F8F6F0]"
@@ -175,7 +175,6 @@ export default function HeroRight({ branch }) {
         >
           <img
             src={bottomImgSrc}
-            onError={() => setBottomImgSrc(bottomFallback)}
             alt={bottomAlt}
             loading="lazy"
             className="w-full h-full object-cover rounded-[32px] sm:rounded-[42px] border-[6px] sm:border-[8px] border-[#F8F6F0]"
@@ -183,7 +182,7 @@ export default function HeroRight({ branch }) {
         </div>
 
         {/* ========================================================
-            5. "STRONGER EVERY DAY" FLOATING CARD (Shifted 60px down, 21px left)
+            5. "STRONGER EVERY DAY" FLOATING CARD
             ======================================================== */}
         <div className="absolute bottom-[20%] sm:bottom-[22%] lg:bottom-[24%] left-[40%] sm:left-[43%] lg:left-[45%] -translate-x-[21px] translate-y-[60px] z-30 pointer-events-none select-none">
           <div
@@ -218,4 +217,3 @@ export default function HeroRight({ branch }) {
     </div>
   )
 }
-

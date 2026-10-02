@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 
 /* ──────────────── Foliage SVG accents ──────────────── */
@@ -22,52 +22,148 @@ function FoliageBottomRight() {
   )
 }
 
-/* ──────────────── Card data — real treatment photos & slugs ──────────────── */
-const cards = [
-  {
-    slug: 'physiotherapy',
-    title: 'Physiotherapy & Rehabilitation',
-    description: 'Manual therapy, joint mobilization & corrective exercise for orthopaedic and neurological recovery.',
-    image: '/images/treatments/exercise-therapy2.jpeg',
-    imageAlt: 'Physiotherapy exercise rehabilitation session',
-    category: 'CORE REHABILITATION',
-  },
-  {
-    slug: 'acupuncture',
-    title: 'Medical Acupuncture',
-    description: 'Sterile fine-needle therapy targeting neuro-meridian points for natural pain modulation.',
-    image: '/images/treatments/acupuncture.jpeg',
-    imageAlt: 'Medical acupuncture treatment session',
-    category: 'TRADITIONAL & MEDICAL',
-  },
-  {
-    slug: 'fire-cupping',
-    title: 'Cupping & Myofascial Therapy',
-    description: 'Dry cupping, fire cupping & wet cupping to decompress tight fascial planes, boost circulation and relieve chronic muscular tension.',
-    image: '/images/treatments/dry-cupping-therapy.jpeg',
-    imageAlt: 'Cupping therapy session for muscle relief',
-    category: 'CUPPING THERAPY',
-    featured: true,
-  },
-  {
-    slug: 'shockwave-therapy',
-    title: 'Shockwave Therapy (ESWT)',
-    description: 'High-energy acoustic pulses for chronic heel spurs, calcific tendinitis & stubborn tendinopathies.',
-    image: '/images/treatments/shockwave-therapy.jpeg',
-    imageAlt: 'Extracorporeal shockwave therapy treatment',
-    category: 'ADVANCED MODALITY',
-  },
-  {
-    slug: 'scalp-acupuncture',
-    title: 'Scalp Acupuncture',
-    description: 'Neuro-acupuncture over cortical zones for stroke, Parkinson\'s, facial palsy & motor recovery.',
-    image: '/images/treatments/scalp-acupuncture.jpeg',
-    imageAlt: 'Scalp acupuncture for neurological rehabilitation',
-    category: 'NEURO REHABILITATION',
-  },
-]
+export default function ExploreCare({ branch }) {
+  const location = useLocation()
+  const pathname = location.pathname.toLowerCase()
 
-export default function CareAreas() {
+  const isSurat = branch?.slug === 'surat' || pathname.includes('/surat')
+  const isVasai = branch?.slug === 'vasai' || pathname.includes('/vasai')
+
+  // Branch-segregated treatment photos and cards
+  let cards = [
+    {
+      slug: 'physiotherapy',
+      title: 'Physiotherapy & Rehabilitation',
+      description: 'Manual therapy, joint mobilization & corrective exercise for orthopaedic and neurological recovery.',
+      image: encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'),
+      imageAlt: 'Physiotherapy rehabilitation at Mira Road clinic',
+      category: 'CORE REHABILITATION',
+    },
+    {
+      slug: 'acupuncture',
+      title: 'Medical Acupuncture',
+      description: 'Sterile fine-needle therapy targeting neuro-meridian points for natural pain modulation.',
+      image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture.jpeg'),
+      imageAlt: 'Medical acupuncture treatment at Mira Road clinic',
+      category: 'TRADITIONAL & MEDICAL',
+    },
+    {
+      slug: 'fire-cupping',
+      title: 'Cupping & Myofascial Therapy',
+      description: 'Dry cupping, fire cupping & wet cupping to decompress tight fascial planes, boost circulation and relieve chronic muscular tension.',
+      image: encodeURI('/Dr Jha photos/treatment photos/Dry cupping therapy.jpeg'),
+      imageAlt: 'Cupping therapy session for muscle relief at Mira Road',
+      category: 'CUPPING THERAPY',
+      featured: true,
+    },
+    {
+      slug: 'laser-therapy',
+      title: 'Laser Therapy (Photobiomodulation)',
+      description: 'Advanced clinical laser therapy for deep cellular tissue repair, rapid inflammation relief and nerve healing.',
+      image: encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
+      imageAlt: 'Laser therapy session at Dr. Jha clinic',
+      category: 'ADVANCED MODALITY',
+    },
+    {
+      slug: 'exercise-therapy',
+      title: 'Movement & Spinal Care',
+      description: 'Individualized movement retraining, posture correction, and kinetic spinal rehabilitation.',
+      image: encodeURI('/Dr Jha photos/treatment photos/physio_2_mira_road.jpeg'),
+      imageAlt: 'Active physical therapy at Mira Road clinic',
+      category: 'SPINE & MOVEMENT',
+    },
+  ]
+
+  if (isSurat) {
+    cards = [
+      {
+        slug: 'laser-therapy',
+        title: 'Clinical LASER Therapy',
+        description: 'Advanced laser photobiomodulation for cellular repair, deep tendon recovery and rapid pain relief in Surat.',
+        image: encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
+        imageAlt: 'Laser therapy photobiomodulation session at Surat clinic',
+        category: 'ADVANCED ELECTRO-MODALITY',
+        featured: true,
+      },
+      {
+        slug: 'physiotherapy',
+        title: 'Physiotherapy & Exercise Rehab',
+        description: 'Targeted joint loading, kinetic exercise and manual mobilization at our Surat facility.',
+        image: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'),
+        imageAlt: 'Exercise rehabilitation session at Surat clinic',
+        category: 'CORE REHABILITATION',
+      },
+      {
+        slug: 'cosmetic-acupuncture-laser',
+        title: 'Cosmetic Acupuncture & LASER',
+        description: 'Non-surgical facial toning, collagen stimulation, and photobiomodulation in Surat.',
+        image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+        imageAlt: 'Cosmetic acupuncture and facial laser in Surat clinic',
+        category: 'AESTHETIC CARE',
+      },
+      {
+        slug: 'shockwave-therapy',
+        title: 'Shockwave Therapy (ESWT)',
+        description: 'High-energy acoustic pulses for chronic heel spurs, calcific tendinitis & stubborn tendinopathies.',
+        image: encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg'),
+        imageAlt: 'Shockwave therapy treatment in Surat clinic',
+        category: 'ADVANCED REGENERATIVE',
+      },
+      {
+        slug: 'acupuncture',
+        title: 'Medical Acupuncture',
+        description: 'Sterile fine-needle therapy stimulating neuro-meridian points for chronic joint and nerve relief.',
+        image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture2.jpeg'),
+        imageAlt: 'Medical acupuncture at Surat clinic',
+        category: 'ACUPUNCTURE CARE',
+      },
+    ]
+  } else if (isVasai) {
+    cards = [
+      {
+        slug: 'acupuncture',
+        title: 'Holistic Care & Acupuncture',
+        description: 'Integrated naturopathy, therapeutic yoga and medical acupuncture with Hr. Shweta Jha at Vasai.',
+        image: encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg'),
+        imageAlt: 'Holistic care session with Hr. Shweta Jha at Vasai clinic',
+        category: 'HOLISTIC HEALTH',
+      },
+      {
+        slug: 'physiotherapy',
+        title: 'Physiotherapy & Rehab',
+        description: 'Manual joint mobilization, posture retraining, and post-surgical recovery at Vasai West.',
+        image: encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg'),
+        imageAlt: 'Physiotherapy rehabilitation at Vasai clinic',
+        category: 'CORE REHABILITATION',
+      },
+      {
+        slug: 'dry-cupping-therapy',
+        title: 'Cupping & Myofascial Therapy',
+        description: 'Dry cupping and tissue decompression to boost blood circulation and release chronic muscle spasm.',
+        image: encodeURI('/Dr Jha photos/treatment photos/Dry cupping therapy.jpeg'),
+        imageAlt: 'Cupping therapy session at Vasai clinic',
+        category: 'CUPPING THERAPY',
+        featured: true,
+      },
+      {
+        slug: 'scalp-acupuncture',
+        title: 'Scalp Neuro-Acupuncture',
+        description: 'Neuro-meridian stimulation over cortical zones for stroke recovery, facial palsy, and motor control.',
+        image: encodeURI('/Dr Jha photos/treatment photos/Scalp acupuncture.jpeg'),
+        imageAlt: 'Scalp acupuncture session at Vasai clinic',
+        category: 'NEURO REHABILITATION',
+      },
+      {
+        slug: 'shockwave-therapy',
+        title: 'Advanced Modality Therapy',
+        description: 'Clinical modalities for chronic heel pain, tendinitis, and acute musculoskeletal relief.',
+        image: encodeURI('/Dr Jha photos/treatment photos/Shockwave Therapy.jpeg'),
+        imageAlt: 'Clinical therapy modality at Vasai clinic',
+        category: 'TARGETED MODALITY',
+      },
+    ]
+  }
+
   const left = cards.slice(0, 2)
   const center = cards[2]
   const right = cards.slice(3, 5)

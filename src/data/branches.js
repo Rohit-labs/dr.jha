@@ -49,20 +49,25 @@ export const branches = [
     about: 'Established as our primary rehabilitation facility in the Mumbai Metropolitan Region, the Mira Road clinic integrates modern physiotherapy, manual mobilization, and sterile medical acupuncture under the clinical guidance of Dr. Pranab Jha. The clinic is equipped with dedicated treatment bays, therapeutic exercise areas, and specialized modalities for complex spinal, nerve, and joint recovery.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Mira+Road',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Mira+Road',
-    image: '/images/clinics/mira-road-clinic-2.png',
+    image: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (2).png'),
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&auto=format&fit=crop&q=80',
-        caption: 'Primary consultation suite & diagnostic evaluation area'
+        url: encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'),
+        caption: 'Physiotherapy & active rehabilitation at Mira Road'
       },
       {
-        url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&auto=format&fit=crop&q=80',
-        caption: 'Dedicated therapy tables for acupuncture & manual mobilization'
+        url: encodeURI('/Dr Jha photos/treatment photos/physio_2_mira_road.jpeg'),
+        caption: 'Hands-on movement & spine rehabilitation at Mira Road'
       },
       {
-        url: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&auto=format&fit=crop&q=80',
-        caption: 'Active movement rehabilitation & postural correction zone'
+        url: encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
+        caption: 'Clinical laser photobiomodulation & deep healing'
       }
+    ],
+    treatmentPhotos: [
+      encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/physio_2_mira_road.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
     ],
     services: [
       'Orthopaedic Physiotherapy',
@@ -166,20 +171,23 @@ export const branches = [
     about: 'Serving the growing community of Vasai-Virar and the Palghar region, our Vasai clinic offers dedicated physical therapy, chronic pain relief, and functional movement training. Located on the second floor of Sai Arcade just moments from the railway terminus, this clinic allows convenient daily access for commuters, seniors, and recovering surgical patients.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Vasai',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Vasai',
-    image: '/images/clinics/vasai-clinic-2.jpeg',
+    image: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&auto=format&fit=crop&q=80',
-        caption: 'Rehabilitation tables and manual therapy suite'
+        url: encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg'),
+        caption: 'Naturopathy, yoga & acupuncture therapy with Hr. Shweta Jha at Vasai'
       },
       {
-        url: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&auto=format&fit=crop&q=80',
-        caption: 'Electrotherapy & localized pain management equipment'
+        url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
+        caption: 'Clinical consultation and therapy evaluation bays at Vasai'
       },
       {
-        url: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=900&auto=format&fit=crop&q=80',
-        caption: 'Gait retraining and balance assessment zone'
+        url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic4.jpeg'),
+        caption: 'Advanced physiotherapy and spine rehabilitation suite at Vasai'
       }
+    ],
+    treatmentPhotos: [
+      encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
     ],
     services: [
       'Spinal & Back Pain Therapy',
@@ -273,20 +281,30 @@ export const branches = [
     about: 'Extending our clinical standards to South Gujarat, the Surat centre in Vesu provides specialized orthopaedic rehabilitation, athletic injury conditioning, and therapeutic acupuncture. Designed to offer a calm, modern setting, the clinic accommodates patients seeking focused care for chronic pain, posture correction, and post-operative recovery.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Surat',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Surat',
-    image: '/images/clinics/surat-clinic-2.jpeg',
+    image: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic2.jpeg'),
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=900&auto=format&fit=crop&q=80',
-        caption: 'Modern clinical consultation & kinetic assessment area'
+        url: encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
+        caption: 'Deep tissue laser photobiomodulation in Surat'
       },
       {
-        url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&auto=format&fit=crop&q=80',
-        caption: 'Specialized therapy treatment rooms'
+        url: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'),
+        caption: 'Exercise therapy & physical rehabilitation in Surat'
       },
       {
-        url: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&auto=format&fit=crop&q=80',
-        caption: 'Corrective movement and athletic functional conditioning suite'
+        url: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+        caption: 'Cosmetic acupuncture & facial laser therapy in Surat'
+      },
+      {
+        url: encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg'),
+        caption: 'Advanced clinical shockwave therapy in Surat'
       }
+    ],
+    treatmentPhotos: [
+      encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg')
     ],
     services: [
       'Advanced Musculoskeletal Rehab',

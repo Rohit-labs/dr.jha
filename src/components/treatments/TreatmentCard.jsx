@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react'
+import { useBranchContext } from '../../context/BranchContext'
 
 export default function TreatmentCard({ treatment }) {
-  const { slug, cardId, variantName, category, name, shortDescription, benefits = [], image } = treatment
+  const { currentBranch } = useBranchContext()
+  const branchKey = currentBranch?.slug
+  const { slug, cardId, variantName, category, name, shortDescription, benefits = [], image, branchImages } = treatment
+  const displayImage = (branchKey && branchImages?.[branchKey]) || image
   const detailHref = variantName
     ? `/treatments/${slug}?variant=${encodeURIComponent(variantName)}`
     : `/treatments/${slug}`
@@ -16,10 +20,10 @@ export default function TreatmentCard({ treatment }) {
     >
       <div>
         {/* Treatment Image Visual */}
-        {image && (
+        {displayImage && (
           <div className="relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden mb-3 sm:mb-5 bg-stone-100 border border-stone-200/60 shadow-inner">
             <img
-              src={image}
+              src={displayImage}
               alt={name}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
               loading="lazy"

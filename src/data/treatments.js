@@ -3,12 +3,16 @@ export const treatments = [
     slug: 'physiotherapy',
     name: 'Physiotherapy & Clinical Rehabilitation',
     category: 'CORE REHABILITATION',
-    image: '/images/treatments/exercise-therapy2.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy.jpeg'),
     gallery: [
-      '/images/treatments/exercise-therapy2.jpeg',
-      '/images/treatments/exercise-therapy.jpeg',
-      '/images/treatments/exercise-therapy3.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Exercise therapy.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Exercise therapy3.jpeg')
     ],
+    branchImages: {
+      'mira-road': encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'),
+      'surat': encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Clinical Physiotherapy & Rehabilitation | Dr. Jha Centre',
     metaDescription: 'Evidence-based physiotherapy for orthopaedic, neurological, and sports recovery. Multi-disciplinary care at Dr. Jha Centre.',
     shortDescription: 'Comprehensive manual therapy, neuromuscular re-education, and individualized corrective exercises.',
@@ -47,13 +51,16 @@ export const treatments = [
     slug: 'acupuncture',
     name: 'Medical Acupuncture & Pain Management',
     category: 'TRADITIONAL & MEDICAL ACUPUNCTURE',
-    image: '/images/treatments/acupuncture.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture.jpeg'),
     gallery: [
-      '/images/treatments/acupuncture.jpeg',
-      '/images/treatments/acupuncture2.jpeg',
-      '/images/treatments/acupuncture3.jpeg',
-      '/images/treatments/acupuncture4.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Acupuncture.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Acupuncture2.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Acupuncture3.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Acupuncture4.jpeg')
     ],
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Medical Acupuncture & Pain Management | Dr. Jha Centre',
     metaDescription: 'Clinically administered medical acupuncture and dry needling for chronic pain, sciatica, and neuromuscular conditions at Dr. Jha Centre.',
     shortDescription: 'Sterile fine-needle therapy stimulating neuro-endocrine pathways for profound natural pain modulation.',
@@ -92,11 +99,14 @@ export const treatments = [
     slug: 'dry-cupping-therapy',
     name: 'Dry Cupping Therapy & Myofascial Decompression',
     category: 'CUPPING & MYOFASCIAL THERAPY',
-    image: '/images/treatments/dry-cupping-therapy.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Dry cupping therapy.jpeg'),
     gallery: [
-      '/images/treatments/dry-cupping-therapy.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Dry cupping therapy.jpeg')
     ],
-    video: '/videos/treatments/cupping-therapy_video.mp4',
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
+    video: '/Dr Jha photos/treatment videos/cupping therapy.mp4',
     pageTitle: 'Dry Cupping Therapy | Dr. Jha Physiotherapy & Acupuncture',
     metaDescription: 'Professional dry cupping therapy and myofascial decompression for muscle tightness, spasm, and circulation enhancement.',
     shortDescription: 'Negative pressure suction cups applied along tight myofascial planes to decompress tissues and boost blood flow.',
@@ -133,11 +143,14 @@ export const treatments = [
     slug: 'wet-cupping-therapy',
     name: 'Wet Cupping Therapy (Hijama & Medicinal Detox)',
     category: 'CUPPING & DETOXIFICATION',
-    image: '/images/treatments/wet-cupping-therapy.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/wet cupping therapy.jpeg'),
     gallery: [
-      '/images/treatments/wet-cupping-therapy.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/wet cupping therapy.jpeg')
     ],
-    video: '/videos/treatments/cupping-therapy_video.mp4',
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
+    video: '/Dr Jha photos/treatment videos/cupping therapy.mp4',
     pageTitle: 'Wet Cupping Therapy (Hijama) | Dr. Jha Centre',
     metaDescription: 'Clinical wet cupping (Hijama) under strict sterile conditions for deep pain relief, systemic detoxification, and micro-circulation.',
     shortDescription: 'Sterile micro-incisions with targeted vacuum suction to evacuate stagnant blood and metabolic toxins.',
@@ -174,11 +187,14 @@ export const treatments = [
     slug: 'auriculotherapy',
     name: 'Auriculotherapy (Ear Acupuncture & Ear Seeding)',
     category: 'MICROSYSTEM ACUPUNCTURE',
-    image: '/images/treatments/auriculotherapy.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Auriculotherapy.jpeg'),
     gallery: [
-      '/images/treatments/auriculotherapy.jpeg',
-      '/images/treatments/auriculotherapy-using-auricular-seed.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Auriculotherapy.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Auriculotherapy using Auricular seed.jpeg')
     ],
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Auriculotherapy & Ear Acupuncture | Dr. Jha Centre',
     metaDescription: 'Clinically proven ear acupuncture and vaccaria ear seed therapy for addiction, neurological conditions, pain relief, and insomnia.',
     shortDescription: 'Microsystem ear stimulation using fine needles or herbal seeds targeting somatic reflex zones across the body.',
@@ -211,10 +227,13 @@ export const treatments = [
     slug: 'bloodletting-therapy',
     name: 'Bloodletting Therapy (Micro-Bleeding & Apex Pricking)',
     category: 'SPECIALIZED THERAPEUTICS',
-    image: '/images/treatments/bloodletting-therapy.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Bloodletting therapy.jpeg'),
     gallery: [
-      '/images/treatments/bloodletting-therapy.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Bloodletting therapy.jpeg')
     ],
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Bloodletting Therapy & Micro-Bleeding | Dr. Jha Centre',
     metaDescription: 'Targeted ear apex and micro-meridian bloodletting therapy for acute hypertension, febrile disorders, and inflammatory relief.',
     shortDescription: 'Precision release of a few drops of blood from reflex nodes (e.g. ear apex) to quickly vent pathogenic heat and lower blood pressure.',
@@ -247,11 +266,16 @@ export const treatments = [
     slug: 'cosmetic-acupuncture-laser',
     name: 'Cosmetic Acupuncture & Facial LASER Therapy',
     category: 'AESTHETICS & FACIAL REJUVENATION',
-    image: '/images/treatments/cosmetic-acupuncture-laser.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
     gallery: [
-      '/images/treatments/cosmetic-acupuncture-laser.jpeg',
-      '/images/treatments/cosmetic-acupuncture-laser2.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg')
     ],
+    branchImages: {
+      'mira-road': encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg'),
+      'surat': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Cosmetic Acupuncture & Facial LASER Therapy | Dr. Jha Centre',
     metaDescription: 'Non-surgical facial rejuvenation, anti-aging collagen stimulation, and facial toning combining gentle acupuncture with red LASER therapy.',
     shortDescription: 'Holistic anti-aging treatment combining micro-needles and red photobiomodulation to boost natural collagen synthesis.',
@@ -284,11 +308,14 @@ export const treatments = [
     slug: 'fire-cupping',
     name: 'Fire Cupping Therapy',
     category: 'THERMAL & CUPPING MODALITY',
-    image: '/images/treatments/fire-cupping.png',
+    image: encodeURI('/Dr Jha photos/treatment photos/fire cupping.png'),
     gallery: [
-      '/images/treatments/fire-cupping.png'
+      encodeURI('/Dr Jha photos/treatment photos/fire cupping.png')
     ],
-    video: '/videos/treatments/fire-cupping_vid.mp4',
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
+    video: '/Dr Jha photos/treatment videos/fire cupping vid.mp4',
     pageTitle: 'Fire Cupping Therapy | Dr. Jha Centre',
     metaDescription: 'Traditional fire cupping using glass cups to warm meridians, disperse deep joint cold, and relieve severe muscular tension.',
     shortDescription: 'Glass cups heated with flame to produce deep negative thermal suction, expelling cold-dampness from muscles.',
@@ -321,11 +348,14 @@ export const treatments = [
     slug: 'laser-therapy',
     name: 'High-Intensity & Low-Level LASER Therapy (LLLT)',
     category: 'ADVANCED ELECTRO-MODALITY',
-    image: '/images/treatments/laser-therapy.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
     gallery: [
-      '/images/treatments/laser-therapy.jpeg',
-      '/images/treatments/laser-therapy2.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
     ],
+    branchImages: {
+      'surat': encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Clinical LASER Therapy (LLLT / Photobiomodulation) | Dr. Jha Centre',
     metaDescription: 'Advanced photobiomodulation and cold laser therapy for cellular tissue repair, nerve regeneration, and inflammation reduction.',
     shortDescription: 'Monochromatic coherent laser beams penetrating deep into damaged tissues to accelerate cellular ATP production.',
@@ -358,11 +388,14 @@ export const treatments = [
     slug: 'shockwave-therapy',
     name: 'Extracorporeal Shockwave Therapy (ESWT)',
     category: 'ADVANCED REGENERATIVE MODALITY',
-    image: '/images/treatments/shockwave-therapy.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Shockwave Therapy.jpeg'),
     gallery: [
-      '/images/treatments/shockwave-therapy.jpeg',
-      '/images/treatments/shockwave-therapy2.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Shockwave Therapy.jpeg')
     ],
+    branchImages: {
+      'surat': encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Extracorporeal Shockwave Therapy (ESWT) | Dr. Jha Centre',
     metaDescription: 'High-energy acoustic radial shockwave therapy for chronic heel spurs, calcific tendinitis, and stubborn tendinopathies.',
     shortDescription: 'High-energy acoustic pulses breaking down calcifications and triggering neo-vascularization in chronic tendons.',
@@ -395,12 +428,15 @@ export const treatments = [
     slug: 'guasa-therapy',
     name: 'Gua Sha Therapy (IASTM Scraping & Soft Tissue Mobilization)',
     category: 'MYOFASCIAL & SOFT TISSUE',
-    image: '/images/treatments/guasa-therapy1.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Guasa therapy1.jpeg'),
     gallery: [
-      '/images/treatments/guasa-therapy1.jpeg',
-      '/images/treatments/guasa-therapy2.jpeg',
-      '/images/treatments/guasa-therapy3.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Guasa therapy1.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Guasa therapy2.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Guasa therapy3.jpeg')
     ],
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Gua Sha & IASTM Soft Tissue Therapy | Dr. Jha Centre',
     metaDescription: 'Instrument-Assisted Soft Tissue Mobilization (IASTM) and Gua Sha scraping for breaking scar tissue and relieving chronic myofascial restriction.',
     shortDescription: 'Specialized clinical scraping tools gliding along muscle contours to break adhesions and enhance micro-perfusion.',
@@ -433,10 +469,13 @@ export const treatments = [
     slug: 'scalp-acupuncture',
     name: 'Scalp Acupuncture (Neurological Neuro-Acupuncture)',
     category: 'NEUROLOGICAL REHABILITATION',
-    image: '/images/treatments/scalp-acupuncture.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Scalp acupuncture.jpeg'),
     gallery: [
-      '/images/treatments/scalp-acupuncture.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Scalp acupuncture.jpeg')
     ],
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Scalp Acupuncture for Neurological Recovery | Dr. Jha Centre',
     metaDescription: 'Specialized scalp acupuncture targeting cortical brain zones for stroke paralysis, Parkinson\'s, motor neuropathy, and speech recovery.',
     shortDescription: 'Specialized micro-needling over cerebral cortex projection zones on the scalp to facilitate neuroplastic brain reorganization.',
@@ -469,10 +508,13 @@ export const treatments = [
     slug: 'moxibustion-therapy',
     name: 'Moxibustion Therapy (Therapeutic Artemisia Heat)',
     category: 'THERMAL & HOLISTIC HEALING',
-    image: '/images/treatments/moxibustion-therapy.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Moxibustion therapy.jpeg'),
     gallery: [
-      '/images/treatments/moxibustion-therapy.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Moxibustion therapy.jpeg')
     ],
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Moxibustion Therapy & Herbal Thermal Care | Dr. Jha Centre',
     metaDescription: 'Therapeutic moxibustion applying warm herbal Artemisia heat along acupuncture points to invigorate blood, expel cold, and boost immunity.',
     shortDescription: 'Controlled burning of compressed therapeutic herbal moxa over key acupoints to deliver deeply penetrating infrared warmth.',
@@ -505,10 +547,13 @@ export const treatments = [
     slug: 'ginger-moxibustion',
     name: 'Ginger Moxibustion Therapy',
     category: 'HERBAL THERMAL THERAPY',
-    image: '/images/treatments/ginger-moxibustion.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Ginger moxibustion.jpeg'),
     gallery: [
-      '/images/treatments/ginger-moxibustion.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Ginger moxibustion.jpeg')
     ],
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Ginger Moxibustion Therapy | Dr. Jha Centre',
     metaDescription: 'Specialized indirect moxibustion over fresh ginger slices for synergistic herbal warmth, arthritis relief, and deep digestive soothing.',
     shortDescription: 'Moxa cones placed atop perforated fresh ginger slices to infuse therapeutic gingerol and far-infrared warmth into joints.',
@@ -541,12 +586,16 @@ export const treatments = [
     slug: 'exercise-therapy',
     name: 'Exercise Therapy & Functional Rehabilitation',
     category: 'CORE REHABILITATION',
-    image: '/images/treatments/exercise-therapy2.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy.jpeg'),
     gallery: [
-      '/images/treatments/exercise-therapy2.jpeg',
-      '/images/treatments/exercise-therapy.jpeg',
-      '/images/treatments/exercise-therapy3.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Exercise therapy.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Exercise therapy3.jpeg')
     ],
+    branchImages: {
+      'mira-road': encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'),
+      'surat': encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Exercise Therapy & Biomechanical Rehabilitation | Dr. Jha Centre',
     metaDescription: 'Customized therapeutic exercise, core stabilization, kinetic chain retraining, and functional movement therapy.',
     shortDescription: 'Supervised progressive resistance, joint loading, and postural stabilization tailored to your biomechanical profile.',
@@ -579,11 +628,15 @@ export const treatments = [
     slug: 'manual-therapy',
     name: 'Manual Therapy & Joint Mobilization',
     category: 'HANDS-ON THERAPY',
-    image: '/images/treatments/exercise-therapy3.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy3.jpeg'),
     gallery: [
-      '/images/treatments/exercise-therapy3.jpeg',
-      '/images/treatments/guasa-therapy2.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Exercise therapy3.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Guasa therapy2.jpeg')
     ],
+    branchImages: {
+      'mira-road': encodeURI('/Dr Jha photos/treatment photos/physio_2_mira_road.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Manual Therapy & Joint Mobilization | Dr. Jha Centre',
     metaDescription: 'Hands-on clinical manual therapy, Maitland joint mobilization, and myofascial release for stiffness and spinal alignment.',
     shortDescription: 'Skilled hands-on techniques to free stiff joints, break soft-tissue adhesions, and restore smooth movement.',
@@ -615,11 +668,14 @@ export const treatments = [
     slug: 'dry-needling',
     name: 'Dry Needling & Myofascial Trigger Point Therapy',
     category: 'TARGETED MODALITY',
-    image: '/images/treatments/acupuncture4.jpeg',
+    image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture4.jpeg'),
     gallery: [
-      '/images/treatments/acupuncture4.jpeg',
-      '/images/treatments/acupuncture2.jpeg'
+      encodeURI('/Dr Jha photos/treatment photos/Acupuncture4.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Acupuncture2.jpeg')
     ],
+    branchImages: {
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    },
     pageTitle: 'Dry Needling & Trigger Point Therapy | Dr. Jha Centre',
     metaDescription: 'Certified dry needling for stubborn knots, muscle spasm, and myofascial pain syndrome at Dr. Jha Centre.',
     shortDescription: 'Precision intramuscular needle stimulation targeting myofascial trigger points to release chronic knots.',
