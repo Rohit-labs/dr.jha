@@ -97,7 +97,7 @@ export default function ExploreCare({ branch }) {
         slug: 'cosmetic-acupuncture-laser',
         title: 'Cosmetic Acupuncture & LASER',
         description: 'Non-surgical facial toning, collagen stimulation, and photobiomodulation in Surat.',
-        image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+        image: encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-surat.jpeg'),
         imageAlt: 'Cosmetic acupuncture and facial laser in Surat clinic',
         category: 'AESTHETIC CARE',
       },

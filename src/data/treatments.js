@@ -256,27 +256,27 @@ export const treatments = [
     slug: 'cosmetic-acupuncture-laser',
     name: 'Cosmetic Acupuncture & Facial LASER Therapy',
     category: 'AESTHETICS & FACIAL REJUVENATION',
-    image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+    image: encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-vasai.jpeg'),
     gallery: [
-      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-vasai.jpeg'),
       encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
     ],
     branchImages: {
       'mira-road': encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg'),
-      'surat': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
-      'vasai': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+      'surat': encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-surat.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-vasai.jpeg')
     },
     branchGalleries: {
       'vasai': [
-        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+        encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-vasai.jpeg'),
         encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
       ],
       'mira-road': [
         encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg'),
-        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+        encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-vasai.jpeg')
       ],
       'surat': [
-        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg')
+        encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-surat.jpeg')
       ]
     },
     pageTitle: 'Cosmetic Acupuncture & Facial LASER Therapy | Dr. Jha Centre',
@@ -352,7 +352,7 @@ export const treatments = [
     image: encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
     gallery: [
       encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+      encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-vasai.jpeg')
     ],
     branchImages: {
       'mira-road': encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
@@ -362,11 +362,11 @@ export const treatments = [
     branchGalleries: {
       'vasai': [
         encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
-        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+        encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-vasai.jpeg')
       ],
       'mira-road': [
         encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
-        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+        encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-vasai.jpeg')
       ],
       'surat': [
         encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg')

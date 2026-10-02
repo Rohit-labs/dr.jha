@@ -299,7 +299,7 @@ export const branches = [
         caption: 'Exercise therapy & physical rehabilitation in Surat'
       },
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+        url: encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-surat.jpeg'),
         caption: 'Cosmetic acupuncture & facial laser therapy in Surat'
       },
       {
@@ -310,7 +310,7 @@ export const branches = [
     treatmentPhotos: [
       encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
       encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-surat.jpeg'),
       encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg')
     ],
     services: [
@@ -326,7 +326,7 @@ export const branches = [
       { name: 'Sports Performance Recovery', slug: 'shockwave-therapy', image: encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg'), category: 'Sports Rehab' },
       { name: 'Medical Acupuncture & Needling', slug: 'acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture2.jpeg'), category: 'Acupuncture' },
       { name: 'Spine Alignment & Postural Laser Therapy', slug: 'laser-therapy', image: encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'), category: 'Spine Care' },
-      { name: 'Facial Rejuvenation & Cosmetic Laser', slug: 'cosmetic-acupuncture-laser', image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'), category: 'Aesthetic Care' }
+      { name: 'Facial Rejuvenation & Cosmetic Laser', slug: 'cosmetic-acupuncture-laser', image: encodeURI('/Dr Jha photos/treatment photos/cosmetic-acupuncture-laser-therapy-surat.jpeg'), category: 'Aesthetic Care' }
     ],
     conditions: [
       { name: 'Lower Back Pain & Lumbar Strain', slug: 'back-pain' },
