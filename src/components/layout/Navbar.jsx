@@ -283,6 +283,7 @@ export default function Navbar() {
     categories: [
       {
         heading: 'PHYSIOTHERAPY & REHAB',
+        headingHref: '/treatments/physiotherapy-rehab',
         items: [
           { name: 'Physiotherapy & Rehabilitation', href: '/treatments/physiotherapy' },
           { name: 'Exercise Therapy & Biomechanics', href: '/treatments/exercise-therapy' },
@@ -292,6 +293,7 @@ export default function Navbar() {
       },
       {
         heading: 'ACUPUNCTURE & SPECIALIZED',
+        headingHref: '/treatments/acupuncture-specialized',
         items: [
           { name: 'Medical Acupuncture & Pain', href: '/treatments/acupuncture' },
           { name: 'Scalp Acupuncture (Neuro)', href: '/treatments/scalp-acupuncture' },
@@ -302,6 +304,7 @@ export default function Navbar() {
       },
       {
         heading: 'CUPPING & DETOXIFICATION',
+        headingHref: '/treatments/cupping-detoxification',
         items: [
           { name: 'Dry Cupping Therapy', href: '/treatments/dry-cupping-therapy' },
           { name: 'Wet Cupping Therapy (Hijama)', href: '/treatments/wet-cupping-therapy' },
@@ -311,6 +314,7 @@ export default function Navbar() {
       },
       {
         heading: 'ADVANCED & THERMAL',
+        headingHref: '/treatments/advanced-thermal',
         items: [
           { name: 'High & Low LASER (LLLT)', href: '/treatments/laser-therapy' },
           { name: 'Shockwave Therapy (ESWT)', href: '/treatments/shockwave-therapy' },
@@ -629,7 +633,7 @@ export default function Navbar() {
                         <div key={idx} className="flex flex-col">
                           <div className="pb-3.5 mb-4 border-b border-stone-200/75">
                             <Link
-                              to={`/treatments?section=${treatmentSections[idx]?.id || ''}`}
+                              to={cat.headingHref}
                               onClick={() => setActiveDropdown(null)}
                               className="text-[11px] font-bold tracking-[0.14em] uppercase text-[#064C3B] hover:text-[#0b6b53] group/treatment-section flex items-center justify-between transition-colors leading-snug"
                             >
@@ -949,7 +953,7 @@ export default function Navbar() {
                   {treatmentsData.categories.map((cat, idx) => (
                     <div key={idx}>
                       <Link
-                        to={`/treatments?section=${treatmentSections[idx]?.id || ''}`}
+                        to={cat.headingHref}
                         onClick={() => setMobileMenuOpen(false)}
                         className="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider uppercase text-[#064C3B] hover:text-[#073D32] mb-1.5"
                       >
