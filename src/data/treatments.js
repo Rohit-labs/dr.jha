@@ -106,7 +106,7 @@ export const treatments = [
     branchImages: {
       'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
     },
-    video: '/Dr Jha photos/treatment videos/cupping therapy.mp4',
+    video: encodeURI('/Dr Jha photos/treatment videos/cupping therapy_video.mp4'),
     pageTitle: 'Dry Cupping Therapy | Dr. Jha Physiotherapy & Acupuncture',
     metaDescription: 'Professional dry cupping therapy and myofascial decompression for muscle tightness, spasm, and circulation enhancement.',
     shortDescription: 'Negative pressure suction cups applied along tight myofascial planes to decompress tissues and boost blood flow.',
@@ -150,7 +150,7 @@ export const treatments = [
     branchImages: {
       'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
     },
-    video: '/Dr Jha photos/treatment videos/cupping therapy.mp4',
+    video: encodeURI('/Dr Jha photos/treatment videos/cupping therapy_video.mp4'),
     pageTitle: 'Wet Cupping Therapy (Hijama) | Dr. Jha Centre',
     metaDescription: 'Clinical wet cupping (Hijama) under strict sterile conditions for deep pain relief, systemic detoxification, and micro-circulation.',
     shortDescription: 'Sterile micro-incisions with targeted vacuum suction to evacuate stagnant blood and metabolic toxins.',
@@ -315,7 +315,7 @@ export const treatments = [
     branchImages: {
       'vasai': encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
     },
-    video: '/Dr Jha photos/treatment videos/fire cupping vid.mp4',
+    video: encodeURI('/Dr Jha photos/treatment videos/fire cupping_vid.mp4'),
     pageTitle: 'Fire Cupping Therapy | Dr. Jha Centre',
     metaDescription: 'Traditional fire cupping using glass cups to warm meridians, disperse deep joint cold, and relieve severe muscular tension.',
     shortDescription: 'Glass cups heated with flame to produce deep negative thermal suction, expelling cold-dampness from muscles.',
