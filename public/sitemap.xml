@@ -61,12 +61,12 @@
 
   <!-- High-Intent Condition Landing Direct Slugs -->
   <url>
-    <loc>https://drjhaphysio.in/conditions/sciatica</loc>
+    <loc>https://drjhaphysio.in/conditions/back-pain</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysio.in/conditions/back-pain</loc>
+    <loc>https://drjhaphysio.in/conditions/sciatica</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -86,7 +86,12 @@
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysio.in/conditions/stroke</loc>
+    <loc>https://drjhaphysio.in/conditions/sports-injuries</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/conditions/stroke-paralysis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -96,17 +101,27 @@
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://drjhaphysio.in/conditions/pcos</loc>
+    <loc>https://drjhaphysio.in/conditions/parkinsons</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/conditions/plantar-fasciitis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/conditions/tennis-elbow</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/conditions/carpal-tunnel</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://drjhaphysio.in/conditions/vertigo</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://drjhaphysio.in/conditions/tinnitus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
@@ -139,6 +154,7 @@
     <priority>0.92</priority>
   </url>
 
+  <!-- 17 Clinical Treatment Modalities -->
   <url>
     <loc>https://drjhaphysio.in/treatments/physiotherapy</loc>
     <changefreq>monthly</changefreq>
@@ -225,7 +241,7 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Blogs, Resources, Case Studies & Events -->
+  <!-- Blogs, Resources, Case Studies, Events, FAQs & Terms -->
   <url>
     <loc>https://drjhaphysio.in/blogs</loc>
     <changefreq>weekly</changefreq>
@@ -245,5 +261,15 @@
     <loc>https://drjhaphysio.in/events</loc>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/faqs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/terms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
   </url>
 </urlset>
