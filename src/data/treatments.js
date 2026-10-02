@@ -262,7 +262,7 @@ export const treatments = [
       encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
     ],
     branchImages: {
-      'mira-road': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+      'mira-road': encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg'),
       'surat': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
       'vasai': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
     },
@@ -272,12 +272,11 @@ export const treatments = [
         encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
       ],
       'mira-road': [
-        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
-        encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
+        encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg'),
+        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
       ],
       'surat': [
-        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
-        encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg')
+        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg')
       ]
     },
     pageTitle: 'Cosmetic Acupuncture & Facial LASER Therapy | Dr. Jha Centre',
@@ -370,8 +369,7 @@ export const treatments = [
         encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
       ],
       'surat': [
-        encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
-        encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg')
+        encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg')
       ]
     },
     pageTitle: 'Clinical LASER Therapy (LLLT / Photobiomodulation) | Dr. Jha Centre',
