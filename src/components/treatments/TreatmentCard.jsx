@@ -7,7 +7,7 @@ export default function TreatmentCard({ treatment }) {
   const { currentBranch } = useBranchContext()
   const branchKey = currentBranch?.slug
   const { slug, cardId, variantName, category, name, shortDescription, benefits = [], image, branchImages } = treatment
-  const displayImage = (branchKey && branchImages?.[branchKey]) || image
+  const displayImage = image || (branchKey && branchImages?.[branchKey])
   const detailHref = variantName
     ? `/treatments/${slug}?variant=${encodeURIComponent(variantName)}`
     : `/treatments/${slug}`

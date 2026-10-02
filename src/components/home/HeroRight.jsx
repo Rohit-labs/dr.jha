@@ -35,12 +35,12 @@ export default function HeroRight({ branch }) {
     topAlt = 'Advanced clinical LASER photobiomodulation in Surat clinic'
     bottomAlt = 'Advanced clinical shockwave therapy treatment in Surat clinic'
   } else if (isVasai) {
-    defaultMain = encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
-    defaultTop = encodeURI('/Dr Jha photos/treatment photos/Guasa therapy1.jpeg')
-    defaultBottom = encodeURI('/Dr Jha photos/treatment photos/Dry cupping therapy.jpeg')
-    mainAlt = 'Naturopathy, yoga and acupuncture therapy at Vasai clinic'
-    topAlt = 'Traditional Gua Sha therapy and soft tissue mobilization at Vasai clinic'
-    bottomAlt = 'Myofascial cupping and joint rehabilitation at Vasai clinic'
+    defaultMain = encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg')
+    defaultTop = encodeURI('/Dr Jha photos/treatment photos/manual_therapy_vasai.jpeg')
+    defaultBottom = encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    mainAlt = 'Physiotherapy and lower limb rehabilitation session at Vasai clinic'
+    topAlt = 'Shoulder mobilization and manual therapy session at Vasai clinic'
+    bottomAlt = 'Expert physical rehabilitation and acupuncture care with Dr. Shweta Jha at Vasai'
   }
 
   const [mainImgSrc, setMainImgSrc] = useState(defaultMain)

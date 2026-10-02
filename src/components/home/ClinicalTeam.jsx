@@ -68,9 +68,9 @@ export default function ClinicalTeam({ branch }) {
             {branch?.slug === 'mira-road' || !branch
               ? 'Under the clinical leadership of Dr. Pranab Jha and Anupam Jha, our Mira Road centre combines evidence-based physiotherapy and medical acupuncture for lasting recovery.'
               : branch?.slug === 'vasai'
-              ? 'Under the clinical leadership of Dr. Pranab Jha and Shweta Jha, our Vasai centre delivers specialized physiotherapy, naturopathy, therapeutic yoga, and acupuncture care tailored to your recovery.'
+              ? 'Under the clinical leadership of Dr. Pranab Jha and Dr. Shweta Jha, our Vasai centre delivers specialized physiotherapy, naturopathy, therapeutic yoga, and acupuncture care tailored to your recovery.'
               : branch?.slug === 'surat'
-              ? 'Under the clinical leadership of Dr. Pranab Jha and Hr. Samta Salecha, our Surat clinic provides advanced acupuncture medicine and dedicated musculoskeletal rehabilitation.'
+              ? 'Under the clinical leadership of Dr. Pranab Jha and Dr. Samta Salecha, our Surat clinic provides advanced acupuncture medicine and dedicated musculoskeletal rehabilitation.'
               : 'Our clinical specialists combine evidence-based rehabilitation and medical acupuncture to help you regain pain-free movement.'}
           </p>
         </div>

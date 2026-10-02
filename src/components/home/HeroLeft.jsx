@@ -260,7 +260,7 @@ export default function HeroLeft({ branch }) {
             className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white/90 hover:bg-white border border-[#064C3B]/30 hover:border-[#064C3B] active:scale-[0.98] transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer"
           >
             <Phone className="w-3.5 h-3.5 text-[#064C3B]" />
-            <span>Call Hr. Anupam</span>
+            <span>Call Dr. Anupam</span>
           </a>
         )}
 

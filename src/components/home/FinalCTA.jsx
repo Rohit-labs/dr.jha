@@ -132,7 +132,7 @@ export default function FinalCTA({ branch }) {
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-[#064C3B] bg-white border border-[#064C3B]/30 hover:border-[#064C3B] hover:bg-[#F0F7F4] transition-all"
                   >
                     <Phone className="w-4 h-4" />
-                    <span>Call Hr. Anupam</span>
+                    <span>Call Dr. Anupam</span>
                   </a>
                 )}
 

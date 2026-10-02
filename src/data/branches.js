@@ -79,12 +79,12 @@ export const branches = [
       'Post-Surgical Rehabilitation'
     ],
     treatments: [
-      { name: 'Orthopaedic Physiotherapy', slug: 'physiotherapy', category: 'Core Rehabilitation' },
-      { name: 'Medical Acupuncture', slug: 'acupuncture', category: 'Traditional & Holistic' },
-      { name: 'Dry Needling & Myofascial Release', slug: 'physiotherapy', category: 'Pain Management' },
-      { name: 'Neurological Rehabilitation', slug: 'physiotherapy', category: 'Neuro Recovery' },
-      { name: 'Post-Surgical Recovery Protocols', slug: 'physiotherapy', category: 'Post-Operative' },
-      { name: 'Sports Injury Rehabilitation', slug: 'physiotherapy', category: 'Athletic Recovery' }
+      { name: 'Orthopaedic Physiotherapy', slug: 'physiotherapy', image: encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'), category: 'Core Rehabilitation' },
+      { name: 'Medical Acupuncture', slug: 'acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture.jpeg'), category: 'Traditional & Holistic' },
+      { name: 'Dry Needling & Myofascial Release', slug: 'dry-needling', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture4.jpeg'), category: 'Pain Management' },
+      { name: 'Neurological Rehabilitation', slug: 'scalp-acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Scalp acupuncture.jpeg'), category: 'Neuro Recovery' },
+      { name: 'Post-Surgical Recovery Protocols', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/physio_2_mira_road.jpeg'), category: 'Post-Operative' },
+      { name: 'Sports Injury Rehabilitation', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy.jpeg'), category: 'Athletic Recovery' }
     ],
     conditions: [
       { name: 'Back Pain & Spine Care', slug: 'back-pain' },
@@ -174,8 +174,12 @@ export const branches = [
     image: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
     gallery: [
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg'),
-        caption: 'Naturopathy, yoga & acupuncture therapy with Hr. Shweta Jha at Vasai'
+        url: encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg'),
+        caption: 'Physiotherapy & lower limb rehabilitation with Dr. Shweta Jha at Vasai'
+      },
+      {
+        url: encodeURI('/Dr Jha photos/treatment photos/manual_therapy_vasai.jpeg'),
+        caption: 'Shoulder mobilization & manual therapy session at Vasai'
       },
       {
         url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
@@ -187,8 +191,11 @@ export const branches = [
       }
     ],
     treatmentPhotos: [
+      encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/manual_therapy_vasai.jpeg'),
       encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
     ],
+
     services: [
       'Spinal & Back Pain Therapy',
       'Joint Mobilization & Manual Therapy',
@@ -198,12 +205,12 @@ export const branches = [
       'Knee & Shoulder Rehabilitation'
     ],
     treatments: [
-      { name: 'Spinal & Back Pain Therapy', slug: 'physiotherapy', category: 'Spine Health' },
-      { name: 'Joint Mobilization & Manual Care', slug: 'physiotherapy', category: 'Manual Therapy' },
-      { name: 'Post-Operative Orthopaedic Rehab', slug: 'physiotherapy', category: 'Post-Surgical' },
-      { name: 'Medical Acupuncture Sessions', slug: 'acupuncture', category: 'Acupuncture' },
-      { name: 'Geriatric Mobility & Balance Care', slug: 'physiotherapy', category: 'Senior Health' },
-      { name: 'Shoulder & Knee Restoration', slug: 'physiotherapy', category: 'Joint Care' }
+      { name: 'Spinal & Back Pain Therapy', slug: 'physiotherapy', image: encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg'), category: 'Spine Health' },
+      { name: 'Joint Mobilization & Manual Care', slug: 'manual-therapy', image: encodeURI('/Dr Jha photos/treatment photos/manual_therapy_vasai.jpeg'), category: 'Manual Therapy' },
+      { name: 'Post-Operative Orthopaedic Rehab', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg'), category: 'Post-Surgical' },
+      { name: 'Medical Acupuncture Sessions', slug: 'acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture.jpeg'), category: 'Acupuncture' },
+      { name: 'Geriatric Mobility & Balance Care', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/balance_rehab_vasai.jpeg'), category: 'Senior Health' },
+      { name: 'Shoulder & Knee Restoration', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/exercise_therapy_vasai.jpeg'), category: 'Joint Care' }
     ],
     conditions: [
       { name: 'Back Pain & Lumbar Strain', slug: 'back-pain' },
@@ -315,11 +322,11 @@ export const branches = [
       'Balance & Gait Retraining'
     ],
     treatments: [
-      { name: 'Advanced Musculoskeletal Rehab', slug: 'physiotherapy', category: 'Orthopaedics' },
-      { name: 'Sports Performance Recovery', slug: 'physiotherapy', category: 'Sports Rehab' },
-      { name: 'Medical Acupuncture & Needling', slug: 'acupuncture', category: 'Acupuncture' },
-      { name: 'Spine Alignment & Postural Therapy', slug: 'physiotherapy', category: 'Spine Care' },
-      { name: 'Neuromuscular & Gait Retraining', slug: 'physiotherapy', category: 'Functional Movement' }
+      { name: 'Advanced Musculoskeletal Rehab', slug: 'physiotherapy', image: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'), category: 'Orthopaedics' },
+      { name: 'Sports Performance Recovery', slug: 'shockwave-therapy', image: encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg'), category: 'Sports Rehab' },
+      { name: 'Medical Acupuncture & Needling', slug: 'acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture2.jpeg'), category: 'Acupuncture' },
+      { name: 'Spine Alignment & Postural Laser Therapy', slug: 'laser-therapy', image: encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'), category: 'Spine Care' },
+      { name: 'Facial Rejuvenation & Cosmetic Laser', slug: 'cosmetic-acupuncture-laser', image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'), category: 'Aesthetic Care' }
     ],
     conditions: [
       { name: 'Lower Back Pain & Lumbar Strain', slug: 'back-pain' },
@@ -331,7 +338,7 @@ export const branches = [
     doctorIds: ['dr-pranab-jha', 'hr-samta-salecha'],
     reviews: [
       {
-        quote: 'Hr. Samta Salecha is very knowledgeable in acupuncture and pain management. Got tremendous relief from chronic spine and joint issues in just a few visits at the Surat centre.',
+        quote: 'Dr. Samta Salecha is very knowledgeable in acupuncture and pain management. Got tremendous relief from chronic spine and joint issues in just a few visits at the Surat centre.',
         author: 'Ketan Patel',
         location: 'Vesu, Surat',
         condition: 'Spine & Joint Rehabilitation',

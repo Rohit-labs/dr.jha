@@ -122,17 +122,17 @@ export default function ExploreCare({ branch }) {
     cards = [
       {
         slug: 'acupuncture',
-        title: 'Holistic Care & Acupuncture',
-        description: 'Integrated naturopathy, therapeutic yoga and medical acupuncture with Hr. Shweta Jha at Vasai.',
-        image: encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg'),
-        imageAlt: 'Holistic care session with Hr. Shweta Jha at Vasai clinic',
-        category: 'HOLISTIC HEALTH',
+        title: 'Medical Acupuncture',
+        description: 'Sterile fine-needle therapy targeting neuro-meridian points for natural pain modulation and recovery with Dr. Shweta Jha at Vasai.',
+        image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture.jpeg'),
+        imageAlt: 'Medical acupuncture treatment at Vasai clinic',
+        category: 'TRADITIONAL & MEDICAL ACUPUNCTURE',
       },
       {
         slug: 'physiotherapy',
         title: 'Physiotherapy & Rehab',
         description: 'Manual joint mobilization, posture retraining, and post-surgical recovery at Vasai West.',
-        image: encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg'),
+        image: encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg'),
         imageAlt: 'Physiotherapy rehabilitation at Vasai clinic',
         category: 'CORE REHABILITATION',
       },

@@ -23,17 +23,17 @@ export default function BranchClinicSection({ branch }) {
   const miraRoadImages = [
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (2).png'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/mira-road-clinic-2.png'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (2).png'),
       caption: 'Treatment bays and rehabilitation suites at Mira Road',
     },
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (3).png'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/mira-road-clinic-3.png'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (3).png'),
       caption: 'Dedicated clinical consultation and therapy areas',
     },
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (4).png'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/mira-road-clinic-4.png'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (4).png'),
       caption: 'Modern physiotherapy and sterile acupuncture facility',
     },
   ]
@@ -41,27 +41,27 @@ export default function BranchClinicSection({ branch }) {
   const suratImages = [
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic2.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/surat-clinic-2.jpeg'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic2.jpeg'),
       caption: 'Clinical consultation and therapy evaluation suite at Surat',
     },
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic3.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/surat-clinic-3.jpeg'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic3.jpeg'),
       caption: 'Advanced physiotherapy and electrotherapy rehabilitation station',
     },
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic4.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/surat-clinic-4.jpeg'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic4.jpeg'),
       caption: 'Private medical acupuncture and therapeutic cupping bay',
     },
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic5.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/surat-clinic-5.jpeg'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic5.jpeg'),
       caption: 'Targeted spine mobilization and musculoskeletal recovery area',
     },
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic8.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/surat-clinic-8.jpeg'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic8.jpeg'),
       caption: 'Modern clinical reception and patient care facility in Vesu',
     },
   ]
@@ -69,20 +69,23 @@ export default function BranchClinicSection({ branch }) {
   const vasaiImages = [
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/vasai-clinic-2.jpeg'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
       caption: 'Clinical consultation and therapy evaluation bays at Vasai',
     },
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic4.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/vasai-clinic-4.jpeg'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic4.jpeg'),
       caption: 'Advanced physiotherapy and spine rehabilitation suite',
     },
     {
       url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic5.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/images/clinics/vasai-clinic-5.jpeg'),
+      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic5.jpeg'),
       caption: 'Specialized medical acupuncture and recovery station',
     },
   ]
+
+
+
 
   return (
     <section className="w-full bg-[#F8F6F0] py-16 sm:py-20 lg:py-24 font-sans antialiased text-[#26332F] relative overflow-hidden border-y border-stone-200/70">
@@ -199,7 +202,7 @@ export default function BranchClinicSection({ branch }) {
               <div className="pt-5 border-t border-white/15 flex flex-wrap items-center gap-3 sm:gap-4">
                 <a
                   href={`tel:${branch.phone.replace(/[^0-9+]/g, '')}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B] hover:bg-[#043328] active:scale-[0.98] transition-all shadow-md shadow-black/20 border border-white/20"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white hover:bg-stone-100 active:scale-[0.98] transition-all shadow-md shadow-black/20"
                 >
                   <Phone className="w-4 h-4" />
                   <span>{branch.secondaryPhone ? 'Call Dr. Pranab' : `Call ${branch.name} Desk`}</span>
@@ -208,10 +211,10 @@ export default function BranchClinicSection({ branch }) {
                 {branch.secondaryPhone && (
                   <a
                     href={`tel:${branch.secondaryPhone.replace(/[^0-9+]/g, '')}`}
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-white bg-[#064C3B]/80 hover:bg-[#043328] active:scale-[0.98] transition-all shadow-md border border-white/20"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white hover:bg-stone-100 active:scale-[0.98] transition-all shadow-md"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>Call Hr. Anupam</span>
+                    <span>Call Dr. Anupam</span>
                   </a>
                 )}
 
@@ -220,7 +223,7 @@ export default function BranchClinicSection({ branch }) {
                     href={branch.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full text-xs sm:text-sm font-medium text-white/90 hover:text-white border border-white/25 hover:border-white/60 transition-all hover:bg-white/5"
+                    className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white hover:bg-stone-100 active:scale-[0.98] transition-all shadow-md"
                   >
                     <span>Get Directions</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -232,13 +235,14 @@ export default function BranchClinicSection({ branch }) {
                     href={`https://wa.me/${branch.phone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 py-3 rounded-full text-xs sm:text-sm font-medium text-white/90 hover:text-white border border-white/20 transition-all hover:bg-white/5"
+                    className="inline-flex items-center gap-1.5 px-4 py-3 rounded-full text-xs sm:text-sm font-semibold text-[#064C3B] bg-white hover:bg-stone-100 active:scale-[0.98] transition-all shadow-md"
                   >
                     <MessageCircle className="w-3.5 h-3.5 text-[#25D366]" />
                     <span>WhatsApp</span>
                   </a>
                 )}
               </div>
+
             </div>
 
             {/* Right Photo & Gallery Area (42%) */}
