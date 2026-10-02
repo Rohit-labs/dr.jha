@@ -45,7 +45,9 @@ export default function TreatmentDetail() {
 
   const branchKey = currentBranch?.slug
   const activeImage = (branchKey && treatment.branchImages?.[branchKey]) || treatment.image
-  const activeGallery = (branchKey && treatment.branchImages?.[branchKey])
+  const activeGallery = (branchKey && treatment.branchGalleries?.[branchKey])
+    ? treatment.branchGalleries[branchKey]
+    : (branchKey && treatment.branchImages?.[branchKey])
     ? [treatment.branchImages[branchKey], ...(treatment.gallery || []).filter((g) => g !== treatment.branchImages[branchKey])]
     : (treatment.gallery || [])
 

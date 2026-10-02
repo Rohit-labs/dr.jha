@@ -258,11 +258,27 @@ export const treatments = [
     category: 'AESTHETICS & FACIAL REJUVENATION',
     image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
     gallery: [
-      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
     ],
     branchImages: {
-      'mira-road': encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg'),
-      'surat': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg')
+      'mira-road': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+      'surat': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+    },
+    branchGalleries: {
+      'vasai': [
+        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+        encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
+      ],
+      'mira-road': [
+        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
+        encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
+      ],
+      'surat': [
+        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+        encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg')
+      ]
     },
     pageTitle: 'Cosmetic Acupuncture & Facial LASER Therapy | Dr. Jha Centre',
     metaDescription: 'Non-surgical facial rejuvenation, anti-aging collagen stimulation, and facial toning combining gentle acupuncture with red LASER therapy.',
@@ -336,10 +352,27 @@ export const treatments = [
     category: 'ADVANCED ELECTRO-MODALITY',
     image: encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
     gallery: [
-      encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
+      encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
+      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
     ],
     branchImages: {
-      'surat': encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg')
+      'mira-road': encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
+      'surat': encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
+      'vasai': encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
+    },
+    branchGalleries: {
+      'vasai': [
+        encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
+        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+      ],
+      'mira-road': [
+        encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
+        encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
+      ],
+      'surat': [
+        encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
+        encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg')
+      ]
     },
     pageTitle: 'Clinical LASER Therapy (LLLT / Photobiomodulation) | Dr. Jha Centre',
     metaDescription: 'Advanced photobiomodulation and cold laser therapy for cellular tissue repair, nerve regeneration, and inflammation reduction.',

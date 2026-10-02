@@ -31,7 +31,7 @@ export default function Treatments({ categorySlug }) {
       name: branchTreatment.name,
       category: branchTreatment.category || treatment.category,
       image: branchTreatment.image || branchImage,
-      gallery: branchTreatment.gallery || treatment.gallery,
+      gallery: branchTreatment.gallery || (currentBranch?.slug && treatment.branchGalleries?.[currentBranch.slug]) || treatment.gallery,
       video: branchTreatment.video || treatment.video,
       variantName: branchTreatment.name,
       cardId: `${branchTreatment.slug}-${index}`
@@ -45,6 +45,7 @@ export default function Treatments({ categorySlug }) {
         .map((t) => ({
           ...t,
           image: (currentBranch?.slug && t.branchImages?.[currentBranch.slug]) || t.image,
+          gallery: (currentBranch?.slug && t.branchGalleries?.[currentBranch.slug]) || t.gallery,
           cardId: `${t.slug}-catalog`
         }))
     : []
