@@ -54,8 +54,15 @@ export default function AppRoutes() {
       <Route path="/conditions/:slug" element={<ConditionDetail />} />
 
       {/* 5. Treatments & Modalities */}
+      {/* Category listing routes (must come BEFORE /:slug to avoid being caught by TreatmentDetail) */}
       <Route path="/treatments" element={<Treatments />} />
+      <Route path="/treatments/physiotherapy-rehab" element={<Treatments categorySlug="physiotherapy-rehab" />} />
+      <Route path="/treatments/acupuncture-specialized" element={<Treatments categorySlug="acupuncture-specialized" />} />
+      <Route path="/treatments/cupping-detoxification" element={<Treatments categorySlug="cupping-detoxification" />} />
+      <Route path="/treatments/advanced-thermal" element={<Treatments categorySlug="advanced-thermal" />} />
+      {/* Individual treatment detail pages — e.g. /treatments/physiotherapy?variant=... */}
       <Route path="/treatments/:slug" element={<TreatmentDetail />} />
+
 
       {/* 6. Patient Knowledge Centre (Blogs & Resources) */}
       <Route path="/blogs" element={<Resources />} />

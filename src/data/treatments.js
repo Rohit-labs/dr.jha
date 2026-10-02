@@ -268,8 +268,7 @@ export const treatments = [
     category: 'AESTHETICS & FACIAL REJUVENATION',
     image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
     gallery: [
-      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg')
+      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy2.jpeg')
     ],
     branchImages: {
       'mira-road': encodeURI('/Dr Jha photos/treatment photos/laser_mira_road.jpeg'),

@@ -117,6 +117,28 @@
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
+  <!-- Treatment Category Hubs (URL-driven SEO filtering) -->
+  <url>
+    <loc>https://drjhaphysio.in/treatments/physiotherapy-rehab</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/treatments/acupuncture-specialized</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/treatments/cupping-detoxification</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://drjhaphysio.in/treatments/advanced-thermal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+
   <url>
     <loc>https://drjhaphysio.in/treatments/physiotherapy</loc>
     <changefreq>monthly</changefreq>
