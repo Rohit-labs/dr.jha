@@ -40,7 +40,7 @@ export const doctors = [
   {
     id: 'hr-shweta-jha',
     name: 'Shweta Jha',
-    role: 'Naturopathy & Yoga Doctor',
+    role: 'Medical Acupuncturist',
     qualification: 'MD Acupuncture',
     experience: '10 Years Experience',
     memberships: ['Maharashtra Council of Acupuncture'],
@@ -48,7 +48,7 @@ export const doctors = [
     branches: ['Vasai'],
     phone: '+91 87679 33950',
     image: encodeURI('/Dr Jha photos/Dr photos/hr-shweta-jha.jpg'),
-    imageAlt: 'Shweta Jha, Naturopathy and Yoga Doctor at Dr. Jha Centre Vasai Branch',
+    imageAlt: 'Shweta Jha, Medical Acupuncturist at Dr. Jha Centre Vasai Branch',
     imagePosition: 'center 25%',
     description: 'A decade of clinical experience combining natural healing modalities, therapeutic yoga, and acupuncture protocols for lasting musculoskeletal and lifestyle recovery.'
   },
