@@ -22,64 +22,64 @@ export default function BranchClinicSection({ branch }) {
 
   const miraRoadImages = [
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (2).png'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (2).png'),
+      url: '/images/clinics/mira-road/mira-road-clinic-2.png',
+      fallback: '/images/clinics/mira-road/mira-road-clinic-2.png',
       caption: 'Treatment bays and rehabilitation suites at Mira Road',
     },
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (3).png'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (3).png'),
+      url: '/images/clinics/mira-road/mira-road-clinic-3.png',
+      fallback: '/images/clinics/mira-road/mira-road-clinic-3.png',
       caption: 'Dedicated clinical consultation and therapy areas',
     },
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (4).png'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (4).png'),
+      url: '/images/clinics/mira-road/mira-road-clinic-4.png',
+      fallback: '/images/clinics/mira-road/mira-road-clinic-4.png',
       caption: 'Modern physiotherapy and sterile acupuncture facility',
     },
   ]
 
   const suratImages = [
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic2.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic2.jpeg'),
+      url: '/images/clinics/surat/surat-clinic-2.jpeg',
+      fallback: '/images/clinics/surat/surat-clinic-2.jpeg',
       caption: 'Clinical consultation and therapy evaluation suite at Surat',
     },
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic3.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic3.jpeg'),
+      url: '/images/clinics/surat/surat-clinic-3.jpeg',
+      fallback: '/images/clinics/surat/surat-clinic-3.jpeg',
       caption: 'Advanced physiotherapy and electrotherapy rehabilitation station',
     },
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic4.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic4.jpeg'),
+      url: '/images/clinics/surat/surat-clinic-4.jpeg',
+      fallback: '/images/clinics/surat/surat-clinic-4.jpeg',
       caption: 'Private medical acupuncture and therapeutic cupping bay',
     },
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic5.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic5.jpeg'),
+      url: '/images/clinics/surat/surat-clinic-5.jpeg',
+      fallback: '/images/clinics/surat/surat-clinic-5.jpeg',
       caption: 'Targeted spine mobilization and musculoskeletal recovery area',
     },
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic8.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic8.jpeg'),
+      url: '/images/clinics/surat/surat-clinic-8.jpeg',
+      fallback: '/images/clinics/surat/surat-clinic-8.jpeg',
       caption: 'Modern clinical reception and patient care facility in Vesu',
     },
   ]
 
   const vasaiImages = [
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
+      url: '/images/clinics/vasai/vasai-clinic-2.jpeg',
+      fallback: '/images/clinics/vasai/vasai-clinic-2.jpeg',
       caption: 'Clinical consultation and therapy evaluation bays at Vasai',
     },
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic4.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic4.jpeg'),
+      url: '/images/clinics/vasai/vasai-clinic-4.jpeg',
+      fallback: '/images/clinics/vasai/vasai-clinic-4.jpeg',
       caption: 'Advanced physiotherapy and spine rehabilitation suite',
     },
     {
-      url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic5.jpeg'),
-      fallback: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic5.jpeg'),
+      url: '/images/clinics/vasai/vasai-clinic-5.jpeg',
+      fallback: '/images/clinics/vasai/vasai-clinic-5.jpeg',
       caption: 'Specialized medical acupuncture and recovery station',
     },
   ]

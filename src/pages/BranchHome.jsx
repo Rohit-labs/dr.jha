@@ -12,6 +12,7 @@ import FollowPrompt from '../components/home/FollowPrompt'
 import NotFound from './NotFound'
 import { getBranchBySlug } from '../data/branches'
 import { useBranchContext } from '../context/BranchContext'
+import { createBranchClinicSchema } from '../utils/seoStructuredData'
 
 export default function BranchHome({ branchSlug: propSlug }) {
   const { slug: paramSlug } = useParams()
@@ -30,31 +31,7 @@ export default function BranchHome({ branchSlug: propSlug }) {
     return <NotFound />
   }
 
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'MedicalClinic',
-    name: `Dr. Jha Physiotherapy & Acupuncture Centre - ${branch.name}`,
-    image: branch.image,
-    url: `https://drjhaphysio.in/${branch.slug}`,
-    telephone: branch.phone,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: branch.address,
-      addressLocality: branch.city,
-      addressRegion: branch.state,
-      postalCode: branch.pincode,
-      addressCountry: 'IN'
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: branch.timingDetails?.[0]?.hours?.split('–')?.[0]?.trim() || '08:30',
-        closes: branch.timingDetails?.[0]?.hours?.split('–')?.[1]?.trim() || '20:30'
-      }
-    ],
-    medicalSpecialty: ['Physiotherapy', 'Acupuncture', 'Rehabilitation']
-  }
+  const structuredData = createBranchClinicSchema(branch)
 
   return (
     <PageContainer>

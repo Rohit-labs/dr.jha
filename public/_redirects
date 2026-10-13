@@ -1,1 +1,8 @@
+/Dr%20Jha%20photos/Logo/* /images/logo/:splat 301
+/Dr%20Jha%20photos/Dr%20photos/* /images/doctors/:splat 301
+/Dr%20Jha%20photos/Clinic%20Photos/Mira%20Road/* /images/clinics/mira-road/:splat 301
+/Dr%20Jha%20photos/Clinic%20Photos/Surat/* /images/clinics/surat/:splat 301
+/Dr%20Jha%20photos/Clinic%20Photos/Vasai/* /images/clinics/vasai/:splat 301
+/Dr%20Jha%20photos/treatment%20photos/* /images/treatments/:splat 301
+/Dr%20Jha%20photos/treatment%20videos/* /videos/treatments/:splat 301
 /*    /index.html   200

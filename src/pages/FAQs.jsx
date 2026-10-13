@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { generalFaqs, faqCategories, getFaqStructuredData } from '../data/faqs'
 import { useBranchContext } from '../context/BranchContext'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema } from '../utils/seoStructuredData'
 import {
   HelpCircle,
   ChevronDown,
@@ -37,7 +38,18 @@ export default function FAQs() {
   }
 
   const structuredData = useMemo(() => {
-    return getFaqStructuredData(generalFaqs)
+    const faqSchema = getFaqStructuredData(generalFaqs)
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        CLINIC_ORGANIZATION,
+        faqSchema,
+        createBreadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: 'Frequently Asked Questions', url: '/faqs' }
+        ])
+      ]
+    }
   }, [])
 
   return (

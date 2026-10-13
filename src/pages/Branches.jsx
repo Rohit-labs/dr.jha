@@ -9,6 +9,7 @@ import BranchCard from '../components/branches/BranchCard'
 import LocationSchematic from '../components/branches/LocationSchematic'
 import { branches } from '../data/branches'
 import { reviewsData } from '../data/reviews'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema } from '../utils/seoStructuredData'
 import {
   MapPin,
   Clock,
@@ -93,23 +94,13 @@ export default function Branches() {
 
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'MedicalClinic',
-    name: 'Dr. Jha Physiotherapy & Acupuncture Centre - Clinic Network',
-    description: 'Specialized multi-disciplinary physiotherapy and acupuncture centres located in Mira Road, Vasai, and Surat.',
-    url: 'https://drjhaphysio.in/branches',
-    department: branches.map((b) => ({
-      '@type': 'MedicalClinic',
-      name: `Dr. Jha Centre - ${b.name}`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: b.address,
-        addressLocality: b.city,
-        addressRegion: b.state,
-        postalCode: b.pincode,
-        addressCountry: 'IN'
-      },
-      telephone: b.phone
-    }))
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Branches', url: '/branches' }
+      ])
+    ]
   }
 
   return (

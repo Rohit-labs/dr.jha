@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { branches } from '../data/branches'
 import { useBranchContext } from '../context/BranchContext'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema } from '../utils/seoStructuredData'
 import { MapPin, Clock, Phone, ArrowRight, Compass } from 'lucide-react'
 
 export default function LocationSelector() {
@@ -18,23 +19,13 @@ export default function LocationSelector() {
 
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'MedicalClinic',
-    name: 'Dr. Jha Physiotherapy & Acupuncture Centre - All Locations',
-    description: 'Multi-disciplinary physiotherapy, medical acupuncture, and rehabilitation care centres in Mira Road, Vasai, and Surat.',
-    url: 'https://drjhaphysio.in/locations',
-    department: branches.map((b) => ({
-      '@type': 'MedicalClinic',
-      name: `Dr. Jha Centre - ${b.name}`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: b.address,
-        addressLocality: b.city,
-        addressRegion: b.state,
-        postalCode: b.pincode,
-        addressCountry: 'IN'
-      },
-      telephone: b.phone
-    }))
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Locations', url: '/locations' }
+      ])
+    ]
   }
 
   return (

@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getResourceBySlug, resources } from '../data/resources'
 import { useBranchContext } from '../context/BranchContext'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema, BASE_URL } from '../utils/seoStructuredData'
 import { Clock, Phone, ArrowRight, BookOpen, Stethoscope } from 'lucide-react'
 
 export default function ResourceDetail() {
@@ -18,20 +19,31 @@ export default function ResourceDetail() {
 
   const articleStructuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    'headline': resource.title,
-    'description': resource.summary,
-    'datePublished': '2026-09-01',
-    'dateModified': '2026-09-06',
-    'author': {
-      '@type': 'Organization',
-      'name': 'Dr. Jha Physiotherapy & Acupuncture Centre'
-    },
-    'publisher': {
-      '@type': 'Organization',
-      'name': 'Dr. Jha Physiotherapy & Acupuncture Centre',
-      'url': 'https://drjhaphysio.in'
-    }
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      {
+        '@type': 'Article',
+        '@id': `${BASE_URL}/blogs/${resource.slug}#article`,
+        'headline': resource.title,
+        'description': resource.summary,
+        'datePublished': '2026-09-01',
+        'dateModified': '2026-09-06',
+        'mainEntityOfPage': `${BASE_URL}/blogs/${resource.slug}`,
+        'author': {
+          '@type': 'Physician',
+          'name': 'Dr. Pranab Jha',
+          'url': `${BASE_URL}/about`
+        },
+        'publisher': {
+          '@id': `${BASE_URL}/#organization`
+        }
+      },
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Blogs', url: '/blogs' },
+        { name: resource.title, url: `/blogs/${resource.slug}` }
+      ])
+    ]
   }
 
   const otherResources = resources.filter((r) => r.slug !== resource.slug)

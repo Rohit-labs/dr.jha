@@ -5,10 +5,28 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { events } from '../data/events'
 import { useBranchContext } from '../context/BranchContext'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema, BASE_URL } from '../utils/seoStructuredData'
 import { Calendar, ArrowRight, Bell, Sparkles } from 'lucide-react'
 
 export default function Events() {
   const { currentBranch } = useBranchContext()
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      {
+        '@type': 'CollectionPage',
+        '@id': `${BASE_URL}/events#page`,
+        'name': 'Events & Workshops | Dr. Jha Physiotherapy & Acupuncture',
+        'description': 'Stay connected with upcoming events, workshops and activities from Dr. Jha Centre across Mira Road, Vasai, and Surat.'
+      },
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Events', url: '/events' }
+      ])
+    ]
+  }
 
   return (
     <PageContainer>
@@ -16,6 +34,7 @@ export default function Events() {
         title="Events & Workshops | Dr. Jha Physiotherapy & Acupuncture"
         description="Stay connected with upcoming events, workshops and activities from Dr. Jha Centre across Mira Road, Vasai, and Surat."
         canonicalUrl="https://drjhaphysio.in/events"
+        structuredData={structuredData}
       />
 
       <div className="w-full py-8 sm:py-12 lg:py-16">

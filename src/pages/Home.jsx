@@ -9,43 +9,10 @@ import Branches from '../components/home/Branches'
 import PatientReviews from '../components/home/PatientReviews'
 import FinalCTA from '../components/home/FinalCTA'
 
+import { createHomePageSchema } from '../utils/seoStructuredData'
+
 export default function Home() {
-  const homeStructuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'MedicalClinic',
-    'name': 'Dr. Jha Physiotherapy & Acupuncture Centre',
-    'image': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop&q=85',
-    'url': 'https://drjhaphysio.in',
-    'telephone': '+919146036559',
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': 'Shop 12-14, Green Heritage, Near Shanti Park',
-      'addressLocality': 'Mira Road East',
-      'addressRegion': 'Maharashtra',
-      'postalCode': '401107',
-      'addressCountry': 'IN'
-    },
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': 19.2812,
-      'longitude': 72.8561
-    },
-    'openingHoursSpecification': [
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        'opens': '08:00',
-        'closes': '21:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': 'Sunday',
-        'opens': '09:00',
-        'closes': '13:00'
-      }
-    ],
-    'medicalSpecialty': ['Physiotherapy', 'Acupuncture', 'Rehabilitation']
-  }
+  const homeStructuredData = createHomePageSchema()
 
   return (
     <PageContainer>

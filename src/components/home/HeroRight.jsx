@@ -19,25 +19,25 @@ export default function HeroRight({ branch }) {
     pathname === '/'
 
   // Branch-specific treatment photos (Mira Road / default reverted to original)
-  let defaultMain = encodeURI('/Dr Jha photos/treatment photos/Exercise therapy.jpeg')
-  let defaultTop = encodeURI('/Dr Jha photos/treatment photos/Exercise therapy3.jpeg')
-  let defaultBottom = encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
+  let defaultMain = '/images/treatments/exercise-therapy.jpeg'
+  let defaultTop = '/images/treatments/exercise-therapy-3.jpeg'
+  let defaultBottom = '/images/treatments/laser-therapy-2.jpeg'
 
   let mainAlt = 'Physiotherapist providing hands-on exercise rehabilitation therapy'
   let topAlt = 'Manual therapy and specialized musculoskeletal joint mobilization'
   let bottomAlt = 'Advanced clinical laser therapy for deep tissue healing and pain relief'
 
   if (isSurat) {
-    defaultMain = encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg')
-    defaultTop = encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg')
-    defaultBottom = encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg')
+    defaultMain = '/images/treatments/exercise-therapy-2-surat.jpeg'
+    defaultTop = '/images/treatments/laser-therapy-surat.jpeg'
+    defaultBottom = '/images/treatments/shockwave-therapy-2-surat.jpeg'
     mainAlt = 'Physiotherapist providing exercise therapy in Surat clinic'
     topAlt = 'Advanced clinical LASER photobiomodulation in Surat clinic'
     bottomAlt = 'Advanced clinical shockwave therapy treatment in Surat clinic'
   } else if (isVasai) {
-    defaultMain = encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg')
-    defaultTop = encodeURI('/Dr Jha photos/treatment photos/manual_therapy_vasai.jpeg')
-    defaultBottom = encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+    defaultMain = '/images/treatments/physio-vasai.jpeg'
+    defaultTop = '/images/treatments/manual-therapy-vasai.jpeg'
+    defaultBottom = '/images/treatments/shweta-jha-vasai.jpeg'
     mainAlt = 'Physiotherapy and lower limb rehabilitation session at Vasai clinic'
     topAlt = 'Shoulder mobilization and manual therapy session at Vasai clinic'
     bottomAlt = 'Expert physical rehabilitation and acupuncture care with Dr. Shweta Jha at Vasai'

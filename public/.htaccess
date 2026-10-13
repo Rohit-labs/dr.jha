@@ -1,6 +1,16 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # 301 Redirects for Legacy Media URLs to SEO-Compliant Directories
+  RewriteRule ^Dr(?:\ |\+)Jha(?:\ |\+)photos/Logo/(.*)$ /images/logo/$1 [R=301,L]
+  RewriteRule ^Dr(?:\ |\+)Jha(?:\ |\+)photos/Dr(?:\ |\+)photos/(.*)$ /images/doctors/$1 [R=301,L]
+  RewriteRule ^Dr(?:\ |\+)Jha(?:\ |\+)photos/Clinic(?:\ |\+)Photos/Mira(?:\ |\+)Road/(.*)$ /images/clinics/mira-road/$1 [R=301,L]
+  RewriteRule ^Dr(?:\ |\+)Jha(?:\ |\+)photos/Clinic(?:\ |\+)Photos/Surat/(.*)$ /images/clinics/surat/$1 [R=301,L]
+  RewriteRule ^Dr(?:\ |\+)Jha(?:\ |\+)photos/Clinic(?:\ |\+)Photos/Vasai/(.*)$ /images/clinics/vasai/$1 [R=301,L]
+  RewriteRule ^Dr(?:\ |\+)Jha(?:\ |\+)photos/treatment(?:\ |\+)photos/(.*)$ /images/treatments/$1 [R=301,L]
+  RewriteRule ^Dr(?:\ |\+)Jha(?:\ |\+)photos/treatment(?:\ |\+)videos/(.*)$ /videos/treatments/$1 [R=301,L]
+
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

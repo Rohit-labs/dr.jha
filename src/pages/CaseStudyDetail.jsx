@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getCaseStudyBySlug, caseStudies } from '../data/caseStudies'
 import { useBranchContext } from '../context/BranchContext'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema, BASE_URL } from '../utils/seoStructuredData'
 import {
   Activity,
   ClipboardList,
@@ -27,6 +28,33 @@ export default function CaseStudyDetail() {
 
   const otherCases = caseStudies.filter((c) => c.slug !== cs.slug)
 
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      {
+        '@type': 'Article',
+        '@id': `${BASE_URL}/case-studies/${cs.slug}#article`,
+        'headline': cs.title,
+        'description': cs.metaDescription || cs.summary,
+        'image': cs.image?.startsWith('http') ? cs.image : `${BASE_URL}${cs.image}`,
+        'author': {
+          '@type': 'Physician',
+          'name': 'Dr. Pranab Jha',
+          'url': `${BASE_URL}/about`
+        },
+        'publisher': {
+          '@id': `${BASE_URL}/#organization`
+        }
+      },
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Case Studies', url: '/case-studies' },
+        { name: cs.title, url: `/case-studies/${cs.slug}` }
+      ])
+    ]
+  }
+
   return (
     <PageContainer>
       <SEO
@@ -34,6 +62,7 @@ export default function CaseStudyDetail() {
         description={cs.metaDescription}
         canonicalUrl={`https://drjhaphysio.in/case-studies/${cs.slug}`}
         ogImage={cs.image}
+        structuredData={structuredData}
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
-import { CLINIC_ORGANIZATION } from '../utils/seoStructuredData'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema, BASE_URL } from '../utils/seoStructuredData'
 import { useBranchContext } from '../context/BranchContext'
 import {
   Search,
@@ -623,15 +623,16 @@ export default function Conditions() {
         title="Conditions We Treat — Physiotherapy & Medical Acupuncture | Dr. Jha"
         description="Comprehensive clinical directory of 34+ conditions treated across Mira Road, Vasai, and Surat. Neuro-rehabilitation, spine & joint pain relief, women's health & specialized care."
         keywords="conditions treated dr jha, physiotherapy clinic mira road, acupuncture vasai, pain relief surat, stroke rehab, sciatica clinic, frozen shoulder, bells palsy"
-        canonicalUrl="https://drjhaphysiotherapy.com/conditions"
+        canonicalUrl={`${BASE_URL}/conditions`}
         structuredData={{
           '@context': 'https://schema.org',
           '@graph': [
             CLINIC_ORGANIZATION,
             {
               '@type': 'MedicalWebPage',
+              '@id': `${BASE_URL}/conditions`,
               'name': 'Conditions We Treat | Dr. Jha Physiotherapy & Acupuncture Centre',
-              'url': 'https://drjhaphysiotherapy.com/conditions',
+              'url': `${BASE_URL}/conditions`,
               'description': 'Comprehensive directory of 34 clinical conditions treated with evidence-based physiotherapy and medical acupuncture.',
               'about': pillars.flatMap((p) =>
                 p.sections.map((s) => ({
@@ -640,7 +641,11 @@ export default function Conditions() {
                   'description': s.description
                 }))
               )
-            }
+            },
+            createBreadcrumbSchema([
+              { name: 'Home', url: '/' },
+              { name: 'Conditions', url: '/conditions' }
+            ])
           ]
         }}
       />

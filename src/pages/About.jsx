@@ -7,6 +7,11 @@ import DoctorCard from '../components/about/DoctorCard'
 import { doctors } from '../data/team'
 import { useBranchContext } from '../context/BranchContext'
 import {
+  CLINIC_ORGANIZATION,
+  createDoctorPhysicianSchema,
+  createBreadcrumbSchema
+} from '../utils/seoStructuredData'
+import {
   Activity,
   HeartHandshake,
   ShieldCheck,
@@ -25,17 +30,26 @@ export default function About() {
     ? doctors.filter((doctor) => branchDoctorIds[currentBranch.slug]?.includes(doctor.id))
     : doctors
 
-  const physicianStructuredData = {
+  const aboutStructuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Physician',
-    'name': 'Dr. Pranab Jha',
-    'jobTitle': 'Physiotherapy & Acupuncture Specialist',
-    'medicalSpecialty': ['Physiotherapy', 'Acupuncture', 'Rehabilitation'],
-    'worksFor': {
-      '@type': 'MedicalClinic',
-      'name': 'Dr. Jha Physiotherapy & Acupuncture Centre',
-      'url': 'https://drjhaphysio.in'
-    }
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      {
+        '@type': 'AboutPage',
+        '@id': 'https://drjhaphysio.in/about#webpage',
+        'url': 'https://drjhaphysio.in/about',
+        'name': 'About Dr. Pranab Jha & Clinical Philosophy | Dr. Jha Centre',
+        'description': 'Learn about Dr. Pranab Jha, our clinical team, and our evidence-based multi-disciplinary physiotherapy and acupuncture approach.',
+        'mainEntity': {
+          '@id': 'https://drjhaphysio.in/#founder'
+        }
+      },
+      ...doctors.map((doc) => createDoctorPhysicianSchema(doc)),
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'About Us', url: '/about' }
+      ])
+    ]
   }
 
   return (
@@ -44,7 +58,7 @@ export default function About() {
         title="About Dr. Pranab Jha & Clinical Philosophy | Dr. Jha Centre"
         description="Learn about Dr. Pranab Jha, our clinical team, and our evidence-based multi-disciplinary physiotherapy and acupuncture approach."
         canonicalUrl="https://drjhaphysio.in/about"
-        structuredData={physicianStructuredData}
+        structuredData={aboutStructuredData}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

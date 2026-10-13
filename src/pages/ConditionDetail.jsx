@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getConditionBySlug, conditions } from '../data/conditions'
 import { useBranchContext } from '../context/BranchContext'
+import { createConditionDetailSchema } from '../utils/seoStructuredData'
 import {
   Activity,
   CheckCircle2,
@@ -98,35 +99,10 @@ export default function ConditionDetail() {
     return <Navigate to="/conditions" replace />
   }
 
-  const faqStructuredData = condition.faqs
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        'mainEntity': condition.faqs.map((faq) => ({
-          '@type': 'Question',
-          'name': faq.question,
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': faq.answer
-          }
-        }))
-      }
-    : null
-
-  const medicalWebPageData = {
-    '@context': 'https://schema.org',
-    '@type': 'MedicalWebPage',
-    'name': condition.name,
-    'description': condition.metaDescription,
-    'url': `https://drjhaphysio.in/conditions/${condition.slug}`,
-    'about': {
-      '@type': 'MedicalCondition',
-      'name': condition.name,
-      'alternateName': condition.medicalTerm,
-      'signOrSymptom': condition.symptoms?.map((s) => ({ '@type': 'MedicalSignOrSymptom', 'name': s })),
-      'possibleTreatment': condition.treatmentApproach?.map((t) => ({ '@type': 'MedicalTherapy', 'name': t }))
-    }
-  }
+  const conditionStructuredData = createConditionDetailSchema({
+    condition,
+    url: `/conditions/${condition.slug}`
+  })
 
   const otherConditions = conditions.filter((c) => c.slug !== condition.slug).slice(0, 5)
 
@@ -136,10 +112,7 @@ export default function ConditionDetail() {
         title={condition.pageTitle}
         description={condition.metaDescription}
         canonicalUrl={`https://drjhaphysio.in/conditions/${condition.slug}`}
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@graph': [faqStructuredData, medicalWebPageData].filter(Boolean)
-        }}
+        structuredData={conditionStructuredData}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

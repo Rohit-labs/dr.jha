@@ -1,4 +1,41 @@
 {
+  "redirects": [
+    {
+      "source": "/Dr%20Jha%20photos/Logo/(.*)",
+      "destination": "/images/logo/$1",
+      "permanent": true
+    },
+    {
+      "source": "/Dr%20Jha%20photos/Dr%20photos/(.*)",
+      "destination": "/images/doctors/$1",
+      "permanent": true
+    },
+    {
+      "source": "/Dr%20Jha%20photos/Clinic%20Photos/Mira%20Road/(.*)",
+      "destination": "/images/clinics/mira-road/$1",
+      "permanent": true
+    },
+    {
+      "source": "/Dr%20Jha%20photos/Clinic%20Photos/Surat/(.*)",
+      "destination": "/images/clinics/surat/$1",
+      "permanent": true
+    },
+    {
+      "source": "/Dr%20Jha%20photos/Clinic%20Photos/Vasai/(.*)",
+      "destination": "/images/clinics/vasai/$1",
+      "permanent": true
+    },
+    {
+      "source": "/Dr%20Jha%20photos/treatment%20photos/(.*)",
+      "destination": "/images/treatments/$1",
+      "permanent": true
+    },
+    {
+      "source": "/Dr%20Jha%20photos/treatment%20videos/(.*)",
+      "destination": "/videos/treatments/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PageContainer from '../components/layout/PageContainer'
 import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema, BASE_URL } from '../utils/seoStructuredData'
 import {
   FileText,
   ShieldCheck,
@@ -21,10 +22,20 @@ import {
 export default function Terms() {
   const termsStructuredData = {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Terms & Conditions for Patients | Dr. Jha Physiotherapy & Acupuncture Centre',
-    description: 'Terms and conditions, patient privacy guidelines, online tele-consultation protocols, and physical clinic policies for Dr. Jha Physiotherapy & Acupuncture Centre.',
-    url: 'https://drjhaphysio.in/terms'
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      {
+        '@type': 'WebPage',
+        '@id': `${BASE_URL}/terms#webpage`,
+        name: 'Terms & Conditions for Patients | Dr. Jha Physiotherapy & Acupuncture Centre',
+        description: 'Terms and conditions, patient privacy guidelines, online tele-consultation protocols, and physical clinic policies for Dr. Jha Physiotherapy & Acupuncture Centre.',
+        url: `${BASE_URL}/terms`
+      },
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Terms & Conditions', url: '/terms' }
+      ])
+    ]
   }
 
   return (

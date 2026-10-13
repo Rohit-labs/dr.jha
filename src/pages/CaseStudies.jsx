@@ -5,9 +5,36 @@ import Breadcrumbs from '../components/common/Breadcrumbs'
 import CaseStudyCard from '../components/case-studies/CaseStudyCard'
 import { caseStudies } from '../data/caseStudies'
 import { useBranchContext } from '../context/BranchContext'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema } from '../utils/seoStructuredData'
 
 export default function CaseStudies() {
   const { currentBranch } = useBranchContext()
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      {
+        '@type': 'CollectionPage',
+        '@id': 'https://drjhaphysio.in/case-studies#page',
+        'name': 'Real Recovery Stories & Case Studies | Dr. Jha Centre',
+        'description': 'Explore real patient rehabilitation journeys and functional recovery milestones achieved at Dr. Jha Centre across Mira Road, Vasai, and Surat.',
+        'mainEntity': {
+          '@type': 'ItemList',
+          'itemListElement': caseStudies.map((cs, idx) => ({
+            '@type': 'ListItem',
+            'position': idx + 1,
+            'name': cs.title,
+            'url': `https://drjhaphysio.in/case-studies/${cs.slug}`
+          }))
+        }
+      },
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Case Studies', url: '/case-studies' }
+      ])
+    ]
+  }
 
   return (
     <PageContainer>
@@ -15,6 +42,7 @@ export default function CaseStudies() {
         title="Real Recovery Stories & Case Studies | Dr. Jha Centre"
         description="Explore real patient rehabilitation journeys and functional recovery milestones achieved at Dr. Jha Centre across Mira Road, Vasai, and Surat."
         canonicalUrl="https://drjhaphysio.in/case-studies"
+        structuredData={structuredData}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

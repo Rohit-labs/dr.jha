@@ -49,25 +49,29 @@ export const branches = [
     about: 'Established as our primary rehabilitation facility in the Mumbai Metropolitan Region, the Mira Road clinic integrates modern physiotherapy, manual mobilization, and sterile medical acupuncture under the clinical guidance of Dr. Pranab Jha. The clinic is equipped with dedicated treatment bays, therapeutic exercise areas, and specialized modalities for complex spinal, nerve, and joint recovery.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Mira+Road',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Mira+Road',
-    image: encodeURI('/Dr Jha photos/Clinic Photos/Mira Road/Mira_road_clinic (2).png'),
+    geo: {
+      latitude: 19.2812,
+      longitude: 72.8561
+    },
+    image: '/images/clinics/mira-road/mira-road-clinic-2.png',
     gallery: [
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'),
+        url: '/images/treatments/physio-mira-road.jpeg',
         caption: 'Physiotherapy & active rehabilitation at Mira Road'
       },
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/physio_2_mira_road.jpeg'),
+        url: '/images/treatments/physio-2-mira-road.jpeg',
         caption: 'Hands-on movement & spine rehabilitation at Mira Road'
       },
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg'),
+        url: '/images/treatments/laser-therapy-2.jpeg',
         caption: 'Clinical laser photobiomodulation & deep healing'
       }
     ],
     treatmentPhotos: [
-      encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/physio_2_mira_road.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/LASER therapy2.jpeg')
+      '/images/treatments/physio-mira-road.jpeg',
+      '/images/treatments/physio-2-mira-road.jpeg',
+      '/images/treatments/laser-therapy-2.jpeg'
     ],
     services: [
       'Orthopaedic Physiotherapy',
@@ -79,12 +83,12 @@ export const branches = [
       'Post-Surgical Rehabilitation'
     ],
     treatments: [
-      { name: 'Orthopaedic Physiotherapy', slug: 'physiotherapy', image: encodeURI('/Dr Jha photos/treatment photos/physio_mira_road.jpeg'), category: 'Core Rehabilitation' },
-      { name: 'Medical Acupuncture', slug: 'acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture.jpeg'), category: 'Traditional & Holistic' },
-      { name: 'Dry Needling & Myofascial Release', slug: 'dry-needling', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture4.jpeg'), category: 'Pain Management' },
-      { name: 'Neurological Rehabilitation', slug: 'scalp-acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Scalp acupuncture.jpeg'), category: 'Neuro Recovery' },
-      { name: 'Post-Surgical Recovery Protocols', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/physio_2_mira_road.jpeg'), category: 'Post-Operative' },
-      { name: 'Sports Injury Rehabilitation', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy.jpeg'), category: 'Athletic Recovery' }
+      { name: 'Orthopaedic Physiotherapy', slug: 'physiotherapy', image: '/images/treatments/physio-mira-road.jpeg', category: 'Core Rehabilitation' },
+      { name: 'Medical Acupuncture', slug: 'acupuncture', image: '/images/treatments/acupuncture.jpeg', category: 'Traditional & Holistic' },
+      { name: 'Dry Needling & Myofascial Release', slug: 'dry-needling', image: '/images/treatments/acupuncture-4.jpeg', category: 'Pain Management' },
+      { name: 'Neurological Rehabilitation', slug: 'scalp-acupuncture', image: '/images/treatments/scalp-acupuncture.jpeg', category: 'Neuro Recovery' },
+      { name: 'Post-Surgical Recovery Protocols', slug: 'exercise-therapy', image: '/images/treatments/physio-2-mira-road.jpeg', category: 'Post-Operative' },
+      { name: 'Sports Injury Rehabilitation', slug: 'exercise-therapy', image: '/images/treatments/exercise-therapy.jpeg', category: 'Athletic Recovery' }
     ],
     conditions: [
       { name: 'Back Pain & Spine Care', slug: 'back-pain' },
@@ -171,29 +175,33 @@ export const branches = [
     about: 'Serving the growing community of Vasai-Virar and the Palghar region, our Vasai clinic offers dedicated physical therapy, chronic pain relief, and functional movement training. Located on the second floor of Sai Arcade just moments from the railway terminus, this clinic allows convenient daily access for commuters, seniors, and recovering surgical patients.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Vasai',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Vasai',
-    image: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
+    geo: {
+      latitude: 19.3813,
+      longitude: 72.8311
+    },
+    image: '/images/clinics/vasai/vasai-clinic-2.jpeg',
     gallery: [
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg'),
+        url: '/images/treatments/physio-vasai.jpeg',
         caption: 'Physiotherapy & lower limb rehabilitation with Dr. Shweta Jha at Vasai'
       },
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/manual_therapy_vasai.jpeg'),
+        url: '/images/treatments/manual-therapy-vasai.jpeg',
         caption: 'Shoulder mobilization & manual therapy session at Vasai'
       },
       {
-        url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic2.jpeg'),
+        url: '/images/clinics/vasai/vasai-clinic-2.jpeg',
         caption: 'Clinical consultation and therapy evaluation bays at Vasai'
       },
       {
-        url: encodeURI('/Dr Jha photos/Clinic Photos/Vasai/Vasai_clinic4.jpeg'),
+        url: '/images/clinics/vasai/vasai-clinic-4.jpeg',
         caption: 'Advanced physiotherapy and spine rehabilitation suite at Vasai'
       }
     ],
     treatmentPhotos: [
-      encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/manual_therapy_vasai.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg')
+      '/images/treatments/physio-vasai.jpeg',
+      '/images/treatments/manual-therapy-vasai.jpeg',
+      '/images/treatments/shweta-jha-vasai.jpeg'
     ],
 
     services: [
@@ -205,12 +213,12 @@ export const branches = [
       'Knee & Shoulder Rehabilitation'
     ],
     treatments: [
-      { name: 'Spinal & Back Pain Therapy', slug: 'physiotherapy', image: encodeURI('/Dr Jha photos/treatment photos/physio_vasai.jpeg'), category: 'Spine Health' },
-      { name: 'Joint Mobilization & Manual Care', slug: 'manual-therapy', image: encodeURI('/Dr Jha photos/treatment photos/manual_therapy_vasai.jpeg'), category: 'Manual Therapy' },
-      { name: 'Post-Operative Orthopaedic Rehab', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/shewta_jha_vasai.jpeg'), category: 'Post-Surgical' },
-      { name: 'Medical Acupuncture Sessions', slug: 'acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture.jpeg'), category: 'Acupuncture' },
-      { name: 'Geriatric Mobility & Balance Care', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/balance_rehab_vasai.jpeg'), category: 'Senior Health' },
-      { name: 'Shoulder & Knee Restoration', slug: 'exercise-therapy', image: encodeURI('/Dr Jha photos/treatment photos/exercise_therapy_vasai.jpeg'), category: 'Joint Care' }
+      { name: 'Spinal & Back Pain Therapy', slug: 'physiotherapy', image: '/images/treatments/physio-vasai.jpeg', category: 'Spine Health' },
+      { name: 'Joint Mobilization & Manual Care', slug: 'manual-therapy', image: '/images/treatments/manual-therapy-vasai.jpeg', category: 'Manual Therapy' },
+      { name: 'Post-Operative Orthopaedic Rehab', slug: 'exercise-therapy', image: '/images/treatments/shweta-jha-vasai.jpeg', category: 'Post-Surgical' },
+      { name: 'Medical Acupuncture Sessions', slug: 'acupuncture', image: '/images/treatments/acupuncture.jpeg', category: 'Acupuncture' },
+      { name: 'Geriatric Mobility & Balance Care', slug: 'exercise-therapy', image: '/images/treatments/balance-rehab-vasai.jpeg', category: 'Senior Health' },
+      { name: 'Shoulder & Knee Restoration', slug: 'exercise-therapy', image: '/images/treatments/exercise-therapy-vasai.jpeg', category: 'Joint Care' }
     ],
     conditions: [
       { name: 'Back Pain & Lumbar Strain', slug: 'back-pain' },
@@ -288,30 +296,34 @@ export const branches = [
     about: 'Extending our clinical standards to South Gujarat, the Surat centre in Vesu provides specialized orthopaedic rehabilitation, athletic injury conditioning, and therapeutic acupuncture. Designed to offer a calm, modern setting, the clinic accommodates patients seeking focused care for chronic pain, posture correction, and post-operative recovery.',
     mapUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Surat',
     directionsUrl: 'https://maps.google.com/?q=Dr+Jha+Physiotherapy+Surat',
-    image: encodeURI('/Dr Jha photos/Clinic Photos/Surat/Surat_clinic2.jpeg'),
+    geo: {
+      latitude: 21.1458,
+      longitude: 72.7758
+    },
+    image: '/images/clinics/surat/surat-clinic-2.jpeg',
     gallery: [
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
+        url: '/images/treatments/laser-therapy-surat.jpeg',
         caption: 'Deep tissue laser photobiomodulation in Surat'
       },
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'),
+        url: '/images/treatments/exercise-therapy-2-surat.jpeg',
         caption: 'Exercise therapy & physical rehabilitation in Surat'
       },
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
+        url: '/images/treatments/cosmetic-acupuncture-laser-surat.jpeg',
         caption: 'Cosmetic acupuncture & facial laser therapy in Surat'
       },
       {
-        url: encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg'),
+        url: '/images/treatments/shockwave-therapy-2-surat.jpeg',
         caption: 'Advanced clinical shockwave therapy in Surat'
       }
     ],
     treatmentPhotos: [
-      encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'),
-      encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg')
+      '/images/treatments/laser-therapy-surat.jpeg',
+      '/images/treatments/exercise-therapy-2-surat.jpeg',
+      '/images/treatments/cosmetic-acupuncture-laser-surat.jpeg',
+      '/images/treatments/shockwave-therapy-2-surat.jpeg'
     ],
     services: [
       'Advanced Musculoskeletal Rehab',
@@ -322,11 +334,11 @@ export const branches = [
       'Balance & Gait Retraining'
     ],
     treatments: [
-      { name: 'Advanced Musculoskeletal Rehab', slug: 'physiotherapy', image: encodeURI('/Dr Jha photos/treatment photos/Exercise therapy2_surat.jpeg'), category: 'Orthopaedics' },
-      { name: 'Sports Performance Recovery', slug: 'shockwave-therapy', image: encodeURI('/Dr Jha photos/treatment photos/Shockwave therapy2_surat.jpeg'), category: 'Sports Rehab' },
-      { name: 'Medical Acupuncture & Needling', slug: 'acupuncture', image: encodeURI('/Dr Jha photos/treatment photos/Acupuncture2.jpeg'), category: 'Acupuncture' },
-      { name: 'Spine Alignment & Postural Laser Therapy', slug: 'laser-therapy', image: encodeURI('/Dr Jha photos/treatment photos/LASER therapy_surat.jpeg'), category: 'Spine Care' },
-      { name: 'Facial Rejuvenation & Cosmetic Laser', slug: 'cosmetic-acupuncture-laser', image: encodeURI('/Dr Jha photos/treatment photos/Cosmetic Acupuncture + LASER therapy_surat.jpeg'), category: 'Aesthetic Care' }
+      { name: 'Advanced Musculoskeletal Rehab', slug: 'physiotherapy', image: '/images/treatments/exercise-therapy-2-surat.jpeg', category: 'Orthopaedics' },
+      { name: 'Sports Performance Recovery', slug: 'shockwave-therapy', image: '/images/treatments/shockwave-therapy-2-surat.jpeg', category: 'Sports Rehab' },
+      { name: 'Medical Acupuncture & Needling', slug: 'acupuncture', image: '/images/treatments/acupuncture-2.jpeg', category: 'Acupuncture' },
+      { name: 'Spine Alignment & Postural Laser Therapy', slug: 'laser-therapy', image: '/images/treatments/laser-therapy-surat.jpeg', category: 'Spine Care' },
+      { name: 'Facial Rejuvenation & Cosmetic Laser', slug: 'cosmetic-acupuncture-laser', image: '/images/treatments/cosmetic-acupuncture-laser-surat.jpeg', category: 'Aesthetic Care' }
     ],
     conditions: [
       { name: 'Lower Back Pain & Lumbar Strain', slug: 'back-pain' },

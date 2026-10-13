@@ -5,9 +5,36 @@ import Breadcrumbs from '../components/common/Breadcrumbs'
 import ResourceCard from '../components/resources/ResourceCard'
 import { resources } from '../data/resources'
 import { useBranchContext } from '../context/BranchContext'
+import { CLINIC_ORGANIZATION, createBreadcrumbSchema } from '../utils/seoStructuredData'
 
 export default function Resources() {
   const { currentBranch } = useBranchContext()
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      CLINIC_ORGANIZATION,
+      {
+        '@type': 'Blog',
+        '@id': 'https://drjhaphysio.in/blogs#blog',
+        'name': 'Clinical Blogs & Patient Knowledge Centre | Dr. Jha Physiotherapy',
+        'description': 'Clinician-authored condition guides, physiotherapy recovery tips, and educational articles.',
+        'publisher': {
+          '@id': 'https://drjhaphysio.in/#organization'
+        },
+        'blogPost': resources.map((r) => ({
+          '@type': 'BlogPosting',
+          'headline': r.title,
+          'description': r.summary,
+          'url': `https://drjhaphysio.in/blogs/${r.slug}`
+        }))
+      },
+      createBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Blogs', url: '/blogs' }
+      ])
+    ]
+  }
 
   return (
     <PageContainer>
@@ -15,6 +42,7 @@ export default function Resources() {
         title="Clinical Blogs & Patient Knowledge Centre | Dr. Jha Physiotherapy"
         description="Clinician-authored condition guides, physiotherapy recovery tips, and educational articles to help you understand your recovery."
         canonicalUrl="https://drjhaphysio.in/blogs"
+        structuredData={structuredData}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

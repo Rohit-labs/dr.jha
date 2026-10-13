@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO'
 import Breadcrumbs from '../components/common/Breadcrumbs'
 import { getTreatmentBySlug, treatments } from '../data/treatments'
 import { useBranchContext } from '../context/BranchContext'
+import { createTreatmentDetailSchema } from '../utils/seoStructuredData'
 import {
   CheckCircle2,
   Phone,
@@ -53,12 +54,18 @@ export default function TreatmentDetail() {
 
   const otherTreatments = treatments.filter((t) => t.slug !== treatment.slug)
 
+  const treatmentStructuredData = createTreatmentDetailSchema({
+    treatment,
+    url: `/treatments/${treatment.slug}`
+  })
+
   return (
     <PageContainer>
       <SEO
         title={treatment.pageTitle}
         description={treatment.metaDescription}
         canonicalUrl={`https://drjhaphysio.in/treatments/${treatment.slug}`}
+        structuredData={treatmentStructuredData}
       />
 
       {/* Fullscreen Photo Lightbox Modal */}

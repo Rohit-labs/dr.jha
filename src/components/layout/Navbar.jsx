@@ -390,7 +390,7 @@ export default function Navbar() {
             {/* Clinic Logo */}
             <div className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
               <img
-                src={encodeURI('/Dr Jha photos/Logo/logo.png')}
+                src="/images/logo/logo.png"
                 alt="Dr. Jha Physiotherapy & Acupuncture Logo"
                 className="w-full h-full object-contain"
               />

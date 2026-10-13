@@ -6,6 +6,7 @@ import TreatmentList from '../components/treatments/TreatmentList'
 import { treatments } from '../data/treatments'
 import { treatmentSections, allTreatmentsSEO } from '../data/treatmentSections'
 import { useBranchContext } from '../context/BranchContext'
+import { createTreatmentsCatalogSchema } from '../utils/seoStructuredData'
 
 /**
  * Treatments listing page.
@@ -66,12 +67,18 @@ export default function Treatments({ categorySlug }) {
       ]
     : [{ label: 'Treatments' }]
 
+  const structuredData = createTreatmentsCatalogSchema({
+    treatments: availableTreatments,
+    url: seo.canonicalUrl || '/treatments'
+  })
+
   return (
     <PageContainer>
       <SEO
         title={seo.pageTitle}
         description={seo.metaDescription}
         canonicalUrl={seo.canonicalUrl}
+        structuredData={structuredData}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">

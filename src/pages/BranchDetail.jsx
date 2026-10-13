@@ -11,6 +11,7 @@ import BranchFAQ from '../components/branches/BranchFAQ'
 import NotFound from './NotFound'
 import { getBranchBySlug, branches } from '../data/branches'
 import { doctors } from '../data/team'
+import { createBranchClinicSchema } from '../utils/seoStructuredData'
 import {
   CheckCircle2,
   HelpCircle,
@@ -45,31 +46,7 @@ export default function BranchDetail() {
   const otherBranches = branches.filter((b) => b.slug !== branch.slug)
 
   // Schema.org MedicalClinic structured data
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'MedicalClinic',
-    name: `Dr. Jha Physiotherapy & Acupuncture Centre - ${branch.name}`,
-    image: branch.image,
-    url: `https://drjhaphysio.in/branches/${branch.slug}`,
-    telephone: branch.phone,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: branch.address,
-      addressLocality: branch.city,
-      addressRegion: branch.state,
-      postalCode: branch.pincode,
-      addressCountry: 'IN'
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: branch.timingDetails?.[0]?.hours?.split('–')?.[0]?.trim() || '08:30',
-        closes: branch.timingDetails?.[0]?.hours?.split('–')?.[1]?.trim() || '20:30'
-      }
-    ],
-    medicalSpecialty: ['Physiotherapy', 'Acupuncture', 'Rehabilitation']
-  }
+  const structuredData = createBranchClinicSchema(branch)
 
   return (
     <PageContainer>
